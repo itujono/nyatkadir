@@ -1,5 +1,12 @@
 @import '../fonts/fonts.css';
+@import "var.scss";
 
+
+
+
+.p0 {
+    padding: 0 !important;
+}
 
 body {
     font-family: 'FontBook', 'Helvetica', Arial, sans-serif;
@@ -7,4 +14,55 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'FontBold', Arial, sans-serif;
+}
+
+a {
+    color: $grey;
+}
+
+
+
+
+
+
+// Waaah sudin  mulai Navbar nich yaaa heheheh
+
+.navbar a.navbar-item {
+    color: #999;
+}
+
+
+
+
+
+
+
+
+// Footer wak ini heheh
+
+footer.footer {
+    position: relative;
+    background-color: $darkBlue;
+    padding: 3rem 0 0 0;
+    > .level {
+        padding: 0 1.6rem;
+        &.copyright {
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+        }
+    }
+    li h3 {
+        color: #fff;
+    }
+    .old-man {
+        img {
+            position: absolute;
+            right: 20px;
+            bottom: 50px;
+        }
+    }
+}
+
+.copyright {
+    background-color: $yellow;
 }
