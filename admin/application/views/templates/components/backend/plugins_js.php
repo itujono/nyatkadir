@@ -66,7 +66,7 @@ altair_charts = {
 </script>
 <script src="<?php echo base_url().$this->data['asback']; ?>js/pages/dashboard.min.js"></script>
 <?php
-} elseif($plugins == 'plugins_terms_titipsewa') { 
+} elseif($plugins == 'plugins') { 
 ?>
 <?php echo $datatables;?>
 <!--  preloaders functions -->
@@ -121,6 +121,13 @@ altair_wysiwyg = {
     }
 };
 </script>
+<?php
+} elseif($plugins == 'plugins_menu') {
+?>
+<!-- page specific plugins -->
+
+<!--  contact list functions -->
+<script src="<?php echo base_url().$this->data['asback']; ?>js/pages/page_contact_list.min.js"></script>
 <?php                   
 }
 ?>
