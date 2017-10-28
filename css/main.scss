@@ -12,6 +12,31 @@
     padding: 20px !important;
 }
 
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.tile.mr20 {
+    margin-right: 20px !important;
+}
+
+.yellowish {
+    color: $yellow !important;
+}
+
+.reddish {
+    color: $reddish !important;
+}
+
+.columns.is-centered {
+    align-items: center;
+}
+
+
+
+
+
+
 body {
     font-family: 'FontBook', 'Helvetica', Arial, sans-serif;
     line-height: 1.6;
@@ -31,6 +56,21 @@ a {
 
 
 
+.preloader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../../img/preloader.GIF');
+}
+
+
+
 
 // Waaah sudin  mulai Navbar nich yaaa heheheh
 
@@ -38,6 +78,26 @@ a {
     color: #999;
 }
 
+.navbar-brand {
+    margin-right: 2.4em;
+}
+
+.main-logo {
+    width: 80px;
+    padding: 0;
+    img {
+        height: auto !important;
+        max-height: initial;
+    }
+}
+
+.navbar-link {
+    &:after {
+        border: 1px solid $reddish;
+        border-top: 0;
+        border-right: 0;
+    }
+}
 
 
 
@@ -115,26 +175,72 @@ article.card {
     }
 }
 
-.columns.flex {
-    display: flex;
-}
-
-.card.buttonize {
-    background-color: #fafafa;
+.tile.card.buttonize {
+    background-color: $darkBlue;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     border-radius: 5px;
     box-shadow: none;
     &:hover {
-        background-color: darken(#fafafa, 5%);
+        transform: none;
+    }
+    .link {
+        &:hover {
+            color: #999;
+        }
     }
 
     .card-footer {
         padding: 1.5rem;
         border-top: none;
+        background-color: #444;
+        .icon, .titanic {
+            font-size: 20px;
+            color: #eee;
+        }
+        &:hover {
+            background-color: $yellow;
+        }
+        &:hover span {
+            color: #444;
+        }
     }
 }
+
+.articles {
+    .card-content {
+        p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+}
+
+.card .level {
+    padding: 1.5rem;
+}
+
+.tile.card {
+    transition: all .3s ease;
+    &:hover {
+        background-color: $darkBlue;
+        transform: translateY(-5px);
+    }
+    &:hover h4 {
+        color: #fff;
+    }
+    .level {
+        p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+}
+
+
+
+
 
 
 
@@ -145,7 +251,7 @@ article.card {
 footer.footer {
     position: relative;
     background-color: $darkBlue;
-    padding: 3rem 0 0 0;
+    padding: 1rem 0 0 0;
     > .level {
         padding: 0 1.6rem;
         &.copyright {
@@ -163,8 +269,17 @@ footer.footer {
             bottom: 50px;
         }
     }
+    .column {
+        h3 {
+            color: $reddish;
+            font-weight: normal;
+        }
+    }
 }
 
 .copyright {
     background-color: $yellow;
+    * {
+        color: $darkBlue;
+    }
 }
