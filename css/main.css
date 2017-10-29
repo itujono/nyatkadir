@@ -139,6 +139,10 @@ a:hover {
   background-color: #eee;
 }
 
+.ataglance {
+  padding-bottom: 0;
+}
+
 .ataglance h3 {
   font-size: 2.4rem;
   line-height: 1.2;
@@ -202,6 +206,11 @@ a:hover {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.article-section {
+  background: url(../img/bg-section.png) no-repeat center;
+  background-size: cover;
 }
 
 .article-section .card:nth-child(2) {
@@ -276,10 +285,6 @@ article.card .card-content {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-}
-
-.tile.card.buttonize .link:hover {
-  color: #999;
 }
 
 .tile.card.buttonize .card-footer {
@@ -419,7 +424,7 @@ footer.footer li h3 {
 footer.footer .old-man img {
   position: absolute;
   right: 20px;
-  bottom: 50px;
+  bottom: 12px;
 }
 
 footer.footer .column h3 {
