@@ -13,4 +13,11 @@
 		handlePreloader();
 	});
 
+    var header = document.querySelector(".navbar");
+    var headroom  = new Headroom(header, {
+        offset: 205,
+        tolerance: 5
+    });
+    headroom.init();
+
 })(window.jQuery);
