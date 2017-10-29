@@ -8,12 +8,20 @@
     padding: 0 !important;
 }
 
+.m0 {
+    margin: 0 !important;
+}
+
 .p20 {
     padding: 20px !important;
 }
 
 .mr20 {
     margin-right: 20px !important;
+}
+
+.mr5em {
+    margin-right: 5em !important;
 }
 
 .tile.mr20 {
@@ -38,7 +46,7 @@
 
 
 body {
-    font-family: 'FontBook', 'Helvetica', Arial, sans-serif;
+    font-family: $fontDefault;
     line-height: 1.6;
     color: #777;
 }
@@ -242,6 +250,65 @@ article.card {
 
 
 
+.aspirasi {
+    .introduction {
+        h5 {
+            color: $yellow;
+        }
+        h2 {
+            color: #fff;
+            font-size: 2.4rem;
+            line-height: 1.4;
+            margin-bottom: .6em;
+        }
+    }
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input, .textarea {
+    font-family: $fontDefault;
+    border-radius: 2px;
+    font-size: .85rem;
+    height: 3.3em;
+    padding-left: calc(1.2em - 1px);
+    border: 1px transparent;
+    color: #777;
+    background-color: #a1a2ab;
+    transition: all .3s ease;
+    &:placeholder {
+        color: #ddd;
+    }
+}
+
+.field:not(:last-child) {
+    margin-bottom: 1.1rem;
+}
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+    background-color: #f9f9f9;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+}
+
+.button.is-submit {
+    font-family: $fontDefault;
+    background-color: $yellow;
+    border-color: transparent;
+    color: #fff;
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    transition: all .3s ease;
+    &:hover {
+        background-color: transparent;
+        border: 1px solid $yellow;
+        color: $yellow;
+    }
+}
+
 
 
 
@@ -275,11 +342,17 @@ footer.footer {
             font-weight: normal;
         }
     }
+    figure {
+        img {
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.16);
+        }
+    }
 }
 
 .copyright {
-    background-color: $yellow;
+    background-color: $darkBlue;
+    border-top: 2px solid rgba(255, 255, 255, .2);
     * {
-        color: $darkBlue;
+        color: #ddd;
     }
 }

@@ -3,6 +3,10 @@
   padding: 0 !important;
 }
 
+.m0 {
+  margin: 0 !important;
+}
+
 .p20 {
   padding: 20px !important;
 }
@@ -11,12 +15,16 @@
   margin-right: 20px !important;
 }
 
+.mr5em {
+  margin-right: 5em !important;
+}
+
 .tile.mr20 {
   margin-right: 20px !important;
 }
 
 .yellowish {
-  color: #f3f313 !important;
+  color: #fdc236 !important;
 }
 
 .reddish {
@@ -31,7 +39,7 @@
 }
 
 body {
-  font-family: 'FontBook', 'Helvetica', Arial, sans-serif;
+  font-family: "FontBook", Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: #777;
 }
@@ -211,7 +219,7 @@ article.card .card-content {
 }
 
 .tile.card.buttonize .card-footer:hover {
-  background-color: #f3f313;
+  background-color: #fdc236;
 }
 
 .tile.card.buttonize .card-footer:hover span {
@@ -249,6 +257,69 @@ article.card .card-content {
   color: #999;
 }
 
+.aspirasi .introduction h5 {
+  color: #fdc236;
+}
+
+.aspirasi .introduction h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 1.4;
+  margin-bottom: .6em;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.input, .textarea {
+  font-family: "FontBook", Helvetica, Arial, sans-serif;
+  border-radius: 2px;
+  font-size: .85rem;
+  height: 3.3em;
+  padding-left: calc(1.2em - 1px);
+  border: 1px transparent;
+  color: #777;
+  background-color: #a1a2ab;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.input:placeholder, .textarea:placeholder {
+  color: #ddd;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 1.1rem;
+}
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button.is-submit {
+  font-family: "FontBook", Helvetica, Arial, sans-serif;
+  background-color: #fdc236;
+  border-color: transparent;
+  color: #fff;
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.button.is-submit:hover {
+  background-color: transparent;
+  border: 1px solid #fdc236;
+  color: #fdc236;
+}
+
 footer.footer {
   position: relative;
   background-color: #2e2f48;
@@ -279,10 +350,16 @@ footer.footer .column h3 {
   font-weight: normal;
 }
 
+footer.footer figure img {
+  -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.16);
+}
+
 .copyright {
-  background-color: #f3f313;
+  background-color: #2e2f48;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .copyright * {
-  color: #2e2f48;
+  color: #ddd;
 }
