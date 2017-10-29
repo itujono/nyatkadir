@@ -33,7 +33,10 @@ class Login extends CI_Controller {
 			$pass = $this->input->post('password');
 
 			if ($this->User_m->login($email, $pass) == "ADMIN") {
+				$checkid = $this->User_m->checkuser($email)->row();
 				
+				$data['lastloginADMIN'] = date("Y-m-d H:i:s");
+				$this->User_m->save($data, $checkid->idADMIN);
 				$data = array(
 		            'title' => 'Welcome!',
 		            'text' => 'Hallo, Selamat datang '. $this->session->userdata('Email').' !',

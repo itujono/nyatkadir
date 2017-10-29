@@ -21,7 +21,7 @@
                         <div class="uk-form-row">
                             <label for="settings_site_name">Password Lama</label>
                             <br>
-                            <input class="md-input label-fixed" required type="password" name="oldpassword" placeholder="Masukkan kata sandi lama anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');/>
+                            <input class="md-input label-fixed" required type="password" name="oldpassword" placeholder="Masukkan kata sandi lama anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');"/>
                         </div>
                         <div class="uk-form-row">
                             <label for="settings_page_description">Password baru</label>

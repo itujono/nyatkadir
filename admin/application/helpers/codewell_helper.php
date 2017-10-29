@@ -74,46 +74,6 @@ function folenc($id){
     return strtolower($folenc);
 }
 
-function selectall_about_only_one(){
-    $CI =& get_instance();
-    $CI->db->select('*');
-    $CI->db->from('about');
-    $CI->db->where('idABOUT', 1);
-
-    $data = $CI->db->get()->row();
-    return $data;
-}
-
-function selectall_terms_only_one(){
-    $CI =& get_instance();
-    $CI->db->select('*');
-    $CI->db->from('terms');
-    $CI->db->where('idTERMS', 1);
-
-    $data = $CI->db->get()->row();
-    return $data;
-}
-
-function selectall_terms_caratitip_only_one(){
-    $CI =& get_instance();
-    $CI->db->select('*');
-    $CI->db->from('terms_caratitip');
-    $CI->db->where('idTERMSTITIP', 1);
-
-    $data = $CI->db->get()->row();
-    return $data;
-}
-
-function selectall_social(){
-    $CI =& get_instance();
-    $CI->db->select('*');
-    $CI->db->from('social');
-    $CI->db->where('idSOCIAL', 1);
-
-    $data = $CI->db->get()->row();
-    return $data;
-}
-
 
 function timeAgo($timestamp){
 

@@ -18,7 +18,20 @@ class User_m extends MY_Model{
 			'label' => 'Kata sandi',
 			'rules' => 'trim|required|min_length[8]'
 			),
-		);
+	);
+
+	public $rules_save_user = array(
+		'emailADMIN' => array(
+			'field' => 'emailADMIN',
+			'label' => 'Email',
+			'rules' => 'trim|required|valid_email|is_unique[nyat_users_admin.emailADMIN]'
+			),
+		'passwordADMIN' => array(
+			'field' => 'passwordADMIN',
+			'label' => 'Kata sandi',
+			'rules' => 'trim|required|min_length[8]'
+			),
+	);
 
 	public $rules_changepassword = array(
 		'oldpassword' => array(
@@ -46,6 +59,7 @@ class User_m extends MY_Model{
 		$new = new stdClass();
 		$new->idADMIN = '';
 		$new->emailADMIN = '';
+		$new->nameADMIN = '';
 		$new->passwordADMIN = '';
 		return $new;
 	}
@@ -67,6 +81,7 @@ class User_m extends MY_Model{
 				$data = array(
 				'Email' => $Administrator->emailADMIN,
 				'idADMIN' => $Administrator->idADMIN,
+				'Name' => $Administrator->nameADMIN,
 				'accessMENU' => 1,
 				'akses' => 'admin',
 				'loggedin' => TRUE,
@@ -82,6 +97,23 @@ class User_m extends MY_Model{
 
 	public function logout(){
 		$this->session->sess_destroy();
+	}
+
+	public function selectall_user($id=NULL){
+		$this->db->select('*');
+		$this->db->from('users_admin');
+		if($id != NULL){
+			$this->db->where('idADMIN', $id);
+		}
+		return $this->db->get();
+	}
+
+	public function checkuser($email){
+		$this->db->select('idADMIN');
+		$this->db->from('users_admin');
+		$this->db->where('emailADMIN', $email);
+		$this->db->limit(1);
+		return $this->db->get();
 	}
 
 	public function checkoldpassword($id){
