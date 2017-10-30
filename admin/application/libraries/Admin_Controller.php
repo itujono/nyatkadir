@@ -14,7 +14,7 @@ class Admin_Controller extends MY_Controller{
 		$this->data['rootDIR'] = 'templates/';
         $this->data['asfront'] = 'assets/frontend/';
         $this->data['emailadmin'] = 'magicwarms@gmail.com';
-        if($this->session->userdata('loggedin') != TRUE OR $this->session->userdata('akses') != 'admin') {
+        if($this->session->userdata('loggedin') != TRUE OR $this->session->userdata('is_admin') != 1) {
             $data = array(
                 'title' => 'Warning',
                 'type' => 'danger',

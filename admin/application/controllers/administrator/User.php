@@ -9,7 +9,7 @@ class User extends Admin_Controller {
 	}
 
 	public function index_user() {
-		$data['addONS'] = 'plugins_menu';
+		$data['addONS'] = 'plugins_user';
 		$data['listuser'] = $this->User_m->selectall_user()->result();
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
@@ -29,9 +29,10 @@ class User extends Admin_Controller {
         $this->form_validation->set_message('min_length', 'Kata sandi Minimal 8 karakter');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->User_m->array_from_post(array('nameADMIN','emailADMIN','passwordADMIN'));
+			$data = $this->User_m->array_from_post(array('nameADMIN','emailADMIN','passwordADMIN','is_adminADMIN'));
 			$data['passwordADMIN'] = $this->User_m->hash($data['passwordADMIN']);
 			$data['statusADMIN'] = 1;
+			
 			$id = decode(urldecode($this->input->post('idADMIN')));
 			if(empty($id))$id=NULL;
 			

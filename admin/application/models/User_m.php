@@ -61,6 +61,8 @@ class User_m extends MY_Model{
 		$new->emailADMIN = '';
 		$new->nameADMIN = '';
 		$new->passwordADMIN = '';
+		$new->statusADMIN = '';
+		$new->is_adminADMIN = '';
 		return $new;
 	}
 
@@ -82,8 +84,7 @@ class User_m extends MY_Model{
 				'Email' => $Administrator->emailADMIN,
 				'idADMIN' => $Administrator->idADMIN,
 				'Name' => $Administrator->nameADMIN,
-				'accessMENU' => 1,
-				'akses' => 'admin',
+				'is_admin' => $Administrator->is_adminADMIN,
 				'loggedin' => TRUE,
 			);
 				$this->session->set_userdata($data);
@@ -121,6 +122,18 @@ class User_m extends MY_Model{
 		$this->db->from('users_admin');
 		$this->db->where('idADMIN', $id);
 		$this->db->limit(1);
+		return $this->db->get();
+	}
+
+	public function select_accessmenu_by_user($id=NULL){
+		$this->db->select('idADMIN, nameADMIN, users_admin.accessMENU');
+		$this->db->select('menus_admin.accessMENU');
+		$this->db->from('users_admin');
+		$this->db->join('menus_admin', 'menus_admin.accessMENU = users_admin.accessMENU', 'left');
+		$this->db->group_by('users_admin.accessMENU');
+		if($id != NULL){
+			$this->db->where('users_admin.accessMENU', $id);
+		}
 		return $this->db->get();
 	}
 }

@@ -49,6 +49,16 @@ function selectall_category_active(){
     return $data;
 }
 
+function selectall_user_active(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('users_admin');
+    $CI->db->where('statusADMIN', 1);
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
 function selectall_category_trivia_active(){
     $CI =& get_instance();
     $CI->db->select('namaCATTRIVIA, statusCATTRIVIA');

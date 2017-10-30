@@ -9,7 +9,7 @@ $datatables = '
     <script src="'.base_url().$this->data['asback'].'js/pages/plugins_datatables.min.js"></script>
 ';
 $forms_advanced='<script src="'.base_url().$this->data['asbackbower'].'ion.rangeslider/js/ion.rangeSlider.min.js"></script>
-    <script src="'.base_url().$this->data['asback'].'js/pages/forms_advanced.min.js"></script>';
+    <script src="'.base_url().$this->data['asback'].'js/pages/forms_advanced.js"></script>';
 ?>
 
 <?php
@@ -122,12 +122,83 @@ altair_wysiwyg = {
 };
 </script>
 <?php
-} elseif($plugins == 'plugins_menu') {
+} elseif($plugins == 'plugins_user') {
 ?>
-<!-- page specific plugins -->
-
 <!--  contact list functions -->
 <script src="<?php echo base_url().$this->data['asback']; ?>js/pages/page_contact_list.min.js"></script>
+<?php
+} elseif($plugins == 'plugins_menu') {
+?>
+<!--  nestable component functions -->
+<script src="<?php echo base_url().$this->data['asback']; ?>js/pages/components_nestable.min.js"></script>
+<?php echo $forms_advanced;?>
+<?php $user = selectall_user_active();?>
+<script type="text/javascript">
+$(function() {
+    // advanced selects
+    altair_form_adv.adv_selects();
+});
+altair_form_adv = {
+    adv_selects: function() {
+        $('#select_access').selectize({
+            plugins: {
+                'remove_button': {
+                    label: ''
+                }
+            },
+            options: [
+            <?php foreach ($user as $usr) { ?>
+                {class: 'userlist', id: <?php echo $usr->idADMIN;?>, title: '<?php echo $usr->nameADMIN;?>'},
+            <?php } ?>
+            ],
+            optgroups: [
+                {value: 'userlist', label: 'List User'}
+            ],
+            optgroupField: 'class',
+            maxItems: null,
+            valueField: 'id',
+            labelField: 'title',
+            searchField: 'title',
+            create: false,
+            render: {
+                option: function(data, escape) {
+                    return  '<div class="option">' +
+                                '<span class="title">' + escape(data.title) + '</span>' +
+                            '</div>';
+                },
+                item: function(data, escape) {
+                    return '<div class="item"><a href="' + escape(data.url) + '" target="_blank">' + escape(data.title) + '</a></div>';
+                },
+                optgroup_header: function(data, escape) {
+                    return '<div class="optgroup-header">' + escape(data.label) + '</div>';
+                }
+            },
+            onDropdownOpen: function($dropdown) {
+                $dropdown
+                    .hide()
+                    .velocity('slideDown', {
+                        begin: function() {
+                            $dropdown.css({'margin-top':'0'})
+                        },
+                        duration: 200,
+                        easing: easing_swiftOut
+                    })
+            },
+            onDropdownClose: function($dropdown) {
+                $dropdown
+                    .show()
+                    .velocity('slideUp', {
+                        complete: function() {
+                            $dropdown.css({'margin-top':''})
+                        },
+                        duration: 200,
+                        easing: easing_swiftOut
+                    })
+            }
+        });
+    }
+};
+</script>
 <?php                   
 }
 ?>

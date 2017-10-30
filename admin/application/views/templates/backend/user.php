@@ -55,6 +55,22 @@
                     <p class="text-red"><?php echo form_error('passwordADMIN'); ?></p>
                   </div>
                 </div>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <label>Akses Admin</label>
+                    <br>
+                    <br>
+                    <input type="checkbox" data-switchery checked="checked" data-switchery-size="large" data-switchery-color="#7cb342" name="is_adminADMIN" id="switch_demo_large">
+                    <label for="switch_demo_large" class="inline-label"><b>Akses Admin?</b></label>
+                  </div>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <label>Status Admin</label>
+                    <br>
+                    <br>
+                      <input type="checkbox" data-switchery checked="checked" data-switchery-size="large" data-switchery-color="#d32f2f" name="statusADMIN" id="switch_demo_large">
+                      <label for="switch_demo_large" class="inline-label"><b>Aktifkan Admin</b></label>
+                  </div>
+                </div>
                 <div class="uk-width-medium-1-1 uk-margin-top">
                  <div class="uk-form-row">
                    <span class="uk-input-group-addon"><?php echo form_submit('submit', 'SAVE', 'class="md-btn md-btn-primary" id="show_preloader_md"'); ?></span>
@@ -84,6 +100,7 @@ if(!empty($listuser)){
                         <ul class="uk-nav">
                             <li><a href="<?php echo base_url();?>administrator/user/saveuser/<?php echo encode($user->idADMIN);?>">Edit</a></li>
                             <li><a href="<?php echo base_url();?>administrator/user/actiondelete_user/<?php echo encode($user->idADMIN);?>">Hapus</a></li>
+                            <li><a href="<?php echo base_url();?>administrator/menu_admin/index_menu/<?php echo encode($user->accessMENU);?>">Menu</a></li>
                         </ul>
                     </div>
                 </div>
