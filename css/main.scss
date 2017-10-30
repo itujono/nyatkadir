@@ -107,6 +107,7 @@ a {
 }
 
 .navbar {
+    background-color: $darkBlue;
     position: fixed;
     z-index: 10;
     right: 0;
@@ -114,7 +115,7 @@ a {
     top: 0;
 }
 
-.navbar a.navbar-item {
+.navbar a.navbar-item, .navbar-item, .navbar-link {
     color: #999;
 }
 
@@ -133,7 +134,7 @@ a {
 
 .navbar-link {
     &:after {
-        border: 1px solid $reddish;
+        border: 1px solid $yellow;
         border-top: 0;
         border-right: 0;
     }

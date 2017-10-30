@@ -100,6 +100,7 @@ a:hover {
 }
 
 .navbar {
+  background-color: #2e2f48;
   position: fixed;
   z-index: 10;
   right: 0;
@@ -107,7 +108,7 @@ a:hover {
   top: 0;
 }
 
-.navbar a.navbar-item {
+.navbar a.navbar-item, .navbar-item, .navbar-link {
   color: #999;
 }
 
@@ -126,7 +127,7 @@ a:hover {
 }
 
 .navbar-link:after {
-  border: 1px solid #ff5a5a;
+  border: 1px solid #fdc236;
   border-top: 0;
   border-right: 0;
 }
