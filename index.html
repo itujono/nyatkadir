@@ -10,13 +10,15 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://code.ionicframework.com/1.3.3/css/ionic.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
+        <link rel="stylesheet" href="css/materialdesignicons.min.css">
         <link rel="stylesheet" href="css/bulma.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/settings.css">
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/revolution-slider.css">
+        <link rel="stylesheet" href="css/owl.css">
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -172,10 +174,10 @@
                 </div>
                 <div class="column">
                     <div class="columns">
-                        <div class="column p20">
+                        <div class="column p20" class="wow fadeInUp" data-wow-delay="2s">
                             <h3>Nyat Kadir adalah <span class="reddish">anggota DPR RI</span> yang akan selalu mengabdi untuk Indonesia.</h3>
                         </div>
-                        <div class="column">
+                        <div class="column wow fadeInUp">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <div class="button-cta">
                                 <a href="#">
@@ -188,16 +190,16 @@
                                         </div>
                                         <div class="level-right">
                                             <div class="level-item">
-                                                <a href="#"><span class="icon ion-android-arrow-forward"></span></a>
+                                                <a href="#"><span class="icon mdi mdi-chevron-right"></span></a>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
+                            </div> <!-- kelar Button-CTA -->
                         </div>
-                    </div>
+                    </div> <!-- kelar Columns -->
                 </div>
-            </div>
+            </div> <!-- kelar Columns pas di bawah At A Glance -->
         </section>
 
         <section class="section article-section">
@@ -208,7 +210,7 @@
                 </div>
                 <div class="tile is-ancestor articles">
                     <div class="tile is-parent is-6">
-                        <div class="tile is-child card">
+                        <div class="tile is-child card wow bounceInUp" data-wow-delay="1s">
                             <div class="card-image">
                                 <div class="image">
                                     <img src="img/sitting.jpg" alt="">
@@ -228,7 +230,7 @@
                         </div>
                     </div>
                     <div class="tile is-parent is-vertical is-4">
-                        <article class="tile is-child card">
+                        <article class="tile is-child card wow bounceInUp" data-wow-delay="2s">
                             <div class="card-image">
                                 <div class="image">
                                     <img src="img/sitting.jpg" alt="">
@@ -239,7 +241,7 @@
                                 <p>13 Januari 2017</p>
                             </div>
                         </article>
-                        <article class="tile is-child card">
+                        <article class="tile is-child card wow bounceInUp" data-wow-delay="1.3s">
                             <!-- <div class="card-image">
                                 <div class="image">
                                     <img src="img/sitting.jpg" alt="">
@@ -250,7 +252,7 @@
                                 <p>13 Januari 2017</p>
                             </div>
                         </article>
-                        <article class="tile is-child card">
+                        <article class="tile is-child card wow bounceInUp" data-wow-delay="1.6s">
                             <!-- <div class="card-image">
                                 <div class="image">
                                     <img src="img/sitting.jpg" alt="">
@@ -268,10 +270,41 @@
                                 <a href="#" class="link">Lihat selengkapnya pemikiran Nyat Kadir lainnya</a>
                             </div>
                             <a href="#" class="card-footer">
-                                <span class="icon ion-android-arrow-forward card-footer-item"></span>
+                                <span class="icon mdi mdi-chevron-right"></span>
                             </a>
                         </div>
                     </div>
+                </div> <!-- kelar Article -->
+            </div>
+        </section>
+
+        <section class="section partner">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Mitra Kerja <span class="reddish">Nyat Kadir</span></h3>
+                    Instansi-instansi yang menjadi kolega sekaligus mitra dalam bidang profesional Nyat Kadir
+                </div>
+                <div class="four-item-carousel owl-carousel owl-theme">
+                    <figure class="image">
+                        <img src="http://placehold.it/200x60/" alt="">
+                        <figcaption><a href="#" target="_blank">PT Sentosa Abadi</a></figcaption>
+                    </figure>
+                    <figure class="image">
+                        <img src="http://placehold.it/200x60/" alt="">
+                        <figcaption><a href="#" target="_blank">PT Karimun Jaya</a></figcaption>
+                    </figure>
+                    <figure class="image">
+                        <img src="http://placehold.it/200x60/" alt="">
+                        <figcaption><a href="#" target="_blank">Alfatron Batam</a></figcaption>
+                    </figure>
+                    <figure class="image">
+                        <img src="http://placehold.it/200x60/" alt="">
+                        <figcaption><a href="#" target="_blank">Kek Pisang Villa</a></figcaption>
+                    </figure>
+                    <figure class="image">
+                        <img src="http://placehold.it/200x60/" alt="">
+                        <figcaption><a href="#" target="_blank">Komunitas Dewan Penasihat Presiden</a></figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -327,7 +360,7 @@
             <div class="container">
                 <div class="columns is-centered">
                 <div class="column mr5em">
-                    <figure class="image logo-footer m0">
+                    <figure class="image logo-footer m0 wow bounceInUp">
                         <img src="img/logo-footer.png" alt="Logo Footer" width="100">
                     </figure>
                 </div>
@@ -359,7 +392,7 @@
                     </ul>
                 </div>
                 <div class="column old-man">
-                    <img src="img/old-man-in-suit.png" width="200" alt="Nyat Kadir in Suit">
+                    <img src="img/old-man-in-suit.png" width="200" alt="Nyat Kadir in Suit" class="wow bounceInRight" data-wow-delay="1.5s">
                 </div>
             </div>
             </div>
@@ -380,10 +413,47 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
         <script src="js/main.js"></script>
+        <script src="js/owl.js"></script>
+        <script src="js/wow.js"></script>
         <script src="js/revolution.min.js"></script>
 
         <script>
-        if($('.main-slider .tp-banner').length){
+            new WOW().init();
+        </script>
+
+        <script>
+            if ($('.four-item-carousel').length) {
+                $('.four-item-carousel').owlCarousel({
+                    loop:true,
+                    margin:30,
+                    smartSpeed: 700,
+                    autoplay: 4000,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        580:{
+                            items:1
+                        },
+                        640:{
+                            items:2
+                        },
+                        800:{
+                            items:2
+                        },
+                        1024:{
+                            items:3
+                        },
+                        1100:{
+                            items:5
+                        }
+                    }
+                });
+            }
+        </script>
+
+        <script>
+            if($('.main-slider .tp-banner').length){
 
             var MainSlider = $('.main-slider');
             var strtHeight = MainSlider.attr('data-start-height');
@@ -401,7 +471,7 @@
               thumbAmount:5,
 
               navigationType:"bullet",
-              navigationArrows:"0",
+              navigationArrows:"1",
               navigationStyle:"preview3",
 
               touchenabled:"on",

@@ -178,6 +178,10 @@ a {
     .tp-bullets.preview3 .bullet:hover, .tp-bullets.preview3 .bullet.selected {
         border: 5px solid $yellow !important;
     }
+    .tparrows.preview3 {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, .14);
+        border-radius: 3px;
+    }
 }
 
 .ataglance .columns {
@@ -297,11 +301,13 @@ article.card {
     }
 
     .card-footer {
+        display: flex;
+        justify-content: center;
         padding: 1.5rem;
         border-top: none;
         background-color: #444;
         .icon, .titanic {
-            font-size: 20px;
+            font-size: 2em;
             color: #eee;
         }
         &:hover {
@@ -339,6 +345,22 @@ article.card {
         p {
             font-size: 14px;
             color: #999;
+        }
+    }
+}
+
+
+
+.partner {
+    background-color: #f3f3f3;
+}
+
+.four-item-carousel {
+    figure {
+        figcaption {
+            padding: 10px;
+            text-align: center;
+            line-height: 1.4;
         }
     }
 }

@@ -168,6 +168,12 @@ a:hover {
   border: 5px solid #fdc236 !important;
 }
 
+.main-slider .tparrows.preview3 {
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.14);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+}
+
 .ataglance .columns > .column:first-child {
   padding: 0;
 }
@@ -341,13 +347,21 @@ article.card .card-content {
 }
 
 .tile.card.buttonize .card-footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 1.5rem;
   border-top: none;
   background-color: #444;
 }
 
 .tile.card.buttonize .card-footer .icon, .tile.card.buttonize .card-footer .titanic {
-  font-size: 20px;
+  font-size: 2em;
   color: #eee;
 }
 
@@ -388,6 +402,16 @@ article.card .card-content {
 .tile.card .level p {
   font-size: 14px;
   color: #999;
+}
+
+.partner {
+  background-color: #f3f3f3;
+}
+
+.four-item-carousel figure figcaption {
+  padding: 10px;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .aspirasi .introduction h5 {
