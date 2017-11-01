@@ -24,6 +24,10 @@
     padding-top: 10em !important;
 }
 
+.pb0 {
+    padding-bottom: 0 !important;
+}
+
 .mr20 {
     margin-right: 20px !important;
 }
@@ -44,8 +48,16 @@
     color: $reddish !important;
 }
 
+.white {
+    color: #fff !important;
+}
+
 .columns.is-centered {
     align-items: center;
+}
+
+.lhnormal {
+    line-height: 1.6 !important;
 }
 
 
@@ -109,7 +121,7 @@ a {
 .navbar {
     background-color: $darkBlue;
     position: fixed;
-    z-index: 10;
+    z-index: 20;
     right: 0;
     left: 0;
     top: 0;
@@ -147,18 +159,38 @@ a {
 // Bagian Home deh ini ya heheheh
 
 
-
+.main-slider {
+    position: relative;
+    z-index: 10;
+    top: 50px;
+    .tp-caption {
+        z-index: 5 !important;
+    }
+    .overlay-slide {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: rgba(0, 0, 0, 0.05);
+    }
+    .tp-bullets.preview3 .bullet:hover, .tp-bullets.preview3 .bullet.selected {
+        border: 5px solid $yellow !important;
+    }
+}
 
 .ataglance .columns {
     > .column:first-child {
         padding: 0;
     }
     > .column:last-child {
-        background-color: #eee;
+        background-color: #d9d9d9;
     }
 }
 
 .ataglance {
+    position: relative;
     padding-bottom: 0;
     h3 {
         font-size: 2.4rem;
@@ -176,9 +208,14 @@ a {
     width: 330px;
     position: absolute;
     right: 0;
-    bottom: -160px;
+    bottom: -70px;
     padding: 40px;
     background-color: $darkBlue;
+    transition: all .3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+    }
     a {
         display: block;
     }
@@ -253,6 +290,10 @@ article.card {
     box-shadow: none;
     &:hover {
         transform: none;
+    }
+
+    .link:hover .tile.card.buttonize .card-footer {
+        background-color: $yellow;
     }
 
     .card-footer {

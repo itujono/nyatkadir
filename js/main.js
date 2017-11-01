@@ -20,4 +20,7 @@
     });
     headroom.init();
 
+    //Revolution Slider
+	
+
 })(window.jQuery);

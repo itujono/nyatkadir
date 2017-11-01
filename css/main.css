@@ -19,6 +19,10 @@
   padding-top: 10em !important;
 }
 
+.pb0 {
+  padding-bottom: 0 !important;
+}
+
 .mr20 {
   margin-right: 20px !important;
 }
@@ -39,11 +43,19 @@
   color: #ff5a5a !important;
 }
 
+.white {
+  color: #fff !important;
+}
+
 .columns.is-centered {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.lhnormal {
+  line-height: 1.6 !important;
 }
 
 body {
@@ -102,7 +114,7 @@ a:hover {
 .navbar {
   background-color: #2e2f48;
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   right: 0;
   left: 0;
   top: 0;
@@ -132,15 +144,40 @@ a:hover {
   border-right: 0;
 }
 
+.main-slider {
+  position: relative;
+  z-index: 10;
+  top: 50px;
+}
+
+.main-slider .tp-caption {
+  z-index: 5 !important;
+}
+
+.main-slider .overlay-slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.main-slider .tp-bullets.preview3 .bullet:hover, .main-slider .tp-bullets.preview3 .bullet.selected {
+  border: 5px solid #fdc236 !important;
+}
+
 .ataglance .columns > .column:first-child {
   padding: 0;
 }
 
 .ataglance .columns > .column:last-child {
-  background-color: #eee;
+  background-color: #d9d9d9;
 }
 
 .ataglance {
+  position: relative;
   padding-bottom: 0;
 }
 
@@ -161,9 +198,20 @@ a:hover {
   width: 330px;
   position: absolute;
   right: 0;
-  bottom: -160px;
+  bottom: -70px;
   padding: 40px;
   background-color: #2e2f48;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.button-cta:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .button-cta a {
@@ -286,6 +334,10 @@ article.card .card-content {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
+}
+
+.tile.card.buttonize .link:hover .tile.card.buttonize .card-footer {
+  background-color: #fdc236;
 }
 
 .tile.card.buttonize .card-footer {
