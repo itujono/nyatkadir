@@ -185,6 +185,7 @@ a:hover {
 .ataglance {
   position: relative;
   padding-bottom: 0;
+  padding-top: 3.8rem;
 }
 
 .ataglance h3 {
@@ -203,8 +204,8 @@ a:hover {
 .button-cta {
   width: 330px;
   position: absolute;
-  right: 0;
-  bottom: -70px;
+  right: -15px;
+  bottom: -150px;
   padding: 40px;
   background-color: #2e2f48;
   -webkit-transition: all .3s ease;
