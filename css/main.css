@@ -120,8 +120,15 @@ a:hover {
   top: 0;
 }
 
+a.navbar-item:hover {
+  background-color: #5e5e61;
+}
+
 .navbar a.navbar-item, .navbar-item, .navbar-link {
   color: #999;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .navbar-brand {
