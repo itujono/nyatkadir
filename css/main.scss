@@ -570,7 +570,9 @@ footer.footer {
     background-color: #eee;
     background: url(../img/bg-section.png) center no-repeat;
     background-size: cover;
+    padding-bottom: 7rem;
     .box {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -582,6 +584,11 @@ footer.footer {
             .title {
                 color: #eee;
             }
+            .link {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .title {
             font-size: 1.2em;
@@ -591,6 +598,26 @@ footer.footer {
         .subtitle {
             color: $yellow;
             font-size: 14px;
+            margin: 0;
+        }
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all .3s ease;
+            .icon {
+                font-size: 2.2em;
+            }
         }
     }
 }
