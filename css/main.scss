@@ -559,3 +559,38 @@ footer.footer {
         }
     }
 }
+
+
+
+
+
+// Widih gawat! Dah masuk ke Articles wak hahahah!
+
+.articles {
+    background-color: #eee;
+    background: url(../img/bg-section.png) center no-repeat;
+    background-size: cover;
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fefefe;
+        min-height: 180px;
+        transition: all .3s ease;
+        &:hover {
+            background-color: $darkBlue;
+            .title {
+                color: #eee;
+            }
+        }
+        .title {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            line-height: 1.4;
+        }
+        .subtitle {
+            color: $yellow;
+            font-size: 14px;
+        }
+    }
+}
