@@ -23,6 +23,10 @@
   padding-bottom: 0 !important;
 }
 
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
 .mr20 {
   margin-right: 20px !important;
 }
@@ -256,6 +260,7 @@ a:hover {
 
 .section-title {
   margin-bottom: 2em;
+  line-height: 1.6;
 }
 
 .section-title.dark {
@@ -268,6 +273,7 @@ a:hover {
 
 .section-title h3 {
   font-size: 1.8rem;
+  line-height: 1.4;
 }
 
 .read-more {
@@ -555,4 +561,35 @@ footer.footer figure.logo-footer img {
 
 .copyright * {
   color: #ddd;
+}
+
+.nyat-hero {
+  margin-top: 5em;
+  background: url(../img/campaign.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.nyat-hero .title {
+  color: #fdc236;
+}
+
+.nyat-hero .subtitle {
+  color: #ddd;
+}
+
+.few-gallery {
+  background-color: #2e2f48;
+}
+
+.achievements {
+  background: url(../img/slide1.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.achievements dl dt {
+  font-weight: bold;
+}
+
+.achievements dl dd {
+  margin-bottom: 10px;
 }

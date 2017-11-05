@@ -28,6 +28,10 @@
     padding-bottom: 0 !important;
 }
 
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
 .mr20 {
     margin-right: 20px !important;
 }
@@ -247,6 +251,7 @@ a {
 
 .section-title {
     margin-bottom: 2em;
+    line-height: 1.6;
     &.dark {
         color: #ddd;
         h3 {
@@ -255,6 +260,7 @@ a {
     }
     h3 {
         font-size: 1.8rem;
+        line-height: 1.4;
     }
 }
 
@@ -516,5 +522,40 @@ footer.footer {
     border-top: 2px solid rgba(255, 255, 255, .2);
     * {
         color: #ddd;
+    }
+}
+
+
+
+
+
+// Maaak serius dah masuk ke Tentang nih? Cool!
+
+.nyat-hero {
+    margin-top: 5em;
+    background: url(../img/campaign.jpg) center no-repeat;
+    background-size: cover;
+    .title {
+        color: $yellow;
+    }
+    .subtitle {
+        color: #ddd;
+    }
+}
+
+.few-gallery {
+    background-color: $darkBlue;
+}
+
+.achievements {
+    background: url(../img/slide1.jpg) center no-repeat;
+    background-size: cover;
+    dl {
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 10px;
+        }
     }
 }
