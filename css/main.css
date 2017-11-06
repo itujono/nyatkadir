@@ -719,18 +719,9 @@ footer.footer figure.logo-footer img {
   margin-bottom: 15px;
 }
 
-.similar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 25%;
-  -ms-flex: 1 0 25%;
-  flex: 1 0 25%;
-}
-
 .similar .card {
+  display: inline-block;
+  width: 31%;
   margin-right: 15px;
 }
 

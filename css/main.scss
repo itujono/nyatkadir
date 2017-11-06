@@ -659,9 +659,9 @@ footer.footer {
 }
 
 .similar {
-    display: flex;
-    flex: 1 0 25%;
     .card {
+        display: inline-block;
+        width: 31%;
         margin-right: 15px;
         .card-content {
             height: 180px;
