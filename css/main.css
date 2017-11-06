@@ -693,6 +693,10 @@ footer.footer figure.logo-footer img {
   margin-bottom: 3em;
 }
 
+.article .breadcrumb li {
+  font-size: 14px;
+}
+
 .article .article-detail {
   margin-bottom: 3em;
 }
