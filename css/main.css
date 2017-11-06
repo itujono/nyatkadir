@@ -685,6 +685,72 @@ footer.footer figure.logo-footer img {
   font-size: 2.2em;
 }
 
-.article-detail {
+.article {
   margin-top: 5em;
+}
+
+.article .breadcrumb {
+  margin-bottom: 3em;
+}
+
+.article .article-detail {
+  margin-bottom: 3em;
+}
+
+.article .article-detail .content {
+  padding-bottom: 3em;
+}
+
+.article .article-detail hr {
+  width: 10%;
+}
+
+.article .article-detail .title {
+  color: #2e2f48;
+}
+
+.article .article-detail .subtitle {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 2em;
+}
+
+.top-post li {
+  margin-bottom: 15px;
+}
+
+.similar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 25%;
+  -ms-flex: 1 0 25%;
+  flex: 1 0 25%;
+}
+
+.similar .card {
+  margin-right: 15px;
+}
+
+.similar .card .card-content {
+  height: 180px;
+}
+
+.similar .card .title {
+  font-size: 1.4em;
+}
+
+.similar .card .date {
+  font-size: 12px;
+  color: #999;
+}
+
+.similar .card a {
+  color: #2e2f48;
+}
+
+.similar .card a:hover {
+  color: #fdc236;
 }
