@@ -686,3 +686,33 @@ footer.footer {
         }
     }
 }
+
+
+
+
+
+
+// Oke login page wak udah. Heheh.
+
+.login {
+    background-color: $darkBlue;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.login-wrapper {
+    width: 60%;
+    .login-title {
+        text-align: center;
+        margin-bottom: 2em;
+        .title {
+            color: $yellow
+        }
+        .subtitle {
+            color: #ddd;
+        }
+    }
+}
