@@ -1,0 +1,735 @@
+@import '../frontend/fonts/fonts.css';
+@import "var.scss";
+
+
+
+
+.p0 {
+    padding: 0 !important;
+}
+
+.m0 {
+    margin: 0 !important;
+}
+
+.p20 {
+    padding: 20px !important;
+}
+
+.pt5em {
+    padding-top: 5em !important;
+}
+
+.pt10em {
+    padding-top: 10em !important;
+}
+
+.pb0 {
+    padding-bottom: 0 !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.mr5em {
+    margin-right: 5em !important;
+}
+
+.tile.mr20 {
+    margin-right: 20px !important;
+}
+
+.yellowish {
+    color: $yellow !important;
+}
+
+.reddish {
+    color: $reddish !important;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.columns.is-centered {
+    align-items: center;
+}
+
+.lhnormal {
+    line-height: 1.6 !important;
+}
+
+
+
+
+
+
+body {
+    font-family: $fontDefault;
+    line-height: 1.6;
+    color: #777;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'FontBold', Arial, sans-serif;
+    color: $darkBlue;
+}
+
+a {
+    color: $grey;
+    &:hover {
+        color: $yellow;
+    }
+}
+
+
+
+
+
+.preloader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../../frontend/img/preloader.GIF');
+}
+
+
+
+
+// Waaah sudin  mulai Navbar nich yaaa heheheh
+
+.headroom {
+    will-change: transform;
+    transition: transform .3s linear;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    background-color: $darkBlue;
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.navbar a.navbar-item {
+    &:hover {
+        background-color: $greyNavbarItem;
+        color: #eee;
+    }
+}
+
+.navbar a.navbar-item, .navbar-item, .navbar-link {
+    color: #999;
+    transition: all .3s ease;
+}
+
+.navbar-brand {
+    margin-right: 2.4em;
+}
+
+.main-logo {
+    width: 80px;
+    padding: 0;
+    img {
+        height: auto !important;
+        max-height: initial;
+    }
+}
+
+.navbar-link {
+    &:after {
+        border: 1px solid $yellow;
+        border-top: 0;
+        border-right: 0;
+    }
+}
+
+
+
+
+
+// Bagian Home deh ini ya heheheh
+
+
+.main-slider {
+    position: relative;
+    z-index: 10;
+    top: 50px;
+    .tp-caption {
+        z-index: 5 !important;
+    }
+    .overlay-slide {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: rgba(0, 0, 0, 0.05);
+    }
+    .tp-bullets.preview3 .bullet:hover, .tp-bullets.preview3 .bullet.selected {
+        border: 5px solid $yellow !important;
+    }
+    .tparrows.preview3 {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, .14);
+        border-radius: 3px;
+    }
+}
+
+.ataglance .columns {
+    > .column:first-child {
+        padding: 0;
+    }
+    > .column:last-child {
+        background-color: #d9d9d9;
+    }
+}
+
+.ataglance {
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 3.8rem;
+    h3 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+    p {
+        font-size: 1rem;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.button-cta {
+    width: 330px;
+    position: absolute;
+    right: -15px;
+    bottom: -150px;
+    padding: 40px;
+    background-color: $darkBlue;
+    transition: all .3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+    }
+    a {
+        display: block;
+    }
+    .level-item {
+        flex-direction: column;
+        align-items: flex-start;
+        .icon {
+            font-size: 2rem;
+        }
+        h3 {
+            color: $yellow;
+            font-size: 2rem;
+        }
+    }
+}
+
+.section-title {
+    margin-bottom: 2em;
+    line-height: 1.6;
+    &.dark {
+        color: #ddd;
+        h3 {
+            color: #ddd;
+        }
+    }
+    h3 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+}
+
+.read-more {
+    margin-bottom: 2em;
+    text-align: right;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article-section {
+    background: url(../img/bg-section.png) no-repeat center;
+    background-size: cover;
+    background-color: $darkBlue;
+    .card {
+        transition: all .3s ease;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+        }
+    }
+    .card:nth-child(2) {
+        margin-right: 0;
+    }
+    .card:nth-child(4) {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .card:nth-child(3) {
+        margin-bottom: 0;
+    }
+    .columns {
+        .column {
+            display: flex;
+            padding: 0;
+        }
+    }
+}
+
+.article-carousel {
+    .card-content {
+        height: 240px;
+    }
+    .title {
+        color: $darkBlue;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+}
+
+.card-footer {
+    .card-footer-item {
+        &:first-child {
+            span {
+                font-size: 12px;
+            }
+        }
+        &:last-child {
+            background-color: #eee;
+            &:hover {
+                background-color: $darkBlue;
+            }
+        }
+    }
+}
+
+.tile.card.buttonize {
+    background-color: $darkBlue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: none;
+    &:hover {
+        transform: none;
+    }
+
+    .link:hover .tile.card.buttonize .card-footer {
+        background-color: $yellow;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem;
+        border-top: none;
+        background-color: #444;
+        .icon, .titanic {
+            font-size: 2em;
+            color: #eee;
+        }
+        &:hover {
+            background-color: $yellow;
+        }
+        &:hover span {
+            color: #444;
+        }
+    }
+}
+
+.articles {
+    .card-content {
+        p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+}
+
+.card .level {
+    padding: 1.5rem;
+}
+
+.tile.card {
+    transition: all .3s ease;
+    &:hover {
+        background-color: $darkBlue;
+        transform: translateY(-5px);
+    }
+    &:hover h4 {
+        color: #fff;
+    }
+    .level {
+        p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+}
+
+
+
+.partner {
+    background-color: #f3f3f3;
+}
+
+.four-item-carousel {
+    figure {
+        figcaption {
+            padding: 10px;
+            text-align: center;
+            line-height: 1.4;
+        }
+    }
+}
+
+
+
+
+
+.aspirasi {
+    .introduction {
+        h5 {
+            color: $yellow;
+        }
+        h2 {
+            color: #fff;
+            font-size: 2.4rem;
+            line-height: 1.4;
+            margin-bottom: .6em;
+        }
+    }
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input, .textarea {
+    font-family: $fontDefault;
+    border-radius: 2px;
+    font-size: .85rem;
+    height: 3.3em;
+    padding-left: calc(1.2em - 1px);
+    border: 1px transparent;
+    color: #777;
+    background-color: #a1a2ab;
+    transition: all .3s ease;
+    &:placeholder {
+        color: #ddd;
+    }
+}
+
+.field:not(:last-child) {
+    margin-bottom: 1.1rem;
+}
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+    background-color: #f9f9f9;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+}
+
+.button.is-submit {
+    font-family: $fontDefault;
+    background-color: $yellow;
+    border-color: transparent;
+    color: #fff;
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    transition: all .3s ease;
+    &:hover {
+        background-color: transparent;
+        border: 1px solid $yellow;
+        color: $yellow;
+    }
+}
+
+
+
+
+
+// Footer wak ini heheh
+
+footer.footer {
+    position: relative;
+    background-color: $darkBlue;
+    background: url(../img/bg-footer.png) no-repeat center center;
+    background-size: cover;
+    padding: 1rem 0 0 0;
+    > .level {
+        padding: 0 1.6rem;
+        &.copyright {
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+        }
+    }
+    li h3 {
+        color: #fff;
+    }
+    .old-man {
+        img {
+            position: absolute;
+            right: 20px;
+            bottom: 12px;
+        }
+    }
+    .column {
+        h3 {
+            color: $reddish;
+            font-weight: normal;
+        }
+    }
+    figure.logo-footer {
+        img {
+            width: 120px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+.copyright {
+    background-color: $darkBlue;
+    border-top: 2px solid rgba(255, 255, 255, .2);
+    * {
+        color: #ddd;
+    }
+}
+
+
+
+
+
+// Maaak serius dah masuk ke Tentang nih? Cool!
+
+.nyat-hero {
+    margin-top: 5em;
+    background: url(../img/campaign.jpg) center no-repeat;
+    background-size: cover;
+    .title {
+        color: $yellow;
+    }
+    .subtitle {
+        color: #ddd;
+    }
+}
+
+.few-gallery {
+    background-color: $darkBlue;
+}
+
+.achievements {
+    background: url(../img/slide1.jpg) center no-repeat;
+    background-size: cover;
+    dl {
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+
+
+
+// Widih gawat! Dah masuk ke Articles wak hahahah!
+
+.articles {
+    background-color: #eee;
+    background: url(../img/bg-section.png) center no-repeat;
+    background-size: cover;
+    padding-bottom: 7rem;
+    .box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fefefe;
+        min-height: 180px;
+        transition: all .3s ease;
+        &:hover {
+            background-color: $darkBlue;
+            .title {
+                color: #eee;
+            }
+            .link {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            line-height: 1.4;
+        }
+        .subtitle {
+            color: $yellow;
+            font-size: 14px;
+            margin: 0;
+        }
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all .3s ease;
+            .icon {
+                font-size: 2.2em;
+            }
+        }
+    }
+}
+
+
+
+
+
+// Hell yeaaah sudin nyampek ke Article Detail! Heheh.
+
+.article {
+    margin-top: 5em;
+    .breadcrumb {
+        margin-bottom: 3em;
+        li {
+            font-size: 14px;
+        }
+    }
+    .article-detail {
+        margin-bottom: 3em;
+        .content {
+            padding-bottom: 3em;
+        }
+        hr {
+            width: 10%;
+        }
+        .title {
+            color: $darkBlue;
+            width: 70%;
+        }
+        .subtitle {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 2em;
+            margin-top: -1rem;
+        }
+    }
+}
+
+.top-post {
+    li {
+        margin-bottom: 15px;
+    }
+}
+
+.similar {
+    .card {
+        display: inline-block;
+        width: 31%;
+        margin-right: 15px;
+        .card-content {
+            height: 180px;
+        }
+        .title {
+            font-size: 1.4em;
+        }
+        .date {
+            font-size: 12px;
+            color: #999;
+        }
+        a {
+            color: $darkBlue;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// Oke login page wak udah. Heheh.
+
+.login {
+    background-color: $darkBlue;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.login-wrapper, .register-wrapper {
+    display: none;
+    visibility: hidden;
+    width: 60%;
+    .login-title {
+        text-align: center;
+        margin-bottom: 2em;
+        .title {
+            color: $yellow
+        }
+        .subtitle {
+            color: #ddd;
+        }
+    }
+    form {
+        margin-bottom: 2em;
+    }
+    .switch-login {
+        text-align: center;
+    }
+    &.is-active {
+        display: block;
+        visibility: visible;
+    }
+}
+
+.register-wrapper {
+    display: none;
+    visibility: hidden;
+}
