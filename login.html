@@ -62,7 +62,7 @@
         <section class="section is-medium login">
             <div class="hero-body">
                 <div class="container">
-                    <div class="login-wrapper">
+                    <div class="login-wrapper is-active">
                         <div class="login-title">
                             <h3 class="title wow fadeInUp">Selamat datang!</h3>
                             <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan login terlebih dahulu untuk melanjutkan aktivitas Anda.</p>
@@ -84,14 +84,14 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="switch-login">
+                        <div class="switch-login" id="switch-to-register">
                             <a href="#">Belum punya akun?</a>
                         </div>
                     </div> <!-- kelar Login Wrapper -->
                     <div class="register-wrapper">
                         <div class="login-title">
-                            <h3 class="title wow fadeInUp">Selamat datang!</h3>
-                            <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan login terlebih dahulu untuk melanjutkan aktivitas Anda.</p>
+                            <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
+                            <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan isi data diri terlebih dahulu untuk melanjutkan.</p>
                         </div>
                         <form class="" action="index.html" method="post">
                             <div class="field">
@@ -104,13 +104,28 @@
                                     <input type="password" class="input" placeholder="Kata Sandi Anda">
                                 </div>
                             </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="password" class="input" placeholder="Input Lagi Kata Sandi Anda">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <div class="select">
+                                        <select name="sex">
+                                            <option value="laki-laki" selected>Laki-laki</option>
+                                            <option value="perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="field wow fadeInUp" data-wow-delay="2s">
                                 <div class="control">
                                     <input type="submit" class="button is-link is-submit" value="Submit">
                                 </div>
                             </div>
                         </form>
-                        <div class="switch-login">
+                        <div class="switch-login" id="switch-to-login">
                             <a href="#">Belum punya akun?</a>
                         </div>
                     </div> <!-- kelar Register Wrapper -->
@@ -123,6 +138,27 @@
         <script src="js/main.js"></script>
         <script src="js/owl.js"></script>
         <script src="js/wow.js"></script>
+
+        <script>
+            var login = document.querySelector('.login-wrapper');
+            var register = document.querySelector('.register-wrapper');
+            var stRegister = document.querySelector('#switch-to-register');
+            var stLogin = document.querySelector('#switch-to-login');
+
+            stRegister.addEventListener('click', function() {
+                if (login.classList.contains('is-active')) {
+                    login.classList.remove('is-active');
+                    register.classList.add('is-active');
+                }
+            });
+
+            stLogin.addEventListener('click', function() {
+                if (register.classList.contains('is-active')) {
+                    register.classList.remove('is-active');
+                    login.classList.add('is-active');
+                }
+            });
+        </script>
 
         <script>
             new WOW().init();

@@ -703,7 +703,9 @@ footer.footer {
     }
 }
 
-.login-wrapper {
+.login-wrapper, .register-wrapper {
+    display: none;
+    visibility: hidden;
     width: 60%;
     .login-title {
         text-align: center;
@@ -721,4 +723,13 @@ footer.footer {
     .switch-login {
         text-align: center;
     }
+    &.is-active {
+        display: block;
+        visibility: visible;
+    }
+}
+
+.register-wrapper {
+    display: none;
+    visibility: hidden;
 }
