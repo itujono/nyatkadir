@@ -787,3 +787,11 @@ footer.footer figure.logo-footer img {
 .login-wrapper .login-title .subtitle {
   color: #ddd;
 }
+
+.login-wrapper form {
+  margin-bottom: 2em;
+}
+
+.login-wrapper .switch-login {
+  text-align: center;
+}
