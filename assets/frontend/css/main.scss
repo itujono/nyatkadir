@@ -420,6 +420,25 @@ a {
 
 
 
+.voting {
+    background-color: $darkBlue;
+    .title {
+        color: $yellow;
+    }
+    .radio {
+        display: block;
+        margin-bottom: 1.2em;
+        + .radio {
+            margin-left: 0;
+        }
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
+
+
+
 
 .aspirasi {
     .introduction {

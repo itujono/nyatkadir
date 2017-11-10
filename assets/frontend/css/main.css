@@ -343,6 +343,18 @@ a {
   text-align: center;
   line-height: 1.4; }
 
+.voting {
+  background-color: #2e2f48; }
+  .voting .title {
+    color: #fdc236; }
+  .voting .radio {
+    display: block;
+    margin-bottom: 1.2em; }
+    .voting .radio + .radio {
+      margin-left: 0; }
+    .voting .radio:hover {
+      color: #fdc236; }
+
 .aspirasi .introduction h5 {
   color: #fdc236; }
 
