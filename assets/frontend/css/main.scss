@@ -1,4 +1,4 @@
-@import '../frontend/fonts/fonts.css';
+@import '../fonts/fonts.css';
 @import "var.scss";
 
 
@@ -63,6 +63,13 @@
 .lhnormal {
     line-height: 1.6 !important;
 }
+
+figure {
+    margin: 0;
+}
+
+
+
 
 
 
@@ -732,4 +739,27 @@ footer.footer {
 .register-wrapper {
     display: none;
     visibility: hidden;
+}
+
+
+
+
+
+
+// Yuppp sudah masuk ke News & Events nih wak. Yihaaaa!
+
+.news {
+    .wrapper .card {
+        flex-basis: 32%;
+    }
+}
+
+.news .card {
+    margin-right: 10px;
+    .card-content {
+        time {
+            color: #999;
+            margin-top: 20px;
+        }
+    }
 }
