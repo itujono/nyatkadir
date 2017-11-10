@@ -119,7 +119,7 @@
                 <div class="column wow fadeInUp">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <div class="button-cta">
-                        <a href="#">
+                        <a href="<?php echo base_url();?>about">
                             <div class="level">
                                 <div class="level-left">
                                     <div class="level-item">
@@ -148,7 +148,7 @@
             Pemikiran-pemikiran Nyat Kadir tentang Indonesia
         </div>
         <div class="read-more">
-            <a href="#">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
+            <a href="<?php echo base_url();?>article">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
         </div>
         <div class="article-carousel four-item-carousel owl-carousel owl-theme">
             <div class="card">
@@ -246,7 +246,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <button class="button is-primary">Submit</button>
+                                <button class="button is-link">Submit</button>
                             </div>
                         </div>
                         </div>

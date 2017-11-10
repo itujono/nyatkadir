@@ -344,6 +344,7 @@ a {
   line-height: 1.4; }
 
 .voting {
+  position: relative;
   background-color: #2e2f48; }
   .voting .title {
     color: #fdc236; }
@@ -354,6 +355,14 @@ a {
       margin-left: 0; }
     .voting .radio:hover {
       color: #fdc236; }
+  .voting:before {
+    content: '';
+    background: url(../img/nyatkadir.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .1; }
 
 .aspirasi .introduction h5 {
   color: #fdc236; }

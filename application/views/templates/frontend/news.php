@@ -14,8 +14,8 @@
         <div class="columns">
             <div class="column is-three-quarters">
                 <div class="section-title">
-                    <h3 class="mb10">Buah Pikiran <span class="reddish">Nyat Kadir</span> Untuk Direnungkan</h3>
-                    <p>Dan bagaimana pemikiran-pemikiran Nyat Kadir amat menarik untuk disimak.</p>
+                    <h3 class="mb10">Aktifitas dan Berita <span class="reddish">Nyat Kadir</span></h3>
+                    <p>Daftar kegiatan yang baru saja dilakukan oleh Nyat Kadir</p>
                 </div>
                 <div class="wrapper">
 
@@ -27,13 +27,13 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <a href="#" class="title"><span class="icon mdi mdi-calendar-check"></span> Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <a href="<?php echo base_url();?>news/detail_news" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
                                 <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
 
@@ -45,13 +45,13 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <a href="#" class="title"><span class="icon mdi mdi-calendar-check"></span> Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <a href="<?php echo base_url();?>news/detail_news" class="title">Membangun Jembatan Barelang Mini di Kelurahan Sadai, Bengkong Laut</a>
                                 <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
 
@@ -63,13 +63,13 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <a href="#" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
+                                <a href="<?php echo base_url();?>news/detail_news" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
                                 <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
 
@@ -87,7 +87,7 @@
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news_detail" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
 

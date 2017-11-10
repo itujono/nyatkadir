@@ -7,7 +7,7 @@
                 <div class="breadcrumb has-bullet-separator">
                     <ul>
                         <li><a href="<?php echo base_url();?>">Home</a></li>
-                        <li><a href="<?php echo base_url();?>article">News/Events</a></li>
+                        <li><a href="<?php echo base_url();?>news">News/Events</a></li>
                         <li class="is-active"><a href="#">Mengunjungi Panti Asuhan di Camp Vietnam Barelang</a></li>
                     </ul>
                 </div>
