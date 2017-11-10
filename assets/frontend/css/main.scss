@@ -288,8 +288,7 @@ a {
     .card {
         transition: all .3s ease;
         &:hover {
-            transform: translateY(-5px);
-            box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+            @include hoverCard;
         }
     }
     .card:nth-child(2) {
@@ -756,10 +755,45 @@ footer.footer {
 
 .news .card {
     margin-right: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 3rem;
+    transition: all .3s ease;
+    &:hover {
+        @include hoverCard;
+    }
+    .card-image {
+        .image {
+            height: 130px;
+            overflow: hidden;
+            img {
+                min-height: 130px;
+            }
+        }
+    }
     .card-content {
+        padding: 1.2rem;
+        a {
+            font-size: 1.25rem;
+            color: $darkBlue;
+            margin-bottom: 10px;
+            &:hover {
+                color: $yellow;
+            }
+        }
         time {
             color: #999;
-            margin-top: 20px;
+            margin-bottom: 10px;
+            display: block;
         }
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .card-footer {
+        border-top: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }

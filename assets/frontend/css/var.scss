@@ -6,3 +6,8 @@ $darkBlue: #2e2f48;
 $grey: #bbb;
 $greyNavbarItem: #5e5e61;
 $reddish: #ff5a5a;
+
+@mixin hoverCard {
+    transform: translateY(-5px);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+}

@@ -18,6 +18,7 @@
                     <p>Dan bagaimana pemikiran-pemikiran Nyat Kadir amat menarik untuk disimak.</p>
                 </div>
                 <div class="wrapper">
+
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
@@ -26,12 +27,16 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <h2>Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</h2>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. <br>
-                                <time datetime="2017-08-14">14 Agustus 2017</time>
+                                <a href="#" class="title"><span class="icon mdi mdi-calendar-check"></span> Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
                     </div> <!-- kelar Single Card -->
+
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
@@ -40,12 +45,16 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <h2>Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</h2>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. <br>
-                                <time datetime="2017-08-14">14 Agustus 2017</time>
+                                <a href="#" class="title"><span class="icon mdi mdi-calendar-check"></span> Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
                     </div> <!-- kelar Single Card -->
+
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
@@ -54,14 +63,73 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <h2>Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</h2>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. <br>
-                                <time datetime="2017-08-14">14 Agustus 2017</time>
+                                <a href="#" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                             </article>
                         </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
                     </div> <!-- kelar Single Card -->
+
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="Nyat Kadir">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <article class="content">
+                                <a href="#" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                            </article>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
+                    </div> <!-- kelar Single Card -->
+
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="Nyat Kadir">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <article class="content">
+                                <a href="#" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                            </article>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
+                    </div> <!-- kelar Single Card -->
+
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="Nyat Kadir">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <article class="content">
+                                <a href="#" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
+                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+                            </article>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item">Selengkapnya</a>
+                        </div>
+                    </div> <!-- kelar Single Card -->
+
                 </div>
-            </div>
+            </div> <!-- kelar div Column Single -->
+
             <div class="column sidebar">
                 <div class="top-post" id="latest-news">
                     <h3 class="title">Kegiatan Terbaru</h3>
