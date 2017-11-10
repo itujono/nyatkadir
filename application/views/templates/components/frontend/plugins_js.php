@@ -202,6 +202,36 @@ if ($plugins == 'home') { ?>
     }
 </script>
 <script>
+    if ($('.four-item-carousel').length) {
+        $('.four-item-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            smartSpeed: 700,
+            autoplay: 3000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                580:{
+                    items:1
+                },
+                640:{
+                    items:2
+                },
+                800:{
+                    items:2
+                },
+                1024:{
+                    items:4
+                },
+                1100:{
+                    items:4
+                }
+            }
+        });
+    }
+</script>
+<script>
     if ($('.three-item-carousel').length) {
         $('.three-item-carousel').owlCarousel({
             loop:true,

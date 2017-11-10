@@ -15,4 +15,12 @@ class News extends Frontend_Controller {
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'news', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
+	
+	public function detail_news() {
+		$data['addONS'] = 'general_addon';
+		$data['title'] = 'Detail News Nyat Kadir - Laman Resmi';
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'news_detail', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
 }
