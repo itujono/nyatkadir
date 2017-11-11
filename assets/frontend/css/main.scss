@@ -841,3 +841,34 @@ footer.footer {
         margin: 0;
     }
 }
+
+
+
+
+
+// Tuh kan udah masuk kan ke page Gallery!
+
+.gallery-wrapper {
+    .card-footer {
+        min-height: 70px;
+        .card-footer-item {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+    .tile {
+        .box {
+            padding: 0;
+            border-radius: 0;
+            height: 140px;
+            transition: all .3s ease;
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+            }
+        }
+        img {
+            border-radius: 0;
+        }
+    }
+}

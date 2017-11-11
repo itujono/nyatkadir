@@ -215,7 +215,7 @@
     </div>
 </section>
 
-<section class="hero is-medium voting">
+<section class="hero voting">
     <div class="hero-body">
         <div class="container">
             <div class="columns">
