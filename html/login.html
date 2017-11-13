@@ -116,14 +116,34 @@
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <div class="select">
-                                        <select name="sex">
-                                            <option value="laki-laki" selected>Laki-laki</option>
-                                            <option value="perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
+                                    <textarea class="textarea" placeholder="Domisili Anda"></textarea>
                                 </div>
                             </div>
+                            <div class="field is-grouped">
+                                <div class="control is-expanded">
+                                    <input type="text" class="input" placeholder="Kota">
+                                </div>
+                                <div class="control">
+                                    <input type="number" class="input" placeholder="Kode Pos">
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control is-expanded">
+                                    <label class="radio">
+                                        <input type="radio" name="question">
+                                        Laki-laki
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="question">
+                                        Perempuan
+                                    </label>
+                                </div>
+                                <div class="control">
+                                    <input type="number" class="input" placeholder="Usia Anda">
+                                </div>
+                            </div>
+                            <!-- <div class="field">
+                            </div> -->
                             <div class="field wow fadeInUp" data-wow-delay="2s">
                                 <div class="control">
                                     <input type="submit" class="button is-link is-submit" value="Submit">

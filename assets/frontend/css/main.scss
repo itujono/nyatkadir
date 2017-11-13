@@ -469,7 +469,7 @@ form {
     margin: 0 auto;
 }
 
-.input, .textarea {
+.input, .textarea, .select {
     font-family: $fontDefault;
     border-radius: 2px;
     font-size: .85rem;
@@ -477,7 +477,7 @@ form {
     padding-left: calc(1.2em - 1px);
     border: 1px transparent;
     color: #777;
-    background-color: #a1a2ab;
+    background-color: $bgInput;
     transition: all .3s ease;
     &:placeholder {
         color: #ddd;
@@ -809,6 +809,19 @@ footer.footer {
     display: none;
     visibility: hidden;
 }
+
+.radio {
+    margin-right: 2em;
+    &:hover {
+        color: $yellow;
+    }
+}
+
+.checkbox:hover, .radio:hover {
+    color: $yellow;
+}
+
+
 
 
 
