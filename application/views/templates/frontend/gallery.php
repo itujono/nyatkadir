@@ -29,6 +29,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -38,6 +39,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -47,6 +49,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -56,6 +59,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -67,6 +71,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -76,6 +81,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -85,6 +91,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -94,6 +101,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -105,6 +113,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -114,6 +123,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -123,6 +133,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -132,6 +143,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
                                         </div>
+                                        <h4>Rapat Terbuka di Sekupang</h4>
                                     </a>
                                 </div>
                             </div>
@@ -158,6 +170,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -167,6 +180,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -176,6 +190,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -185,6 +200,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -196,6 +212,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -205,6 +222,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI</h4>
                                     </a>
                                 </div>
                             </div>
@@ -214,6 +232,7 @@
                                         <div class="image">
                                             <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
                                         </div>
+                                        <h4>Sidang Pleno DPR RI Tahun 2017</h4>
                                     </a>
                                 </div>
                             </div>
