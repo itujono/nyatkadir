@@ -670,6 +670,9 @@ footer.footer {
         li {
             font-size: 14px;
         }
+        a {
+            color: $yellow;
+        }
     }
     .article-detail {
         margin-bottom: 3em;
@@ -931,6 +934,45 @@ footer.footer {
         width: 100%;
         p {
             color: $yellow;
+        }
+    }
+}
+
+
+
+
+
+
+// Oh yeaaah anda memasuki Press Detail sempardak!
+
+.press {
+    margin-top: 5em;
+    .breadcrumb {
+        margin-bottom: 3em;
+        li {
+            font-size: 14px;
+        }
+        a {
+            color: $yellow;
+        }
+    }
+    .press-detail {
+        margin-bottom: 3em;
+        .content {
+            padding-bottom: 3em;
+        }
+        hr {
+            width: 10%;
+        }
+        .title {
+            color: $darkBlue;
+            width: 70%;
+        }
+        .subtitle {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 2em;
+            margin-top: -1rem;
         }
     }
 }

@@ -547,6 +547,8 @@ footer.footer {
     margin-bottom: 3em; }
     .article .breadcrumb li {
       font-size: 14px; }
+    .article .breadcrumb a {
+      color: #fdc236; }
   .article .article-detail {
     margin-bottom: 3em; }
     .article .article-detail .content {
@@ -736,3 +738,26 @@ footer.footer {
     width: 100%; }
     .press .card .card-footer p {
       color: #fdc236; }
+
+.press {
+  margin-top: 5em; }
+  .press .breadcrumb {
+    margin-bottom: 3em; }
+    .press .breadcrumb li {
+      font-size: 14px; }
+    .press .breadcrumb a {
+      color: #fdc236; }
+  .press .press-detail {
+    margin-bottom: 3em; }
+    .press .press-detail .content {
+      padding-bottom: 3em; }
+    .press .press-detail hr {
+      width: 10%; }
+    .press .press-detail .title {
+      color: #2e2f48;
+      width: 70%; }
+    .press .press-detail .subtitle {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 2em;
+      margin-top: -1rem; }
