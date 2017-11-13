@@ -447,6 +447,13 @@ a {
     }
 }
 
+.successful.box {
+    background-color: #ddd;
+    border: 2px solid $yellow;
+    .icon {
+        font-size: 3rem;
+    }
+}
 
 
 

@@ -364,6 +364,12 @@ a {
     height: 100%;
     opacity: .1; }
 
+.successful.box {
+  background-color: #ddd;
+  border: 2px solid #fdc236; }
+  .successful.box .icon {
+    font-size: 3rem; }
+
 .aspirasi .introduction h5 {
   color: #fdc236; }
 

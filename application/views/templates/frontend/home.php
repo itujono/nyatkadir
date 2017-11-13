@@ -4,8 +4,8 @@
     <div class="tp-banner-container">
         <div class="tp-banner">
             <ul>
-            <?php 
-            if(!empty($listslider)){ 
+            <?php
+            if(!empty($listslider)){
                 foreach ($listslider as $key => $slider) {
             ?>
                 <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo $slider->imageSLIDER; ?>" data-saveperformance="on" data-title="<?php echo $slider->titleSLIDER; ?>">
@@ -44,7 +44,7 @@
         </div> <!-- kelar TP-Banner -->
     </div>
 </section>
-<?php 
+<?php
     $about = select_row_about();
     $title_about = $about->titlehomeABOUT;
     $desc_about = $about->deschomeABOUT;
@@ -198,12 +198,26 @@
                                 <button class="button is-link">Submit</button>
                             </div>
                         </div>
-                        </div>
                     </div>
-                </div> <!-- kelar Column Radio -->
+                    <div class="successful box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image">
+                                    <span class="icon is-large mdi mdi-trophy-award"></span>
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <h3>Terima kasih!</h3>
+                                    <p>Opini Anda telah kami rekam. Dan terima kasih sudah berpartisipasi. Kami berharap dapat bertemu Anda di lain kesempatan.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div> <!-- kelar div Columns -->
         </div>
-    </div>
+    </div> <!-- kelar Hero-Body -->
 </section>
 
 <section class="section partner">

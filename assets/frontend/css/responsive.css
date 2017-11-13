@@ -1,5 +1,14 @@
-@media screen and (max-width: 767px) {
-    .login-wrapper {
-        width: 100%;
-    }
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+  }
+  .column.old-man {
+    display: none;
+  }
+  footer .column {
+    text-align: center;
+  }
+  footer .column.mr5em {
+    margin-right: initial;
+  }
 }

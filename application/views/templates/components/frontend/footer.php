@@ -44,9 +44,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                             </div>
                         </form>
-                    </div>
+                        <div class="successful box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image">
+                                        <span class="icon is-large mdi mdi-trophy-award"></span>
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h3>Terima kasih!</h3>
+                                        <p>Aspirasi Anda telah kami rekam. Dan terima kasih sudah berpartisipasi. Kami berharap dapat bertemu Anda di lain kesempatan.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div> <!-- kelar div Column form -->
                 </div>
-            </div>
+            </div> <!-- kelar Container -->
         </div>
     </section>
     <div class="container">
@@ -55,24 +70,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <figure class="image logo-footer m0 wow bounceInUp">
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-footer.png" alt="Logo Footer" width="100">
                 </figure>
-            </div>
-            <div class="column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
             </div>
             <div class="column">
                 <h3>Quick Links</h3>
