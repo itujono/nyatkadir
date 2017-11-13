@@ -270,6 +270,7 @@ if ($plugins == 'home') { ?>
     <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/jquery.fancybox.min.js"></script>
 
     <script>
@@ -286,6 +287,37 @@ if ($plugins == 'home') { ?>
                 'close'
             ]
         });
+    </script>
+
+    <script>
+        if ($('.four-item-carousel').length) {
+            $('.four-item-carousel').owlCarousel({
+                loop:true,
+                margin:20,
+                smartSpeed: 700,
+                autoplay: 3000,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    580:{
+                        items:1
+                    },
+                    640:{
+                        items:2
+                    },
+                    800:{
+                        items:2
+                    },
+                    1024:{
+                        items:3
+                    },
+                    1100:{
+                        items:4
+                    }
+                }
+            });
+        }
     </script>
 
 <?php } ?>

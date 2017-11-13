@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<?php 
+<?php
     $about = select_row_about();
     $header_title_about = $about->headertitleABOUT;
     $title_about = $about->titleABOUT;
@@ -64,7 +64,36 @@
 <section class="achievements section">
     <div class="container">
         <div class="columns">
-            <div class="column is-half"></div>
+            <div class="column is-half fraksi">
+                <div class="box">
+                    <h2 class="title">
+                        Nyat Kadir Adalah Anggota Kehormatan Fraksi Nasdem di DPR RI
+                    </h2>
+                    <div class="content">
+                        <div class="image">
+                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="Nyat Kadir">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="button-cta">
+                        <a href="<?php echo base_url();?>#">
+                            <div class="level">
+                                <div class="level-left">
+                                    <div class="level-item">
+                                        <span>Berkenalan dengan</span>
+                                        <h3>Fraksi Nasdem</h3>
+                                    </div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">
+                                        <a href="#"><span class="icon mdi mdi-chevron-right"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div> <!-- kelar Button-CTA -->
+                </div>
+            </div>
             <div class="column">
                 <div class="section-title">
                     <h3 class="mb10"><?php echo $title_award;?></h3>

@@ -458,6 +458,8 @@ footer.footer {
 
 .few-gallery {
   background-color: #2e2f48; }
+  .few-gallery .card-footer .card-footer-item:hover {
+    background-color: initial; }
 
 .achievements {
   background: url(../img/slide1.jpg) center no-repeat;
@@ -466,6 +468,35 @@ footer.footer {
     font-weight: bold; }
   .achievements dl dd {
     margin-bottom: 10px; }
+
+.fraksi .box {
+  background-color: #fdc236;
+  padding-bottom: 3em;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  margin-top: -80px;
+  min-height: 130%;
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1); }
+  .fraksi .box .image {
+    width: 30%;
+    float: left;
+    margin-right: 2em; }
+  .fraksi .box:before {
+    content: '';
+    background: #fdc236;
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    left: -100px;
+    top: 0; }
+
+.fraksi .button-cta {
+  right: 0;
+  bottom: -50px;
+  z-index: 1; }
 
 .articles {
   background-color: #eee;
@@ -761,3 +792,25 @@ footer.footer {
       font-size: 14px;
       margin-bottom: 2em;
       margin-top: -1rem; }
+
+.press-slider {
+  margin-bottom: 2em; }
+  .press-slider figure {
+    margin: 0; }
+
+.share ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .share ul li {
+    margin-right: 2em;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+    .share ul li:hover {
+      -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      transform: translateY(-5px); }
+    .share ul li a {
+      font-size: 1.4rem; }

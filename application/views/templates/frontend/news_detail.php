@@ -37,6 +37,15 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
                     </div>
+                    <div class="share">
+                        <h3>Share berita ini:</h3>
+                        <ul>
+                            <li><a href="#" title="Share to Twitter"><span class="icon mdi mdi-twitter"></span></a></li>
+                            <li><a href="#" title="Share to Facebook"><span class="icon mdi mdi-facebook"></span></a></li>
+                            <li><a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
+                            <li><a href="#" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a></li>
+                        </ul>
+                    </div>
                     <hr>
                 </div> <!-- kelar Article-Detail -->
                 <div class="similar">

@@ -15,19 +15,27 @@
                     <div class="content">
                         <h1 class="title">Nyat Kadir Menolak Tawaran Kerjasama Partai Gerindra</h1>
                         <p class="subtitle">Diposting <span class="yellowish">21 Agustus 2017</span></p>
-                        <div class="news-slider four-item-carousel owl-theme owl-carousel">
-                            <figure class="image is-2by1">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                            </figure>
-                            <figure class="image is-2by1">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
-                            </figure>
-                            <figure class="image is-2by1">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg" alt="">
-                            </figure>
-                            <figure class="image is-2by1">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                            </figure>
+                        <div class="press-slider four-item-carousel owl-theme owl-carousel">
+                            <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sedang rapat">
+                                <figure class="image is-2by1">
+                                    <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
+                                </figure>
+                            </a>
+                            <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Rapat lagi">
+                                <figure class="image is-2by1">
+                                    <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                </figure>
+                            </a>
+                            <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Jembatan Barelang">
+                                <figure class="image is-2by1">
+                                    <img src="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg" alt="">
+                                </figure>
+                            </a>
+                            <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Rapat besar">
+                                <figure class="image is-2by1">
+                                    <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
+                                </figure>
+                            </a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>
@@ -36,6 +44,15 @@
                             </blockquote>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
+                    </div>
+                    <div class="share">
+                        <h3>Share berita ini:</h3>
+                        <ul>
+                            <li><a href="#" title="Share to Twitter"><span class="icon mdi mdi-twitter"></span></a></li>
+                            <li><a href="#" title="Share to Facebook"><span class="icon mdi mdi-facebook"></span></a></li>
+                            <li><a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
+                            <li><a href="#" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a></li>
+                        </ul>
                     </div>
                     <hr>
                 </div> <!-- kelar Press -->
@@ -80,7 +97,7 @@
 
             <div class="column sidebar">
                 <div class="top-post">
-                    <h3 class="title">Artikel Terbaik</h3>
+                    <h3 class="title">Liputan Lainnya</h3>
                     <ul>
                         <li>
                             <a href="#">Trik Membuat Tempe Orek Dari Biji Sawit</a>

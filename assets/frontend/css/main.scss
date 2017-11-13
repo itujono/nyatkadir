@@ -580,6 +580,11 @@ footer.footer {
 
 .few-gallery {
     background-color: $darkBlue;
+    .card-footer {
+        .card-footer-item:hover {
+            background-color: initial;
+        }
+    }
 }
 
 .achievements {
@@ -592,6 +597,39 @@ footer.footer {
         dd {
             margin-bottom: 10px;
         }
+    }
+}
+
+.fraksi {
+    .box {
+        background-color: #fdc236;
+        padding-bottom: 3em;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+        margin-top: -80px;
+        min-height: 130%;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+        .image {
+            width: 30%;
+            float: left;
+            margin-right: 2em;
+        }
+        &:before {
+            content: '';
+            background: $yellow;
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            left: -100px;
+            top: 0;
+        }
+    }
+    .button-cta {
+        right: 0;
+        bottom: -50px;
+        z-index: 1;
     }
 }
 
@@ -973,6 +1011,29 @@ footer.footer {
             font-size: 14px;
             margin-bottom: 2em;
             margin-top: -1rem;
+        }
+    }
+}
+
+.press-slider {
+    margin-bottom: 2em;
+    figure {
+        margin: 0;
+    }
+}
+
+.share {
+    ul {
+        display: flex;
+        li {
+            margin-right: 2em;
+            transition: all .3s ease;
+            &:hover {
+                transform: translateY(-5px);
+            }
+            a {
+                font-size: 1.4rem;
+            }
         }
     }
 }

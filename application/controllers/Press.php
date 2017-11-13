@@ -17,7 +17,7 @@ class Press extends Frontend_Controller {
 	}
 
 	public function press_detail() {
-		$data['addONS'] = 'general_addon';
+		$data['addONS'] = 'gallery';
 		$data['title'] = 'Liputan Media - Nyat Kadir - Laman Resmi';
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'press_detail', $data, TRUE);
