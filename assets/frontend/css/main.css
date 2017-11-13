@@ -678,7 +678,6 @@ footer.footer {
 .gallery-wrapper .tile .box {
   padding: 0;
   border-radius: 0;
-  height: 140px;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease; }

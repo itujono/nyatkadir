@@ -32,7 +32,7 @@
         <div class="navbar-menu">
             <div class="navbar-start">
              <?php
-              $menus = array (array('home','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('#','Mitra Kerja'), array('#','Liputan Media'));
+              $menus = array (array('home','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('#','Liputan Media'));
               foreach ($menus as $values) {
                 if(!empty($this->uri->segment(3))) {
                   $url = $this->uri->segment(2);

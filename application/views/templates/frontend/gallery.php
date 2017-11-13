@@ -189,6 +189,35 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tile is-ancestor">
+                            <div class="tile is-parent">
+                                <div class="tile is-child box">
+                                    <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tile is-parent">
+                                <div class="tile is-child box">
+                                    <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tile is-parent">
+                                <div class="tile is-child box">
+                                    <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
                 </div>
             </div> <!-- kelar div Columns -->
