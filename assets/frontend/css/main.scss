@@ -871,3 +871,66 @@ footer.footer {
         }
     }
 }
+
+
+
+
+
+
+
+// Yeaaah ini dia Press Media kitaaaa! Yippieee kayeeee!
+
+
+.press {
+    .wrapper .card {
+        flex-basis: 32%;
+    }
+}
+
+.press .card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 3rem;
+    transition: all .3s ease;
+    &:hover {
+        @include hoverCard;
+    }
+    .card-image {
+        .image {
+            height: 130px;
+            overflow: hidden;
+            img {
+                min-height: 130px;
+            }
+        }
+    }
+    .card-content {
+        padding: 1.2rem;
+        a {
+            font-size: 1.25rem;
+            color: $darkBlue;
+            margin-bottom: 10px;
+            &:hover {
+                color: $yellow;
+            }
+        }
+        time {
+            color: #999;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .card-footer {
+        border-top: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        p {
+            color: $yellow;
+        }
+    }
+}
