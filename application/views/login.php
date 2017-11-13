@@ -37,7 +37,8 @@
                     <?php echo $message['text']; ?>
                 </div>
                 <?php } ?>
-                <form name="login" action="<?php echo base_url();?>login/processing" method="POST">
+                <form name="login" action="<?php echo base_url();?>login/processing" method="post">
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                     <div class="uk-form-row">
                         <label for="login_email">Email</label>
                         <input class="md-input" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />

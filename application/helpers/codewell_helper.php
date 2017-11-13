@@ -209,3 +209,28 @@ function select_accessmenu_by_menu($arr=NULL){
     $data = $CI->db->get()->result();
     return $data;
 }
+
+function encodingdata($json=0, $type=0, $diberikanaward_about=0, $tahunaward_about=0){
+    
+    if($type == 0) {
+        $jj = array();
+        foreach ($json as $key => $value) {
+            $jj[]=array($value, $diberikanaward_about[$key], $tahunaward_about[$key]);
+        }
+    } else {
+        $jj = $json;
+    }
+    return json_encode($jj);
+}
+
+function select_row_about(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('about');
+    $CI->db->where('idABOUT', 1);
+    $CI->db->limit(1);
+    $CI->db->order_by('idABOUT', 'asc');
+    
+    $data = $CI->db->get()->row();
+    return $data;
+}

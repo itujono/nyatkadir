@@ -1,10 +1,21 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-
+<?php 
+    $about = select_row_about();
+    $header_title_about = $about->headertitleABOUT;
+    $title_about = $about->titleABOUT;
+    $desc_about = $about->descABOUT;
+    $title_award = $about->titleawardABOUT;
+    $map = directory_map('assets/upload/about/header-about/pic-header-about-'.folenc($about->idABOUT), FALSE, TRUE);
+    if(!empty($map)){
+        $about->imageABOUT = base_url() . 'assets/upload/about/header-about/pic-header-about-'.folenc($about->idABOUT).'/'.$map[0];
+    } else {
+        $about->imageABOUT = base_url() . 'assets/upload/no-image-available.png';
+    }
+?>
 <section class="nyat-hero hero is-medium">
     <div class="hero-body">
         <div class="container">
-            <h2 class="title">Bergegaslah!</h2>
-            <h2 class="subtitle">Bangsa ini harus menang!</h2>
+            <h2 class="title"><?php echo $header_title_about;?></h2>
         </div>
     </div>
 </section>
@@ -14,8 +25,8 @@
         <div class="columns">
             <div class="column is-one-third">
                 <div class="section-title dark">
-                    <h3 class="mb10">Dengan Pengalaman <span class="yellowish">20 Tahun</span> Mengabdi <br> Untuk Indonesia</h3>
-                    Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
+                    <h3 class="mb10"><?php echo $title_about;?></h3>
+                    <?php echo $desc_about;?>
                 </div>
             </div>
             <div class="column">
@@ -56,7 +67,7 @@
             <div class="column is-half"></div>
             <div class="column">
                 <div class="section-title">
-                    <h3 class="mb10">Raihan dan Award yang Didapat <br> oleh <span class="reddish">Nyat Kadir</span></h3>
+                    <h3 class="mb10"><?php echo $title_award;?></h3>
                 </div>
                 <dl>
                     <dt>Anugerah Politikus Terbaik 2016</dt>

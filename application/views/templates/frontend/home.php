@@ -4,9 +4,12 @@
     <div class="tp-banner-container">
         <div class="tp-banner">
             <ul>
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg"  data-saveperformance="on"  data-title="Dia Budak Melayu">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
+            <?php 
+            if(!empty($listslider)){ 
+                foreach ($listslider as $key => $slider) {
+            ?>
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo $slider->imageSLIDER; ?>" data-saveperformance="on" data-title="<?php echo $slider->titleSLIDER; ?>">
+                    <img src="<?php echo $slider->imageSLIDER; ?>" alt="<?php echo $slider->titleSLIDER; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="left" data-hoffset="15"
                     data-y="center" data-voffset="-100"
@@ -18,8 +21,8 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="title yellowish">Selamat datang di Laman Resmi Nyat Kadir</div></div>
-
+                    data-endeasing="Power4.easeIn">
+                    <div class="title yellowish"><?php echo $slider->titleSLIDER; ?></div>
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="left" data-hoffset="15"
                     data-y="center" data-voffset="-50"
@@ -32,92 +35,38 @@
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
                     data-endeasing="Power4.easeIn">
-                    <h2 class="lhnormal">Pemuda Melayu berasaskan <br> Indonesia seutuhnya.</h2>
+                    <h2 class="lhnormal"><?php echo $slider->descSLIDER; ?></h2>
                 </div>
-
             </li>
-
-            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo base_url().$this->data['asfront'];?>img/bg-footer.png"  data-saveperformance="on"  data-title="Profesionalisme Kerja">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/bg-footer.png"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                <div class="tp-caption sfl sfb tp-resizeme"
-                data-x="left" data-hoffset="15"
-                data-y="center" data-voffset="-100"
-                data-speed="1500"
-                data-start="500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="title yellowish">Profesional adalah nama tengah kami</div></div>
-
-                <div class="tp-caption sfl sfb tp-resizeme"
-                data-x="left" data-hoffset="15"
-                data-y="center" data-voffset="-50"
-                data-speed="1500"
-                data-start="1000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn">
-                <h2 class="lhnormal reddish">Didukung oleh SDM yang berkualitas <br> di berbagai bidang.</h2>
-            </div>
-
-        </li>
-
-        <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg"  data-saveperformance="on"  data-title="Masa Depan Indonesia">
-            <img src="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-            <div class="tp-caption sfl sfb tp-resizeme"
-            data-x="left" data-hoffset="15"
-            data-y="center" data-voffset="-100"
-            data-speed="1500"
-            data-start="500"
-            data-easing="easeOutExpo"
-            data-splitin="none"
-            data-splitout="none"
-            data-elementdelay="0.01"
-            data-endelementdelay="0.3"
-            data-endspeed="1200"
-            data-endeasing="Power4.easeIn"><div class="title yellowish">Songsong masa depan Indonesia lebih gemilang</div></div>
-
-            <div class="tp-caption sfl sfb tp-resizeme"
-            data-x="left" data-hoffset="15"
-            data-y="center" data-voffset="-50"
-            data-speed="1500"
-            data-start="1000"
-            data-easing="easeOutExpo"
-            data-splitin="none"
-            data-splitout="none"
-            data-elementdelay="0.01"
-            data-endelementdelay="0.3"
-            data-endspeed="1200"
-            data-endeasing="Power4.easeIn">
-            <h2 class="lhnormal white">Jadilah bagian dari pemersatu bangsa, melalui <br> lingkar mitra Nyat Kadir</h2>
-        </div>
-    </li>
-</ul>
-</div> <!-- kelar TP-Banner -->
-</div>
+            <?php } ?>
+            <?php } ?>
+            </ul>
+        </div> <!-- kelar TP-Banner -->
+    </div>
 </section>
-
+<?php 
+    $about = select_row_about();
+    $title_about = $about->titlehomeABOUT;
+    $desc_about = $about->deschomeABOUT;
+    $map = directory_map('assets/upload/about/home-about/pic-home-about-'.folenc($about->idABOUT), FALSE, TRUE);
+    if(!empty($map)){
+        $imageHOMEABOUT = base_url() . 'assets/upload/about/home-about/pic-home-about-'.folenc($about->idABOUT).'/'.$map[0];
+    } else {
+        $imageHOMEABOUT = '';
+    }
+?>
 <section class="section ataglance">
     <div class="columns">
         <div class="column">
-            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" width="300" alt="">
+            <img src="<?php echo $imageHOMEABOUT; ?>" width="300" alt="<?php echo $title_about;?>">
         </div>
         <div class="column">
             <div class="columns">
                 <div class="column p20" class="wow fadeInUp" data-wow-delay="2s">
-                    <h3>Nyat Kadir adalah <span class="reddish">anggota DPR RI</span> yang akan selalu mengabdi untuk Indonesia.</h3>
+                    <h3><?php echo $title_about;?></h3>
                 </div>
                 <div class="column wow fadeInUp">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><?php echo $desc_about;?></p>
                     <div class="button-cta">
                         <a href="<?php echo base_url();?>about">
                             <div class="level">
