@@ -32,17 +32,19 @@
         <div class="navbar-menu">
             <div class="navbar-start">
              <?php
-              $menus = array (array('home','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
+              $menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
               foreach ($menus as $values) {
-                if(!empty($this->uri->segment(3))) {
-                  $url = $this->uri->segment(2);
-                } else {
-                  $url = $this->uri->segment(1);
-                }
-                $class = '';
-                if($url == $values[0])$class = 'active';
+                // if(!empty($this->uri->segment(3))) {
+                //   $url = $this->uri->segment(2);
+                // } else {
+                //   $url = $this->uri->segment(1);
+                // }
+                // echo $url;
+                // exit;
+                // $class = '';
+                // if($url == $values[0])$class = 'active';
             ?>
-                <a href="<?php echo $values[0];?>" class="navbar-item"><?php echo $values[1];?></a>
+                <a href="<?php echo base_url().$values[0];?>" class="navbar-item"><?php echo $values[1];?></a>
             <?php } ?>
             </div>
             <div class="navbar-end">
