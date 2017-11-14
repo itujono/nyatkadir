@@ -66,18 +66,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
     </section>
     <div class="container">
         <div class="columns is-centered">
-            <div class="column mr5em">
+            <div class="column">
                 <figure class="image logo-footer m0 wow bounceInUp">
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-footer.png" alt="Logo Footer" width="100">
                 </figure>
             </div>
-            <div class="column">
+            <div class="column is-two-thirds quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Fraksi Nasdem</a></li>
+                    <li><a href="#">Website Resmi Partai Nasdem</a></li>
+                    <li><a href="#">Mitra Kerja Nyat Kadir</a></li>
+                    <li><a href="#">Sekapur Sirih</a></li>
                 </ul>
             </div>
             <div class="column old-man">

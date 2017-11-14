@@ -379,6 +379,10 @@ a {
   line-height: 1.4;
   margin-bottom: .6em; }
 
+.aspirasi .successful.box {
+  width: 80%;
+  margin: 0 auto; }
+
 form {
   width: 80%;
   margin: 0 auto; }
@@ -442,6 +446,11 @@ footer.footer {
   footer.footer .column h3 {
     color: #ff5a5a;
     font-weight: normal; }
+  footer.footer .quick-links {
+    margin-bottom: -4em; }
+    footer.footer .quick-links ul li {
+      display: inline-block;
+      margin-right: 1.4em; }
   footer.footer figure.logo-footer img {
     width: 120px;
     -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.16);

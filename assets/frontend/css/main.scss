@@ -469,6 +469,10 @@ a {
             margin-bottom: .6em;
         }
     }
+    .successful.box {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 form {
@@ -549,6 +553,15 @@ footer.footer {
         h3 {
             color: $reddish;
             font-weight: normal;
+        }
+    }
+    .quick-links {
+        margin-bottom: -4em;
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 1.4em;
+            }
         }
     }
     figure.logo-footer {
