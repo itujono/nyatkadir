@@ -7,7 +7,7 @@ class About_m extends MY_Model{
 	protected $_order_by = 'idABOUT';
 	protected $_primary_key = 'idABOUT';
 
-	public $rules_slider = array(
+	public $rules_about = array(
 		'titlehomeABOUT' => array(
 			'field' => 'titlehomeABOUT', 
 			'label' => 'Judul di Halaman Utama', 
@@ -31,6 +31,16 @@ class About_m extends MY_Model{
 		'descABOUT' => array(
 			'field' => 'descABOUT', 
 			'label' => 'Deskripsi di Halaman Tentang', 
+			'rules' => 'trim|required'
+		),
+		'title2ABOUT' => array(
+			'field' => 'title2ABOUT', 
+			'label' => 'Judul tentang nyat kadir', 
+			'rules' => 'trim|required'
+		),
+		'desc2ABOUT' => array(
+			'field' => 'desc2ABOUT', 
+			'label' => 'Deskripsi tentang nyat kadir', 
 			'rules' => 'trim|required'
 		),
 		'titleawardABOUT' => array(
@@ -57,6 +67,8 @@ class About_m extends MY_Model{
 		$about->headertitleABOUT = '';
 		$about->titleABOUT = '';
 		$about->descABOUT = '';
+		$about->title2ABOUT = '';
+		$about->desc2ABOUT = '';
 		$about->titleawardABOUT = '';
 		$about->listawardABOUT = '';
 		return $about;

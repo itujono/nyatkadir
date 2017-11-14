@@ -33,6 +33,7 @@ if($plugins == 'plugins_datatables'){
     // tinymce
     altair_wysiwyg._tinymce();
     altair_wysiwyg._tinymces();
+    altair_wysiwyg._tinymcess();
 });
 
 // wysiwyg editors
@@ -59,6 +60,22 @@ altair_wysiwyg = {
             tinymce.init({
                 skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
                 selector: "#wysiwyg_tinymce_codewell_second",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+            
+        }
+    },
+    _tinymcess: function() {
+        var $tinymce = '#wysiwyg_tinymce_codewell_third';
+        if($($tinymce).length) {
+            tinymce.init({
+                skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
+                selector: "#wysiwyg_tinymce_codewell_third",
                 plugins: [
                     "advlist autolink lists link image charmap print preview anchor",
                     "searchreplace visualblocks code fullscreen",

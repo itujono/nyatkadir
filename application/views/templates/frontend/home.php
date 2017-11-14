@@ -100,66 +100,27 @@
             <a href="<?php echo base_url();?>article">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
         </div>
         <div class="article-carousel four-item-carousel owl-carousel owl-theme">
+        <?php 
+            if(!empty($listidea)){
+                foreach ($listidea as $key => $idea) {
+        ?>
             <div class="card">
                 <div class="card-content">
                     <h3 class="title">
-                        Ada 2 jenis manusia yang ada di dunia ini. Kamu yang mana?
+                        <?php echo $idea->titleIDEA;?>
                     </h3>
                 </div>
                 <div class="card-footer">
                     <div class="card-footer-item">
-                        <span>23 Januari 2017</span>
+                        <span><?php echo date('d F Y', strtotime($idea->createdateIDEA));?></span>
                     </div>
                     <div class="card-footer-item">
                         <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="title">
-                        Ke mana kamu mau jika kelak akan terjadi perselisihan?
-                    </h3>
-                </div>
-                <div class="card-footer">
-                    <div class="card-footer-item">
-                        <span>23 Januari 2017</span>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="title">
-                        Bagaimana jika burung pelikan tak mampu berdiri satu kaki?
-                    </h3>
-                </div>
-                <div class="card-footer">
-                    <div class="card-footer-item">
-                        <span>23 Januari 2017</span>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="title">
-                        Sudahkah kamu mengamalkan Pancasila di kehidupan TK mu dulu?
-                    </h3>
-                </div>
-                <div class="card-footer">
-                    <div class="card-footer-item">
-                        <span>23 Januari 2017</span>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                    </div>
-                </div>
-            </div>
+                <?php } ?>
+            <?php } ?>
         </div> <!-- kelar Article-Carousel -->
     </div>
 </section>

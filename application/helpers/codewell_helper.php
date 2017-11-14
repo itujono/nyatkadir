@@ -225,6 +225,7 @@ function encodingdata($json=0, $type=0, $diberikanaward_about=0, $tahunaward_abo
 
 function select_row_about(){
     $CI =& get_instance();
+    $CI->db->cache_on();
     $CI->db->select('*');
     $CI->db->from('about');
     $CI->db->where('idABOUT', 1);

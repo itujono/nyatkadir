@@ -124,6 +124,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                   <div class="uk-width-medium-1-1 uk-margin-top">
                     <div class="parsley-row">
                       <label>Deskripsi di Halaman Utama</label>
+                      <br>
                       <textarea cols="30" rows="4" name="deschomeABOUT" class="md-input" id="wysiwyg_tinymce_codewell"><?php echo cetak($getabout->deschomeABOUT);?></textarea>
                     </div>
                     <p class="text-red"><?php echo form_error('deschomeABOUT'); ?></p>
@@ -175,6 +176,48 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                       <textarea cols="30" rows="4" name="descABOUT" class="md-input" id="wysiwyg_tinymce_codewell_second"><?php echo cetak($getabout->descABOUT);?></textarea>
                     </div>
                     <p class="text-red"><?php echo form_error('descABOUT'); ?></p>
+                  </div>
+                </div>
+                <h2 class="heading_a">
+                  Informasi Tentang Nyat Kadir
+                  <span class="sub-heading">Silakan masukkan informasi data tentang nyat kadir sesuai form inputan dibawah.</span>
+                </h2>
+                <hr class="md-hr"/>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-1">
+                    <div class="md-card">
+                      <div class="md-card-content">
+                        <?php
+                          if(!empty($getabout->imageABOUT2)){
+                        ?>
+                        <div class="uk-margin-bottom uk-text-center uk-position-relative">
+                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini di halaman deskripsi tentang?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimg_about/".encode($getabout->idABOUT); ?>'; });"></a>
+                            <img src="<?php echo $getabout->imageABOUT2;?>" alt="<?php echo $getabout->titleABOUT;?>" class="img_medium"/>
+                        </div>
+                        <?php } else { ?>
+                          <?php echo form_upload('imgABOUT2','','class="md-input" required'); ?>
+                        <?php } ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-1 uk-margin-top">
+                    <div class="parsley-row">
+                      <label>Judul Tentang nyat kadir<span class="req">*</span></label>
+                      <input type="text" class="md-input" name="title2ABOUT" autocomplete value="<?php echo cetak($getabout->title2ABOUT);?>" required/>
+                    </div>
+                    <p class="text-red"><?php echo form_error('title2ABOUT'); ?></p>
+                  </div>
+                </div>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-1 uk-margin-top">
+                    <div class="parsley-row">
+                      <label>Deskripsi Tentang nyat kadir</label>
+                      <br>
+                      <textarea cols="30" rows="4" name="desc2ABOUT" class="md-input" id="wysiwyg_tinymce_codewell_third"><?php echo cetak($getabout->desc2ABOUT);?></textarea>
+                    </div>
+                    <p class="text-red"><?php echo form_error('desc2ABOUT'); ?></p>
                   </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
@@ -272,12 +315,15 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     </div>
                   </div>
                 </div>
-                <?php } ?>
+                <?php } 
+                  if(!empty($getabout->idABOUT)){
+                ?>
                 <div class="uk-width-medium-1-1 uk-margin-top">
                  <div class="uk-form-row">
                    <span class="uk-input-group-addon"><?php echo form_submit('submit', 'SAVE', 'class="md-btn md-btn-primary" id="show_preloader_md"'); ?></span>
                  </div>
                </div>
+                <?php } ?>
              </div>
            </div>
          </div>

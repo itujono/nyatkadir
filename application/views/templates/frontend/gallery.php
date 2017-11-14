@@ -23,130 +23,24 @@
                 <div class="column">
                     <div class="gallery-wrapper">
                         <div class="tile is-ancestor">
+                        <?php
+                            if(!empty($listgallery)){
+                                foreach ($listgallery as $key => $gal) {
+                                    if($gal->categoryGALLERY == 1){
+                        ?>
                             <div class="tile is-parent">
                                 <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
+                                    <a href="<?php echo $gal->imageGALLERY;?>" data-fancybox="image" data-caption="<?php echo $gal->titleGALLERY;?>">
                                         <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                            <img src="<?php echo $gal->imageGALLERY;?>" alt="<?php echo $gal->titleGALLERY;?>">
                                         </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
+                                        <h4><?php echo $gal->titleGALLERY;?></h4>
                                     </a>
                                 </div>
                             </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile is-ancestor">
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile is-ancestor">
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="http://placehold.it/500x500" data-fancybox="image" data-caption="Sempardak ugak">
-                                        <div class="image">
-                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                                        </div>
-                                        <h4>Rapat Terbuka di Sekupang</h4>
-                                    </a>
-                                </div>
-                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
                     </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
                 </div>

@@ -4,12 +4,20 @@
     $header_title_about = $about->headertitleABOUT;
     $title_about = $about->titleABOUT;
     $desc_about = $about->descABOUT;
+    $title2_about = $about->title2ABOUT;
+    $desc2_about = $about->desc2ABOUT;
     $title_award = $about->titleawardABOUT;
     $map = directory_map('assets/upload/about/header-about/pic-header-about-'.folenc($about->idABOUT), FALSE, TRUE);
     if(!empty($map)){
-        $about->imageABOUT = base_url() . 'assets/upload/about/header-about/pic-header-about-'.folenc($about->idABOUT).'/'.$map[0];
+        $imageABOUT = base_url() . 'assets/upload/about/header-about/pic-header-about-'.folenc($about->idABOUT).'/'.$map[0];
     } else {
-        $about->imageABOUT = base_url() . 'assets/upload/no-image-available.png';
+        $imageABOUT = base_url() . 'assets/upload/no-image-available.png';
+    }
+    $map2 = directory_map('assets/upload/about/about-desc/pic-about-'.folenc($about->idABOUT), FALSE, TRUE);
+    if(!empty($map2)){
+        $imageABOUT2 = base_url() . 'assets/upload/about/about-desc/pic-about-'.folenc($about->idABOUT).'/'.$map2[0];
+    } else {
+        $imageABOUT2 = base_url() . 'assets/upload/no-image-available.png';
     }
 ?>
 <section class="nyat-hero hero is-medium">
@@ -31,30 +39,20 @@
             </div>
             <div class="column">
                 <div class="three-item-carousel owl-theme owl-carousel">
+                <?php 
+                    if(!empty($listgallery)){
+                        foreach ($listgallery as $key => $gal) {
+                ?>
                     <div class="card">
                         <div class="card-image">
-                            <img src="http://placehold.it/250x200" alt="">
+                            <img src="<?php echo $gal->imageGALLERY;?>" alt="<?php echo $gal->titleGALLERY;?>">
                         </div>
                         <div class="card-footer">
-                            <p class="card-footer-item">Demi bangsa</p>
+                            <p class="card-footer-item"><?php echo $gal->titleGALLERY;?></p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="http://placehold.it/250x200" alt="">
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-footer-item">Menjaga marwah Melayu</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="http://placehold.it/250x200" alt="">
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-footer-item">Negeri segantang lada</p>
-                        </div>
-                    </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div> <!-- kelar div Columns -->
@@ -67,13 +65,13 @@
             <div class="column is-half fraksi">
                 <div class="box">
                     <h2 class="title">
-                        Nyat Kadir Adalah Anggota Kehormatan Fraksi Nasdem di DPR RI
+                        <?php echo $title2_about;?>
                     </h2>
                     <div class="content">
                         <div class="image">
-                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="Nyat Kadir">
+                            <img src="<?php echo $imageABOUT2; ?>" alt="<?php echo $title2_about;?>">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <?php echo $desc2_about;?>
                     </div>
                     <div class="button-cta">
                         <a href="<?php echo base_url();?>#">
@@ -94,22 +92,42 @@
                     </div> <!-- kelar Button-CTA -->
                 </div>
             </div>
+            <?php 
+                $award = json_decode($about->listawardABOUT,TRUE);
+                if(!empty($award)){
+                $i=0;
+                foreach ($award as $key => $val) {
+                $i++;
+                if($i == 1){
+            ?>
             <div class="column">
+                <?php  ?>
                 <div class="section-title">
                     <h3 class="mb10"><?php echo $title_award;?></h3>
                 </div>
+                <?php  ?>
                 <dl>
-                    <dt>Anugerah Politikus Terbaik 2016</dt>
-                    <dd>Diberikan oleh KPK <br> 2016</dd>
-                    <dt>Anugerah Politikus Terpelajar 2014</dt>
+                <?php } ?>
+                    <dt><?php echo $val[0];?></dt>
+                    <dd><?php echo $val[1];?>
+                    <br> <?php echo $val[2];?>
+                    </dd>
+                <?php 
+                    if($i == 4){ 
+                    $i = 0;
+                ?>
+                    <!-- <dt>Anugerah Politikus Terpelajar 2014</dt>
                     <dd>Diberikan oleh BPK <br> 2014</dd>
                     <dt>Anugerah Tokoh Melayu 2015</dt>
                     <dd>Diberikan oleh Dinpar <br> 2015</dd>
                     <dt>Tuanku Diraja Melayu 2016</dt>
-                    <dd>Diberikan oleh Sultan Bolqiah <br> 2016</dd>
+                    <dd>Diberikan oleh Sultan Bolqiah <br> 2016</dd> -->
                 </dl>
             </div>
-            <div class="column">
+                <?php } ?>
+            <?php } ?>
+            <?php } ?>
+            <!-- <div class="column">
                 <dl>
                     <dt>Anugerah Politikus Terbaik 2016</dt>
                     <dd>Diberikan oleh KPK <br> 2016</dd>
@@ -122,7 +140,7 @@
                     <dt>Anugerah Tokoh Melayu 2015</dt>
                     <dd>Diberikan oleh Dinpar <br> 2015</dd>
                 </dl>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

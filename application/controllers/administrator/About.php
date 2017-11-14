@@ -41,6 +41,13 @@ class About extends Admin_Controller {
 			} else {
 				$data['getabout']->imageABOUT = '';
 			}
+
+			$map3 = directory_map('assets/upload/about/about-desc/pic-about-'.folenc($data['getabout']->idABOUT), FALSE, TRUE);
+			if(!empty($map3)){
+				$data['getabout']->imageABOUT2 = base_url() . 'assets/upload/about/about-desc/pic-about-'.folenc($data['getabout']->idABOUT).'/'.$map3[0];
+			} else {
+				$data['getabout']->imageABOUT2 = '';
+			}
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -52,13 +59,13 @@ class About extends Admin_Controller {
 	}
 
 	public function saveabout() {
-		$rules = $this->About_m->rules_slider;
+		$rules = $this->About_m->rules_about;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->About_m->array_from_post(array('titlehomeABOUT','deschomeABOUT','headertitleABOUT','titleABOUT','descABOUT','titleawardABOUT','listawardABOUT'));
+			$data = $this->About_m->array_from_post(array('titlehomeABOUT','deschomeABOUT','headertitleABOUT','titleABOUT','descABOUT','title2ABOUT','desc2ABOUT','titleawardABOUT','listawardABOUT'));
 			$data['listawardABOUT'] = encodingdata($data['listawardABOUT'], 0, $this->input->post('diberikanawardABOUT'), $this->input->post('tahunawardABOUT'));
 
 
@@ -71,6 +78,7 @@ class About extends Admin_Controller {
 			$subject = $idsave;
 			$filenamesubject = 'pic-home-about-'.folenc($subject);
 			$filenamesubject2 = 'pic-header-about-'.folenc($subject);
+			$filenamesubject3 = 'pic-about-'.folenc($subject);
 
 			if(!empty($_FILES['imghomeABOUT']['name'][0])) {
 				$path = 'assets/upload/about/home-about/'.$filenamesubject;
@@ -103,6 +111,23 @@ class About extends Admin_Controller {
 		        $this->upload->initialize($config);
 
 		        if ($this->upload->do_upload('imgABOUT')){
+		        	$data['uploads'] = $this->upload->data();
+		        }
+		  	}
+
+		  	if(!empty($_FILES['imgABOUT2']['name'][0])) {
+		  		$path3 = 'assets/upload/about/about-desc/'.$filenamesubject3;
+				if (!file_exists($path3)){
+	            	mkdir($path3, 0777, true);
+	        	}
+
+				$config['upload_path']		= $path3;
+	            $config['allowed_types']	= 'jpg|png|jpeg';
+	            $config['file_name']        = $this->security->sanitize_filename($filenamesubject3);
+
+		        $this->upload->initialize($config);
+
+		        if ($this->upload->do_upload('imgABOUT2')){
 		        	$data['uploads'] = $this->upload->data();
 		        }
 		  	}
@@ -176,6 +201,27 @@ class About extends Admin_Controller {
 			$path = 'assets/upload/about/header-about/'.folenc($id);
 			foreach ($map as $value) {
 				unlink('assets/upload/about/header-about/'.folenc($id).'/'.$value);
+			}
+			if(is_dir($path)){
+				rmdir($path);
+			}
+		}
+		$data = array(
+            'title' => 'Sukses',
+            'text' => 'Penghapusan Gambar berhasil dilakukan',
+            'type' => 'success'
+        );
+        $this->session->set_flashdata('message',$data);
+		redirect('administrator/about/index_about/'.$id1);
+	}
+
+	public function deleteimg_about($id1=NULL){
+		if($id1 != NULL){
+			$id = decode(urldecode($id1));
+			$map = directory_map('assets/upload/about/about-desc/'.folenc($id), FALSE, TRUE);
+			$path = 'assets/upload/about/about-desc/'.folenc($id);
+			foreach ($map as $value) {
+				unlink('assets/upload/about/about-desc/'.folenc($id).'/'.$value);
 			}
 			if(is_dir($path)){
 				rmdir($path);

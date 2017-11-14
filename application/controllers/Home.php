@@ -6,6 +6,7 @@ class Home extends Frontend_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Slider_m');
+		$this->load->model('Idea_m');
 	}
 
 	public function index() {
@@ -21,7 +22,8 @@ class Home extends Frontend_Controller {
 				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
-		
+		$data['listidea'] = $this->Idea_m->selectall_idea()->result();
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'home', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
