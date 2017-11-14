@@ -448,6 +448,7 @@ a {
 }
 
 .successful.box {
+    display: none;
     background-color: #ddd;
     border: 2px solid $yellow;
     .icon {

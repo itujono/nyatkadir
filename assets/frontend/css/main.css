@@ -365,6 +365,7 @@ a {
     opacity: .1; }
 
 .successful.box {
+  display: none;
   background-color: #ddd;
   border: 2px solid #fdc236; }
   .successful.box .icon {
