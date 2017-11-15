@@ -39,7 +39,7 @@
             </div>
             <div class="column">
                 <div class="three-item-carousel owl-theme owl-carousel">
-                <?php 
+                <?php
                     if(!empty($listgallery)){
                         foreach ($listgallery as $key => $gal) {
                 ?>
@@ -91,56 +91,49 @@
                         </a>
                     </div> <!-- kelar Button-CTA -->
                 </div>
-            </div>
-            <?php 
-                $award = json_decode($about->listawardABOUT,TRUE);
-                if(!empty($award)){
-                $i=0;
-                foreach ($award as $key => $val) {
-                $i++;
-                if($i == 1){
+            </div> <!-- kelar div Fraksi -->
+
+
+            <?php
+                // $award = json_decode($about->listawardABOUT,TRUE);
+                // if(!empty($award)){
+                // $i=0;
+                // foreach ($award as $key => $val) {
+                // $i++;
+                // if($i == 1){
             ?>
-            <div class="column">
-                <?php  ?>
+            <div class="column award">
                 <div class="section-title">
                     <h3 class="mb10"><?php echo $title_award;?></h3>
                 </div>
-                <?php  ?>
-                <dl>
-                <?php } ?>
-                    <dt><?php echo $val[0];?></dt>
-                    <dd><?php echo $val[1];?>
-                    <br> <?php echo $val[2];?>
-                    </dd>
-                <?php 
-                    if($i == 4){ 
-                    $i = 0;
-                ?>
-                    <!-- <dt>Anugerah Politikus Terpelajar 2014</dt>
-                    <dd>Diberikan oleh BPK <br> 2014</dd>
-                    <dt>Anugerah Tokoh Melayu 2015</dt>
-                    <dd>Diberikan oleh Dinpar <br> 2015</dd>
-                    <dt>Tuanku Diraja Melayu 2016</dt>
-                    <dd>Diberikan oleh Sultan Bolqiah <br> 2016</dd> -->
-                </dl>
-            </div>
-                <?php } ?>
-            <?php } ?>
-            <?php } ?>
-            <!-- <div class="column">
-                <dl>
-                    <dt>Anugerah Politikus Terbaik 2016</dt>
-                    <dd>Diberikan oleh KPK <br> 2016</dd>
-                    <dt>Anugerah Politikus Terpelajar 2014</dt>
-                    <dd>Diberikan oleh BPK <br> 2014</dd>
-                    <dt>Anugerah Tokoh Melayu 2015</dt>
-                    <dd>Diberikan oleh Dinpar <br> 2015</dd>
-                    <dt>Anugerah Politikus Terpelajar 2014</dt>
-                    <dd>Diberikan oleh BPK <br> 2014</dd>
-                    <dt>Anugerah Tokoh Melayu 2015</dt>
-                    <dd>Diberikan oleh Dinpar <br> 2015</dd>
-                </dl>
-            </div> -->
+                <div class="level">
+                    <div class="level-item">
+                        <dl>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                        </dl>
+                    </div>
+                    <div class="level-item">
+                        <dl>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                            <dt>Anugrah Politikus Terbaik 2015</dt>
+                            <dd>Diberikan oleh KPK <br> 2015</dd>
+                        </dl>
+                    </div>
+                </div> <!-- kelar div Level -->
+
+            </div> <!-- kelar div Column -->
         </div>
-    </div>
+    </div> <!-- kelar Container Utama -->
 </section>

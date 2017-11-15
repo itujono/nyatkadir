@@ -484,6 +484,11 @@ footer.footer {
     font-weight: bold; }
   .achievements dl dd {
     margin-bottom: 10px; }
+  .achievements .award .level-item {
+    -webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch; }
 
 .fraksi .box {
   background-color: #fdc236;
