@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
-<section class="nyat-hero hero is-medium">
+<section class="nyat-hero hero is-medium" style="background: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
     <div class="hero-body">
         <div class="container">
             <h2 class="title">Bergegaslah!</h2>

@@ -589,7 +589,8 @@ footer.footer {
 
 .nyat-hero {
     margin-top: 5em;
-    background: url(../img/campaign.jpg) center no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     .title {
         color: $yellow;

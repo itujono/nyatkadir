@@ -20,7 +20,8 @@
         $imageABOUT2 = base_url() . 'assets/upload/no-image-available.png';
     }
 ?>
-<section class="nyat-hero hero is-medium">
+
+<section class="nyat-hero hero is-medium" style="background: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
     <div class="hero-body">
         <div class="container">
             <h2 class="title"><?php echo $header_title_about;?></h2>
