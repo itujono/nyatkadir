@@ -15,4 +15,14 @@
             margin-right: initial;
         }
     }
+
+    .account-wrapper {
+        width: 100%;
+        .tabs {
+            ul {
+                justify-content: space-around;
+            }
+        }
+    }
+
 }

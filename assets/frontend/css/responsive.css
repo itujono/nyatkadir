@@ -11,4 +11,12 @@
   footer .column.mr5em {
     margin-right: initial;
   }
+  .account-wrapper {
+    width: 100%;
+  }
+  .account-wrapper .tabs ul {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
 }

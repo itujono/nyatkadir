@@ -262,6 +262,33 @@ if ($plugins == 'home') { ?>
         }
     </script>
 
+    <script>
+        var tabbed = function() {
+            var tab = document.getElementsByClassName('tab-link');
+            var tabContent = document.getElementsByClassName('tab-content');
+
+            for (var i = 0; i < tab.length; i++) {
+                tab[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    for (var i = 0; i < tab.length; i++) {
+                        tab[i].classList.remove('is-active');
+                    };
+                    for (var i = 0; i < tabContent.length; i++) {
+                        tabContent[i].classList.remove('is-active');
+                    };
+                    this.className += ' is-active';
+
+                    var samainTabNya = this.getAttribute('data-tab');
+
+                    document.getElementById(samainTabNya).className += ' is-active';
+                }, false);
+            }
+        }
+
+        tabbed();
+    </script>
+
 <?php
 } elseif ($plugins == 'gallery') {
 ?>

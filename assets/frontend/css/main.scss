@@ -1096,3 +1096,106 @@ footer.footer {
         }
     }
 }
+
+
+
+
+
+
+
+// Waaaw sudin di User Profile wak! Hahahahahah!
+
+.account {
+    .section-title {
+        text-align: center;
+    }
+}
+
+.account-wrapper {
+    width: 65%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+
+    .topbar {
+        padding: 1em 1.4em;
+        figure.image {
+            border-radius: 50%;
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .tab-wrapper {
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+    }
+
+    .tab-content {
+        display: none;
+        visibility: hidden;
+        &.is-active {
+            display: block;
+            visibility: visible;
+        }
+        .title {
+            color: $yellow;
+            margin-bottom: 2em !important;
+            padding-left: 1em;
+        }
+    }
+
+    .tab-link {
+        padding: 1em 2.4em;
+        &.is-active {
+            background-color: $yellow;
+        }
+    }
+
+    .level:first-child {
+        padding: 1em 1.4em;
+    }
+    .user-info {
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 20px;
+        }
+    }
+    .content {
+        .polling-list *, .aspirasi-list * {
+            margin-bottom: 0;
+        }
+    }
+    .polling-item {
+        margin-left: 0;
+        li {
+            padding: 0 1.4em 1.4em 1.4em;
+            margin-bottom: 1.4em !important;
+            border-bottom: 1px solid #ddd;
+            list-style-type: none;
+            &:last-child {
+                border-bottom: none;
+            }
+            h4 {
+                // color: ;
+            }
+        }
+    }
+    .aspirasi-item {
+        margin-left: 0;
+        li {
+            padding: 0 1.4em 1.4em 1.4em;
+            margin-bottom: 1.4em !important;
+            border-bottom: 1px solid #ddd;
+            list-style-type: none;
+            &:last-child {
+                border-bottom: none;
+            }
+            h4 {
+                // color: ;
+            }
+        }
+    }
+}
