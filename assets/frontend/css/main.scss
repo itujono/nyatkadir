@@ -602,9 +602,17 @@ footer.footer {
 
 .few-gallery {
     background-color: $darkBlue;
+    padding: 3rem 0;
     .card-footer {
         .card-footer-item:hover {
             background-color: initial;
+        }
+    }
+    .image-gallery, .video-gallery {
+        padding: 3rem 6rem;
+        border-bottom: 1px solid transparentize($yellow, .5);
+        &:last-child {
+            border-bottom: none;
         }
     }
 }
@@ -1106,29 +1114,51 @@ footer.footer {
 // Waaaw sudin di User Profile wak! Hahahahahah!
 
 .account {
+    background-color: #f3f3f3;
     .section-title {
         text-align: center;
+    }
+    .hero-body {
+        padding-top: 0;
     }
 }
 
 .account-wrapper {
+    background-color: #fff;
     width: 65%;
+    border-radius: 8px;
     margin: 0 auto;
     border: 1px solid #ddd;
+    box-shadow: 2px 5px 12px rgba(0, 0, 0, .1);
 
     .topbar {
         padding: 1em 1.4em;
+        margin-bottom: 0;
+        background-color: #eee;
+        border-radius: 8px 8px 0 0;
+        .level-right {
+            span {
+                font-size: 20px;
+            }
+            small {
+                font-size: 12px;
+            }
+        }
         figure.image {
             border-radius: 50%;
             img {
                 border-radius: 50%;
             }
         }
+        input[type="file"] {
+            display: none;
+        }
     }
 
     .tab-wrapper {
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #ddd;
+        background: linear-gradient(to top, #eee, #f9f9f9);
     }
 
     .tab-content {
@@ -1148,7 +1178,9 @@ footer.footer {
     .tab-link {
         padding: 1em 2.4em;
         &.is-active {
-            background-color: $yellow;
+            background-color: $darkBlue;
+            border-bottom: 2px solid $yellow;
+            color: #fff;
         }
     }
 
@@ -1178,8 +1210,8 @@ footer.footer {
             &:last-child {
                 border-bottom: none;
             }
-            h4 {
-                // color: ;
+            h4, p {
+                margin-bottom: .6em !important;
             }
         }
     }
@@ -1193,8 +1225,8 @@ footer.footer {
             &:last-child {
                 border-bottom: none;
             }
-            h4 {
-                // color: ;
+            h4, p {
+                margin-bottom: .6em !important;
             }
         }
     }

@@ -640,10 +640,20 @@ footer.footer figure.logo-footer img {
 
 .few-gallery {
   background-color: #2e2f48;
+  padding: 3rem 0;
 }
 
 .few-gallery .card-footer .card-footer-item:hover {
   background-color: initial;
+}
+
+.few-gallery .image-gallery, .few-gallery .video-gallery {
+  padding: 3rem 6rem;
+  border-bottom: 1px solid rgba(253, 194, 54, 0.5);
+}
+
+.few-gallery .image-gallery:last-child, .few-gallery .video-gallery:last-child {
+  border-bottom: none;
 }
 
 .achievements {
@@ -1201,18 +1211,41 @@ footer.footer figure.logo-footer img {
   font-size: 1.4rem;
 }
 
+.account {
+  background-color: #f3f3f3;
+}
+
 .account .section-title {
   text-align: center;
 }
 
+.account .hero-body {
+  padding-top: 0;
+}
+
 .account-wrapper {
+  background-color: #fff;
   width: 65%;
+  border-radius: 8px;
   margin: 0 auto;
   border: 1px solid #ddd;
+  -webkit-box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.1);
 }
 
 .account-wrapper .topbar {
   padding: 1em 1.4em;
+  margin-bottom: 0;
+  background-color: #eee;
+  border-radius: 8px 8px 0 0;
+}
+
+.account-wrapper .topbar .level-right span {
+  font-size: 20px;
+}
+
+.account-wrapper .topbar .level-right small {
+  font-size: 12px;
 }
 
 .account-wrapper .topbar figure.image {
@@ -1223,9 +1256,17 @@ footer.footer figure.logo-footer img {
   border-radius: 50%;
 }
 
+.account-wrapper .topbar input[type="file"] {
+  display: none;
+}
+
 .account-wrapper .tab-wrapper {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+  background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#f9f9f9));
+  background: -webkit-linear-gradient(bottom, #eee, #f9f9f9);
+  background: -o-linear-gradient(bottom, #eee, #f9f9f9);
+  background: linear-gradient(to top, #eee, #f9f9f9);
 }
 
 .account-wrapper .tab-content {
@@ -1249,7 +1290,9 @@ footer.footer figure.logo-footer img {
 }
 
 .account-wrapper .tab-link.is-active {
-  background-color: #fdc236;
+  background-color: #2e2f48;
+  border-bottom: 2px solid #fdc236;
+  color: #fff;
 }
 
 .account-wrapper .level:first-child {
@@ -1283,6 +1326,10 @@ footer.footer figure.logo-footer img {
   border-bottom: none;
 }
 
+.account-wrapper .polling-item li h4, .account-wrapper .polling-item li p {
+  margin-bottom: .6em !important;
+}
+
 .account-wrapper .aspirasi-item {
   margin-left: 0;
 }
@@ -1296,4 +1343,8 @@ footer.footer figure.logo-footer img {
 
 .account-wrapper .aspirasi-item li:last-child {
   border-bottom: none;
+}
+
+.account-wrapper .aspirasi-item li h4, .account-wrapper .aspirasi-item li p {
+  margin-bottom: .6em !important;
 }

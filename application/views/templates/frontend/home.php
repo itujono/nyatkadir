@@ -100,7 +100,7 @@
             <a href="<?php echo base_url();?>article">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
         </div>
         <div class="article-carousel four-item-carousel owl-carousel owl-theme">
-        <?php 
+        <?php
             if(!empty($listidea)){
                 foreach ($listidea as $key => $idea) {
         ?>

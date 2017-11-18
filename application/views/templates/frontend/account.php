@@ -18,7 +18,7 @@
                     </div>
                     <div class="level-right">
                         <div class="level-item">
-                            <a href="#" class="button is-primary">Lihat Profile</a>
+                            <span>Rusmanto <br> <small>User ID: 34934290</small></span>
                         </div>
                     </div>
                 </div> <!-- kelar Level Pertama -->
@@ -27,8 +27,8 @@
                     <div class="level-left tabs">
                         <ul>
                             <li><a href="#" class="tab-link is-active" data-tab="tab-profile">Profile</a></li>
-                            <li><a href="#" class="tab-link" data-tab="tab-polling">Polling</a></li>
-                            <li><a href="#" class="tab-link" data-tab="tab-aspirasi">Aspirasi</a></li>
+                            <li><a href="#" class="tab-link" data-tab="tab-polling">Polling (3)</a></li>
+                            <li><a href="#" class="tab-link" data-tab="tab-aspirasi">Aspirasi (3)</a></li>
                         </ul>
                     </div>
                 </div>
