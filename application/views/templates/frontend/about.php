@@ -21,7 +21,7 @@
     }
 ?>
 
-<section class="nyat-hero hero is-medium" style="background: url(<?php echo $header_title_intro;?>);">
+<section class="nyat-hero hero is-medium" style="background: url(<?php echo $imageABOUT;?>);">
     <div class="hero-body">
         <div class="container">
             <h2 class="title"><?php echo $header_title_about;?></h2>
