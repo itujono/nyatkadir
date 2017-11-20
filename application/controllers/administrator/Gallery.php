@@ -41,6 +41,7 @@ class Gallery extends Admin_Controller {
 			} else {
 				$data['getgallery']->imageGALLERY = '';
 			}
+
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -58,7 +59,7 @@ class Gallery extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Gallery_m->array_from_post(array('titleGALLERY','categoryGALLERY'));
+			$data = $this->Gallery_m->array_from_post(array('titleGALLERY','categoryGALLERY','linkvideoGALLERY'));
 			$id = decode(urldecode($this->input->post('idGALLERY')));
 
 			if(empty($id))$id=NULL;

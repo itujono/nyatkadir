@@ -21,12 +21,16 @@
             </div>
             <div class="column">
                 <div class="gallery-wrapper">
+                <?php
+                    if(!empty($listgallery)){
+                        $i= 0;
+                        foreach ($listgallery as $key => $gal) {
+                        if($gal->categoryGALLERY == 1){
+                        $i++;
+                        if($i == 1){
+                ?>
                     <div class="tile is-ancestor">
-                    <?php
-                        if(!empty($listgallery)){
-                            foreach ($listgallery as $key => $gal) {
-                                if($gal->categoryGALLERY == 1){
-                    ?>
+                        <?php } ?>
                         <div class="tile is-parent">
                             <div class="tile is-child box">
                                 <a href="<?php echo $gal->imageGALLERY;?>" data-fancybox="image" data-caption="<?php echo $gal->titleGALLERY;?>">
@@ -37,10 +41,15 @@
                                 </a>
                             </div>
                         </div>
-                                <?php } ?>
-                            <?php } ?>
-                        <?php } ?>
+                    <?php 
+                    if($i == 4){ 
+                    $i = 0;
+                    ?>    
                     </div>
+                                <?php }?>
+                            <?php }?>
+                        <?php }?>
+                    <?php }?>
                 </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
             </div>
         </div> <!-- kelar div Columns -->
@@ -56,80 +65,36 @@
             </div>
             <div class="column">
                 <div class="gallery-wrapper">
+                <?php
+                    if(!empty($listgallery)){
+                        $i= 0;
+                        foreach ($listgallery as $key => $gal) {
+                        if($gal->categoryGALLERY == 2){
+                        $thumbnail = get_thumbnail_from_youtube($gal->linkvideoGALLERY);
+                        $i++;
+                        if($i == 1){
+                ?>
                     <div class="tile is-ancestor">
+                        <?php } ?>
                         <div class="tile is-parent">
                             <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
+                                <a href="<?php echo $gal->linkvideoGALLERY;?>" data-fancybox="video" data-caption="<?php echo $gal->titleGALLERY;?>">
                                     <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        <img src="<?php echo $thumbnail;?>" alt="<?php echo $gal->titleGALLERY;?>">
                                     </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
+                                    <h4><?php echo $gal->titleGALLERY;?></h4>
                                 </a>
                             </div>
                         </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
-                                </a>
-                            </div>
-                        </div>
+                    <?php 
+                    if($i == 4){ 
+                    $i = 0;
+                    ?>    
                     </div>
-                    <div class="tile is-ancestor">
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI</h4>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox="video" data-caption="Sempardak ugak">
-                                    <div class="image">
-                                        <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
-                                    </div>
-                                    <h4>Sidang Pleno DPR RI Tahun 2017</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
                 </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
             </div>
         </div> <!-- kelar div Columns -->

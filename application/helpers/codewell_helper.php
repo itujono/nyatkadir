@@ -235,3 +235,36 @@ function select_row_about(){
     $data = $CI->db->get()->row();
     return $data;
 }
+
+function select_row_intro_news(){
+    $CI =& get_instance();
+    $CI->db->cache_on();
+    $CI->db->select('*');
+    $CI->db->from('intro_news');
+    $CI->db->where('idINTRONEWS', 1);
+    $CI->db->limit(1);
+    $CI->db->order_by('idINTRONEWS', 'asc');
+    
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
+function get_thumbnail_from_youtube($link=NULL){
+    if($link != NULL){
+        // YouTube video url
+        $videoURL = $link;
+        $urlArr = explode("/",$videoURL);
+        $urlArrNum = count($urlArr);
+        // Youtube video ID
+        $youtubeVideoId = $urlArr[$urlArrNum - 1];
+        // Generate youtube thumbnail url
+        $youtubeVideoId = str_replace(['watch','?','v='], ['','',''], $youtubeVideoId);
+        $thumbURL = 'http://img.youtube.com/vi/'.$youtubeVideoId.'/hqdefault.jpg';
+        // Display thumbnail image
+        return $thumbURL;
+    } else {
+        return 'YOUTUBE VIDEO LINK - REQUIRED';
+        exit;
+    }
+
+}
