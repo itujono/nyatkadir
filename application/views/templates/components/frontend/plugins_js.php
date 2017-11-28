@@ -346,5 +346,37 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+<?php
+} elseif ($plugins == 'login_user') {
+?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://npmcdn.com/headroom.js@0.9.4"></script>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
 
+<script>
+    var login = document.querySelector('.login-wrapper');
+    var register = document.querySelector('.register-wrapper');
+    var stRegister = document.querySelector('#switch-to-register');
+    var stLogin = document.querySelector('#switch-to-login');
+
+    stRegister.addEventListener('click', function() {
+        if (login.classList.contains('is-active')) {
+            login.classList.remove('is-active');
+            register.classList.add('is-active');
+        }
+    });
+
+    stLogin.addEventListener('click', function() {
+        if (register.classList.contains('is-active')) {
+            register.classList.remove('is-active');
+            login.classList.add('is-active');
+        }
+    });
+</script>
+
+<script>
+    new WOW().init();
+</script>
 <?php } ?>

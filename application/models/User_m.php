@@ -39,12 +39,12 @@ class User_m extends MY_Model{
 			'label' => 'Kata sandi lama',
 			'rules' => 'trim|required|min_length[8]'
 			),
-		'passwordUSER' => array(
+		'passwordADMIN' => array(
 			'field' => 'password',
 			'label' => 'Kata sandi',
 			'rules' => 'trim|required|min_length[8]'
 			),
-		'repasswordUSER' => array(
+		'repasswordADMIN' => array(
 			'field' => 'repassword',
 			'label' => 'Ulangi kata sandi',
 			'rules' => 'trim|required|min_length[8]'
