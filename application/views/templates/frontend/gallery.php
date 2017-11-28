@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
-<section class="nyat-hero hero is-medium" style="background: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
+<section class="nyat-hero hero is-medium" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
     <div class="hero-body">
         <div class="container">
             <h2 class="title">Bergegaslah!</h2>
@@ -41,10 +41,10 @@
                                 </a>
                             </div>
                         </div>
-                    <?php 
-                    if($i == 4){ 
+                    <?php
+                    if($i == 4){
                     $i = 0;
-                    ?>    
+                    ?>
                     </div>
                                 <?php }?>
                             <?php }?>
@@ -86,10 +86,10 @@
                                 </a>
                             </div>
                         </div>
-                    <?php 
-                    if($i == 4){ 
+                    <?php
+                    if($i == 4){
                     $i = 0;
-                    ?>    
+                    ?>
                     </div>
                                 <?php } ?>
                             <?php } ?>

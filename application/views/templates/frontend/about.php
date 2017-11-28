@@ -21,7 +21,7 @@
     }
 ?>
 
-<section class="nyat-hero hero is-medium" style="background: url(<?php echo $imageABOUT;?>);">
+<section class="nyat-hero hero is-medium" style="background-image: url(<?php echo $imageABOUT;?>);">
     <div class="hero-body">
         <div class="container">
             <h2 class="title"><?php echo $header_title_about;?></h2>
@@ -95,7 +95,7 @@
             </div> <!-- kelar div Fraksi -->
 
 
-            
+
             <div class="column award">
                 <div class="section-title">
                     <h3 class="mb10"><?php echo $title_award;?></h3>
@@ -116,8 +116,8 @@
                             <dd><?php echo $val[1];?>
                             <br> <?php echo $val[2];?>
                             </dd>
-                <?php 
-                    if($i == 4){ 
+                <?php
+                    if($i == 4){
                     $i = 0;
                 ?>
                         </dl>

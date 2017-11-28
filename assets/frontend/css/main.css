@@ -133,6 +133,10 @@ a:hover {
   color: #eee;
 }
 
+.navbar a.navbar-item:active {
+  background-color: #fdc236;
+}
+
 .navbar a.navbar-item, .navbar-item, .navbar-link {
   color: #999;
   -webkit-transition: all .3s ease;
