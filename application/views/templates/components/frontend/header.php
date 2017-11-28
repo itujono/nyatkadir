@@ -50,12 +50,21 @@
             <div class="navbar-end">
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">
-                        <span class="icon ion-person"></span> Rusmanto
+                        <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; Rusmanto
                     </a>
                     <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Atur Akun</a>
                         <a href="#" class="navbar-item">Keluar</a>
-                    </div>
+                    </div> <!--Ini kalo udah login ya-->
+
+                    <a href="#" class="navbar-link">
+                        <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; Daftar
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="#" class="navbar-item">Login</a>
+                        <a href="#" class="navbar-item">Daftar</a>
+                    </div> <!--Ini kalo belum login ya-->
+
                 </div>
             </div>
         </div> <!-- kelar Navbar-Menu -->
