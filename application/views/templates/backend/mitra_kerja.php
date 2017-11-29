@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$title1 = 'Buat Data Slider Baru';
-$actions = 'saveslider';
-$controller = 'slider';
-if($getslider->idSLIDER != NULL){
- $title1 = 'Perbaharui Data Slider';
+$title1 = 'Buat Data Mitra Kerja';
+$actions = 'savemitra';
+$controller = 'mitra';
+if($getmitra->idMITRA != NULL){
+ $title1 = 'Perbaharui Data Mitra Kerja';
 } 
 $url = base_url().'administrator/'.$controller.'/'.$actions;
 ?>
@@ -23,8 +23,8 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Slider</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Slider</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Mitra Kerja</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Mitra Kerja</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -34,7 +34,6 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
-                <th>Deskripsi</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -44,29 +43,27 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
-                <th>Deskripsi</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
               <?php 
-              if(!empty($listslider)){
-                foreach ($listslider  as $key => $slider) { 
-                  $id = encode($slider->idSLIDER);
+              if(!empty($listmitra)){
+                foreach ($listmitra  as $key => $mitra) { 
+                  $id = encode($mitra->idMITRA);
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><img class="img_thumb" src="<?php echo $slider->imageSLIDER;?>" alt="<?php echo $slider->titleSLIDER;?>"/></td>
-                    <td><?php echo $slider->titleSLIDER; ?></td>
-                    <td><?php echo $slider->descSLIDER; ?></td>
-                    <td><?php echo date('d F Y', strtotime($slider->createdateSLIDER));?></td>
+                    <td><img class="img_thumb" src="<?php echo $mitra->imageMITRA;?>" alt="<?php echo $mitra->nameMITRA;?>"/></td>
+                    <td><?php echo $mitra->nameMITRA; ?></td>
+                    <td><?php echo date('d F Y', strtotime($mitra->createdateMITRA));?></td>
                     <?php
                     $icndel = '&#xE16C;';
                     $msg1 = 'Are you sure want to delete this data ?';
                     $msg2 = 'Are you sure want to change this data ?';
-                    $url1 = 'administrator/'.$controller.'/actiondelete_slider/'.urlencode($id);
-                    $url2 = 'administrator/'.$controller.'/index_slider/'.urlencode($id);
+                    $url1 = 'administrator/'.$controller.'/actiondelete_mitra/'.urlencode($id);
+                    $url2 = 'administrator/'.$controller.'/index_mitra/'.urlencode($id);
                     ?>
                     <td class="uk-text-center">
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
@@ -83,22 +80,22 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
             <!-- START FORM INPUT AREA -->
             <li>
               <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
-              <form method="post" name="formslider" action="<?php echo $url;?>" id="form_validation" enctype="multipart/form-data" class="uk-form-stacked">
+              <form method="post" name="formmitra" action="<?php echo $url;?>" id="form_validation" enctype="multipart/form-data" class="uk-form-stacked">
               <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
-                <?php echo form_hidden('idSLIDER',encode($getslider->idSLIDER),'hidden'); ?>
+                <?php echo form_hidden('idMITRA',encode($getmitra->idMITRA),'hidden'); ?>
                 <div class="uk-grid" data-uk-grid-margin>
                   <div class="uk-width-medium-1-1">
                     <div class="md-card">
                       <div class="md-card-content">
                         <?php
-                          if(!empty($getslider->imageSLIDER)){
+                          if(!empty($getmitra->imageMITRA)){
                         ?>
                         <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimgslider/".encode($getslider->idSLIDER); ?>'; });"></a>
-                            <img src="<?php echo $getslider->imageSLIDER;?>" alt="<?php echo $getslider->titleSLIDER;?>" class="img_medium"/>
+                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimgmitra/".encode($getmitra->idMITRA); ?>'; });"></a>
+                            <img src="<?php echo $getmitra->imageMITRA;?>" alt="<?php echo $getmitra->nameMITRA;?>" class="img_medium"/>
                         </div>
                         <?php } else { ?>
-                          <?php echo form_upload('imgSLIDER','','class="md-input" required'); ?>
+                          <?php echo form_upload('imgMITRA','','class="md-input" required'); ?>
                         <?php } ?>
                       </div>
                     </div>
@@ -108,18 +105,9 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                   <div class="uk-width-medium-1-1 uk-margin-top">
                     <div class="parsley-row">
                       <label>Judul<span class="req">*</span></label>
-                      <input type="text" class="md-input" name="titleSLIDER" autocomplete value="<?php echo cetak($getslider->titleSLIDER);?>" required/>
+                      <input type="text" class="md-input" name="nameMITRA" autocomplete value="<?php echo cetak($getmitra->nameMITRA);?>" required/>
                     </div>
-                    <p class="text-red"><?php echo form_error('titleSLIDER'); ?></p>
-                  </div>
-                </div>
-                <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-1 uk-margin-top">
-                    <div class="parsley-row">
-                      <label>Deskripsi</label>
-                      <textarea cols="30" rows="4" name="descSLIDER" class="md-input" id="wysiwyg_tinymce_codewell"><?php echo cetak($getslider->descSLIDER);?></textarea>
-                    </div>
-                    <p class="text-red"><?php echo form_error('descSLIDER'); ?></p>
+                    <p class="text-red"><?php echo form_error('nameMITRA'); ?></p>
                   </div>
                 </div>
                 <div class="uk-width-medium-1-1 uk-margin-top">

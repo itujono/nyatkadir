@@ -187,26 +187,16 @@
             Instansi-instansi yang menjadi kolega sekaligus mitra dalam bidang profesional Nyat Kadir
         </div>
         <div class="five-item-carousel owl-carousel owl-theme">
+        <?php
+            if(!empty($listmitra)){
+                foreach ($listmitra as $key => $mitra) {
+        ?>
             <figure class="image">
-                <img src="http://placehold.it/200x60/" alt="">
-                <figcaption><a href="#" target="_blank">PT Sentosa Abadi</a></figcaption>
+                <img src="<?php echo $mitra->imageMITRA;?>" alt="<?php echo $mitra->nameMITRA;?>">
+                <figcaption><a href="#" target="_blank"><?php echo $mitra->nameMITRA;?></a></figcaption>
             </figure>
-            <figure class="image">
-                <img src="http://placehold.it/200x60/" alt="">
-                <figcaption><a href="#" target="_blank">PT Karimun Jaya</a></figcaption>
-            </figure>
-            <figure class="image">
-                <img src="http://placehold.it/200x60/" alt="">
-                <figcaption><a href="#" target="_blank">Alfatron Batam</a></figcaption>
-            </figure>
-            <figure class="image">
-                <img src="http://placehold.it/200x60/" alt="">
-                <figcaption><a href="#" target="_blank">Kek Pisang Villa</a></figcaption>
-            </figure>
-            <figure class="image">
-                <img src="http://placehold.it/200x60/" alt="">
-                <figcaption><a href="#" target="_blank">Komunitas Dewan Penasihat Presiden</a></figcaption>
-            </figure>
+                <?php } ?>
+            <?php } ?>
         </div>
     </div>
 </section>
