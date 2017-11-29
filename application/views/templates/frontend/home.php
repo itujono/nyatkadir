@@ -139,24 +139,27 @@
                 <div class="column">
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
-                        <div class="field">
-                            <div class="control">
-                                <?php
+                        <form class="" action="index.html" method="post">
+                            <div class="field">
+                                <div class="control">
+                                    <?php
                                     $data_polling = json_decode($getpolling->answerPOLLING,TRUE);
                                     foreach ($data_polling as $value) {
-                                ?>
-                                <label class="radio">
-                                  <input type="radio" name="answer" value="<?php echo $value[0];?>" required="required">
-                                  <?php echo $value[0];?>
-                                </label>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-link">Submit</button>
-                            </div>
-                        </div>
+                                        ?>
+                                        <label class="radio">
+                                            <input type="radio" name="answer" value="<?php echo $value[0];?>" required="required">
+                                            <?php echo $value[0];?>
+                                        </label>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <!-- <button class="button is-link">Submit</button> -->
+                                        <input type="submit" name="" value="Submit" class="button is-link">
+                                    </div>
+                                </div>
+                        </form>
                     </div>
                     <div class="successful box">
                         <article class="media">
@@ -178,6 +181,115 @@
             </div> <!-- kelar div Columns -->
         </div>
     </div> <!-- kelar Hero-Body -->
+</section>
+
+<section class="section news-section">
+    <div class="container">
+        <div class="section-title dark">
+            <h3>Berita dan Event <span class="reddish">Nyat Kadir</span></h3>
+            Segala hal yang Nyat Kadir lakukan baru-baru ini
+        </div>
+        <div class="read-more">
+            <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
+        </div>
+        <div class="columns">
+            <div class="column is-three-quarters news-started">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title">
+                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <span>21 Agustus 2017</span>
+                        </div>
+                        <div class="card-footer-item">
+                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section partner">

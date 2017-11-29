@@ -289,9 +289,16 @@ a {
     background-size: cover;
     background-color: $darkBlue;
     .card {
+        border-radius: 6px;
         transition: all .3s ease;
         &:hover {
             @include hoverCard;
+        }
+        .card-footer {
+            border-radius: 6px;
+            .card-footer-item:last-child {
+                border-radius: 0 0 6px 0;
+            }
         }
     }
     .card:nth-child(2) {
@@ -448,6 +455,9 @@ a {
         height: 100%;
         opacity: .1;
     }
+    form {
+        width: inherit;
+    }
 }
 
 .successful.box {
@@ -456,6 +466,39 @@ a {
     border: 2px solid $yellow;
     .icon {
         font-size: 3rem;
+    }
+}
+
+
+
+.news-section {
+    .news-started {
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 6px;
+            flex: 1 0 31%;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            transition: all .3s ease;
+            .card-footer {
+                border: none;
+                .card-footer-item {
+                    border: none;
+                }
+            }
+            &:hover {
+                @include hoverCard;
+            }
+            a {
+                &:hover h2 {
+                    color: $yellow;
+                }
+            }
+        }
     }
 }
 

@@ -306,6 +306,7 @@ a:hover {
 }
 
 .article-section .card {
+  border-radius: 6px;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -317,6 +318,14 @@ a:hover {
   transform: translateY(-5px);
   -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-section .card .card-footer {
+  border-radius: 6px;
+}
+
+.article-section .card .card-footer .card-footer-item:last-child {
+  border-radius: 0 0 6px 0;
 }
 
 .article-section .card:nth-child(2) {
@@ -493,6 +502,10 @@ a:hover {
   opacity: .1;
 }
 
+.voting form {
+  width: inherit;
+}
+
 .successful.box {
   display: none;
   background-color: #ddd;
@@ -501,6 +514,62 @@ a:hover {
 
 .successful.box .icon {
   font-size: 3rem;
+}
+
+.news-section .news-started {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.news-section .news-started .card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-radius: 6px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 31%;
+  -ms-flex: 1 0 31%;
+  flex: 1 0 31%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.news-section .news-started .card .card-footer {
+  border: none;
+}
+
+.news-section .news-started .card .card-footer .card-footer-item {
+  border: none;
+}
+
+.news-section .news-started .card:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-section .news-started .card a:hover h2 {
+  color: #fdc236;
 }
 
 .aspirasi .introduction h5 {
