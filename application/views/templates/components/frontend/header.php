@@ -49,22 +49,25 @@
             </div>
             <div class="navbar-end">
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
+                <?php 
+                    if(!empty($this->session->userdata('Name'))){
+                ?>
                     <a href="#" class="navbar-link">
                         <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; Rusmanto
                     </a>
                     <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Atur Akun</a>
                         <a href="#" class="navbar-item">Keluar</a>
-                    </div> <!--Ini kalo udah login ya-->
-
+                    </div>
+                <?php } else { ?>
                     <a href="#" class="navbar-link">
                         <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; Daftar
                     </a>
                     <div class="navbar-dropdown">
-                        <a href="#" class="navbar-item">Login</a>
-                        <a href="#" class="navbar-item">Daftar</a>
-                    </div> <!--Ini kalo belum login ya-->
-
+                        <a href="<?php echo base_url();?>user" class="navbar-item">Login</a>
+                        <a href="<?php echo base_url();?>user" class="navbar-item">Daftar</a>
+                    </div>
+                <?php } ?>
                 </div>
             </div>
         </div> <!-- kelar Navbar-Menu -->

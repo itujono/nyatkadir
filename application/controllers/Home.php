@@ -7,6 +7,7 @@ class Home extends Frontend_Controller {
 		parent::__construct();
 		$this->load->model('Slider_m');
 		$this->load->model('Idea_m');
+		$this->load->model('Polling_m');
 	}
 
 	public function index() {
@@ -23,6 +24,7 @@ class Home extends Frontend_Controller {
 			}
 		}
 		$data['listidea'] = $this->Idea_m->selectall_idea()->result();
+		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'home', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);

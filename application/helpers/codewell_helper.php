@@ -223,6 +223,19 @@ function encodingdata($json=0, $type=0, $diberikanaward_about=0, $tahunaward_abo
     return json_encode($jj);
 }
 
+function encodingdata_polling($json=0, $type=0){
+    
+    if($type == 0) {
+        $jj = array();
+        foreach ($json as $key => $value) {
+            $jj[]=array($value);
+        }
+    } else {
+        $jj = $json;
+    }
+    return json_encode($jj);
+}
+
 function select_row_about(){
     $CI =& get_instance();
     $CI->db->cache_on();

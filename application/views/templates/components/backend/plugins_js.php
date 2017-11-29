@@ -8,8 +8,7 @@ $datatables = '
     <script src="'.base_url().$this->data['asback'].'js/custom/datatables/datatables.uikit.min.js"></script>
     <script src="'.base_url().$this->data['asback'].'js/pages/plugins_datatables.min.js"></script>
 ';
-$forms_advanced='<script src="'.base_url().$this->data['asbackbower'].'ion.rangeslider/js/ion.rangeSlider.min.js"></script>
-    <script src="'.base_url().$this->data['asback'].'js/pages/forms_advanced.js"></script>';
+$forms_advanced='<script src="'.base_url().$this->data['asback'].'js/pages/forms_advanced.js"></script>';
 $forms_validation='<script> altair_forms.parsley_validation_config();</script><script src="'.base_url().$this->data['asbackbower'].'parsleyjs/dist/parsley.min.js"></script>
     <script src="'.base_url().$this->data['asback'].'js/pages/forms_validation.min.js"></script>';
 
@@ -276,6 +275,29 @@ altair_form_adv = {
     }
 };
 </script>
+<?php
+} elseif($plugins == 'plugins_polling') {
+?>
+<?php echo $datatables;?>
+<?php echo $forms_advanced;?>
+<!--  preloaders functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+
+<script type="text/javascript">
+    $('.multi-field-wrapper').each(function() {
+        var $wrapper = $('.multi-fields', this);
+        $(".add-field", $(this)).click(function(e) {
+            $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+        });
+        $('.multi-field .remove-field ', $wrapper).click(function() {
+            if ($('.multi-field', $wrapper).length > 1)
+                $(this).parents('.multi-field').remove();
+        });
+    });
+</script>
+<!--  contact list functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/page_contact_list.min.js"></script>
+
 <?php                   
 }
 ?>

@@ -135,23 +135,21 @@
                         Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                     </div>
                 </div>
+                <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                     <div class="content">
-                        <h3 class="title">Bagaimana pendapatmu tentang kejadian Setya Novanto di Rumah Sakit Jakarta?</h3>
+                        <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
                         <div class="field">
                             <div class="control">
+                                <?php
+                                    $data_polling = json_decode($getpolling->answerPOLLING,TRUE);
+                                    foreach ($data_polling as $value) {
+                                ?>
                                 <label class="radio">
-                                  <input type="radio" name="question">
-                                  Biasa aja
+                                  <input type="radio" name="answer" value="<?php echo $value[0];?>" required="required">
+                                  <?php echo $value[0];?>
                                 </label>
-                                <label class="radio">
-                                  <input type="radio" name="question">
-                                  Nggak bisa lah
-                                </label>
-                                <label class="radio">
-                                  <input type="radio" name="question">
-                                  Ya bisa tapi nggak boleh
-                                </label>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="field">
@@ -176,6 +174,7 @@
                         </article>
                     </div>
                 </div>
+            <?php } ?>
             </div> <!-- kelar div Columns -->
         </div>
     </div> <!-- kelar Hero-Body -->
