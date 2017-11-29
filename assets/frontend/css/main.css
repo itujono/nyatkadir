@@ -604,12 +604,17 @@ footer.footer .column h3 {
 }
 
 footer.footer .quick-links {
-  margin-bottom: -4em;
+  margin-bottom: 20px;
 }
 
 footer.footer .quick-links ul li {
   display: inline-block;
   margin-right: 1.4em;
+}
+
+footer.footer .social ul li {
+  margin-right: 1.5em;
+  display: inline-block;
 }
 
 footer.footer figure.logo-footer img {

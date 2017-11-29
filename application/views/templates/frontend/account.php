@@ -11,9 +11,11 @@
                 <div class="level topbar">
                     <div class="level-left">
                         <div class="level-item">
-                            <figure class="image">
+                            <input type="file" name="file" id="file" class="inputfile" />
+                            <label for="file">
                                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto">
-                            </figure>
+                                <span>Edit Gambar...</span>
+                            </label>
                         </div>
                     </div>
                     <div class="level-right">

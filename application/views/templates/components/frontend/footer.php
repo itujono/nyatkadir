@@ -71,14 +71,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-footer.png" alt="Logo Footer" width="100">
                 </figure>
             </div>
-            <div class="column is-two-thirds quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Fraksi Nasdem</a></li>
-                    <li><a href="#">Website Resmi Partai Nasdem</a></li>
-                    <li><a href="#">Mitra Kerja Nyat Kadir</a></li>
-                    <li><a href="#">Sekapur Sirih</a></li>
-                </ul>
+            <div class="column is-two-thirds">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Fraksi Nasdem</a></li>
+                        <li><a href="#">Website Resmi Partai Nasdem</a></li>
+                        <li><a href="#">Mitra Kerja Nyat Kadir</a></li>
+                        <li><a href="#">Sekapur Sirih</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <h3>Berkawan</h3>
+                    <ul>
+                        <li><a href="#" class="icon" title="Twitter Nyat Kadir"><span class="mdi mdi-twitter"></span></a></li>
+                        <li><a href="#" class="icon" title="Facebook Nyat Kadir"><span class="mdi mdi-facebook  "></span></a></li>
+                        <li><a href="#" class="icon" title="Instagram Nyat Kadir"><span class="mdi mdi-instagram"></span></a></li>
+                        <li><a href="#" class="icon" title="Google+ Nyat Kadir"><span class="mdi mdi-google-plus"></span></a></li>
+                    </ul>
+                </div>
             </div>
             <div class="column old-man">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/old-man-in-suit.png" width="200" alt="Nyat Kadir in Suit" class="wow fadeInRight" data-wow-delay="1.5s">

@@ -560,11 +560,19 @@ footer.footer {
         }
     }
     .quick-links {
-        margin-bottom: -4em;
+        margin-bottom: 20px;
         ul {
             li {
                 display: inline-block;
                 margin-right: 1.4em;
+            }
+        }
+    }
+    .social {
+        ul {
+            li {
+                margin-right: 1.5em;
+                display: inline-block;
             }
         }
     }
