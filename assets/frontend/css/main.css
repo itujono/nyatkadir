@@ -928,6 +928,16 @@ footer.footer figure.logo-footer img {
   visibility: visible;
 }
 
+.login-wrapper .message, .register-wrapper .message {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-wrapper .message .message-body, .register-wrapper .message .message-body {
+  color: #777;
+  background-color: #fff;
+}
+
 .register-wrapper {
   display: none;
   visibility: hidden;
@@ -1225,6 +1235,70 @@ footer.footer figure.logo-footer img {
 
 .account .hero-body {
   padding-top: 0;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.inputfile + label:hover span {
+  display: block;
+  cursor: pointer;
+}
+
+.inputfile + label img {
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.inputfile + label span {
+  display: none;
+  background-color: #ff3860;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px;
+  border-radius: 5px;
+  margin-left: -40px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  opacity: .6;
+  -webkit-box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.inputfile + label span:active {
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+}
+
+.inputfile + label span:hover {
+  opacity: 1;
+}
+
+.inputfile:focus + label, .inputfile + label:hover img {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  opacity: .7;
+  cursor: pointer;
 }
 
 .account-wrapper {

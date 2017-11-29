@@ -839,6 +839,14 @@ footer.footer {
         display: block;
         visibility: visible;
     }
+    .message {
+        width: 80%;
+        margin: 0 auto;
+        .message-body {
+            color: #777;
+            background-color: #fff;
+        }
+    }
 }
 
 .register-wrapper {
@@ -1125,6 +1133,59 @@ footer.footer {
         padding-top: 0;
     }
 }
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+    + label {
+        position: relative;
+        display: inline-block;
+        transition: all .3s ease;
+        &:hover {
+            span {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        img {
+            border-radius: 50%;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, .2);
+            transition: all .3s ease;
+        }
+        span {
+            display: none;
+            background-color: #ff3860;
+            color: #fff;
+            font-size: 12px;
+            padding: 3px;
+            border-radius: 5px;
+            margin-left: -40px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            opacity: .6;
+            box-shadow: 2px 5px 8px rgba(0, 0, 0, .2);
+            // transition: all .3s ease;
+            &:active {
+                transform: translateY(3px);
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    &:focus + label, + label:hover img {
+        filter: blur(2px);
+        opacity: .7;
+        cursor: pointer;
+    }
+}
+
+
 
 .account-wrapper {
     background-color: #fff;
