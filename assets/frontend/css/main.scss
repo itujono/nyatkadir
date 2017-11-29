@@ -737,6 +737,22 @@ footer.footer {
             }
         }
     }
+    .tile {
+        &.has-bg {
+            .title {
+                color: #fff;
+                &:hover {
+                    color: $yellow;
+                }
+            }
+            .box {
+                opacity: .6;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
 
 

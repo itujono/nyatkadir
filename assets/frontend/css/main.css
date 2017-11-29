@@ -811,6 +811,22 @@ footer.footer figure.logo-footer img {
   font-size: 2.2em;
 }
 
+.articles .tile.has-bg .title {
+  color: #fff;
+}
+
+.articles .tile.has-bg .title:hover {
+  color: #fdc236;
+}
+
+.articles .tile.has-bg .box {
+  opacity: .6;
+}
+
+.articles .tile.has-bg .box:hover {
+  opacity: 1;
+}
+
 .article {
   margin-top: 5em;
 }

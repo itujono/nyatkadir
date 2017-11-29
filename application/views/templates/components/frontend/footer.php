@@ -75,10 +75,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="social">
                     <h3>Berkawan</h3>
                     <ul>
-                        <li><a href="#" class="icon" title="Twitter Nyat Kadir"><span class="mdi mdi-twitter"></span></a></li>
-                        <li><a href="#" class="icon" title="Facebook Nyat Kadir"><span class="mdi mdi-facebook  "></span></a></li>
-                        <li><a href="#" class="icon" title="Instagram Nyat Kadir"><span class="mdi mdi-instagram"></span></a></li>
-                        <li><a href="#" class="icon" title="Google+ Nyat Kadir"><span class="mdi mdi-google-plus"></span></a></li>
+                        <li><a href="#" class="" title="Twitter Nyat Kadir"><!--<span class="mdi mdi-twitter"></span>-->Twitter</a></li>
+                        <li><a href="#" class="" title="Facebook Nyat Kadir"><!--<span class="mdi mdi-facebook"></span>-->Facebook</a></li>
+                        <li><a href="#" class="" title="Instagram Nyat Kadir"><!--<span class="mdi mdi-instagram"></span>-->Instagram</a></li>
+                        <li><a href="#" class="" title="Google+ Nyat Kadir"><!--<span class="mdi mdi-google-plus"></span>-->Google Plus</a></li>
                     </ul>
                 </div>
                 <div class="quick-links">
