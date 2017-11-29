@@ -5,6 +5,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 class="title">Pengaturan Akun</h2>
+                <h4 class="subtitle">Dan histori aktifitas Anda sebagai member Nyat Kadir.com</h4>
             </div>
 
             <div class="account-wrapper">

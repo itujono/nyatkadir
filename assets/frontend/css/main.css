@@ -603,13 +603,13 @@ footer.footer .column h3 {
   font-weight: normal;
 }
 
-footer.footer .quick-links {
-  margin-bottom: 20px;
-}
-
 footer.footer .quick-links ul li {
   display: inline-block;
   margin-right: 1.4em;
+}
+
+footer.footer .social {
+  margin-bottom: 20px;
 }
 
 footer.footer .social ul li {
@@ -1242,6 +1242,12 @@ footer.footer figure.logo-footer img {
   padding-top: 0;
 }
 
+.account h4.subtitle {
+  color: #999;
+  font-weight: 100;
+  font-size: 16px;
+}
+
 .inputfile {
   width: 0.1px;
   height: 0.1px;
@@ -1278,7 +1284,7 @@ footer.footer figure.logo-footer img {
   background-color: #ff3860;
   color: #fff;
   font-size: 12px;
-  padding: 3px;
+  padding: 3px 5px;
   border-radius: 5px;
   margin-left: -40px;
   position: absolute;

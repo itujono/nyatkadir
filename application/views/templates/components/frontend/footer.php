@@ -72,15 +72,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 </figure>
             </div>
             <div class="column is-two-thirds">
-                <div class="quick-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Fraksi Nasdem</a></li>
-                        <li><a href="#">Website Resmi Partai Nasdem</a></li>
-                        <li><a href="#">Mitra Kerja Nyat Kadir</a></li>
-                        <li><a href="#">Sekapur Sirih</a></li>
-                    </ul>
-                </div>
                 <div class="social">
                     <h3>Berkawan</h3>
                     <ul>
@@ -88,6 +79,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                         <li><a href="#" class="icon" title="Facebook Nyat Kadir"><span class="mdi mdi-facebook  "></span></a></li>
                         <li><a href="#" class="icon" title="Instagram Nyat Kadir"><span class="mdi mdi-instagram"></span></a></li>
                         <li><a href="#" class="icon" title="Google+ Nyat Kadir"><span class="mdi mdi-google-plus"></span></a></li>
+                    </ul>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Fraksi Nasdem</a></li>
+                        <li><a href="#">Website Resmi Partai Nasdem</a></li>
+                        <li><a href="#">Mitra Kerja Nyat Kadir</a></li>
+                        <li><a href="#">Sekapur Sirih</a></li>
                     </ul>
                 </div>
             </div>
