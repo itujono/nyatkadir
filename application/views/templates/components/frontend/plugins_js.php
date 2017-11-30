@@ -356,6 +356,20 @@ if ($plugins == 'home') { ?>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
 
 <script>
+    var btnDelete = document.querySelectorAll(".delete");
+    var message = document.querySelectorAll(".message");
+
+    for (var i = 0; i < btnDelete.length; i++) {
+        btnDelete[i].addEventListener("click", function(e) {
+            e.preventDefault();
+            for (var i = 0; i < message.length; i++) {
+                message[i].classList += " none";
+            }
+        });
+    }
+</script>
+
+<script>
     var login = document.querySelector('.login-wrapper');
     var register = document.querySelector('.register-wrapper');
     var forgot = document.querySelector('.forgot-wrapper');

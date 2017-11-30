@@ -1066,6 +1066,9 @@ footer.footer figure.logo-footer img {
 
 .login-wrapper form, .register-wrapper form, .forgot-wrapper form {
   margin-bottom: 2em;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .login-wrapper .switch-login, .login-wrapper .forgot, .register-wrapper .switch-login, .register-wrapper .forgot, .forgot-wrapper .switch-login, .forgot-wrapper .forgot {
@@ -1084,6 +1087,23 @@ footer.footer figure.logo-footer img {
 .login-wrapper .message, .register-wrapper .message, .forgot-wrapper .message {
   width: 80%;
   margin: 0 auto;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.login-wrapper .message.none, .register-wrapper .message.none, .forgot-wrapper .message.none {
+  display: none;
+  visibility: hidden;
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .login-wrapper .message .message-body, .register-wrapper .message .message-body, .forgot-wrapper .message .message-body {

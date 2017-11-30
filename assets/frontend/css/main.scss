@@ -955,6 +955,7 @@ footer.footer {
     }
     form {
         margin-bottom: 2em;
+        transition: all .3s ease;
     }
     .switch-login, .forgot {
         text-align: center;
@@ -969,6 +970,16 @@ footer.footer {
     .message {
         width: 80%;
         margin: 0 auto;
+        opacity: 1;
+        visibility: visible;
+        transition: all .3s ease;
+        &.none {
+            display: none;
+            visibility: hidden;
+            transform: translateY(-5px);
+            opacity: 0;
+            transition: all .3s ease;
+        }
         .message-body {
             color: #777;
             background-color: #fff;
