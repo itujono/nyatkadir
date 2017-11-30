@@ -230,14 +230,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="read-more">
-                    <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
-                </div>
             </div>
             <div class="column">
                 <figure class="image">
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/looking.jpg" alt="">
                 </figure>
+                <div class="read-more">
+                    <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
+                </div>
             </div>
         </div> <!-- kelar div Columns -->
     </div>

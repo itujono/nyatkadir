@@ -569,6 +569,12 @@ a:hover {
   margin-bottom: 0;
 }
 
+.news-section .read-more {
+  padding: 3em;
+  text-align: left;
+  background-color: #2e2f48;
+}
+
 .aspirasi .introduction h5 {
   color: #fdc236;
 }
