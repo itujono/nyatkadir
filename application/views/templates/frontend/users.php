@@ -60,7 +60,25 @@
                     <?php
                         if (!empty($message)){
                     ?>
-                    <p class="subtitle"><?php echo $message['text'];?></p>
+                    <!-- <p class="subtitle"><?php //echo $message['text'];?></p> -->
+                    <article class="message is-success">
+                        <div class="message-header">
+                            <p>Sukses!</p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            <?php echo $message['text'];?>
+                        </div>
+                    </article>
+                    <article class="message is-warning">
+                        <div class="message-header">
+                            <p>Error!</p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            <?php echo $message['text'];?>
+                        </div>
+                    </article>
                     <?php } ?>
                 </div>
                 <form action="<?php echo base_url();?>user/registration" method="POST">
