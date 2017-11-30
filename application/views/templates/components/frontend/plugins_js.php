@@ -76,84 +76,84 @@ if ($plugins == 'home') { ?>
     </script>
 
     <script>
-        if($('.main-slider .tp-banner').length){
+        if ( $('.main-slider .tp-banner').length ) {
 
-        var MainSlider = $('.main-slider');
-        var strtHeight = MainSlider.attr('data-start-height');
-        var slideOverlay =  "'"+ MainSlider.attr('data-slide-overlay') +"'";
+                var MainSlider = $('.main-slider');
+                var strtHeight = MainSlider.attr('data-start-height');
+                var slideOverlay =  "'"+ MainSlider.attr('data-slide-overlay') +"'";
 
-        $('.main-slider .tp-banner').show().revolution({
-        //dottedOverlay: slideOverlay,
-        delay:5000,
-        startwidth:1200,
-        startheight:strtHeight,
-        hideThumbs:600,
+                $('.main-slider .tp-banner').show().revolution( {
+                //dottedOverlay: slideOverlay,
+                delay:5000,
+                startwidth:1200,
+                startheight:strtHeight,
+                hideThumbs:600,
 
-        thumbWidth:80,
-        thumbHeight:50,
-        thumbAmount:5,
+                thumbWidth:80,
+                thumbHeight:50,
+                thumbAmount:5,
 
-        navigationType:"bullet",
-        navigationArrows:"1",
-        navigationStyle:"preview3",
+                navigationType:"bullet",
+                navigationArrows:"1",
+                navigationStyle:"preview3",
 
-        touchenabled:"on",
-        onHoverStop:"off",
+                touchenabled:"on",
+                onHoverStop:"off",
 
-        swipe_velocity: 0.7,
-        swipe_min_touches: 1,
-        swipe_max_touches: 1,
-        drag_block_vertical: false,
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
 
-        parallax:"mouse",
-        parallaxBgFreeze:"on",
-        parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+                parallax:"mouse",
+                parallaxBgFreeze:"on",
+                parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
 
-        keyboardNavigation:"off",
+                keyboardNavigation:"off",
 
-        navigationHAlign:"center",
-        navigationVAlign:"bottom",
-        navigationHOffset:0,
-        navigationVOffset:50,
+                navigationHAlign:"center",
+                navigationVAlign:"bottom",
+                navigationHOffset:0,
+                navigationVOffset:50,
 
-        soloArrowLeftHalign:"left",
-        soloArrowLeftValign:"bottom",
-        soloArrowLeftHOffset:20,
-        soloArrowLeftVOffset:0,
+                soloArrowLeftHalign:"left",
+                soloArrowLeftValign:"bottom",
+                soloArrowLeftHOffset:20,
+                soloArrowLeftVOffset:0,
 
-        soloArrowRightHalign:"right",
-        soloArrowRightValign:"center",
-        soloArrowRightHOffset:20,
-        soloArrowRightVOffset:0,
+                soloArrowRightHalign:"right",
+                soloArrowRightValign:"center",
+                soloArrowRightHOffset:20,
+                soloArrowRightVOffset:0,
 
-        shadow:0,
-        fullWidth:"on",
-        fullScreen:"off",
+                shadow:0,
+                fullWidth:"on",
+                fullScreen:"off",
 
-        spinner:"spinner4",
+                spinner:"spinner4",
 
-        stopLoop:"off",
-        stopAfterLoops:-1,
-        stopAtSlide:-1,
+                stopLoop:"off",
+                stopAfterLoops:-1,
+                stopAtSlide:-1,
 
-        shuffle:"off",
+                shuffle:"off",
 
-        autoHeight:"off",
-        forceFullWidth:"on",
+                autoHeight:"off",
+                forceFullWidth:"on",
 
-        hideThumbsOnMobile:"on",
-        hideNavDelayOnMobile:1500,
-        hideBulletsOnMobile:"on",
-        hideArrowsOnMobile:"on",
-        hideThumbsUnderResolution:0,
+                hideThumbsOnMobile:"on",
+                hideNavDelayOnMobile:1500,
+                hideBulletsOnMobile:"on",
+                hideArrowsOnMobile:"on",
+                hideThumbsUnderResolution:0,
 
-        hideSliderAtLimit:0,
-        hideCaptionAtLimit:0,
-        hideAllCaptionAtLilmit:0,
-        startWithSlide:0,
-        videoJsPath:"",
-        fullScreenOffsetContainer: ""
-    });
+                hideSliderAtLimit:0,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                startWithSlide:0,
+                videoJsPath:"",
+                fullScreenOffsetContainer: ""
+            });
         }
     </script>
 
@@ -264,8 +264,8 @@ if ($plugins == 'home') { ?>
 
     <script>
         var tabbed = function() {
-            var tab = document.getElementsByClassName('tab-link');
-            var tabContent = document.getElementsByClassName('tab-content');
+        var tab = document.getElementsByClassName('tab-link');
+        var tabContent = document.getElementsByClassName('tab-content');
 
             for (var i = 0; i < tab.length; i++) {
                 tab[i].addEventListener('click', function(e) {
@@ -358,8 +358,10 @@ if ($plugins == 'home') { ?>
 <script>
     var login = document.querySelector('.login-wrapper');
     var register = document.querySelector('.register-wrapper');
+    var forgot = document.querySelector('.forgot-wrapper');
     var stRegister = document.querySelector('#switch-to-register');
-    var stLogin = document.querySelector('#switch-to-login');
+    var stLogin = document.querySelectorAll('#switch-to-login');
+    var stForgot = document.querySelector('#switch-to-forgot');
 
     stRegister.addEventListener('click', function() {
         if (login.classList.contains('is-active')) {
@@ -368,10 +370,25 @@ if ($plugins == 'home') { ?>
         }
     });
 
-    stLogin.addEventListener('click', function() {
-        if (register.classList.contains('is-active')) {
-            register.classList.remove('is-active');
-            login.classList.add('is-active');
+    for (var i = 0; i < stLogin.length; i++) {
+        stLogin[i].addEventListener("click", function() {
+            if (register.classList.contains("is-active")) {
+                register.classList.remove("is-active");
+                login.classList += " is-active";
+            }
+            if (forgot.classList.contains("is-active")) {
+                forgot.classList.remove("is-active");
+                login.classList += " is-active";
+            }
+        });
+    }
+
+    stForgot.addEventListener('click', function() {
+        if (forgot.classList.contains('is-active')) {
+            forgot.classList.remove('is-active');
+        } else {
+            forgot.classList += " is-active";
+            login.classList.remove("is-active");
         }
     });
 </script>

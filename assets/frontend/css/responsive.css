@@ -1,4 +1,20 @@
 @media screen and (max-width: 768px) {
+  .article-section {
+    padding-top: 15em;
+  }
+  .ataglance .button-cta {
+    width: 100%;
+    right: inherit;
+    left: 13%;
+    margin-left: -50px;
+    bottom: inherit;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+  footer .quick-links {
+    margin-bottom: 2em;
+  }
   form {
     width: 100%;
   }
@@ -18,5 +34,11 @@
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+  }
+  .login-wrapper, .register-wrapper, .forgot-wrapper {
+    width: inherit;
+  }
+  .news-section .read-more h4 {
+    padding-left: 15px;
   }
 }

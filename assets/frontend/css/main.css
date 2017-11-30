@@ -1045,48 +1045,48 @@ footer.footer figure.logo-footer img {
   align-items: center;
 }
 
-.login-wrapper, .register-wrapper {
+.login-wrapper, .register-wrapper, .forgot-wrapper {
   display: none;
   visibility: hidden;
   width: 60%;
 }
 
-.login-wrapper .login-title, .register-wrapper .login-title {
+.login-wrapper .login-title, .register-wrapper .login-title, .forgot-wrapper .login-title {
   text-align: center;
   margin-bottom: 2em;
 }
 
-.login-wrapper .login-title .title, .register-wrapper .login-title .title {
+.login-wrapper .login-title .title, .register-wrapper .login-title .title, .forgot-wrapper .login-title .title {
   color: #fdc236;
 }
 
-.login-wrapper .login-title .subtitle, .register-wrapper .login-title .subtitle {
+.login-wrapper .login-title .subtitle, .register-wrapper .login-title .subtitle, .forgot-wrapper .login-title .subtitle {
   color: #ddd;
 }
 
-.login-wrapper form, .register-wrapper form {
+.login-wrapper form, .register-wrapper form, .forgot-wrapper form {
   margin-bottom: 2em;
 }
 
-.login-wrapper .switch-login, .login-wrapper .forgot, .register-wrapper .switch-login, .register-wrapper .forgot {
+.login-wrapper .switch-login, .login-wrapper .forgot, .register-wrapper .switch-login, .register-wrapper .forgot, .forgot-wrapper .switch-login, .forgot-wrapper .forgot {
   text-align: center;
 }
 
-.login-wrapper .switch-login, .register-wrapper .switch-login {
+.login-wrapper .switch-login, .register-wrapper .switch-login, .forgot-wrapper .switch-login {
   margin-bottom: 1.4em;
 }
 
-.login-wrapper.is-active, .register-wrapper.is-active {
+.login-wrapper.is-active, .register-wrapper.is-active, .forgot-wrapper.is-active {
   display: block;
   visibility: visible;
 }
 
-.login-wrapper .message, .register-wrapper .message {
+.login-wrapper .message, .register-wrapper .message, .forgot-wrapper .message {
   width: 80%;
   margin: 0 auto;
 }
 
-.login-wrapper .message .message-body, .register-wrapper .message .message-body {
+.login-wrapper .message .message-body, .register-wrapper .message .message-body, .forgot-wrapper .message .message-body {
   color: #777;
   background-color: #fff;
 }
