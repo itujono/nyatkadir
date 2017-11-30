@@ -57,7 +57,7 @@
                     </a>
                     <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Atur Akun</a>
-                        <a href="#" class="navbar-item">Keluar</a>
+                        <a href="<?php echo base_url();?>user/logout" class="navbar-item">Keluar</a>
                     </div>
                 <?php } else { ?>
                     <a href="#" class="navbar-link">
