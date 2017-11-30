@@ -40,7 +40,10 @@
                     </div>
                 </form>
                 <div class="switch-login" id="switch-to-register">
-                    <a href="#">Belum punya akun?</a>
+                    <a href="#"><span class="icon mdi mdi-account-outline"></span> Belum punya akun?</a>
+                </div>
+                <div class="forgot">
+                    <a href="#">Lupa kata sandi?</a>
                 </div>
             </div> <!-- kelar Login Wrapper -->
             <div class="register-wrapper">

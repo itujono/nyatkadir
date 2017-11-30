@@ -1068,8 +1068,12 @@ footer.footer figure.logo-footer img {
   margin-bottom: 2em;
 }
 
-.login-wrapper .switch-login, .register-wrapper .switch-login {
+.login-wrapper .switch-login, .login-wrapper .forgot, .register-wrapper .switch-login, .register-wrapper .forgot {
   text-align: center;
+}
+
+.login-wrapper .switch-login, .register-wrapper .switch-login {
+  margin-bottom: 1.4em;
 }
 
 .login-wrapper.is-active, .register-wrapper.is-active {
