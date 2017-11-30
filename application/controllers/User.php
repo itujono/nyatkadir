@@ -45,6 +45,8 @@ class User extends Frontend_Controller {
 	                //if($this->sendemailconfirmation($saveid, $name, $email)){
 
 					$data = array(
+						'title' => 'Sukses',
+						'style' => 'is-success',
 	                    'text' => 'Terima kasih sudah mendaftar, silakan cek kotak masuk ataupun kotak spam anda!. Terima Kasih!'
 	                );
 	                $this->session->set_flashdata('message',$data);
@@ -60,6 +62,8 @@ class User extends Frontend_Controller {
 
 			} else {
 				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
 		            'text' => 'Maaf, Sistem tidak dapat menyimpan data anda, silakan ulangi beberapa saat lagi.'
 		        );
 		        $this->session->set_flashdata('message',$data);
@@ -67,6 +71,8 @@ class User extends Frontend_Controller {
 			}
 		} else {
 			$data = array(
+				'title' => 'Error!',
+				'style' => 'is-warning',
 	            'text' => 'Maaf ada kesalahan, mohon ulangi inputan form registrasi anda!.'
 	        );
 	        $this->session->set_flashdata('message',$data);
@@ -82,6 +88,8 @@ class User extends Frontend_Controller {
 
 	    if(empty($idlogin_users)){
 	    	$data = array(
+	    		'title' => 'Error!',
+				'style' => 'is-warning',
 	            'text' => 'Maaf, akun anda tidak terdaftar di data kami.'
 	        );
 	        $this->session->set_flashdata('message',$data);
@@ -116,6 +124,8 @@ class User extends Frontend_Controller {
 			if($attemptslogin == true){
 
 				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
 		            'text' => 'Maaf!, untuk sementara akun anda telah terkunci, silakan hubungi bagian admin kami untuk melaporkan masalah ini. Terima kasih!'
 		        );
 		        $this->session->set_flashdata('message',$data);
@@ -124,6 +134,8 @@ class User extends Frontend_Controller {
 
 			if ($countencrypt > 128 OR $countencrypt < 128) {
 				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
 		            'text' => 'Akun anda terdeteksi ada kesalahan, anda telah mencoba praktek pembobolan akun, secara otomatis akun yang bersangkutan dinonaktifkan.'
 		        );
 
@@ -138,6 +150,8 @@ class User extends Frontend_Controller {
 			if ($this->Users_m->login($email, $pass) == "USER"){
 				
 				$data = array(
+					'title' => 'Sukses!',
+					'style' => 'is-success',
 		            'text' => 'Hallo, Selamat datang '. $this->session->userdata('Name')
 		        );
 
@@ -146,6 +160,8 @@ class User extends Frontend_Controller {
 			} else if ($this->Users_m->login($email, $pass) == "NOT ACTIVE"){
 
 				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
 		            'text' => 'Maaf, akun anda tidak aktif, silakan cek email anda untuk konfirmasi, atau hubungi kami di form contact us. Terima kasih!'
 		        	);
 		        $this->session->set_flashdata('message',$data);
@@ -160,6 +176,8 @@ class User extends Frontend_Controller {
 				$this->Attempts_m->save($data);
 
 				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
 		            'text' => 'Maaf, email dan kata sandi yang anda masukkan salah'
 		        	);
 		        $this->session->set_flashdata('message',$data);
@@ -167,6 +185,8 @@ class User extends Frontend_Controller {
 			}
 		} else {
 			$data = array(
+			'title' => 'Error!',
+			'style' => 'is-warning',
             'text' => 'Maaf, Silakan ulangi email dan kata sandi anda dibawah!'
         	);
         $this->session->set_flashdata('message',$data);
@@ -177,6 +197,8 @@ class User extends Frontend_Controller {
 	public function logout (){
 		$this->Users_m->logout();
 		$data = array(
+			'title' => 'Sukses!',
+			'style' => 'is-success',
             'text' => 'Selamat! Kamu sudah logout. Sampai jumpa lagi!'
         	);
         $this->session->set_flashdata('message',$data);

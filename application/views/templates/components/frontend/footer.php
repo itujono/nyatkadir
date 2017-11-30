@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
-
+<?php
+    if($addONS != 'non_footer_page'){
+?>
 <footer class="footer">
     <section class="hero aspirasi">
         <div class="hero-body">
@@ -109,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
         </div>
     </div>
 </footer>
-
+<?php } ?>
 <?php echo $plugins; ?>
 </body>
 </html>

@@ -20,6 +20,14 @@ class Polling_m extends MY_Model{
 		)
 	);
 
+	public $rules_save_choice_polling = array(
+		'answer' => array(
+			'field' => 'answer', 
+			'label' => 'Option Jawaban', 
+			'rules' => 'required'
+		)
+	);
+
 	function __construct (){
 		parent::__construct();
 	}

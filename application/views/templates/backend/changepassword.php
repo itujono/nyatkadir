@@ -13,6 +13,7 @@
     $value = encode($this->session->userdata('idADMIN'));
     ?>
     <form method="POST" action="<?php echo base_url().$action;?>processchangepassword" class="uk-form-stacked" id="form_validation">
+    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
     <input type="hidden" name="<?php echo $naming;?>" value="<?php echo $value;?>">
         <div class="uk-grid" data-uk-grid-margin>
             <div class="uk-width-large-1-1">

@@ -137,9 +137,15 @@
                 </div>
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
+                <?php
+                    if (empty($message_choice)){
+                ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
-                        <form class="" action="index.html" method="post">
+                        <form class="" action="<?php echo base_url();?>polling/submit_polling" method="POST">
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                            <input type="hidden" name="idUSER" value="<?php echo $this->session->userdata('idUSER');?>">
+                            <input type="hidden" name="idPOLLING" value="<?php echo $getpolling->idPOLLING;?>" required="required">
                             <div class="field">
                                 <div class="control">
                                     <?php
@@ -155,12 +161,12 @@
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <!-- <button class="button is-link">Submit</button> -->
                                         <input type="submit" name="" value="Submit" class="button is-link">
                                     </div>
                                 </div>
                         </form>
                     </div>
+                    <?php } else { ?>
                     <div class="successful box">
                         <article class="media">
                             <div class="media-left">
@@ -170,12 +176,13 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <h3>Terima kasih!</h3>
-                                    <p>Opini Anda telah kami rekam. Dan terima kasih sudah berpartisipasi. Kami berharap dapat bertemu Anda di lain kesempatan.</p>
+                                    <h3><?php echo $message_choice['title'];?></h3>
+                                    <p><?php echo $message_choice['text'];?></p>
                                 </div>
                             </div>
                         </article>
                     </div>
+                    <?php } ?>
                 </div>
             <?php } ?>
             </div> <!-- kelar div Columns -->
