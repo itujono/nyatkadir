@@ -475,29 +475,41 @@ a {
     .news-started {
         display: flex;
         flex-wrap: wrap;
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-radius: 6px;
-            flex: 1 0 31%;
-            margin-right: 15px;
-            margin-bottom: 15px;
-            transition: all .3s ease;
-            .card-footer {
-                border: none;
-                .card-footer-item {
-                    border: none;
+        .box {
+            .image {
+                img {
+                    border-radius: 50%;
                 }
             }
-            &:hover {
-                @include hoverCard;
+            .media {
+                padding-bottom: 2em;
+                padding-top: 1.8rem;
+                &:first-child {
+                    padding-top: 0;
+                }
             }
-            a {
-                &:hover h2 {
+            .media-content {
+                position: relative;
+                h3 {
+                    margin-bottom: 1em;
+                }
+                p {
+                    padding-left: 6em;
+                }
+                span {
+                    font-size: 4rem;
                     color: $yellow;
+                    position: absolute;
+                    top: 30%;
+                }
+                a {
+                    padding-left: 6em;
                 }
             }
+        }
+        .read-more {
+            margin-top: 3em;
+            margin-bottom: 0;
         }
     }
 }

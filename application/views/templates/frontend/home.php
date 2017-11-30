@@ -189,106 +189,50 @@
             <h3>Berita dan Event <span class="reddish">Nyat Kadir</span></h3>
             Segala hal yang Nyat Kadir lakukan baru-baru ini
         </div>
-        <div class="read-more">
-            <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
-        </div>
         <div class="columns">
-            <div class="column is-three-quarters news-started">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+            <div class="column is-half news-started">
+                <div class="box wow fadeInUp">
+                    <div class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <span>01</span>
+                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
+                    <div class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <span>02</span>
+                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                    <div class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <span>03</span>
+                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="title">
-                            <a href="#"><h2>Bagaimana Cara Menanak Nasi di Kamar Pribadi</h2></a>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-footer-item">
-                            <span>21 Agustus 2017</span>
-                        </div>
-                        <div class="card-footer-item">
-                            <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
-                        </div>
-                    </div>
+                <div class="read-more">
+                    <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
                 </div>
             </div>
             <div class="column">
-
+                <figure class="image">
+                    <img src="<?php echo base_url().$this->data['asfront'];?>img/looking.jpg" alt="">
+                </figure>
             </div>
-        </div>
+        </div> <!-- kelar div Columns -->
     </div>
 </section>
 
