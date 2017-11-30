@@ -10,17 +10,7 @@
                     <?php
                         if (!empty($message)){
                     ?>
-                    <!-- <p class="subtitle"></p> -->
-                    <article class="message is-success">
-                        <div class="message-header">
-                            <p>Sukses!</p>
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
-                        <div class="message-body">
-                            <?php echo $message['text'];?>
-                        </div>
-                    </article>
-                    <article class="message is-warning">
+                    <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
                             <p>Error!</p>
                             <button class="delete" aria-label="delete"></button>

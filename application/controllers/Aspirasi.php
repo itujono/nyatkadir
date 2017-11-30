@@ -9,7 +9,7 @@ class Aspirasi extends Frontend_Controller {
 	}
 
 	public function index() {
-		$data['addONS'] = 'general_addon';
+		$data['addONS'] = 'non_footer_page';
 		$data['title'] = 'Aspirasi Anda - Nyat Kadir - Laman Resmi';
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'aspirasi', $data, TRUE);
