@@ -192,7 +192,7 @@
         <div class="columns">
             <div class="column is-half news-started">
                 <div class="box wow fadeInUp">
-                    <div class="media">
+                    <div class="media wow fadeInUp">
                         <div class="media-content">
                             <div class="content">
                                 <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
@@ -202,20 +202,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="media">
+                    <div class="media wow fadeInUp" data-wow-delay=".4s">
                         <div class="media-content">
                             <div class="content">
-                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
+                                <h3>Indonesia Membutuhkan Seorang Pemimpin yang Kritis?</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
                                 <span>02</span>
                                 <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="media">
+                    <div class="media wow fadeInUp" data-wow-delay=".7s">
                         <div class="media-content">
                             <div class="content">
-                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
+                                <h3>Apakah Batam akan Bernasib Seperti Kuala Lumpur?</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
                                 <span>03</span>
                                 <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>

@@ -545,10 +545,12 @@ a:hover {
 
 .news-section .news-started .box .media-content h3 {
   margin-bottom: 1em;
+  line-height: 1.6;
 }
 
 .news-section .news-started .box .media-content p {
   padding-left: 6em;
+  line-height: 2;
 }
 
 .news-section .news-started .box .media-content span {
