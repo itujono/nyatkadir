@@ -290,6 +290,7 @@ a {
     background-color: $darkBlue;
     .card {
         border-radius: 6px;
+        cursor: move;
         transition: all .3s ease;
         &:hover {
             @include hoverCard;
@@ -415,6 +416,14 @@ a {
 
 .partner {
     background-color: #f3f3f3;
+    .owl-item {
+        cursor: move;
+    }
+    figure {
+        figcaption {
+            margin-top: 15px;
+        }
+    }
 }
 
 .four-item-carousel {
@@ -472,6 +481,16 @@ a {
 
 
 .news-section {
+    background-color: #f3f3f3;
+    .column {
+        padding: 0;
+        .box {
+            border-radius: 5px 0 0 5px;
+        }
+    }
+    .section-title {
+        margin-bottom: 4em;
+    }
     .news-started {
         display: flex;
         flex-wrap: wrap;
@@ -515,9 +534,28 @@ a {
         }
     }
     .read-more {
-        padding: 3em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
         text-align: left;
         background-color: $darkBlue;
+        h4 {
+            color: #eee;
+            padding-left: 2em;
+            line-height: 1.3;
+            font-size: 24px;
+        }
+        a {
+            font-size: 3em;
+            line-height: 3.1;
+            padding: 0 1.2em;
+            background: #fdc236;
+            color: #f2f2f2;
+            &:hover {
+                background-color: darken($darkBlue, 10%);
+            }
+        }
     }
 }
 

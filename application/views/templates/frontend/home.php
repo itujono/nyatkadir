@@ -192,7 +192,7 @@
 
 <section class="section news-section">
     <div class="container">
-        <div class="section-title dark">
+        <div class="section-title">
             <h3>Berita dan Event <span class="reddish">Nyat Kadir</span></h3>
             Segala hal yang Nyat Kadir lakukan baru-baru ini
         </div>
@@ -236,7 +236,8 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/looking.jpg" alt="">
                 </figure>
                 <div class="read-more">
-                    <a href="<?php echo base_url();?>news">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
+                    <h4>Lihat semua <br> <span class="yellowish">Berita dan Event</span></h4>
+                    <a href="<?php echo base_url();?>news/news_detail"><span class="icon mdi mdi-chevron-right"></span></a>
                 </div>
             </div>
         </div> <!-- kelar div Columns -->
