@@ -279,5 +279,15 @@ function get_thumbnail_from_youtube($link=NULL){
         return 'YOUTUBE VIDEO LINK - REQUIRED';
         exit;
     }
+}
 
+function counter_choice($id=NULL) {
+    $CI =& get_instance();
+
+    $CI->db->select('idUSER');
+    $CI->db->from('choice_polling');
+    $CI->db->where('idPOLLING', $id);
+
+    $data = $CI->db->get()->num_rows();
+    return $data;
 }

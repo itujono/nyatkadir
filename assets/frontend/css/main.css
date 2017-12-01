@@ -516,7 +516,6 @@ a:hover {
 }
 
 .successful.box {
-  display: none;
   background-color: #ddd;
   border: 2px solid #fdc236;
 }

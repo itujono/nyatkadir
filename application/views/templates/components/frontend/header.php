@@ -53,7 +53,7 @@
                     if(!empty($this->session->userdata('Name'))){
                 ?>
                     <a href="#" class="navbar-link">
-                        <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; Rusmanto
+                        <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; <?php echo $this->session->userdata('Name');?>
                     </a>
                     <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Atur Akun</a>

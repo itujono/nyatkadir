@@ -9,6 +9,7 @@ class Home extends Frontend_Controller {
 		$this->load->model('Idea_m');
 		$this->load->model('Polling_m');
 		$this->load->model('Mitra_m');
+		$this->load->model('Polling_choice_m');
 	}
 
 	public function index() {
@@ -26,6 +27,8 @@ class Home extends Frontend_Controller {
 		}
 		$data['listidea'] = $this->Idea_m->selectall_idea()->result();
 		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
+		$session_user = $this->session->userdata('idUSER');
+		$data['check_choice_polling'] = $this->Polling_choice_m->check_choice_polling($data['getpolling']->idPOLLING, $session_user)->row();
 
 		$data['listmitra'] = $this->Mitra_m->selectall_mitra()->result();
 		foreach ($data['listmitra'] as $key => $value) {
@@ -37,6 +40,10 @@ class Home extends Frontend_Controller {
 			}
 		}
 
+		if(!empty($this->session->flashdata('message_choice'))) {
+            $data['message_choice'] = $this->session->flashdata('message_choice');
+        }
+        
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'home', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}

@@ -142,6 +142,18 @@
                 ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
+                        <?php
+                            if(!empty($check_choice_polling)){
+                        ?>
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" value="<?php echo $check_choice_polling->nameCHOICE;?>" required="required" checked>
+                                    <?php echo $check_choice_polling->nameCHOICE;?> <br> <h6 class="title">Anda telah memilih</h6>
+                                </label>
+                            </div>
+                        </div>
+                        <?php } else { ?>
                         <form class="" action="<?php echo base_url();?>polling/submit_polling" method="POST">
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                             <input type="hidden" name="idUSER" value="<?php echo $this->session->userdata('idUSER');?>">
@@ -157,14 +169,15 @@
                                             <?php echo $value[0];?>
                                         </label>
                                         <?php } ?>
-                                    </div>
                                 </div>
+                            </div>
                                 <div class="field">
                                     <div class="control">
                                         <input type="submit" name="" value="Submit" class="button is-link">
                                     </div>
                                 </div>
                         </form>
+                        <?php } ?>
                     </div>
                     <?php } else { ?>
                     <div class="successful box">
@@ -184,6 +197,22 @@
                     </div>
                     <?php } ?>
                 </div>
+            <?php } else { ?>
+            <div class="successful box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image">
+                            <span class="icon is-large mdi mdi-trophy-award"></span>
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <h3>Mohon Maaf!</h3>
+                            <p>Tidak ada polling untuk saat ini.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
             <?php } ?>
             </div> <!-- kelar div Columns -->
         </div>

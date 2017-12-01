@@ -6,6 +6,7 @@ class Polling extends Admin_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Polling_m');
+		$this->load->model('Polling_choice_m');
 	}
 
 	public function index_polling($id = NULL){
@@ -13,6 +14,8 @@ class Polling extends Admin_Controller {
 		$id = decode(urldecode($id));
 		
 		$data['listpolling'] = $this->Polling_m->selectall_polling()->result();
+
+		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting()->result();
 
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');

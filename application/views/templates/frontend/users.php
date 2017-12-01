@@ -6,13 +6,18 @@
             <div class="login-wrapper is-active">
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Selamat datang!</h3>
+                    <?php if(empty($this->session->userdata('idUSER'))) { ?>
                     <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan login terlebih dahulu untuk melanjutkan aktivitas Anda.</p>
-                    <?php
+                    <?php } else { ?>
+                    <br>
+                    <p class="title wow fadeInUp" data-wow-delay="1s"><?php echo $this->session->userdata('Name'); ?></p>
+                    <?php }
                         if (!empty($message)){
+                    
                     ?>
                     <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
-                            <p>Error!</p>
+                            <p><?php echo $message['title'];?></p>
                             <button class="delete" aria-label="delete"></button>
                         </div>
                         <div class="message-body">
@@ -21,6 +26,7 @@
                     </article>
                     <?php } ?>
                 </div>
+                <?php if(empty($this->session->userdata('idUSER'))) { ?>
                 <form action="<?php echo base_url();?>user/process" method="POST">
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                     <div class="field">
@@ -39,12 +45,19 @@
                         </div>
                     </div>
                 </form>
+                <?php } 
+                if(empty($this->session->userdata('idUSER'))){ ?>
                 <div class="switch-login" id="switch-to-register">
                     <a href="#"><span class="icon mdi mdi-account-outline"></span> Belum punya akun?</a>
                 </div>
                 <div class="forgot" id="switch-to-forgot">
                     <a href="#">Lupa kata sandi?</a>
                 </div>
+                <?php } else { ?>
+                <div class="switch-login">
+                    <a href="<?php echo base_url();?>user/logout"><span class="icon mdi mdi-account-outline button is-link"></span> Logout?</a>
+                </div>
+                <?php } ?>
             </div> <!-- kelar Login Wrapper -->
 
             <div class="register-wrapper">

@@ -65,19 +65,21 @@
             <br>
             <br>
             <?php
-              $data_polling = json_decode($polling->answerPOLLING,TRUE);
-              if(!empty($data_polling)){
-                foreach ($data_polling as $value) {
-                  $randomprogress = ['uk-progress-success', 'uk-progress-danger', 'uk-progress-warning', ''];
-                  $randomprogress = $randomprogress[array_rand($randomprogress)];
+              if(!empty($number_voting)){
+                foreach ($number_voting as $choice) {
+                  if($choice->idPOLLING == $polling->idPOLLING){
+                    $randomprogress = ['uk-progress-success', 'uk-progress-danger', 'uk-progress-warning', ''];
+                    $randomprogress = $randomprogress[array_rand($randomprogress)];
+                    $total_vote = round(100*($choice->vote_value / $choice->total),2);
             ?>
-            <span class="uk-text-medium uk-text-muted uk-text-left"><?php echo $value[0];?></span>
+            <span class="uk-text-medium uk-text-muted uk-text-left"><?php echo $choice->nameCHOICE;?> - <?php echo $total_vote;?>%</span>
             <div class="uk-progress <?php echo $randomprogress;?> uk-progress-striped uk-active uk-progress-small">
-                <div class="uk-progress-bar" style="width: 60%;"></div>
+                <div class="uk-progress-bar" style="width: <?php echo $total_vote;?>%;"></div>
             </div>
             <br>
+                  <?php } ?>
+                <?php } ?>
               <?php } ?>
-            <?php } ?>
           </h3>
         </div>
         <div class="md-card-content">
@@ -87,7 +89,15 @@
                 <center><span class="md-list-heading">Jumlah Pemilih</span></center>
                 <br>
                 <center>
-                  <h3 class="md-card-head-text uk-text-center">56 Orang</h3>
+                  <?php
+                    $counters = counter_choice($polling->idPOLLING);
+                    if($counters > 0){
+                      $count = $counters." Orang";
+                    } else {
+                      $count = "Belum ada yang memilih";
+                    }
+                  ?>
+                  <h3 class="md-card-head-text uk-text-center"><?php echo $count;?></h3>
                 </center>
               </div>
             </li>
