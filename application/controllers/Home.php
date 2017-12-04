@@ -27,8 +27,15 @@ class Home extends Frontend_Controller {
 		}
 		$data['listidea'] = $this->Idea_m->selectall_idea()->result();
 		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
+
 		$session_user = $this->session->userdata('idUSER');
-		$data['check_choice_polling'] = $this->Polling_choice_m->check_choice_polling($data['getpolling']->idPOLLING, $session_user)->row();
+		if(empty($data['getpolling'])){
+			$polling_data = '';
+		} else {
+			$polling_data = $data['getpolling']->idPOLLING;
+		}
+		
+		$data['check_choice_polling'] = $this->Polling_choice_m->check_choice_polling($polling_data, $session_user)->row();
 
 		$data['listmitra'] = $this->Mitra_m->selectall_mitra()->result();
 		foreach ($data['listmitra'] as $key => $value) {
