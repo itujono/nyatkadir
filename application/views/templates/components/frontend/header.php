@@ -45,7 +45,7 @@
                 // if($url == $values[0])$class = 'active';
             ?>
                 <a href="<?php //echo base_url().$values[0];?>" class="navbar-item"><?php //echo $values[1];?></a>
-            <?php } ?>
+            <?php //} ?>
             </div> -->
             <div class="navbar-start">
                 <a href="#" class="navbar-item">Home</a>
