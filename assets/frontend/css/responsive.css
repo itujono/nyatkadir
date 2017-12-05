@@ -1,4 +1,20 @@
 @media screen and (max-width: 768px) {
+  .navbar-burger {
+    background-color: #fdc236;
+    color: #2e2f48;
+    margin-top: 20px;
+  }
+  .navbar-burger:hover {
+    background-color: #fdc236;
+  }
+  .navbar .navbar-item {
+    color: #2e2f48 !important;
+  }
+  .navbar .navbar-dropdown {
+    font-size: 0.875rem;
+    padding-bottom: 1.2rem;
+    padding-top: 0;
+  }
   .article-section {
     padding-top: 15em;
   }
@@ -40,5 +56,18 @@
   }
   .news-section .read-more h4 {
     padding-left: 15px;
+  }
+  .article-carousel .title {
+    color: #2e2f48;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .article-carousel .card-content {
+    padding: 1rem;
+    height: 220px;
+  }
+  .logo-footer img {
+    margin: 0 auto;
   }
 }

@@ -100,11 +100,11 @@ a:hover {
 
 .headroom {
   will-change: transform;
-  -webkit-transition: -webkit-transform .3s linear;
-  transition: -webkit-transform .3s linear;
-  -o-transition: transform .3s linear;
-  transition: transform .3s linear;
-  transition: transform .3s linear, -webkit-transform .3s linear;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01);
+  transition: -webkit-transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01);
+  -o-transition: transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01);
+  transition: transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01);
+  transition: transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01), -webkit-transform 0.3s cubic-bezier(0.82, -0.13, 0, 1.01);
 }
 
 .headroom--pinned {
@@ -516,8 +516,10 @@ a:hover {
 }
 
 .successful.box {
+  display: none;
   background-color: #ddd;
   border: 2px solid #fdc236;
+  width: 100%;
 }
 
 .successful.box .icon {

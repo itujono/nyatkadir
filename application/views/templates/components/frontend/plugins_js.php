@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
+
+
 <?php
 if ($plugins == 'home') { ?>
 
@@ -413,7 +415,26 @@ if ($plugins == 'home') { ?>
 <?php
 } elseif ($plugins == 'non_footer_page') {
 ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
 <?php } ?>
+
+<script>
+    var navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+
+    if (navbarBurgers.length > 0) {
+        navbarBurgers.forEach(function(e) {
+            e.addEventListener("click", function() {
+                var target = e.dataset.target;
+                var $target = document.getElementById(target);
+
+                e.classList.toggle("is-active");
+                $target.classList.toggle("is-active");
+
+                console.log("Sempardak!");
+            })
+        });
+    }
+</script>

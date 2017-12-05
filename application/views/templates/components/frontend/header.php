@@ -23,13 +23,13 @@
             <a href="#" class="navbar-item main-logo">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/logo.png" alt="Logo Utama Nyat Kadir" width="">
             </a>
-            <button class="button navbar-burger">
+            <button class="button navbar-burger" data-target="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id="navMenu">
             <!-- <div class="navbar-start">
              <?php
               //$menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
@@ -52,7 +52,7 @@
                 <a href="#" class="navbar-item">Tentang</a>
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">Artikel</a>
-                    <div class="navbar-dropdown is-boxed">
+                    <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Luar Negeri</a>
                         <a href="#" class="navbar-item">Dalam Negeri</a>
                         <a href="#" class="navbar-item">Politik</a>
