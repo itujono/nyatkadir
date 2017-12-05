@@ -18,115 +18,29 @@
                     <p>Daftar kegiatan yang baru saja dilakukan oleh Nyat Kadir</p>
                 </div>
                 <div class="wrapper">
-
+                <?php
+                    if(!empty($listnews)){
+                        foreach ($listnews as $news) {
+                ?>
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="Nyat Kadir">
+                                <img src="<?php echo $news->imageNEWS; ?>" alt="<?php echo $news->titleNEWS; ?>">
                             </figure>
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <a href="<?php echo base_url();?>news/detail_news" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                                <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="title"><?php echo $news->titleNEWS; ?></a>
+                                <time datetime="<?php echo date('Y-m-d', strtotime($news->createdateNEWS));?>"><span class="icon mdi mdi-calendar-check"></span> <?php echo indonesian_date($news->createdateNEWS,'j F Y',''); ?></time>
+                                <?php echo word_limiter($news->descNEWS,24); ?>
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="Nyat Kadir">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <article class="content">
-                                <a href="<?php echo base_url();?>news/detail_news" class="title">Membangun Jembatan Barelang Mini di Kelurahan Sadai, Bengkong Laut</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                            </article>
-                        </div>
-                        <div class="card-footer">
-                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
-                        </div>
-                    </div> <!-- kelar Single Card -->
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="Nyat Kadir">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <article class="content">
-                                <a href="<?php echo base_url();?>news/detail_news" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                            </article>
-                        </div>
-                        <div class="card-footer">
-                            <a href="<?php echo base_url();?>news/detail_news" class="card-footer-item">Selengkapnya</a>
-                        </div>
-                    </div> <!-- kelar Single Card -->
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg" alt="Nyat Kadir">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <article class="content">
-                                <a href="#" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                            </article>
-                        </div>
-                        <div class="card-footer">
-                            <a href="<?php echo base_url();?>news_detail" class="card-footer-item">Selengkapnya</a>
-                        </div>
-                    </div> <!-- kelar Single Card -->
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="Nyat Kadir">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <article class="content">
-                                <a href="#" class="title">Membangun Kembali Masjid Baiturrahman di Tiban Atas Bersama Masyarakat</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                            </article>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
-                        </div>
-                    </div> <!-- kelar Single Card -->
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="Nyat Kadir">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <article class="content">
-                                <a href="#" class="title">Kunjungan Nyat Kadir ke Panti Asuhan di Kawasan Camp Vietnam</a>
-                                <time datetime="2017-08-14"><span class="icon mdi mdi-calendar-check"></span> 14 Agustus 2017</time>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-                            </article>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-footer-item">Selengkapnya</a>
-                        </div>
-                    </div> <!-- kelar Single Card -->
-
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div> <!-- kelar div Column Single -->
 
@@ -134,22 +48,16 @@
                 <div class="top-post" id="latest-news">
                     <h3 class="title">Kegiatan Terbaru</h3>
                     <ul>
+                    <?php
+                        if(!empty($new_news)){
+                            foreach ($new_news as $new) {
+                    ?>
                         <li>
-                            <a href="#">Nyat Kadir Mengunjungi Pasar Basah Sei Harapan</a>
-                            <p>20 Februari 2018</p>
+                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($new->idNEWS).'-'.seo_url($new->titleNEWS);?>"><?php echo $new->titleNEWS; ?></a>
+                            <p><?php echo indonesian_date($new->createdateNEWS,'j F Y',''); ?></p>
                         </li>
-                        <li>
-                            <a href="#">Peresmian Masjid Al-Furqon oleh Nyat Kadir di Sembulang</a>
-                            <p>20 Desember 2018</p>
-                        </li>
-                        <li>
-                            <a href="#">Peresmian Masjid Al-Furqon oleh Nyat Kadir di Batu Ranai</a>
-                            <p>8 Maret 2018</p>
-                        </li>
-                        <li>
-                            <a href="#">Peresmian Masjid Al-Furqon oleh Nyat Kadir di Lingga</a>
-                            <p>25 November 2018</p>
-                        </li>
+                        <?php } ?>
+                    <?php } ?>
                     </ul>
                 </div>
             </div> <!-- kelar Column Sidebar -->

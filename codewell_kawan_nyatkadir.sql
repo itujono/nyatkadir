@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2017 at 02:49 AM
+-- Generation Time: Dec 05, 2017 at 04:02 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -47,6 +47,31 @@ CREATE TABLE `nyat_about` (
 
 INSERT INTO `nyat_about` (`idABOUT`, `titlehomeABOUT`, `deschomeABOUT`, `headertitleABOUT`, `titleABOUT`, `descABOUT`, `title2ABOUT`, `desc2ABOUT`, `titleawardABOUT`, `listawardABOUT`, `createdateABOUT`, `updatedateABOUT`) VALUES
 (1, 'Nyat Kadir adalah anggota DPR RI yang akan selalu mengabdi untuk Indonesia.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Bergegaslah! <br>Bangsa ini harus menang!', 'Dengan Pengalaman 20 Tahun Mengabdi  Untuk Indonesia', '<p>Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.</p>', 'Nyat Kadir Adalah Anggota Kehormatan Fraksi Nasdem di DPR RI', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', 'Raihan dan Award yang Didapat  oleh Nyat Kadir', '[[\"Anugerah Politikus Terbaik 2016\",\"Diberikan oleh KPK \",\"2016\"],[\"Anugerah Politikus Terpelajar 2014\",\"Diberikan oleh BPK \",\"2013\"],[\"Anugerah Tokoh Melayu 2015\",\"Diberikan oleh Dinpar \",\"2015\"],[\"Tuanku Diraja Melayu 2016\",\"Diberikan oleh Sultan Bolqiah \",\"2016\"],[\"Anugerah Politikus Terbaik 2017\",\"Diberikan oleh KPK \",\"2017\"],[\"Anugerah Politikus Terbaik 2018\",\"Diberikan oleh KPK \",\"2015\"]]', '2017-11-13 13:54:39', '2017-11-15 04:15:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nyat_article`
+--
+
+CREATE TABLE `nyat_article` (
+  `idARTICLE` int(11) NOT NULL,
+  `titleARTICLE` varchar(90) NOT NULL,
+  `descARTICLE` text NOT NULL,
+  `bestARTICLE` int(1) NOT NULL,
+  `createdateARTICLE` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedateARTICLE` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nyat_article`
+--
+
+INSERT INTO `nyat_article` (`idARTICLE`, `titleARTICLE`, `descARTICLE`, `bestARTICLE`, `createdateARTICLE`, `updatedateARTICLE`) VALUES
+(1, 'Ada 2 jenis manusia yang ada di dunia ini. Kamu yang mana?', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&nbsp;<br /><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&nbsp;</p>\r\n<p><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 1, '2017-11-14 14:46:19', '2017-12-05 13:31:39'),
+(2, 'Ke mana kamu mau jika kelak akan terjadi perselisihan?', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&nbsp;<br /><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&nbsp;</p>\r\n<p><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 1, '2017-11-14 14:46:32', '2017-12-05 13:32:15'),
+(3, 'Bagaimana jika burung pelikan tak mampu berdiri satu kaki?', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&nbsp;<br /><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&nbsp;</p>\r\n<p><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 0, '2017-11-14 14:46:40', '2017-12-05 13:33:29'),
+(4, 'Sudahkah kamu mengamalkan Pancasila di kehidupan TK mu dulu?', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&nbsp;<br /><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 0, '2017-11-14 14:46:48', '2017-12-05 13:33:56');
 
 -- --------------------------------------------------------
 
@@ -126,30 +151,6 @@ INSERT INTO `nyat_gallery` (`idGALLERY`, `titleGALLERY`, `categoryGALLERY`, `lin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nyat_idea`
---
-
-CREATE TABLE `nyat_idea` (
-  `idIDEA` int(11) NOT NULL,
-  `titleIDEA` varchar(90) NOT NULL,
-  `descIDEA` text NOT NULL,
-  `createdateIDEA` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedateIDEA` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `nyat_idea`
---
-
-INSERT INTO `nyat_idea` (`idIDEA`, `titleIDEA`, `descIDEA`, `createdateIDEA`, `updatedateIDEA`) VALUES
-(1, 'Ada 2 jenis manusia yang ada di dunia ini. Kamu yang mana?', '', '2017-11-14 14:46:19', '0000-00-00 00:00:00'),
-(2, 'Ke mana kamu mau jika kelak akan terjadi perselisihan?', '', '2017-11-14 14:46:32', '0000-00-00 00:00:00'),
-(3, 'Bagaimana jika burung pelikan tak mampu berdiri satu kaki?', '', '2017-11-14 14:46:40', '0000-00-00 00:00:00'),
-(4, 'Sudahkah kamu mengamalkan Pancasila di kehidupan TK mu dulu?', '', '2017-11-14 14:46:48', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `nyat_intro_news`
 --
 
@@ -200,8 +201,8 @@ INSERT INTO `nyat_menus_admin` (`idMENU`, `namaMENU`, `iconMENU`, `functionMENU`
 (8, 'Daftar', 'textsms', 'index_about', 7, '0', 1, 1, '2017-11-13 13:39:06'),
 (9, 'Galeri', 'photo_library', 'gallery', 0, '0', 1, 1, '2017-11-14 13:55:25'),
 (10, 'Daftar', 'photo_library', 'index_gallery', 9, '0', 1, 1, '2017-11-14 13:55:31'),
-(11, 'Buah Pikiran', 'lightbulb_outline', 'idea', 0, '0', 1, 1, '2017-11-14 14:44:43'),
-(12, 'Daftar', 'lightbulb_outline', 'index_idea', 11, '0', 1, 1, '2017-11-14 14:44:48'),
+(11, 'Artikel', 'lightbulb_outline', 'article', 0, '0', 1, 1, '2017-11-14 14:44:43'),
+(12, 'Daftar', 'lightbulb_outline', 'index_article', 11, '0', 1, 1, '2017-11-14 14:44:48'),
 (13, 'Berita', 'question_answer', 'news', 0, '0', 1, 1, '2017-11-20 03:58:40'),
 (14, 'Daftar', 'question_answer', 'index_intro_news', 13, '0', 1, 1, '2017-11-20 03:59:08'),
 (15, 'Daftar Berita', 'question_answer', 'index_news', 13, '0', 1, 1, '2017-11-20 04:30:36'),
@@ -245,6 +246,7 @@ CREATE TABLE `nyat_news` (
   `idNEWS` int(11) NOT NULL,
   `titleNEWS` varchar(80) NOT NULL,
   `descNEWS` text NOT NULL,
+  `bestNEWS` int(1) NOT NULL,
   `createdateNEWS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedateNEWS` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -253,8 +255,8 @@ CREATE TABLE `nyat_news` (
 -- Dumping data for table `nyat_news`
 --
 
-INSERT INTO `nyat_news` (`idNEWS`, `titleNEWS`, `descNEWS`, `createdateNEWS`, `updatedateNEWS`) VALUES
-(1, 'Mengunjungi Panti Asuhan di Camp Vietnam Barelang', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '2017-11-20 05:23:07', '0000-00-00 00:00:00');
+INSERT INTO `nyat_news` (`idNEWS`, `titleNEWS`, `descNEWS`, `bestNEWS`, `createdateNEWS`, `updatedateNEWS`) VALUES
+(1, 'Mengunjungi Panti Asuhan di Camp Vietnam Barelang', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 0, '2017-11-20 05:23:07', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -301,13 +303,18 @@ INSERT INTO `nyat_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('2p9uqs6cud8qkjioq96ndft1d67hvlqm', '::1', 1512013618, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031333631383b),
 ('3494q5fv51f4qfonla9vkodoqa8pqmm7', '::1', 1511877206, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837373230363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a383a2257656c636f6d6521223b733a343a2274657874223b733a33393a2248616c6c6f2c2053656c616d617420646174616e672061646d696e4061646d696e2e636f6d2021223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
 ('3kc0kagnikjaq50mvcrbjn8jb2btg08h', '::1', 1511919149, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313931393134393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e676861707573616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('3mrao3o1j2frlh5iom795mbv1le3utp9', '::1', 1512438781, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323433383738313b),
 ('4ktm4s0af9qto8elmmo68oc99e26q1np', '::1', 1511918387, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313931383338373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('4qk8cupq34rshtl5f7m2pqsj7iuleik0', '::1', 1512485961, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438353935303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('51sl1imhcb0c66t7vmqbtg7463h7bdcl', '::1', 1512485237, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438353233373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('55k4qo98um75jt09j1tuhmi4oa1vde6j', '::1', 1512483155, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438333135353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('6btpin31q19c77fdgfffel2oheo8hp77', '::1', 1512087953, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323038373935333b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a353a224d6172636f223b6c6f67676564696e7c623a313b696441444d494e7c733a313a2231223b69735f61646d696e7c733a313a2231223b),
 ('6d9nb0s5jatabcdqpoov8jnshpcmif0c', '::1', 1511920149, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313932303134393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a31303a2250657268617469616e2c223b733a343a2274657874223b733a34363a2253696c616b616e206e6f6e2d616b7469666b616e20706f6c6c696e672079616e67206d6173696820616b7469662e223b733a343a2274797065223b733a373a227761726e696e67223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
 ('7k39gdun7pn955g4n8jglfb1q11pc3eq', '::1', 1512091750, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039313735303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('7q3l6b3tbstedd8hp3aibe2gmo48f08o', '::1', 1512079480, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323037393438303b6d6573736167655f63686f6963657c613a323a7b733a353a227469746c65223b733a363a224572726f7221223b733a343a2274657874223b733a3134383a224d6161662c20616e646120646968617275736b616e20756e74756b206c6f67696e207465726c6562696820646168756c752c2061746175206a696b6120616e64612062656c756d206d656e6461667461722073696c616b616e206d656e756a75206c696e6b20696e692022687474703a2f2f6c6f63616c686f73742f636f646577656c6c2f6e7961746b616469722f7573657222223b7d5f5f63695f766172737c613a313a7b733a31343a226d6573736167655f63686f696365223b733a333a226f6c64223b7d),
 ('7tik9oo8e4hribt113fhamiavbcc7bvp', '::1', 1511880753, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313838303735333b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('7ua6m0oq12ma9ehdvbclrpesqa0m9us7', '::1', 1511877678, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837373637383b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('8s4vqgbd7us98pvaepvm2b0lcom2l9op', '::1', 1512350870, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323335303837303b),
 ('985cp2e5nvuhub9r9to3kqbvlls89umn', '::1', 1512092435, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039323433353b456d61696c7c733a32303a226d616769637761726d7340676d61696c2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a31333a22416e6468616e61205574616d61223b6c6f67676564696e7c623a313b),
 ('995k8ch1vsaha17lh9o2ilfp07o06q59', '::1', 1512090452, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039303435323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('9bjoht19dgslqpbu1nk8v9pp40koki1e', '::1', 1511960639, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313936303633393b),
@@ -317,26 +324,36 @@ INSERT INTO `nyat_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('agfamuguimqdur3gultron6s2ml9esue', '::1', 1512092892, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039323730363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a353a224d6172636f223b6c6f67676564696e7c623a313b696441444d494e7c733a313a2231223b69735f61646d696e7c733a313a2231223b),
 ('aj8icigrt4lc5hab7c7ap98h5pvucuuq', '::1', 1511877984, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837373938343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('ajossbieadvg1gj1v5s17dq6dhnh5mo1', '::1', 1511925236, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313932353233363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a31303a2250657268617469616e2c223b733a343a2274657874223b733a3133333a2253696c616b616e206e6f6e2d616b7469666b616e20706f6c6c696e67203c623e282242616761696d616e612070656e64617061746d752074656e74616e67206b656a616469616e205365747961204e6f76616e746f2064692052756d61682053616b6974204a616b617274613f22293c2f623e2079616e67206d6173696820616b7469662e223b733a343a2274797065223b733a363a2264616e676572223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('apto8jtq03f0vgvqfd7hfn1s3b48pfug', '::1', 1512478420, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323437383432303b),
 ('b4p8qn4s1aeflc6oam0ukau9it2nlfnu', '::1', 1511959687, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313935393638373b),
 ('b9j7737j20vb69qtlhgs6n3srp7bkgde', '::1', 1511879670, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837393637303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('c4enon7980phrmk7eirej62pp6mk4li7', '::1', 1512374696, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323337343439393b),
 ('c952cg3lneb53mlul3f6rdsnrnlv7fh0', '::1', 1511881084, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313838313038343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('ca1vagdnkp9m4cftivjk8tcg1iam65m0', '::1', 1511878505, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837383530353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('ce6i23o39sgkj4uqdctd5tjvfkf223la', '::1', 1511918761, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313931383736313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('chk0evia010emgfbjniot1eo80sk246v', '::1', 1512485647, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438353634373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('dn2kekugl4jfvqi9ibiq65s7hjosovrl', '::1', 1511924281, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313932343238313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a31303a2250657268617469616e2c223b733a343a2274657874223b733a34363a2253696c616b616e206e6f6e2d616b7469666b616e20706f6c6c696e672079616e67206d6173696820616b7469662e223b733a343a2274797065223b733a373a227761726e696e67223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('dnb02ghh7j22rq7tp0erdibmko7i9omv', '::1', 1512353507, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323335333330313b),
 ('ev4rvc7rb1vvji6of6l0tjc97nokdndo', '::1', 1512016937, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031363933373b),
+('g9s1m8a2et0jhlnsj6ivv2t1k54d86aq', '::1', 1512482849, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438323834393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('hfjfc77kcn5qlbkoteu65v9c49a6bqpu', '::1', 1511881220, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313838313038343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('hsdjnas0beva0hh16npu47prtj3ote3n', '::1', 1511960955, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313936303935353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('htssdge5fi3mhgm0g3753mf5qvbk9rvn', '::1', 1512484326, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438343332363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('i0lptp72bvjse0v70u1oap9ieadlmvdb', '::1', 1512011269, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031313236393b6d6573736167657c613a313a7b733a343a2274657874223b733a36333a224d61616620616461206b6573616c6168616e2c206d6f686f6e20756c616e676920696e707574616e20666f726d207265676973747261736920616e6461212e223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
 ('jp6hb5qpalm77hf36thekhs8bloud0di', '::1', 1512013973, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031333937333b),
 ('kr9p111hjmq2c47hsbj8rmabaco4jso8', '::1', 1512012906, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031323930363b),
+('ljgem7ip78546b5f4jq2hmm7ih4b2vc8', '::1', 1512485950, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438353935303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('m00okn462d0vs9vp06pievuubaf71pes', '::1', 1512080259, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323038303235393b456d61696c7c733a32303a226d616769637761726d7340676d61696c2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a31333a22416e6468616e61205574616d61223b6c6f67676564696e7c623a313b6d6573736167655f63686f6963657c613a323a7b733a353a227469746c65223b733a31333a22546572696d61204b6173696821223b733a343a2274657874223b733a3132303a224f70696e6920416e64612074656c6168206b616d692072656b616d2e2044616e20746572696d61206b617369682073756461682062657270617274697369706173692e204b616d692062657268617261702064617061742062657274656d7520416e6461206469206c61696e206b6573656d706174616e2e223b7d5f5f63695f766172737c613a313a7b733a31343a226d6573736167655f63686f696365223b733a333a226f6c64223b7d),
 ('n3j471jovj3cf3bcmmvhuo9rsn6faf11', '::1', 1512016564, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031363536343b),
 ('n3lhv28ar93blnerejmiuohub96lo0mb', '::1', 1512079126, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323037393132363b6d6573736167655f63686f6963657c613a323a7b733a353a227469746c65223b733a363a224572726f7221223b733a343a2274657874223b733a3135313a224d6161662c20616e646120646968617275736b616e20756e74756b206c6f67696e207465726c6562696820646168756c752c2061746175206a696b6120616e646120696e67696e206d656e6461667461722073696c616b616e206d656e756a75206b65206c696e6b20696e692022687474703a2f2f6c6f63616c686f73742f636f646577656c6c2f6e7961746b616469722f7573657222223b7d5f5f63695f766172737c613a313a7b733a31343a226d6573736167655f63686f696365223b733a333a226f6c64223b7d),
 ('n8ta8hb4mfvr37k81ss9k1d5io11uflq', '::1', 1512082041, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323038323034313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a353a224d6172636f223b6c6f67676564696e7c623a313b696441444d494e7c733a313a2231223b69735f61646d696e7c733a313a2231223b),
 ('nh35ms09aeirrop87vmvv0b39rk9oicc', '::1', 1512013238, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031333233383b),
 ('nih5lthhd9dp802d145eqrpasu8845r0', '::1', 1512089166, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323038393136363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('nmc5hc3es7si28hhk8n9thio4ofhm83r', '::1', 1512480250, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438303235303b),
 ('o3af15nhrb100g692iulu4m94pacph0i', '::1', 1511878824, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837383832343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('p85ff7rbj502j6i1q5mqu0doqeq0ad5f', '::1', 1512480578, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438303537383b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33373a2250656e676861707573616e2047616d62617220626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
 ('q2qfc8nhq8rthovthkk00blvgfkhgug6', '::1', 1512011886, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031313838363b6d6573736167657c613a313a7b733a343a2274657874223b733a34353a224d6161662c20616b756e20616e646120746964616b207465726461667461722064692064617461206b616d692e223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('q7t6nkke0vlp4b0l2r19mj848j8bo562', '::1', 1512353301, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323335333330313b),
 ('qq17e5v7pa6vh55m3rk6qv5i05rkpa67', '::1', 1512090812, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039303831323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('rcfk6b7pttf4atugj9c189oiropic26e', '::1', 1512079830, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323037393833303b456d61696c7c733a32303a226d616769637761726d7340676d61696c2e636f6d223b6964555345527c733a313a2231223b4e616d657c733a31333a22416e6468616e61205574616d61223b6c6f67676564696e7c623a313b),
 ('rktjl63q7649qoki20i14q9v8bc8np4f', '::1', 1512092084, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039323038343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
@@ -345,10 +362,13 @@ INSERT INTO `nyat_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('sf23hfqbue282pqv94dr158kkal6if6l', '::1', 1512016967, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323031363933373b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a224572726f7221223b733a353a227374796c65223b733a31303a2269732d7761726e696e67223b733a343a2274657874223b733a3132313a224d6161662c20616b756e20616e646120746964616b20616b7469662c2073696c616b616e2063656b20656d61696c20616e646120756e74756b206b6f6e6669726d6173692c206174617520687562756e6769206b616d6920646920666f726d20636f6e746163742075732e20546572696d61206b6173696821223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
 ('sklqlnp7j1lj9mrlsergpr3aake0ne9h', '::1', 1511879993, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837393939333b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('sqkcs6gokpp611oivdd0jjamdog3rmsr', '::1', 1512090139, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323039303133393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('t06msjm332rmmmevfb329ed09obf26l1', '::1', 1512482245, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438323234353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('tq396d551ng5kbrbh4lbv1ejo90sef95', '::1', 1511879328, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313837393332383b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
 ('u402pdqfma22l42arc8kcee698tmb927', '::1', 1511925541, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313932353534313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('u70jg38h99abagllb6igq3l8adjfd350', '::1', 1512349111, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323334393131313b),
 ('uu69qtt3gkik0r8rp46cskuf8ubfhn9t', '::1', 1511925628, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313932353534313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
-('vhfv4cj2sleuesu0mv8hs659la33prbb', '::1', 1511880417, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313838303431373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b);
+('vhfv4cj2sleuesu0mv8hs659la33prbb', '::1', 1511880417, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531313838303431373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b),
+('vkdhvfm2eoigvp7dbr2q51dno8ge8ucf', '::1', 1512481925, 0x5f5f63695f6c6173745f726567656e65726174657c693a313531323438313932353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b4e616d657c733a353a224d6172636f223b69735f61646d696e7c733a313a2231223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d);
 
 -- --------------------------------------------------------
 
@@ -421,7 +441,7 @@ CREATE TABLE `nyat_users_admin` (
 --
 
 INSERT INTO `nyat_users_admin` (`idADMIN`, `nameADMIN`, `emailADMIN`, `passwordADMIN`, `createdateADMIN`, `lastloginADMIN`, `statusADMIN`, `is_adminADMIN`) VALUES
-(1, 'Marco', 'admin@admin.com', '6a118651d34f7021bebb5acbeb91639f2ab77c25aca7b33e4e5889b5b5c272e3f83669371c2f9aa62e2942bdf7abc0c28be1c2ad9c69ce8344f8b14cb5b106b9', '2017-09-26 10:04:09', '2017-12-01 08:45:46', 1, 1),
+(1, 'Marco', 'admin@admin.com', '6a118651d34f7021bebb5acbeb91639f2ab77c25aca7b33e4e5889b5b5c272e3f83669371c2f9aa62e2942bdf7abc0c28be1c2ad9c69ce8344f8b14cb5b106b9', '2017-09-26 10:04:09', '2017-12-05 20:24:32', 1, 1),
 (2, 'Vasco', 'admin1@admin.com', '6a118651d34f7021bebb5acbeb91639f2ab77c25aca7b33e4e5889b5b5c272e3f83669371c2f9aa62e2942bdf7abc0c28be1c2ad9c69ce8344f8b14cb5b106b9', '2017-10-25 13:32:15', '2017-10-25 21:20:19', 1, 2);
 
 -- --------------------------------------------------------
@@ -452,7 +472,9 @@ INSERT INTO `nyat_visitor` (`idVISITOR`, `ipVISITOR`, `dateVISITOR`) VALUES
 (9, '::1', '2017-11-28'),
 (10, '::1', '2017-11-29'),
 (11, '::1', '2017-11-30'),
-(12, '::1', '2017-12-01');
+(12, '::1', '2017-12-01'),
+(13, '::1', '2017-12-04'),
+(14, '::1', '2017-12-05');
 
 --
 -- Indexes for dumped tables
@@ -463,6 +485,12 @@ INSERT INTO `nyat_visitor` (`idVISITOR`, `ipVISITOR`, `dateVISITOR`) VALUES
 --
 ALTER TABLE `nyat_about`
   ADD PRIMARY KEY (`idABOUT`);
+
+--
+-- Indexes for table `nyat_article`
+--
+ALTER TABLE `nyat_article`
+  ADD PRIMARY KEY (`idARTICLE`);
 
 --
 -- Indexes for table `nyat_attempts`
@@ -481,12 +509,6 @@ ALTER TABLE `nyat_choice_polling`
 --
 ALTER TABLE `nyat_gallery`
   ADD PRIMARY KEY (`idGALLERY`);
-
---
--- Indexes for table `nyat_idea`
---
-ALTER TABLE `nyat_idea`
-  ADD PRIMARY KEY (`idIDEA`);
 
 --
 -- Indexes for table `nyat_intro_news`
@@ -559,6 +581,11 @@ ALTER TABLE `nyat_visitor`
 ALTER TABLE `nyat_about`
   MODIFY `idABOUT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `nyat_article`
+--
+ALTER TABLE `nyat_article`
+  MODIFY `idARTICLE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `nyat_attempts`
 --
 ALTER TABLE `nyat_attempts`
@@ -574,11 +601,6 @@ ALTER TABLE `nyat_choice_polling`
 ALTER TABLE `nyat_gallery`
   MODIFY `idGALLERY` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `nyat_idea`
---
-ALTER TABLE `nyat_idea`
-  MODIFY `idIDEA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- AUTO_INCREMENT for table `nyat_intro_news`
 --
 ALTER TABLE `nyat_intro_news`
@@ -587,7 +609,7 @@ ALTER TABLE `nyat_intro_news`
 -- AUTO_INCREMENT for table `nyat_menus_admin`
 --
 ALTER TABLE `nyat_menus_admin`
-  MODIFY `idMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `nyat_mitra_kerja`
 --
@@ -622,7 +644,7 @@ ALTER TABLE `nyat_users_admin`
 -- AUTO_INCREMENT for table `nyat_visitor`
 --
 ALTER TABLE `nyat_visitor`
-  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
