@@ -101,21 +101,21 @@
         </div>
         <div class="article-carousel four-item-carousel owl-carousel owl-theme">
         <?php
-            if(!empty($listidea)){
-                foreach ($listidea as $key => $idea) {
+            if(!empty($listarticle)){
+                foreach ($listarticle as $key => $article) {
         ?>
             <div class="card">
                 <div class="card-content">
                     <h3 class="title">
-                        <?php echo $idea->titleIDEA;?>
+                        <?php echo $article->titleARTICLE;?>
                     </h3>
                 </div>
                 <div class="card-footer">
                     <div class="card-footer-item">
-                        <span><?php echo date('d F Y', strtotime($idea->createdateIDEA));?></span>
+                        <span><?php echo date('d F Y', strtotime($article->createdateARTICLE));?></span>
                     </div>
                     <div class="card-footer-item">
-                        <a href="#">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                        <a href="<?php echo base_url();?>article/detail/<?php echo base64_encode($article->idARTICLE).'-'.seo_url($article->titleARTICLE);?>">Baca <span class="icon mdi mdi-chevron-right"></span></a>
                     </div>
                 </div>
             </div>
@@ -228,36 +228,22 @@
         <div class="columns">
             <div class="column is-half news-started">
                 <div class="box wow fadeInUp">
+                    <?php
+                        if(!empty($updated_at_home)){
+                            foreach ($updated_at_home as $key => $updated) {
+                    ?>
                     <div class="media wow fadeInUp">
                         <div class="media-content">
                             <div class="content">
-                                <h3>Membangun Pribadi Gubernur yang Unggul di Indonesia</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                <span>01</span>
-                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
+                                <h3><?php echo $updated->titleNEWS;?></h3>
+                                <?php echo word_limiter($updated->descNEWS,35);?>
+                                <span>0<?php echo $key+1;?></span>
+                                <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($updated->idNEWS).'-'.seo_url($updated->titleNEWS);?>">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="media wow fadeInUp" data-wow-delay=".4s">
-                        <div class="media-content">
-                            <div class="content">
-                                <h3>Indonesia Membutuhkan Seorang Pemimpin yang Kritis?</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                <span>02</span>
-                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="media wow fadeInUp" data-wow-delay=".7s">
-                        <div class="media-content">
-                            <div class="content">
-                                <h3>Apakah Batam akan Bernasib Seperti Kuala Lumpur?</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                <span>03</span>
-                                <a href="#">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="column">

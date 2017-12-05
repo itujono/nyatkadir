@@ -29,14 +29,34 @@ class News_m extends MY_Model{
 		$news->idNEWS = '';
 		$news->titleNEWS = '';
 		$news->descNEWS = '';
+		$news->bestNEWS = '';
 		return $news;
 	}
 
-	public function selectall_news($id = NULL) {
+	public function selectall_news($id = NULL, $best=NULL, $new=NULL) {
 		$this->db->select('*');
 		$this->db->from('news');
 		if ($id != NULL) {
 			$this->db->where('idNEWS',$id);
+		}
+		if ($best != NULL) {
+			$this->db->where('bestNEWS',1);
+		}
+		if ($new != NULL) {
+			$this->db->order_by('createdateNEWS','desc');
+		}
+		return $this->db->get();
+	}
+
+	public function selectall_random_news($id = NULL, $updated_at_home=NULL) {
+		$this->db->select('idNEWS, titleNEWS, descNEWS, createdateNEWS');
+		$this->db->from('news');
+		if($id != NULL){
+			$this->db->where('idNEWS !=',$id);
+		}
+		if($updated_at_home != NULL){
+			$this->db->order_by('idNEWS', 'desc');
+			$this->db->limit('3');
 		}
 		return $this->db->get();
 	}

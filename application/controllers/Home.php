@@ -6,10 +6,11 @@ class Home extends Frontend_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Slider_m');
-		$this->load->model('Idea_m');
+		$this->load->model('Article_m');
 		$this->load->model('Polling_m');
 		$this->load->model('Mitra_m');
 		$this->load->model('Polling_choice_m');
+		$this->load->model('News_m');
 	}
 
 	public function index() {
@@ -25,7 +26,7 @@ class Home extends Frontend_Controller {
 				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
-		$data['listidea'] = $this->Idea_m->selectall_idea()->result();
+		$data['listarticle'] = $this->Article_m->selectall_article()->result();
 		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
 
 		$session_user = $this->session->userdata('idUSER');
@@ -46,6 +47,8 @@ class Home extends Frontend_Controller {
 				$data['listmitra'][$key]->imageMITRA = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
+
+		$data['updated_at_home'] = $this->News_m->selectall_random_news('',1)->result();
 
 		if(!empty($this->session->flashdata('message_choice'))) {
             $data['message_choice'] = $this->session->flashdata('message_choice');

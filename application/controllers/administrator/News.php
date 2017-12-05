@@ -64,12 +64,14 @@ class News extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->News_m->array_from_post(array('titleNEWS','descNEWS'));
+			$data = $this->News_m->array_from_post(array('titleNEWS','bestNEWS'));
+			if($data['bestNEWS'] == 'on')$data['bestNEWS']=1;
+			else $data['bestNEWS']=0;
 			$id = decode(urldecode($this->input->post('idNEWS')));
 
 			if(empty($id))$id=NULL;
 			$data = $this->security->xss_clean($data);
-
+			$data['descNEWS'] = $this->input->post('descNEWS');
 			$idsave = $this->News_m->save($data, $id);
 
 			$subject = $idsave;
@@ -157,6 +159,31 @@ class News extends Admin_Controller {
         );
         $this->session->set_flashdata('message',$data);
 		redirect('administrator/news/index_news/'.$id1);
+	}
+
+	public function change_best_news($id=NULL , $id2=NULL){
+		$id = decode(urldecode($id));
+		$ss = 0;
+		if($id2 != NULL)$ss = 1;
+		if($id != 0){
+			$data['bestNEWS'] = $ss;
+			$this->News_m->save($data, $id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Perubahan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('administrator/news/index_news');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, sistem tidak mengganti data anda.',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        redirect('administrator/news/index_news');
+		}
 	}
 
 	public function index_intro_news($id = NULL){

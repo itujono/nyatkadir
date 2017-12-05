@@ -22,13 +22,34 @@ class News extends Frontend_Controller {
 			}
 		}
 
+		$data['new_news'] = $this->News_m->selectall_news('','',1)->result();
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'news', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
 	
-	public function detail() {
+	public function detail($id) {
 		$data['addONS'] = 'general_addon';
-		$data['title'] = 'Detail News Nyat Kadir - Laman Resmi';
+		if($id == NULL){
+			redirect('news');
+		}
+		$id = base64_decode(cutting($id));
+		$data['getnews'] = $this->News_m->selectall_news($id)->row();
+		$data['title'] = $data['getnews']->titleNEWS.' - Laman Resmi';
+
+		$map = directory_map('assets/upload/news/pic-news-'.folenc($data['getnews']->idNEWS), FALSE, TRUE);
+		$maps = array();
+		$imgs = array();
+		if(!empty($map)){
+			foreach ($map  as $key => $value) {
+				$maps[] = base_url().'assets/upload/news/pic-news-'.folenc($data['getnews']->idNEWS).'/'.$value;
+				$imgs[] = $value;
+			}
+		}
+		$data['getnews']->map = $maps;
+
+		$data['random_news'] = $this->News_m->selectall_random_news($id)->result();
+		$data['best_news'] = $this->News_m->selectall_news('',1)->result();
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'news_detail', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);

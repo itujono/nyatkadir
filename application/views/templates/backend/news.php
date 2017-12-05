@@ -60,12 +60,24 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     <td><?php echo date('d F Y', strtotime($news->createdateNEWS));?></td>
                     <?php
                     $icndel = '&#xE16C;';
+                    if($news->bestNEWS == 1){
+                        $id2 = '';
+                        $icnbest = '&#xE838;';
+                        $tooltip = 'Berita Terbaik';
+                      } else {
+                        $id2 = '/1';
+                        $icnbest = '&#xE83A;';
+                        $tooltip = 'Bukan Berita Terbaik';
+                      }
                     $msg1 = 'Are you sure want to delete this data ?';
                     $msg2 = 'Are you sure want to change this data ?';
+                    $msg3 = 'Are you sure want to change this best news ?';
                     $url1 = 'administrator/'.$controller.'/actiondelete_news/'.urlencode($id);
                     $url2 = 'administrator/'.$controller.'/index_news/'.urlencode($id);
+                    $url3 = 'administrator/'.$controller.'/change_best_news/'.urlencode($id).$id2;
                     ?>
                     <td class="uk-text-center">
+                      <a href="#"  data-uk-tooltip title="<?php echo $tooltip;?>" onclick="UIkit.modal.confirm('<?php echo $msg3; ?>', function(){ document.location.href='<?php echo site_url($url3);?>'; });"><i class="md-icon material-icons"><?php echo $icnbest; ?></i></a>
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                     </td>
@@ -98,12 +110,22 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     </div>
                   </div>
                   <div class="uk-grid" data-uk-grid-margin>
-                    <div class="uk-width-medium-1-1 uk-margin-top">
+                    <div class="uk-width-medium-1-2 uk-margin-top">
                       <label>Judul</label>
                       <br>
                       <input type="text" class="md-input label-fixed" name="titleNEWS" autocomplete value="<?php echo $getnews->titleNEWS;?>" required/>
                       <p class="text-red"><?php echo form_error('titleNEWS'); ?></p>
                     </div>
+                    <div class="uk-width-medium-1-2 uk-margin-top">
+                    <div class="parsley-row">
+                      <?php
+                        $checkdis= '';
+                        if($getnews->bestNEWS == 1) $checkdis = 'checked' ;
+                      ?>
+                      <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#7cb342" name="bestNEWS" id="switch_demo_large">
+                      <label for="switch_demo_large" class="inline-label"><b>Berita Terbaik</b></label>
+                    </div>
+                  </div>
                   </div>
                   <div class="uk-grid" data-uk-grid-margin>
                     <div class="uk-width-medium-1-1 uk-margin-top">
