@@ -350,6 +350,22 @@ a:hover {
   padding: 0;
 }
 
+.article-section .section-title > div {
+  display: inline-block;
+}
+
+.article-section .section-title .iconic {
+  position: relative;
+  top: -5px;
+  margin-top: -5px;
+  margin-right: 20px;
+}
+
+.article-section .section-title .iconic span {
+  font-size: 3.4em;
+  color: #fdc236;
+}
+
 .article-carousel .card-content {
   height: 240px;
 }
@@ -584,6 +600,7 @@ a:hover {
   color: #fdc236;
   position: absolute;
   top: 30%;
+  left: 0;
 }
 
 .news-section .news-started .box .media-content a {
@@ -626,6 +643,9 @@ a:hover {
   padding: 0 1.2em;
   background: #fdc236;
   color: #f2f2f2;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .news-section .read-more a:hover {

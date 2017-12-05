@@ -93,8 +93,13 @@
 <section class="section article-section">
     <div class="container">
         <div class="section-title dark">
-            <h3>Buah Pikiran <span class="reddish">Nyat Kadir</span></h3>
-            Pemikiran-pemikiran Nyat Kadir tentang Indonesia
+            <div class="iconic">
+                <span class="icon mdi mdi-barley"></span>
+            </div>
+            <div>
+                <h3>Buah Pikiran <span class="reddish">Nyat Kadir</span></h3>
+                Pemikiran-pemikiran Nyat Kadir tentang Indonesia
+            </div>
         </div>
         <div class="read-more">
             <a href="<?php echo base_url();?>article">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>

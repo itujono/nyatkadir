@@ -318,6 +318,21 @@ a {
             padding: 0;
         }
     }
+    .section-title {
+        > div {
+            display: inline-block;
+        }
+        .iconic {
+            position: relative;
+            top: -5px;
+            margin-top: -5px;
+            margin-right: 20px;
+            span {
+                font-size: 3.4em;
+                color: $yellow;
+            }
+        }
+    }
 }
 
 .article-carousel {
@@ -523,6 +538,7 @@ a {
                     color: $yellow;
                     position: absolute;
                     top: 30%;
+                    left: 0;
                 }
                 a {
                     padding-left: 6em;
@@ -553,6 +569,7 @@ a {
             padding: 0 1.2em;
             background: #fdc236;
             color: #f2f2f2;
+            transition: all .3s ease;
             &:hover {
                 background-color: darken($darkBlue, 10%);
             }
