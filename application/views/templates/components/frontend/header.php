@@ -30,10 +30,10 @@
             </button>
         </div>
         <div class="navbar-menu">
-            <div class="navbar-start">
+            <!-- <div class="navbar-start">
              <?php
-              $menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
-              foreach ($menus as $values) {
+              //$menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
+              //foreach ($menus as $values) {
                 // if(!empty($this->uri->segment(3))) {
                 //   $url = $this->uri->segment(2);
                 // } else {
@@ -44,12 +44,30 @@
                 // $class = '';
                 // if($url == $values[0])$class = 'active';
             ?>
-                <a href="<?php echo base_url().$values[0];?>" class="navbar-item"><?php echo $values[1];?></a>
+                <a href="<?php //echo base_url().$values[0];?>" class="navbar-item"><?php //echo $values[1];?></a>
             <?php } ?>
+            </div> -->
+            <div class="navbar-start">
+                <a href="#" class="navbar-item">Home</a>
+                <a href="#" class="navbar-item">Tentang</a>
+                <div href="#" class="navbar-item has-dropdown is-hoverable">
+                    <a href="#" class="navbar-link">Artikel</a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a href="#" class="navbar-item">Luar Negeri</a>
+                        <a href="#" class="navbar-item">Dalam Negeri</a>
+                        <a href="#" class="navbar-item">Politik</a>
+                        <hr class="navbar-divider">
+                        <a href="#" class="navbar-item">Infografis</a>
+                        <a href="#" class="navbar-item">Statistik</a>
+                    </div>
+                </div>
+                <a href="#" class="navbar-item">News/Event</a>
+                <a href="#" class="navbar-item">Galeri</a>
+                <a href="#" class="navbar-item">Liputan Media</a>
             </div>
             <div class="navbar-end">
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
-                <?php 
+                <?php
                     if(!empty($this->session->userdata('Name'))){
                 ?>
                     <a href="#" class="navbar-link">
