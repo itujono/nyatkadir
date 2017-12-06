@@ -53,4 +53,14 @@ class Polling_choice_m extends MY_Model{
 
 		return $this->db->get();
 	}
+
+	public function list_choice_polling_users($session_user=NULL) {
+		$this->db->select('choice_polling.idPOLLING, idUSER, nameCHOICE, createdateCHOICE');
+		$this->db->select('questionPOLLING');
+		$this->db->from('choice_polling');
+		$this->db->join('polling', 'polling.idPOLLING = choice_polling.idPOLLING');
+		$this->db->where('idUSER',$session_user);
+
+		return $this->db->get();
+	}
 }

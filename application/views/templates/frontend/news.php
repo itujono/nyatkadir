@@ -30,13 +30,13 @@
                         </div>
                         <div class="card-content">
                             <article class="content">
-                                <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="title"><?php echo $news->titleNEWS; ?></a>
+                                <a href="<?php echo base_url();?>news/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="title"><?php echo $news->titleNEWS; ?></a>
                                 <time datetime="<?php echo date('Y-m-d', strtotime($news->createdateNEWS));?>"><span class="icon mdi mdi-calendar-check"></span> <?php echo indonesian_date($news->createdateNEWS,'j F Y',''); ?></time>
                                 <?php echo word_limiter($news->descNEWS,24); ?>
                             </article>
                         </div>
                         <div class="card-footer">
-                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="card-footer-item">Selengkapnya</a>
+                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($news->idNEWS).'-'.seo_url($news->titleNEWS);?>" class="card-footer-item">Selengkapnya</a>
                         </div>
                     </div> <!-- kelar Single Card -->
                         <?php } ?>
@@ -53,7 +53,7 @@
                             foreach ($new_news as $new) {
                     ?>
                         <li>
-                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($new->idNEWS).'-'.seo_url($new->titleNEWS);?>"><?php echo $new->titleNEWS; ?></a>
+                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($new->idNEWS).'-'.seo_url($new->titleNEWS);?>"><?php echo $new->titleNEWS; ?></a>
                             <p><?php echo indonesian_date($new->createdateNEWS,'j F Y',''); ?></p>
                         </li>
                         <?php } ?>

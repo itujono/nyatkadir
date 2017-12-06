@@ -7,6 +7,8 @@ class User extends Frontend_Controller {
 		parent::__construct();
 		$this->load->model('Users_m');
 		$this->load->model('Attempts_m');
+		$this->load->model('Polling_m');
+		$this->load->model('Polling_choice_m');
 	}
 
 	public function index() {
@@ -202,6 +204,22 @@ class User extends Frontend_Controller {
             'text' => 'Selamat! Kamu sudah logout. Sampai jumpa lagi!'
         	);
         $this->session->set_flashdata('message',$data);
-		redirect($_SERVER['HTTP_REFERER']);
+		redirect('user');
+	}
+
+	public function account() {
+		if(empty($this->session->userdata('idUSER'))){
+			redirect('user/logout');
+		}
+
+		$data['addONS'] = 'general_addon';
+		$data['title'] = $this->session->userdata('Name').' - Nyat Kadir - Laman Resmi';
+		$id = $this->session->userdata('idUSER');
+		$data['getuser'] = $this->Users_m->selectall_user($id)->row();
+
+		$data['list_choice_polling_users'] = $this->Polling_choice_m->list_choice_polling_users($id)->result();
+		$data['count_polling_user'] = count($data['list_choice_polling_users']);
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'account', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
 }

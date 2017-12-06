@@ -21,7 +21,7 @@
                     </div>
                     <div class="level-right">
                         <div class="level-item">
-                            <span>Rusmanto <br> <small>User ID: 34934290</small></span>
+                            <span><?php echo $getuser->nameUSER;?> <br> <small>User ID: <?php echo $getuser->idUSER;?></small></span>
                         </div>
                     </div>
                 </div> <!-- kelar Level Pertama -->
@@ -30,7 +30,7 @@
                     <div class="level-left tabs">
                         <ul>
                             <li><a href="#" class="tab-link is-active" data-tab="tab-profile">Profile</a></li>
-                            <li><a href="#" class="tab-link" data-tab="tab-polling">Polling (3)</a></li>
+                            <li><a href="#" class="tab-link" data-tab="tab-polling">Polling (<?php echo $count_polling_user;?>)</a></li>
                             <li><a href="#" class="tab-link" data-tab="tab-aspirasi">Aspirasi (3)</a></li>
                         </ul>
                     </div>
@@ -41,17 +41,17 @@
                         <div class="level-left">
                             <dl class="user-info">
                                 <dt>Nama</dt>
-                                <dd>Rusmanto Jagad Maya</dd>
+                                <dd><?php echo $getuser->nameUSER;?></dd>
                                 <dt>Email</dt>
-                                <dd>rusmanto@rusmantocoy.com</dd>
+                                <dd><?php echo $getuser->emailUSER;?></dd>
                                 <dt>ID Anggota</dt>
-                                <dd>3429843</dd>
+                                <dd><?php echo $getuser->idUSER;?></dd>
                                 <dt>Basis Wilayah</dt>
-                                <dd>Tanjung Pinang</dd>
+                                <dd><?php echo $getuser->cityUSER;?></dd>
                                 <dt>Alamat</dt>
-                                <dd>Jalan Kepodang Raya #13, Tiban Lama, Batam 29432</dd>
+                                <dd><?php echo $getuser->addressUSER;?></dd>
                                 <dt>Nomor Telepon</dt>
-                                <dd>+62 813 6464 7777</dd>
+                                <dd><?php //echo $getuser->nameUSER;?></dd>
                             </dl>
                         </div>
                     </div>
@@ -59,21 +59,17 @@
                         <div class="polling-list">
                             <h3 class="title">Daftar Polling yang Anda Ikuti</h3>
                             <ul class="polling-item">
+                            <?php
+                                if(!empty($list_choice_polling_users)){
+                                    foreach ($list_choice_polling_users as $choice) {
+                            ?>
                                 <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p><strong>Anda memilih: </strong>Biasa aja sih, tapi yaa gitu, deh.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
+                                    <h4><?php echo $choice->questionPOLLING;?></h4>
+                                    <p><strong>Anda memilih: </strong><?php echo $choice->nameCHOICE;?></p>
+                                    <small><?php echo indonesian_date($choice->createdateCHOICE);?></small>
                                 </li>
-                                <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p><strong>Anda memilih: </strong>Biasa aja sih, tapi yaa gitu, deh.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
-                                </li>
-                                <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p><strong>Anda memilih: </strong>Biasa aja sih, tapi yaa gitu, deh.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
-                                </li>
+                                <?php } ?>
+                            <?php } ?>
                             </ul>
                         </div>
                     </div> <!-- kelar ID Tab-Polling -->

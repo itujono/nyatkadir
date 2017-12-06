@@ -48,12 +48,12 @@
                     <div class="card">
                         <div class="card-content">
                             <h2 class="title">
-                                <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($random->idNEWS).'-'.seo_url($random->titleNEWS);?>"><?php echo $random->titleNEWS;?></a>
+                                <a href="<?php echo base_url();?>news/<?php echo base64_encode($random->idNEWS).'-'.seo_url($random->titleNEWS);?>"><?php echo $random->titleNEWS;?></a>
                             </h2>
                         </div>
                         <div class="card-footer">
                             <p class="card-footer-item date"><?php echo indonesian_date($random->createdateNEWS,'j F Y',''); ?></p>
-                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($random->idNEWS).'-'.seo_url($random->titleNEWS);?>" class="card-footer-item">Baca <span class="icon mdi mdi-chevron-right"></span></a>
+                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($random->idNEWS).'-'.seo_url($random->titleNEWS);?>" class="card-footer-item">Baca <span class="icon mdi mdi-chevron-right"></span></a>
                         </div>
                     </div>
                         <?php } ?>
@@ -69,7 +69,7 @@
                             foreach ($best_news as $best) {
                     ?>
                         <li>
-                            <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($best->idNEWS).'-'.seo_url($best->titleNEWS);?>"><?php echo $best->titleARTICLE;?></a>
+                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($best->idNEWS).'-'.seo_url($best->titleNEWS);?>"><?php echo $best->titleARTICLE;?></a>
                             <p><?php echo indonesian_date($best->createdateARTICLE,'j F Y',''); ?></p>
                         </li>
                         <?php } ?>

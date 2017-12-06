@@ -30,28 +30,23 @@
             </button>
         </div>
         <div class="navbar-menu" id="navMenu">
-            <!-- <div class="navbar-start">
-             <?php
-              //$menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
-              //foreach ($menus as $values) {
-                // if(!empty($this->uri->segment(3))) {
-                //   $url = $this->uri->segment(2);
-                // } else {
-                //   $url = $this->uri->segment(1);
-                // }
-                // echo $url;
-                // exit;
-                // $class = '';
-                // if($url == $values[0])$class = 'active';
-            ?>
-                <a href="<?php //echo base_url().$values[0];?>" class="navbar-item"><?php //echo $values[1];?></a>
-            <?php //} ?>
-            </div> -->
             <div class="navbar-start">
-                <a href="#" class="navbar-item">Home</a>
-                <a href="#" class="navbar-item">Tentang</a>
+             <?php
+              $menus = array (array('','Home'), array('about','Tentang'), array('article','Artikel'), array('news','News/Events'), array('gallery','Galeri'), array('press','Liputan Media'));
+              foreach ($menus as $values) {
+                if(!empty($this->uri->segment(3))) {
+                  $url = $this->uri->segment(2);
+                } else {
+                  $url = $this->uri->segment(1);
+                }
+                $class = '';
+                if($url == $values[0])$class = 'active';
+                if($values[1] != 'Artikel'){
+            ?>
+                <a href="<?php echo base_url().$values[0];?>" class="navbar-item"><?php echo $values[1];?></a>
+                <?php } else { ?>
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
-                    <a href="#" class="navbar-link">Artikel</a>
+                    <a href="<?php echo base_url().$values[0];?>" class="navbar-link">Artikel</a>
                     <div class="navbar-dropdown">
                         <a href="#" class="navbar-item">Luar Negeri</a>
                         <a href="#" class="navbar-item">Dalam Negeri</a>
@@ -61,9 +56,8 @@
                         <a href="#" class="navbar-item">Statistik</a>
                     </div>
                 </div>
-                <a href="#" class="navbar-item">News/Event</a>
-                <a href="#" class="navbar-item">Galeri</a>
-                <a href="#" class="navbar-item">Liputan Media</a>
+                <?php } ?>
+            <?php } ?>
             </div>
             <div class="navbar-end">
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
@@ -74,7 +68,7 @@
                         <span class="icon"><i class="mdi mdi-account-circle"></i></span> &nbsp; <?php echo $this->session->userdata('Name');?>
                     </a>
                     <div class="navbar-dropdown">
-                        <a href="#" class="navbar-item">Atur Akun</a>
+                        <a href="<?php echo base_url();?>account/<?php echo $this->session->userdata('idUSER'); ?>/<?php echo seo_url($this->session->userdata('Name')); ?>" class="navbar-item">Atur Akun</a>
                         <a href="<?php echo base_url();?>user/logout" class="navbar-item">Keluar</a>
                     </div>
                 <?php } else { ?>
