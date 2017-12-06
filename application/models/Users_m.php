@@ -59,18 +59,13 @@ class Users_m extends MY_Model{
 	);
 
 	public $rules_changepassword_users = array(
-		'oldpassword' => array(
-			'field' => 'oldpassword',
-			'label' => 'Kata sandi lama',
-			'rules' => 'trim|required|min_length[8]'
-			),
 		'passwordUSER' => array(
-			'field' => 'password',
+			'field' => 'passwordUSER',
 			'label' => 'Kata sandi',
 			'rules' => 'trim|required|min_length[8]'
 			),
 		'repasswordUSER' => array(
-			'field' => 'repassword',
+			'field' => 'repasswordUSER',
 			'label' => 'Ulangi kata sandi',
 			'rules' => 'trim|required|min_length[8]'
 			)

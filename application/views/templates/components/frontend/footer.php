@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
 <?php
-    if($addONS != 'non_footer_page'){
+    if($addONS != 'non_footer_page' AND $addONS != 'reset_password_user'){
 ?>
 <footer class="footer">
     <section class="hero aspirasi">

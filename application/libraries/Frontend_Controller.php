@@ -27,11 +27,11 @@ class Frontend_Controller extends MY_Controller{
 
 	function mail_config(){
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = ''; 
+        $config['smtp_host'] = 'mail.hooplarentalmainan.com'; 
         $config['smtp_port'] = '587'; 
         $config['smtp_timeout'] = 30;
-        $config['smtp_user'] = '';
-        $config['smtp_pass'] = '';
+        $config['smtp_user'] = 'info@hooplarentalmainan.com';
+        $config['smtp_pass'] = 'HooplaInfo5678#';
         $config['mailtype'] = 'html';
         $config['charset'] = 'iso-8859-1';
         $config['wordwrap'] = TRUE;

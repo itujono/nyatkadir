@@ -348,14 +348,14 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+
 <?php
-} elseif ($plugins == 'login_user') {
+} elseif ($plugins == 'non_footer_page') {
 ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
-<script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
-<script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
 
 <script>
     var btnDelete = document.querySelectorAll(".delete");
@@ -408,14 +408,9 @@ if ($plugins == 'home') { ?>
         }
     });
 </script>
-
-<script>
-    new WOW().init();
-</script>
 <?php
-} elseif ($plugins == 'non_footer_page') {
+} elseif ($plugins == 'reset_password_user') {
 ?>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>

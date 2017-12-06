@@ -177,11 +177,11 @@
                     </article>
                     <?php } ?>
                 </div>
-                <form action="<?php echo base_url();?>user/registration" method="POST">
+                <form action="<?php echo base_url();?>user/processreset" method="POST">
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                     <div class="field">
                         <div class="control">
-                            <input type="email" name="emailUSER" class="input" placeholder="Masukkan alamat email Anda" required="required">
+                            <input type="email" name="emailing" class="input" placeholder="Masukkan alamat email Anda" required="required">
                         </div>
                     </div>
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
