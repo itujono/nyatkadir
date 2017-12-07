@@ -130,7 +130,7 @@ a {
 }
 
 .navbar {
-    background-color: $darkBlue;
+    background: $gradientDarkBlue;
     position: fixed;
     z-index: 20;
     right: 0;
@@ -530,18 +530,22 @@ a {
                     line-height: 1.6;
                 }
                 p {
+                    position: relative;
                     padding-left: 6em;
                     line-height: 2;
                 }
                 span {
-                    font-size: 4rem;
-                    color: $yellow;
                     position: absolute;
-                    top: 30%;
+                    top: 0;
                     left: 0;
+                    line-height: 1;
+                    font-size: 5rem;
+                    color: $yellow;
+                    text-shadow: $textShadow;
                 }
                 a {
-                    padding-left: 6em;
+                    display: block;
+                    // padding-left: 6em;
                 }
             }
         }
@@ -556,7 +560,8 @@ a {
         align-items: center;
         margin-bottom: 0;
         text-align: left;
-        background-color: $darkBlue;
+        background: $gradientDarkBlue;
+        box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
         h4 {
             color: #eee;
             padding-left: 2em;
@@ -949,7 +954,10 @@ footer.footer {
 // Oke login page wak udah. Heheh.
 
 .login {
+    position: relative;
     background-color: $darkBlue;
+    background: url(../img/bg-footer.png) no-repeat center center;
+    background-size: cover;
     .container {
         display: flex;
         justify-content: center;

@@ -11,33 +11,34 @@
                 <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="<?php echo $slider->imageSLIDER; ?>" data-saveperformance="on" data-title="<?php echo $slider->titleSLIDER; ?>">
                     <img src="<?php echo $slider->imageSLIDER; ?>" alt="<?php echo $slider->titleSLIDER; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                     <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="15"
-                    data-y="center" data-voffset="-100"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn">
-                    <div class="title yellowish"><?php echo $slider->titleSLIDER; ?></div>
+                        data-x="left" data-hoffset="15"
+                        data-y="center" data-voffset="-100"
+                        data-speed="1500"
+                        data-start="500"
+                        data-easing="easeOutExpo"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.01"
+                        data-endelementdelay="0.3"
+                        data-endspeed="1200"
+                        data-endeasing="Power4.easeIn">
+                        <div class="title yellowish"><?php echo $slider->titleSLIDER; ?></div>
+                    </div>
                     <div class="tp-caption sfl sfb tp-resizeme"
-                    data-x="left" data-hoffset="15"
-                    data-y="center" data-voffset="-50"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn">
-                    <h2 class="lhnormal"><?php echo $slider->descSLIDER; ?></h2>
-                </div>
-            </li>
+                        data-x="left" data-hoffset="15"
+                        data-y="center" data-voffset="-50"
+                        data-speed="1500"
+                        data-start="1000"
+                        data-easing="easeOutExpo"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.01"
+                        data-endelementdelay="0.3"
+                        data-endspeed="1200"
+                        data-endeasing="Power4.easeIn">
+                        <h2 class="lhnormal"><?php echo $slider->descSLIDER; ?></h2>
+                    </div>
+                </li>
             <?php } ?>
             <?php } ?>
             </ul>
@@ -242,7 +243,7 @@
                             <div class="content">
                                 <h3><?php echo $updated->titleNEWS;?></h3>
                                 <?php echo word_limiter($updated->descNEWS,35);?>
-                                <span>0<?php echo $key+1;?></span>
+                                <span class="wow fadeInUp" data-wow-delay=".5s">0<?php echo $key+1;?></span>
                                 <a href="<?php echo base_url();?>news/detail/<?php echo base64_encode($updated->idNEWS).'-'.seo_url($updated->titleNEWS);?>">Selengkapnya <i class="icon mdi mdi-arrow-right"></i></a>
                             </div>
                         </div>

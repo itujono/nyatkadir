@@ -120,7 +120,10 @@ a:hover {
 }
 
 .navbar {
-  background-color: #2e2f48;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2e2f48), to(#424367));
+  background: -webkit-linear-gradient(bottom, #2e2f48, #424367);
+  background: -o-linear-gradient(bottom, #2e2f48, #424367);
+  background: linear-gradient(to top, #2e2f48, #424367);
   position: fixed;
   z-index: 20;
   right: 0;
@@ -591,20 +594,23 @@ a:hover {
 }
 
 .news-section .news-started .box .media-content p {
+  position: relative;
   padding-left: 6em;
   line-height: 2;
 }
 
 .news-section .news-started .box .media-content span {
-  font-size: 4rem;
-  color: #fdc236;
   position: absolute;
-  top: 30%;
+  top: 0;
   left: 0;
+  line-height: 1;
+  font-size: 5rem;
+  color: #fdc236;
+  text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.17);
 }
 
 .news-section .news-started .box .media-content a {
-  padding-left: 6em;
+  display: block;
 }
 
 .news-section .news-started .read-more {
@@ -627,7 +633,12 @@ a:hover {
   align-items: center;
   margin-bottom: 0;
   text-align: left;
-  background-color: #2e2f48;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2e2f48), to(#424367));
+  background: -webkit-linear-gradient(bottom, #2e2f48, #424367);
+  background: -o-linear-gradient(bottom, #2e2f48, #424367);
+  background: linear-gradient(to top, #2e2f48, #424367);
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 }
 
 .news-section .read-more h4 {
@@ -1048,7 +1059,10 @@ footer.footer figure.logo-footer img {
 }
 
 .login {
+  position: relative;
   background-color: #2e2f48;
+  background: url(../img/bg-footer.png) no-repeat center center;
+  background-size: cover;
 }
 
 .login .container {

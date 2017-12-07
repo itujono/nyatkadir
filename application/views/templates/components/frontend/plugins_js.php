@@ -70,7 +70,8 @@ if ($plugins == 'home') { ?>
                         items:3
                     },
                     1100:{
-                        items:4
+                        items:4,
+                        nav: true
                     }
                 }
             });
@@ -224,7 +225,9 @@ if ($plugins == 'home') { ?>
                         items:2
                     },
                     1024:{
-                        items:4
+                        items:4,
+                        nav: true,
+                        dots: true
                     },
                     1100:{
                         items:4
@@ -266,28 +269,27 @@ if ($plugins == 'home') { ?>
 
     <script>
         var tabbed = function() {
-        var tab = document.getElementsByClassName('tab-link');
-        var tabContent = document.getElementsByClassName('tab-content');
+            var tab = document.getElementsByClassName('tab-link');
+            var tabContent = document.getElementsByClassName('tab-content');
 
-            for (var i = 0; i < tab.length; i++) {
-                tab[i].addEventListener('click', function(e) {
-                    e.preventDefault();
+                for (var i = 0; i < tab.length; i++) {
+                    tab[i].addEventListener('click', function(e) {
+                        e.preventDefault();
 
-                    for (var i = 0; i < tab.length; i++) {
-                        tab[i].classList.remove('is-active');
-                    };
-                    for (var i = 0; i < tabContent.length; i++) {
-                        tabContent[i].classList.remove('is-active');
-                    };
-                    this.className += ' is-active';
+                        for (var i = 0; i < tab.length; i++) {
+                            tab[i].classList.remove('is-active');
+                        };
+                        for (var i = 0; i < tabContent.length; i++) {
+                            tabContent[i].classList.remove('is-active');
+                        };
+                        this.className += ' is-active';
 
-                    var samainTabNya = this.getAttribute('data-tab');
+                        var samainTabNya = this.getAttribute('data-tab');
 
-                    document.getElementById(samainTabNya).className += ' is-active';
-                }, false);
+                        document.getElementById(samainTabNya).className += ' is-active';
+                    }, false);
+                }
             }
-        }
-
         tabbed();
     </script>
 
