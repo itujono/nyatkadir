@@ -81,6 +81,7 @@
                                 <a href="<?php echo $gal->linkvideoGALLERY;?>" data-fancybox="video" data-caption="<?php echo $gal->titleGALLERY;?>">
                                     <div class="image">
                                         <img src="<?php echo $thumbnail;?>" alt="<?php echo $gal->titleGALLERY;?>">
+                                        <span class="play-button"><i class="mdi mdi-play"></i></span>
                                     </div>
                                     <h4><?php echo $gal->titleGALLERY;?></h4>
                                 </a>

@@ -131,7 +131,7 @@
     </div>
 </section>
 
-<section class="hero voting">
+<section class="hero voting parallax-window" data-stellar-ratio="0.5">
     <div class="hero-body">
         <div class="container">
             <div class="columns">
@@ -252,7 +252,7 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="column">
+            <div class="column parallax-window" data-stellar-background-ratio="0.5">
                 <figure class="image">
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/looking.jpg" alt="">
                 </figure>
@@ -285,3 +285,13 @@
         </div>
     </div>
 </section>
+
+<!-- <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <p class="image">
+            <img src="http://source.unsplash.com/300x400/" alt="Flyer Hari Besar">
+        </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div> -->
