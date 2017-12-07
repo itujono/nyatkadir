@@ -53,6 +53,9 @@ class Home extends Frontend_Controller {
 		if(!empty($this->session->flashdata('message_choice'))) {
             $data['message_choice'] = $this->session->flashdata('message_choice');
         }
+        if(!empty($this->session->flashdata('message_aspirasi'))) {
+            $data['message_aspirasi'] = $this->session->flashdata('message_aspirasi');
+        }
         
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'home', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);

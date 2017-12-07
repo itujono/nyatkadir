@@ -117,10 +117,15 @@ class Users_m extends MY_Model{
 		return $this->db->get();
 	}
 
-	public function checkusers($email){
+	public function checkusers($email=NULL, $id=NULL){
 		$this->db->select('idUSER, emailUSER');
 		$this->db->from('users');
-		$this->db->where('emailUSER', $email);
+		if($email != NULL){
+			$this->db->where('emailUSER', $email);
+		}
+		if($id != NULL){
+			$this->db->where('idUSER', $id);
+		}
 		$this->db->limit(1);
 		return $this->db->get();
 	}

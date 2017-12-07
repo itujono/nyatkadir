@@ -291,3 +291,13 @@ function counter_choice($id=NULL) {
     $data = $CI->db->get()->num_rows();
     return $data;
 }
+
+function get_data_user_row($id){
+    $CI =& get_instance();
+
+    $CI->db->select('ageUSER');
+    $CI->db->from('users');
+    $CI->db->where('idUSER', $id);
+    $data = $CI->db->get()->row();
+    return $data;
+}

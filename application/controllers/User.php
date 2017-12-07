@@ -44,7 +44,7 @@ class User extends Frontend_Controller {
 				$email = $this->input->post('emailUSER');
                 $name = ucwords($this->input->post('nameUSER'));
 
-	                if($this->sendemailconfirmation($name, $email)){
+	                if($this->sendemailconfirmation($name, $email, $saveid)){
 
 					$data = array(
 						'title' => 'Sukses',
@@ -84,7 +84,7 @@ class User extends Frontend_Controller {
 		}
 	}
 
-	private function sendemailconfirmation($name=NULL, $email=NULL)
+	private function sendemailconfirmation($name=NULL, $email=NULL, $id=NULL)
 	{
 
 		$from_email = 'no-reply@nyatkadir.com';
@@ -264,7 +264,15 @@ class User extends Frontend_Controller {
 		            </tr>
 		            <tr>
 		                <td bgcolor="#ffffff" style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555;">
-		                    
+		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+		                        <tr>
+		                            <td style="border-radius: 3px; background: #2e2f48; text-align: center;" class="button-td">
+		                                <a href="'.base_url().'user/confirmuser/'.encode($id).'" style="background: #2e2f48; border: 15px solid #2e2f48; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
+		                                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff;">Konfirmasi Keanggotaan</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		                                </a>
+		                            </td>
+		                        </tr>
+		                    </table>
 		                </td>
 		            </tr>
 		    </table>
@@ -292,6 +300,45 @@ class User extends Frontend_Controller {
         $this->email->subject($subject);
         $this->email->message($message);
         return $this->email->send();
+	}
+
+	public function confirmuser($id=NULL) {
+		if (empty($id)){
+			$data = array(
+				'title' => 'Error!',
+				'style' => 'is-warning',
+	            'text' => 'Maaf sesuatu telah terjadi, silakan coba beberapa saat lagi.'
+        	);
+		} else {
+			$id = decode($id);
+			$checkuser = $this->Users_m->checkusers('',$id);
+			if (!empty($checkuser)) {
+				$data['statusUSER'] = '1';
+				if ($this->Users_m->save($data, $id)) {
+
+					$data = array(
+						'title' => 'Sukses!',
+						'style' => 'is-success',
+		                'text' => 'Selamat, Kami telah mengkonfirmasi email anda, silakan masuk untuk memulai'
+	            	);
+				} else{
+					$data = array(
+						'title' => 'Error!',
+						'style' => 'is-warning',
+			            'text' => 'Maaf sesuatu telah terjadi, silakan coba beberapa saat lagi.'
+		        	);
+				}
+
+			} else {
+				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
+		            'text' => 'Maaf kamu belum terdaftar di sistem kami, silakan mendaftar.'
+	        	);
+			}
+		}
+		$this->session->set_flashdata('message',$data);
+        redirect('user');
 	}
 
 	private function _checkbrute_users($email) {
@@ -392,7 +439,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf, email dan kata sandi yang anda masukkan salah'
+		            'text' => 'Maaf, email atau kata sandi yang anda masukkan salah'
 		        	);
 		        $this->session->set_flashdata('message',$data);
 				redirect($_SERVER['HTTP_REFERER']);
@@ -757,9 +804,10 @@ class User extends Frontend_Controller {
 
 			$data['passwordUSER'] = $this->Users_m->hash($this->input->post('passwordUSER'));
 			$idUSER = decode($this->input->post('idUSER'));
-
+			$get_email = $this->Users_m->checkusers('',$idUSER)->row();
 			$saving = $this->Users_m->save($data, $idUSER);
 			if($saving){
+				$this->sendemailnotification_success_reset($get_email->idUSER, $get_email->emailUSER);
 				$data = array(
                     'title' => 'Sukses!',
 					'style' => 'is-success',
@@ -786,5 +834,237 @@ class User extends Frontend_Controller {
 			$this->session->set_flashdata('message', $data);
 			redirect('user');
 		}
+	}
+
+	private function sendemailnotification_success_reset($id=NULL, $email=NULL) {
+		$from_email = 'no-reply@nyatkadir.com'; //change this to yours
+     	$idCODE = encode($id);
+        $subject = 'Reset Kata sandi berhasil - Kawan Nyat Kadir';
+        $word1 = '<p style="margin: 0;">Selamat! Kata sandi baru akun Anda telah berhasil direset pada <b>'.date("l, d F Y H:i:s").'</b>. Harap simpan baik-baik informasi kata sandi Anda di tempat yang aman.</p>
+        <br><br>
+        <p>Salam Sejahtera!</p>';
+        $message = '
+        <!DOCTYPE html>
+		<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+		<head>
+		    <meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="x-apple-disable-message-reformatting">
+		    <title>'.$subject.'</title>
+
+		    <style>
+		        html,
+		        body {
+		            margin: 0 auto !important;
+		            padding: 0 !important;
+		            height: 100% !important;
+		            width: 100% !important;
+		        }
+
+		        * {
+		            -ms-text-size-adjust: 100%;
+		            -webkit-text-size-adjust: 100%;
+		        }
+
+		        div[style*="margin: 16px 0"] {
+		            margin: 0 !important;
+		        }
+
+		        table,
+		        td {
+		            mso-table-lspace: 0pt !important;
+		            mso-table-rspace: 0pt !important;
+		        }
+
+		        table {
+		            border-spacing: 0 !important;
+		            border-collapse: collapse !important;
+		            table-layout: fixed !important;
+		            margin: 0 auto !important;
+		        }
+		        table table table {
+		            table-layout: auto;
+		        }
+
+		        img {
+		            -ms-interpolation-mode:bicubic;
+		        }
+
+		        *[x-apple-data-detectors],  /* iOS */
+		        .x-gmail-data-detectors,    /* Gmail */
+		        .x-gmail-data-detectors *,
+		        .aBn {
+		            border-bottom: 0 !important;
+		            cursor: default !important;
+		            color: inherit !important;
+		            text-decoration: none !important;
+		            font-size: inherit !important;
+		            font-family: inherit !important;
+		            font-weight: inherit !important;
+		            line-height: inherit !important;
+		        }
+
+		        .a6S {
+		           display: none !important;
+		           opacity: 0.01 !important;
+		       }
+
+		       img.g-img + div {
+		           display: none !important;
+		       }
+
+		        .button-link {
+		            text-decoration: none !important;
+		        }
+
+		        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */
+		            .email-container {
+		                min-width: 375px !important;
+		            }
+		        }
+
+			    @media screen and (max-width: 480px) {
+			        /* What it does: Forces Gmail app to display email full width */
+			        u ~ div .email-container {
+				        min-width: 100vw;
+				        width: 100% !important;
+			        }
+				}
+
+		    </style>
+
+		    <style>
+		        .button-td,
+		        .button-a {
+		            transition: all 100ms ease-in;
+		        }
+		        .button-td:hover,
+		        .button-a:hover {
+		            background: #555555 !important;
+		            border-color: #555555 !important;
+		        }
+
+		        @media screen and (max-width: 600px) {
+
+		            .email-container {
+		                width: 100% !important;
+		                margin: auto !important;
+		            }
+
+		            .fluid {
+		                max-width: 100% !important;
+		                height: auto !important;
+		                margin-left: auto !important;
+		                margin-right: auto !important;
+		            }
+
+		            .stack-column,
+		            .stack-column-center {
+		                display: block !important;
+		                width: 100% !important;
+		                max-width: 100% !important;
+		                direction: ltr !important;
+		            }
+
+		            .stack-column-center {
+		                text-align: center !important;
+		            }
+
+		            .center-on-narrow {
+		                text-align: center !important;
+		                display: block !important;
+		                margin-left: auto !important;
+		                margin-right: auto !important;
+		                float: none !important;
+		            }
+		            table.center-on-narrow {
+		                display: inline-block !important;
+		            }
+
+		            /* What it does: Adjust typography on small screens to improve readability */
+		            .email-container p {
+		                font-size: 17px !important;
+		            }
+		        }
+
+		    </style>
+
+		</head>
+		<body width="100%" bgcolor="#eee" style="margin: 0; mso-line-height-rule: exactly;">
+		    <center style="width: 100%; background: #32384c; text-align: left;">
+
+		        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+		            '.$word1.'
+		        </div>
+
+		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+		            <tr>
+		                <td style="padding: 20px 0; text-align: center">
+		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">com</span></h2>
+		                </td>
+		            </tr>
+		        </table>
+
+		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+		            <tr>
+		                <td bgcolor="#ffffff" align="center">
+		                    <img src="http://placehold.it/1200x600" width="600" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; margin: auto;" class="g-img">
+		                </td>
+		            </tr>
+		            <tr>
+		                <td bgcolor="#ffffff" style="padding: 40px 40px 20px; text-align: center;">
+		                    <h1 style="margin: 0; font-family: sans-serif; font-size: 24px; line-height: 125%; color: #2e2f48; font-weight: bold;">Kata Sandi Berhasil Direset</h1>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td bgcolor="#ffffff" style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; text-align: center;">
+		                    '.$word1.'
+		                </td>
+		            </tr>
+		            <tr>
+		                <td bgcolor="#ffffff" style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555;">
+		                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+		                        <tr>
+		                            <td style="border-radius: 3px; background: #2e2f48; text-align: center;" class="button-td">
+		                                <a href="'.base_url().'" style="background: #2e2f48; border: 15px solid #2e2f48; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
+		                                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff;">Kembali ke Halaman Utama</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		                                </a>
+		                            </td>
+		                        </tr>
+		                    </table>
+		                    <!-- Button : END -->
+		                </td>
+		            </tr> <!-- 1 Column Text + Button : END -->
+
+		    </table>
+		    <!-- Email Body : END -->
+
+		    <!-- Email Footer : BEGIN -->
+		    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px; font-family: sans-serif; color: #888888; font-size: 12px; line-height: 140%;">
+		        <tr>
+		            <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
+		                <br><br>
+		                Nyat Kadir.com<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
+		                <br><br>
+		                <unsubscribe style="color: #888888; text-decoration: underline;">unsubscribe</unsubscribe>
+		            </td>
+		        </tr>
+		    </table>
+
+		    </center>
+		</body>
+		</html>';
+						        
+        //configure email settings
+        $config = $this->mail_config();
+        $this->email->initialize($config);
+        
+        //send mail
+        $this->email->from($from_email, 'Kawan Nyat Kadir');
+        $this->email->to($email);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        return $this->email->send();
 	}
 }

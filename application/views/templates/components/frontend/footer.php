@@ -14,30 +14,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                         Gunakan form di samping. Tulis sejelas-jelasnya isi aspirasimu. Jangan hanya simpan mereka di dalam benak.
                     </div>
                     <div class="column">
-                        <form class="" action="#" method="post">
+                        <form class="" action="<?php echo base_url();?>aspirasi/send_aspirasi" method="POST">
+                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" class="input" placeholder="Nama Anda">
+                                    <?php
+                                        if(!empty($this->session->userdata('idUSER'))){
+                                            $data_val = $this->session->userdata('Name');
+                                            $read_only = 'readonly';
+                                        } else {
+                                            $data_val = '';
+                                            $read_only = '';
+                                        }
+                                    ?>
+                                    <input type="text" class="input" name="nameASPIRASI" placeholder="Nama Anda" value="<?php echo $data_val;?>" required="required" <?php echo $read_only;?>>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" class="input" placeholder="Email Anda">
+                                    <?php
+                                        if(!empty($this->session->userdata('idUSER'))){
+                                            $data_val = $this->session->userdata('Email');
+                                            $read_only = 'readonly';
+                                        } else {
+                                            $data_val = '';
+                                            $read_only = '';
+                                        }
+                                    ?>
+                                    <input type="email" name="emailASPIRASI" class="input" placeholder="Email Anda" value="<?php echo $data_val;?>" required="required" <?php echo $read_only;?>>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input type="number" class="input" placeholder="Usia Anda">
+                                    <?php
+                                        if(!empty($this->session->userdata('idUSER'))){
+                                            $val = get_data_user_row($this->session->userdata('idUSER'));
+                                            $data_val = $val->ageUSER;
+                                            $read_only = 'readonly';
+                                        } else {
+                                            $data_val = '';
+                                            $read_only = '';
+                                        }
+                                    ?>
+                                    <input type="number" class="input" name="ageASPIRASI" placeholder="Usia Anda" required="required" value="<?php echo $data_val;?>" <?php echo $read_only;?>>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" class="input" placeholder="Judul Aspirasi Anda">
+                                    <input type="text" class="input" name="subjectASPIRASI" placeholder="Judul Aspirasi Anda" required="required">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <textarea class="textarea" rows="6" placeholder="Isi Aspirasi"></textarea>
+                                    <textarea  class="textarea" rows="6" name="descASPIRASI" placeholder="Isi Aspirasi" required="required"></textarea>
                                 </div>
                             </div>
                             <div class="field">
@@ -46,6 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                             </div>
                         </form>
+                        <?php if(!empty($message_aspirasi)){ ?>
                         <div class="successful box">
                             <article class="media">
                                 <div class="media-left">
@@ -55,12 +85,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                                 <div class="media-content">
                                     <div class="content">
-                                        <h3>Terima kasih!</h3>
-                                        <p>Aspirasi Anda telah kami rekam. Dan terima kasih sudah berpartisipasi. Kami berharap dapat bertemu Anda di lain kesempatan.</p>
+                                        <h3><?php echo $message_aspirasi['title']; ?></h3>
+                                        <p><?php echo $message_aspirasi['text']; ?></p>
                                     </div>
                                 </div>
                             </article>
                         </div>
+                        <?php } ?>
                     </div> <!-- kelar div Column form -->
                 </div>
             </div> <!-- kelar Container -->
