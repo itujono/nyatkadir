@@ -1239,6 +1239,10 @@ footer.footer figure.logo-footer img {
   margin-bottom: 2em;
 }
 
+.news-slider:hover {
+  cursor: move;
+}
+
 .news-slider figure {
   margin: 0;
 }

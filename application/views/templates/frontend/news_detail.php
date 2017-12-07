@@ -16,11 +16,11 @@
                         <h1 class="title"><?php echo $getnews->titleNEWS;?></h1>
                         <p class="subtitle">Diposting <span class="yellowish"><?php echo indonesian_date($getnews->createdateNEWS,'j F Y',''); ?></span></p>
                         <div class="news-slider four-item-carousel owl-theme owl-carousel">
-                        <?php 
+                        <?php
                           if(!empty($getnews->map)){
-                            foreach ($getnews->map as $key=> $value_img) { 
+                            foreach ($getnews->map as $key=> $value_img) {
                         ?>
-                            <figure class="image is-2by1">
+                            <figure class="image">
                                 <img src="<?php echo $value_img;?>" alt="<?php echo $getnews->titleNEWS;?>">
                             </figure>
                             <?php } ?>

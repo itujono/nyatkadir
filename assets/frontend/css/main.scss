@@ -1108,6 +1108,9 @@ footer.footer {
 
 .news-slider {
     margin-bottom: 2em;
+    &:hover {
+        cursor: move;
+    }
     figure {
         margin: 0;
     }
