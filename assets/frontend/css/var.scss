@@ -14,3 +14,9 @@ $textShadow: 2px 5px 10px rgba(0, 0, 0, 0.17);
     transform: translateY(-5px);
     box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
 }
+
+@mixin goldGradient {
+    color: #c3943c;
+    background: linear-gradient(left,#ffe09e,#c3943c);
+    background-clip: text;
+}

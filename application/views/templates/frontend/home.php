@@ -137,14 +137,14 @@
             <div class="columns">
                 <div class="column is-one-third">
                     <div class="section-title dark">
-                        <h3 class="mb10">Mau ikut <span class="yellowish">berpartisipasi</span> <br> dalam pemberian opini?</h3>
+                        <h3 class="mb10 goldish">Mau ikut <span class="yellowish">berpartisipasi</span> <br> dalam pemberian opini?</h3>
                         Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                     </div>
                 </div>
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                 <?php
-                    if (empty($message_choice)){
+                    //if (empty($message_choice)){
                 ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
@@ -185,8 +185,9 @@
                         </form>
                         <?php } ?>
                     </div>
-                    <?php } else { ?>
-                    <div class="successful box">
+                    <?php //} else { ?>
+                        <div class="column">
+                            <div class="successful box">
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image">
@@ -195,16 +196,18 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <h3><?php echo $message_choice['title'];?></h3>
-                                    <p><?php echo $message_choice['text'];?></p>
+                                    <h3>Blablafnsidkf</h3>
+                                    <p>erhrthbrsb</p>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    <?php } ?>
+                        </div>
+                    <?php //} ?>
                 </div>
             <?php } else { ?>
-            <div class="successful box">
+                <div class="column">
+                    <div class="successful box">
                 <article class="media">
                     <div class="media-left">
                         <figure class="image">
@@ -214,11 +217,12 @@
                     <div class="media-content">
                         <div class="content">
                             <h3>Mohon Maaf!</h3>
-                            <p>Tidak ada polling untuk saat ini.</p>
+                            <p>Tidak ada polling yang sedang berjalan untuk saat ini.</p>
                         </div>
                     </div>
                 </article>
             </div>
+                </div>
             <?php } ?>
             </div> <!-- kelar div Columns -->
         </div>

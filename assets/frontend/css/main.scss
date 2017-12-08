@@ -52,6 +52,10 @@
     color: $reddish !important;
 }
 
+.goldish {
+    @include goldGradient;
+}
+
 .white {
     color: #fff !important;
 }
@@ -488,12 +492,23 @@ a {
 }
 
 .successful.box {
-    display: none;
-    background-color: #ddd;
+    // display: none;
+    background: rgba(0, 0, 0, .2);
     border: 2px solid $yellow;
     width: 100%;
     .icon {
         font-size: 3rem;
+        &.mdi {
+            color: transparentize($yellow, .5);
+        }
+    }
+    .content {
+        h3 {
+            color: $yellow;
+        }
+        p {
+            color: #f3f3f3;
+        }
     }
 }
 
