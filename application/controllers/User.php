@@ -9,6 +9,7 @@ class User extends Frontend_Controller {
 		$this->load->model('Attempts_m');
 		$this->load->model('Polling_m');
 		$this->load->model('Polling_choice_m');
+		$this->load->model('Aspirasi_m');
 	}
 
 	public function index() {
@@ -478,6 +479,10 @@ class User extends Frontend_Controller {
 
 		$data['list_choice_polling_users'] = $this->Polling_choice_m->list_choice_polling_users($id)->result();
 		$data['count_polling_user'] = count($data['list_choice_polling_users']);
+
+		$data['list_submited_aspirasi_user'] = $this->Aspirasi_m->selectall_aspirasi_at_account($this->session->userdata('idUSER'))->result();
+		$data['count_submited_aspirasi_user'] = count($data['list_submited_aspirasi_user']);
+		
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'account', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
