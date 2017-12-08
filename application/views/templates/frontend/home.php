@@ -144,7 +144,7 @@
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                 <?php
-                    if (empty($message_choice)){
+                    //if (empty($message_choice)){
                 ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
@@ -185,7 +185,7 @@
                         </form>
                         <?php } ?>
                     </div>
-                    <?php } else { ?>
+                    <?php //} else { ?>
                     <div class="successful box">
                         <article class="media">
                             <div class="media-left">
@@ -201,7 +201,7 @@
                             </div>
                         </article>
                     </div>
-                    <?php } ?>
+                    <?php// } ?>
                 </div>
             <?php } else { ?>
             <div class="successful box">
@@ -258,7 +258,7 @@
                 </figure>
                 <div class="read-more">
                     <h4>Lihat semua <br> <span class="yellowish">Berita dan Event</span></h4>
-                    <a href="<?php echo base_url();?>news/news_detail"><span class="icon mdi mdi-chevron-right"></span></a>
+                    <a href="<?php echo base_url();?>news"><span class="icon mdi mdi-chevron-right"></span></a>
                 </div>
             </div>
         </div> <!-- kelar div Columns -->

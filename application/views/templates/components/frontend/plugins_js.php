@@ -23,7 +23,7 @@ if ($plugins == 'home') { ?>
 
             if (sessionStorage.getItem('advertOnce') !== 'true') {
                 $('body').append(
-                    '<div class="modal is-active"><div class="modal-background"></div><div class="modal-content"><p class="image"><img src="http://source.unsplash.com/300x400/" alt="Flyer Hari Besar"></p></div><button class="modal-close is-large" aria-label="close"></button></div>'
+                    '<div class="modal is-active"><div class="modal-background"></div><div class="modal-content"><p class="image"><img src="<?php echo $getflyer->imageFLYER;?>" alt="<?php echo $getflyer->titleFLYER;?>"></p></div><button class="modal-close is-large" aria-label="close"></button></div>'
                 )
                 sessionStorage.setItem('advertOnce','true');
                 console.log(advertOnce);
@@ -37,8 +37,6 @@ if ($plugins == 'home') { ?>
             jQuery(document).keypress(function(e) {
                 if (e.keyCode == 27) {
                     $(".modal").fadeOut(500);
-                    //or
-                    // window.close();
                 }
             });
         });
