@@ -47,4 +47,13 @@ class Aspirasi_m extends MY_Model{
 		}
 		return $this->db->get();
 	}
+
+	public function selectall_aspirasi_at_account($id) {
+		$this->db->select('subjectASPIRASI, descASPIRASI, createdateASPIRASI');
+		$this->db->select('users.idUSER');
+		$this->db->from('aspirasi');
+		$this->db->join('users', 'users.idUSER = aspirasi.userASPIRASI', 'left');
+		$this->db->where('userASPIRASI', $id);
+		return $this->db->get();
+	}
 }

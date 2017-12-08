@@ -137,7 +137,7 @@
             <div class="columns">
                 <div class="column is-one-third">
                     <div class="section-title dark">
-                        <h3 class="mb10 goldish">Mau ikut <span class="yellowish">berpartisipasi</span> <br> dalam pemberian opini?</h3>
+                        <h3 class="mb10">Mau ikut <span class="yellowish">berpartisipasi</span> <br> dalam pemberian opini?</h3>
                         Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                     </div>
                 </div>
@@ -186,8 +186,7 @@
                         <?php } ?>
                     </div>
                     <?php //} else { ?>
-                        <div class="column">
-                            <div class="successful box">
+                    <div class="successful box">
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image">
@@ -196,18 +195,16 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <h3>Blablafnsidkf</h3>
-                                    <p>erhrthbrsb</p>
+                                    <h3><?php echo $message_choice['title'];?></h3>
+                                    <p><?php echo $message_choice['text'];?></p>
                                 </div>
                             </div>
                         </article>
                     </div>
-                        </div>
-                    <?php //} ?>
+                    <?php// } ?>
                 </div>
             <?php } else { ?>
-                <div class="column">
-                    <div class="successful box">
+            <div class="successful box">
                 <article class="media">
                     <div class="media-left">
                         <figure class="image">
@@ -217,12 +214,11 @@
                     <div class="media-content">
                         <div class="content">
                             <h3>Mohon Maaf!</h3>
-                            <p>Tidak ada polling yang sedang berjalan untuk saat ini.</p>
+                            <p>Tidak ada polling untuk saat ini.</p>
                         </div>
                     </div>
                 </article>
             </div>
-                </div>
             <?php } ?>
             </div> <!-- kelar div Columns -->
         </div>
@@ -262,7 +258,7 @@
                 </figure>
                 <div class="read-more">
                     <h4>Lihat semua <br> <span class="yellowish">Berita dan Event</span></h4>
-                    <a href="<?php echo base_url();?>news/news_detail"><span class="icon mdi mdi-chevron-right"></span></a>
+                    <a href="<?php echo base_url();?>news"><span class="icon mdi mdi-chevron-right"></span></a>
                 </div>
             </div>
         </div> <!-- kelar div Columns -->

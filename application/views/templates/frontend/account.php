@@ -31,7 +31,7 @@
                         <ul>
                             <li><a href="#" class="tab-link is-active" data-tab="tab-profile">Profile</a></li>
                             <li><a href="#" class="tab-link" data-tab="tab-polling">Polling (<?php echo $count_polling_user;?>)</a></li>
-                            <li><a href="#" class="tab-link" data-tab="tab-aspirasi">Aspirasi (3)</a></li>
+                            <li><a href="#" class="tab-link" data-tab="tab-aspirasi">Aspirasi (<?php echo $count_submited_aspirasi_user;?>)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,21 +78,17 @@
                         <div class="aspirasi-list">
                             <h3 class="title">Daftar Aspirasi yang Anda Sampaikan</h3>
                             <ul class="aspirasi-item">
+                            <?php
+                                if(!empty($list_submited_aspirasi_user)){
+                                    foreach ($list_submited_aspirasi_user as $asp_user) {
+                            ?>
                                 <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
+                                    <h4><?php echo $asp_user->subjectASPIRASI;?></h4>
+                                    <p><?php echo $asp_user->descASPIRASI;?></p>
+                                    <small><?php echo indonesian_date($asp_user->createdateASPIRASI,'j F Y H:i'); ?></small>
                                 </li>
-                                <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
-                                </li>
-                                <li>
-                                    <h4>Bagaimana Pendapat Anda Tentang Setya Novanto di Sana?</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <small>30 Desember 2017 • 02:22 AM</small>
-                                </li>
+                                <?php } ?>
+                            <?php } ?>
                             </ul>
                         </div>
                     </div>
