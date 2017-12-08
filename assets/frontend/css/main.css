@@ -49,7 +49,7 @@
 
 .goldish {
   color: #c3943c;
-  background: -webkit-gradient(linear, left top, right top, from(#ffe09e), to(#c3943c));
+  background: -webkit-gradient(linear, left top, left bottom, from(left), color-stop(#ffe09e), to(#c3943c));
   background: -webkit-linear-gradient(left, #ffe09e, #c3943c);
   background: -o-linear-gradient(left, #ffe09e, #c3943c);
   background: linear-gradient(left, #ffe09e, #c3943c);
@@ -908,7 +908,7 @@ footer.footer figure.logo-footer img {
 
 .few-gallery {
   background-color: #2e2f48;
-  padding: 3rem 0;
+  padding: 3rem 0 6rem 0;
 }
 
 .few-gallery .card-footer .card-footer-item:hover {
@@ -946,12 +946,12 @@ footer.footer figure.logo-footer img {
 
 .fraksi .box {
   background-color: #fdc236;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
   position: relative;
-  margin-top: -80px;
+  margin-top: -110px;
   min-height: 130%;
   -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
@@ -966,10 +966,10 @@ footer.footer figure.logo-footer img {
 .fraksi .box:before {
   content: '';
   background: #fdc236;
-  width: 100px;
+  width: 200px;
   height: 100%;
   position: absolute;
-  left: -100px;
+  left: -200px;
   top: 0;
 }
 
@@ -1132,7 +1132,7 @@ footer.footer figure.logo-footer img {
 
 .similar .card {
   display: inline-block;
-  width: 31%;
+  width: 30%;
   margin-right: 15px;
 }
 
@@ -1263,9 +1263,9 @@ footer.footer figure.logo-footer img {
 }
 
 .news .wrapper .card {
-  -webkit-flex-basis: 32%;
-  -ms-flex-preferred-size: 32%;
-  flex-basis: 32%;
+  -webkit-flex-basis: 31%;
+  -ms-flex-preferred-size: 31%;
+  flex-basis: 31%;
 }
 
 .news .card {

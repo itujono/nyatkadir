@@ -801,7 +801,7 @@ footer.footer {
 
 .few-gallery {
     background-color: $darkBlue;
-    padding: 3rem 0;
+    padding: 3rem 0 6rem 0;
     .card-footer {
         .card-footer-item:hover {
             background-color: initial;
@@ -835,12 +835,12 @@ footer.footer {
 .fraksi {
     .box {
         background-color: #fdc236;
-        padding-bottom: 3em;
+        padding-bottom: 4em;
         border-radius: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
         position: relative;
-        margin-top: -80px;
+        margin-top: -110px;
         min-height: 130%;
         box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
         .image {
@@ -851,10 +851,10 @@ footer.footer {
         &:before {
             content: '';
             background: $yellow;
-            width: 100px;
+            width: 200px;
             height: 100%;
             position: absolute;
-            left: -100px;
+            left: -200px;
             top: 0;
         }
     }
@@ -990,7 +990,7 @@ footer.footer {
 .similar {
     .card {
         display: inline-block;
-        width: 31%;
+        width: 30%;
         margin-right: 15px;
         .card-content {
             height: 180px;
@@ -1105,7 +1105,7 @@ footer.footer {
 
 .news {
     .wrapper .card {
-        flex-basis: 32%;
+        flex-basis: 31%;
     }
 }
 
