@@ -298,6 +298,27 @@ altair_form_adv = {
 <!--  contact list functions -->
 <script src="<?php echo base_url().$this->data['asback'];?>js/pages/page_contact_list.min.js"></script>
 
+<?php
+} elseif($plugins == 'plugins_aspirasi') {
+?>
+<?php echo $datatables;?>
+<script type="text/javascript">
+  function modalBOX(str){
+      $.ajax({
+           url:"<?php echo base_url();?>administrator/aspirasi/get_aspirasi/"+str+"",
+           success: function(data){
+              $('#subject').html('<h1>'+data.subjectASPIRASI+'</h1>');
+              $('#name_user').html('<h4>'+data.nameASPIRASI+' ( '+ data.emailASPIRASI +' )</h4>');
+              $('#timestamps').html('<span>'+data.createdateASPIRASI+'</span><br><br>');
+              $('#description').html('<p>'+data.descASPIRASI+'</p>');
+              var modal = UIkit.modal("#modal_header_footer");
+              modal.show(); 
+           },
+           dataType:"json"
+       });
+       return false;
+  }
+</script>
 <?php                   
 }
 ?>

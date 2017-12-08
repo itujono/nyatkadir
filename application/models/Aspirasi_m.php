@@ -47,13 +47,4 @@ class Aspirasi_m extends MY_Model{
 		}
 		return $this->db->get();
 	}
-
-	public function select_join_aspirasi($id=NULL) {
-		$this->db->select('*');
-		$this->db->select('nameUSER, emailUSER, ageUSER');
-		$this->db->from('aspirasi');
-		$this->db->join('users', 'users.idUSER = aspirasi.userASPIRASI');
-
-		return $this->db->get();
-	}
 }
