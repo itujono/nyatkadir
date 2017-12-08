@@ -10,7 +10,17 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/jquery.fancybox.min.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/revolution.min.js"></script>
+
+    <script>
+    $('[data-fancybox]').fancybox({
+        youtube : {
+            controls : 0,
+            showinfo : 0
+        }
+    });
+    </script>
 
     <script>
         new WOW().init();

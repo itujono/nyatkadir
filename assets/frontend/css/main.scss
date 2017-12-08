@@ -598,6 +598,47 @@ a {
             }
         }
     }
+    .video-pop {
+        max-height: 80%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 4em;
+        height: 400px;
+        max-width: 100%;
+        transition: all .3s ease;
+        &:hover img {
+            filter: brightness(.5);
+        }
+        .image {
+            width: 100%;
+            img {
+                transition: all .3s ease;
+            }
+        }
+        .play-button {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-left: -30px;
+            width: 80px;
+            height: 80px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: .7;
+            &:hover {
+                opacity: 1;
+            }
+            i {
+                font-size: 3em;
+            }
+        }
+    }
 }
 
 

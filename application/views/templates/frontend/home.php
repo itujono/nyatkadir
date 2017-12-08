@@ -186,6 +186,27 @@
                         <?php } ?>
                     </div>
                     <?php //} else { ?>
+                    <div class="column">
+                        <div class="successful box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image">
+                                        <span class="icon is-large mdi mdi-trophy-award"></span>
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h3><?php echo $message_choice['title'];?></h3>
+                                        <p><?php echo $message_choice['text'];?></p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <?php// } ?>
+                </div>
+            <?php } else { ?>
+                <div class="column">
                     <div class="successful box">
                         <article class="media">
                             <div class="media-left">
@@ -195,30 +216,13 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <h3><?php echo $message_choice['title'];?></h3>
-                                    <p><?php echo $message_choice['text'];?></p>
+                                    <h3>Mohon Maaf!</h3>
+                                    <p>Tidak ada polling untuk saat ini.</p>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    <?php// } ?>
                 </div>
-            <?php } else { ?>
-            <div class="successful box">
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image">
-                            <span class="icon is-large mdi mdi-trophy-award"></span>
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <div class="content">
-                            <h3>Mohon Maaf!</h3>
-                            <p>Tidak ada polling untuk saat ini.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
             <?php } ?>
             </div> <!-- kelar div Columns -->
         </div>
@@ -226,6 +230,16 @@
 </section>
 
 <section class="section news-section">
+    <section class="hero">
+        <div class="container">
+            <div class="video-pop">
+                <figure class="image">
+                    <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="Video Pop">
+                </figure>
+                <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" class="icon play-button"><i class="mdi mdi-play"></i></a>
+            </div>
+        </div>
+    </section>
     <div class="container">
         <div class="section-title">
             <h3>Berita dan Event <span class="reddish">Nyat Kadir</span></h3>
