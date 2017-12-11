@@ -52,11 +52,14 @@ class Home extends Frontend_Controller {
 		$data['updated_at_home'] = $this->News_m->selectall_random_news('',1)->result();
 
 		$data['getflyer'] = $this->Flyer_m->select_flyer_in_frontend()->row();
-		$map = directory_map('assets/upload/flyer/pic-flyer-'.folenc($data['getflyer']->idFLYER), FALSE, TRUE);
-		if(!empty($map)){
-			$data['getflyer']->imageFLYER = base_url() . 'assets/upload/flyer/pic-flyer-'.folenc($data['getflyer']->idFLYER).'/'.$map[0];
-		} else {
-			$data['getflyer']->imageFLYER = '';
+
+		if(!empty($data['getflyer'])){
+			$map = directory_map('assets/upload/flyer/pic-flyer-'.folenc($data['getflyer']->idFLYER), FALSE, TRUE);
+			if(!empty($map)){
+				$data['getflyer']->imageFLYER = base_url() . 'assets/upload/flyer/pic-flyer-'.folenc($data['getflyer']->idFLYER).'/'.$map[0];
+			} else {
+				$data['getflyer']->imageFLYER = '';
+			}
 		}
 
 		if(!empty($this->session->flashdata('message_choice'))) {

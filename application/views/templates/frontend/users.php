@@ -67,7 +67,6 @@
                     <?php
                         if (!empty($message)){
                     ?>
-                    <!-- <p class="subtitle"><?php //echo $message['text'];?></p> -->
                     <article class="message is-success">
                         <div class="message-header">
                             <p>Sukses!</p>
