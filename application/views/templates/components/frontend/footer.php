@@ -15,8 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                     </div>
                     <?php if(!empty($this->session->userdata('idUSER'))) { ?>
                     <div class="column">
-                        <form class="" action="<?php echo base_url();?>aspirasi/send_aspirasi" method="POST">
-                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                        <form class="form-aspirasi" action="<?php echo base_url();?>aspirasi/send_aspirasi" method="POST">
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                             <div class="field">
                                 <div class="control">
                                     <?php
@@ -104,8 +104,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                                 <div class="media-content">
                                     <div class="content">
-                                        <h3>Mohon maaf,</h3>
-                                        <p>Anda diharuskan mendaftar jika ingin menyampaikan aspirasi</p>
+                                        <h3>Login Dulu</h3>
+                                        <p>Mohon maaf, Anda diharuskan login terlebih dulu jika ingin menyampaikan aspirasi. <br> Terima kasih.</p>
+                                        <a href="<?php echo base_url();?>user" class="button is-link">Login</a>
                                     </div>
                                 </div>
                             </article>

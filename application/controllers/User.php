@@ -438,18 +438,18 @@ class User extends Frontend_Controller {
 				$this->Attempts_m->save($data);
 
 				$data = array(
-					'title' => 'Error!',
+					'title' => 'Gagal',
 					'style' => 'is-warning',
-		            'text' => 'Maaf, email atau kata sandi yang anda masukkan salah'
+		            'text' => 'Maaf, email atau kata sandi yang Anda masukkan salah. Mohon periksa kembali terlebih dulu dengan seksama.'
 		        	);
 		        $this->session->set_flashdata('message',$data);
 				redirect($_SERVER['HTTP_REFERER']);
 			}
 		} else {
 			$data = array(
-			'title' => 'Error!',
+			'title' => 'Error',
 			'style' => 'is-warning',
-            'text' => 'Maaf, Silakan ulangi email dan kata sandi anda dibawah!'
+            'text' => 'Maaf, silakan ulangi inputan email dan kata sandi Anda dibawah!'
         	);
         $this->session->set_flashdata('message',$data);
 		redirect($_SERVER['HTTP_REFERER']);
@@ -461,7 +461,7 @@ class User extends Frontend_Controller {
 		$data = array(
 			'title' => 'Sukses!',
 			'style' => 'is-success',
-            'text' => 'Selamat! Kamu sudah logout. Sampai jumpa lagi!'
+            'text' => 'Anda sudah berhasil logout. Sampai jumpa lagi!'
         	);
         $this->session->set_flashdata('message',$data);
 		redirect('user');
@@ -493,7 +493,7 @@ class User extends Frontend_Controller {
 			$data = array(
 				'title' => 'Warning!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf, kamu belum memasukkan email.'
+	            'text' => 'Maaf, Anda belum memasukkan email.'
 	        	);
 	        $this->session->set_flashdata('message',$data);
 			redirect('user');
@@ -505,7 +505,7 @@ class User extends Frontend_Controller {
 					$data = array(
 	                    'title' => 'Sukses!',
 						'style' => 'is-success',
-			            'text' => 'Kami sudah berhasil mengirim tautan reset kata sandi lewat email<br>silakan cek email kamu!'
+			            'text' => 'Kami sudah berhasil mengirim tautan reset kata sandi lewat email. <br> Harap periksa inbox email Anda.'
 	                );
 	                $this->session->set_flashdata('message',$data);
 	                redirect('user');
@@ -513,7 +513,7 @@ class User extends Frontend_Controller {
 					$data = array(
 						'title' => 'Warning!',
 						'style' => 'is-warning',
-	                    'text' => 'Maaf, kami tidak dapat mengirim email kepada anda, silakan coba beberapa saat kembali, Terima Kasih!'
+	                    'text' => 'Maaf, kami tidak dapat mengirim email kepada Anda, silakan coba beberapa saat kembali. <br> Terima Kasih!'
 	                );
 	                $this->session->set_flashdata('message',$data);
 	                redirect('user');
@@ -522,7 +522,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Warning!',
 					'style' => 'is-warning',
-                    'text' => 'Maaf, email anda tidak terdaftar pada sistem kami, silakan masukkan kembali alamat email anda dengan benar, Terima kasih!'
+                    'text' => 'Maaf, email Anda tidak terdaftar pada sistem kami, silakan masukkan kembali alamat email Anda dengan benar. <br> Terima kasih!'
                 );
 
                 $this->session->set_flashdata('message',$data);
@@ -816,7 +816,7 @@ class User extends Frontend_Controller {
 				$data = array(
                     'title' => 'Sukses!',
 					'style' => 'is-success',
-		            'text' => 'Selamat!, kata sandi telah berhasil di reset, silakan login kembali.'
+		            'text' => 'Selamat! Kata sandi telah berhasil direset. Silakan login kembali.'
                 );
 				$this->session->set_flashdata('message', $data);
 				redirect('user');
@@ -824,7 +824,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Warning!',
 					'style' => 'is-warning',
-					'text' => 'Maaf, kami tidak dapat me-reset kata sandi kamu, silakan coba beberapa saat kembali!'
+					'text' => 'Maaf, kami tidak dapat me-reset kata sandi Anda. Silakan coba beberapa saat kembali.'
 				);
 				$this->session->set_flashdata('message', $data);
 				redirect('user');
@@ -834,7 +834,7 @@ class User extends Frontend_Controller {
 			$data = array(
 				'title' => 'Warning!',
 				'style' => 'is-warning',
-				'text' => 'Maaf, Mohon ulangi inputan form perubahan kata sandi anda!<br>Minimal 8 Karakter kata sandi'
+				'text' => 'Maaf, mohon ulangi inputan form perubahan kata sandi Anda! <br> Petunjuk: Kata sandi memerlukan setidaknya 8 karakter.'
 				);
 			$this->session->set_flashdata('message', $data);
 			redirect('user');

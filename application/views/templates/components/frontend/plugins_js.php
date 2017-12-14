@@ -23,6 +23,14 @@ if ($plugins == 'home') { ?>
     </script>
 
     <script>
+        var form = document.querySelector(".form-aspirasi");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
         new WOW().init();
     </script>
 
