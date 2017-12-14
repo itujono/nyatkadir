@@ -24,9 +24,11 @@ if ($plugins == 'home') { ?>
 
     <script>
         var form = document.querySelector(".form-aspirasi");
+        var successBox = document.querySelector("#submit-success");
 
-        form.addEventListener("submit", function(e) {
+        submit.addEventListener("submit", function(e) {
             e.preventDefault();
+            console.log("Sempardak!!!");
         });
     </script>
 
@@ -477,6 +479,15 @@ if ($plugins == 'home') { ?>
                 console.log("Sempardak!");
             })
         });
+    }
+</script>
+
+<script>
+    var aspirasiTitle = document.querySelector("#aspirasi-title");
+
+    aspirasiTitle.oninvalid = function(e) {
+        e.target.setCustomValidity('Harap isi judul aspirasi Anda');
+        console.log("Sempirdik!");
     }
 </script>
 

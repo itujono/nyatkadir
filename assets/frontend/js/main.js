@@ -954,7 +954,7 @@ $(window).load(function () {
     $('html,body').addClass('add-oveflow');
 });
 
-jQuery(document).ready(function ($) {
+$(document).ready(function ($) {
     goto_top_page();
 });
 

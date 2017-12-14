@@ -518,6 +518,23 @@ a {
     form {
         width: inherit;
     }
+    .voting-result {
+        margin-bottom: 2em;
+        .progress {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+        h4 {
+            font-family: 'FontBook', Helvetica, Arial;
+            color: #ddd;
+        }
+    }
+    .share {
+        h3 {
+            color: $yellow;
+        }
+    }
 }
 
 .successful.box {

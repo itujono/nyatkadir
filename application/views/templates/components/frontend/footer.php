@@ -62,12 +62,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" class="input" name="subjectASPIRASI" placeholder="Judul Aspirasi Anda" required="required">
+                                    <input type="text" class="input" name="subjectASPIRASI" placeholder="Judul Aspirasi Anda" required="required" id="aspirasi-title">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <textarea  class="textarea" rows="6" name="descASPIRASI" placeholder="Isi Aspirasi" required="required"></textarea>
+                                    <textarea  class="textarea" rows="6" name="descASPIRASI" placeholder="Isi Aspirasi" required="required" id="aspirasi-message"></textarea>
                                 </div>
                             </div>
                             <div class="field">
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                             </div>
                         </form>
                         <?php if(!empty($message_aspirasi)){ ?>
-                        <div class="successful box">
+                        <div class="successful box" id="submit-success">
                             <article class="media">
                                 <div class="media-left">
                                     <figure class="image">
@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                         <?php } ?>
                     </div> <!-- kelar div Column form -->
                     <?php } else { ?>
-                        <div class="successful box">
+                        <div class="successful box" id="submit-failed">
                             <article class="media">
                                 <div class="media-left">
                                     <figure class="image">

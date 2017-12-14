@@ -13,7 +13,7 @@
                     <p class="title wow fadeInUp" data-wow-delay="1s"><?php echo $this->session->userdata('Name'); ?></p>
                     <?php }
                         if (!empty($message)){
-                    
+
                     ?>
                     <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </form>
-                <?php } 
+                <?php }
                 if(empty($this->session->userdata('idUSER'))){ ?>
                 <div class="switch-login" id="switch-to-register">
                     <a href="#"><span class="icon mdi mdi-account-outline"></span> Belum punya akun?</a>
@@ -55,7 +55,7 @@
                 </div>
                 <?php } else { ?>
                 <div class="switch-login">
-                    <a href="<?php echo base_url();?>user/logout"><span class="icon mdi mdi-account-outline button is-link"></span> Logout?</a>
+                    <a href="<?php echo base_url();?>user/logout"><span class="icon mdi mdi-account-outline"></span> Keluar?</a>
                 </div>
                 <?php } ?>
             </div> <!-- kelar Login Wrapper -->

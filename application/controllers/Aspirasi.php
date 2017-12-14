@@ -96,14 +96,14 @@ class Aspirasi extends Frontend_Controller {
 
 		$from_email = 'no-reply@nyatkadir.com';
         $subject = 'Terima Kasih Telah Berpartisipasi - Kawan Nyat Kadir';
-        $word1 = 'Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi <a href="http://www.nyatkadir.com/">NyatKadir.com</a> pada <b>'.date("l, d F Y H:i:s").'</b>. Besar harapan agar segala bentuk aspirasi dari masyarakat Indonesia dapat berdampak positif untuk kemaslahatan umat di kemudian hari.';
+        $word1 = 'Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi <a href="http://www.nyatkadir.com/">NyatKadir.org</a> pada <b>'.date("l, d F Y H:i:s").'</b>. Besar harapan agar segala bentuk aspirasi dari masyarakat Indonesia dapat berdampak positif untuk kemaslahatan umat di kemudian hari.';
         $message = '
         <!DOCTYPE html>
 		<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 		<head>
 		    <meta charset="utf-8">
 		    <meta name="viewport" content="width=device-width">
-		    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		    <meta name="x-apple-disable-message-reformatting">
 		    <title>'.$subject.'</title>
 
@@ -250,7 +250,7 @@ class Aspirasi extends Frontend_Controller {
 		    <center style="width: 100%; background: #32384c; text-align: left;">
 
 		        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-		            Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi NyatKadir.com.
+		            Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi NyatKadir.org.
 		        </div> <!-- Visually Hidden Preheader Text : END -->
 
 		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
@@ -319,11 +319,11 @@ class Aspirasi extends Frontend_Controller {
 		    </center>
 		</body>
 		</html>';
-						        
+
         //configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
         $this->email->from($from_email, 'Kawan Nyat Kadir');
         $this->email->to($email);

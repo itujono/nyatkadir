@@ -225,6 +225,35 @@
                     </div>
                 </div>
             <?php } ?>
+                <div class="column"> <!--Hasil polling ya wak-->
+                    <div class="voting-result">
+                        <h4 class="wow fadeInUp">A. Bagus - 15%</h4>
+                        <progress class="progress is-primary wow fadeInUp" value="15" max="100">15%</progress>
+                        <h4 class="wow fadeInUp" data-wow-delay=".3s">B. Biasa saja - 35%</h4>
+                        <progress class="progress is-primary wow fadeInUp" data-wow-delay=".3s" value="35" max="100">35%</progress>
+                        <h4 class="wow fadeInUp" data-wow-delay=".6s">C. Tidak Bagus - 40%</h4>
+                        <progress class="progress is-primary wow fadeInUp" data-wow-delay=".6s" value="40" max="100">40%</progress>
+                        <h4 class="wow fadeInUp" data-wow-delay=".9s">D. Tidak Tahu - 10%</h4>
+                        <progress class="progress is-primary wow fadeInUp" data-wow-delay=".9s" value="10" max="100">10%</progress>
+                    </div>
+                    <div class="share">
+                        <h3>Share Polling ini:</h3>
+                        <ul>
+                            <li class="wow fadeInUp">
+                                <a href="#" title="Share to Twitter" data-wow-delay=".9s"><span class="icon mdi mdi-twitter"></span></a>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="1.1s">
+                                <a href="#" title="Share to Facebook"><span class="icon mdi mdi-facebook"></span></a>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="1.3s">
+                                <a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="1.5s">
+                                <a href="#" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div> <!-- kelar div Columns -->
         </div>
     </div> <!-- kelar Hero-Body -->

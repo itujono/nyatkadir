@@ -320,7 +320,7 @@ class User extends Frontend_Controller {
 					$data = array(
 						'title' => 'Sukses!',
 						'style' => 'is-success',
-		                'text' => 'Selamat, kami telah mengkonfirmasi email Anda. Silakan login terlebih dulu untuk memulai beraktifitas di NyatKadir.org.'
+		                'text' => 'Selamat, kami telah mengonfirmasi email Anda. Silakan login terlebih dulu untuk memulai beraktifitas di NyatKadir.org.'
 	            	);
 				} else{
 					$data = array(
