@@ -27,11 +27,11 @@ class User extends Frontend_Controller {
 	public function registration(){
 		$rules = $this->Users_m->rules_save_users;
 		$this->form_validation->set_rules($rules);
-		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
+		$this->form_validation->set_message('required', 'Form %s tidak boleh kosong');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
         $this->form_validation->set_message('valid_email', 'Maaf $s anda tidak valid');
         $this->form_validation->set_message('is_unique', 'Email anda sudah terdaftar');
-        $this->form_validation->set_message('min_length', 'Minimal 8 karakter');
+        $this->form_validation->set_message('min_length', 'Minimal kata sandi 8 karakter');
 
 		if ($this->form_validation->run() == TRUE) {
 			$data = $this->Users_m->array_from_post(array('nameUSER','emailUSER','passwordUSER','addressUSER','cityUSER','zipUSER','genderUSER','ageUSER'));
@@ -50,7 +50,7 @@ class User extends Frontend_Controller {
 					$data = array(
 						'title' => 'Sukses',
 						'style' => 'is-success',
-	                    'text' => 'Terima kasih sudah mendaftar, silakan cek kotak masuk ataupun kotak spam anda!. Terima Kasih!'
+	                    'text' => 'Terima kasih sudah mendaftar. Silakan cek kotak masuk ataupun kotak spam email Anda. Terima Kasih!'
 	                );
 	                $this->session->set_flashdata('message',$data);
 	                redirect('user');
@@ -69,7 +69,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf, Sistem tidak dapat menyimpan data anda, silakan ulangi beberapa saat lagi.'
+		            'text' => 'Maaf, sistem tidak dapat menyimpan data Anda. Silakan ulangi beberapa saat lagi.'
 		        );
 		        $this->session->set_flashdata('message',$data);
 		        redirect('user');
@@ -78,7 +78,7 @@ class User extends Frontend_Controller {
 			$data = array(
 				'title' => 'Error!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf ada kesalahan, mohon ulangi inputan form registrasi anda!.'
+	            'text' => 'Maaf, sedang terjadi kesalahan. Mohon ulangi inputan form registrasi Anda.'
 	        );
 	        $this->session->set_flashdata('message',$data);
 	        redirect('user');
@@ -88,7 +88,7 @@ class User extends Frontend_Controller {
 	private function sendemailconfirmation($name=NULL, $email=NULL, $id=NULL)
 	{
 
-		$from_email = 'no-reply@nyatkadir.com';
+		$from_email = 'no-reply@nyatkadir.org';
         $subject = 'Selamat datang '.$name.' - Kawan Nyat Kadir';
         $word1 = 'Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.';
         $message = '
@@ -234,7 +234,7 @@ class User extends Frontend_Controller {
 		    <center style="width: 100%; background: #32384c; text-align: left;">
 
 		        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-		            Terima kasih! Satu langkah lagi Anda akan menjadi anggota di laman resmi Nyat Kadir.com. Silakan klik tautan berikut untuk mengonfirmasi status registrasi keanggotaan Anda.
+		            Terima kasih! Satu langkah lagi Anda akan menjadi anggota di laman resmi Nyat Kadir.org. Silakan klik tautan berikut untuk mengonfirmasi status registrasi keanggotaan Anda.
 		        </div> <!-- Visually Hidden Preheader Text : END -->
 
 		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
@@ -282,7 +282,7 @@ class User extends Frontend_Controller {
 		            <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
 
 		                <br><br>
-		                Nyat Kadir.com<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
+		                Nyat Kadir.org<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
 		                <br><br>
 		            </td>
 		        </tr>
@@ -308,7 +308,7 @@ class User extends Frontend_Controller {
 			$data = array(
 				'title' => 'Error!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf sesuatu telah terjadi, silakan coba beberapa saat lagi.'
+	            'text' => 'Maaf, sedang terjadi kesalahan teknis. Silakan coba beberapa saat lagi.'
         	);
 		} else {
 			$id = decode($id);
@@ -320,13 +320,13 @@ class User extends Frontend_Controller {
 					$data = array(
 						'title' => 'Sukses!',
 						'style' => 'is-success',
-		                'text' => 'Selamat, Kami telah mengkonfirmasi email anda, silakan masuk untuk memulai'
+		                'text' => 'Selamat, kami telah mengkonfirmasi email Anda. Silakan login terlebih dulu untuk memulai beraktifitas di NyatKadir.org.'
 	            	);
 				} else{
 					$data = array(
 						'title' => 'Error!',
 						'style' => 'is-warning',
-			            'text' => 'Maaf sesuatu telah terjadi, silakan coba beberapa saat lagi.'
+			            'text' => 'Maaf, sedang terjadi kesalahan teknis. Silakan coba beberapa saat lagi.'
 		        	);
 				}
 
@@ -334,7 +334,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf kamu belum terdaftar di sistem kami, silakan mendaftar.'
+		            'text' => 'Maaf, Anda belum terdaftar di sistem kami, silakan mendaftar terlebih dulu.'
 	        	);
 			}
 		}
@@ -352,7 +352,7 @@ class User extends Frontend_Controller {
 	    	$data = array(
 	    		'title' => 'Error!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf, akun anda tidak terdaftar di data kami.'
+	            'text' => 'Maaf, akun Anda tidak terdaftar di data kami.'
 	        );
 	        $this->session->set_flashdata('message',$data);
 			redirect($_SERVER['HTTP_REFERER']);
@@ -370,9 +370,9 @@ class User extends Frontend_Controller {
 
 		$rules = $this->Users_m->rules_login_users;
 		$this->form_validation->set_rules($rules);
-		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
+		$this->form_validation->set_message('required', 'Form %s tidak boleh kosong');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
-        $this->form_validation->set_message('valid_email', 'Maaf $s anda tidak valid');
+        $this->form_validation->set_message('valid_email', 'Maaf, $s anda tidak valid');
         $this->form_validation->set_message('min_length', 'Minimal 8 karakter');
 
 		if($this->form_validation->run() == TRUE){
@@ -388,7 +388,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf!, untuk sementara akun anda telah terkunci, silakan hubungi bagian admin kami untuk melaporkan masalah ini. Terima kasih!'
+		            'text' => 'Maaf, untuk sementara akun Anda telah terkunci, silakan hubungi bagian Admin kami untuk melaporkan masalah ini. Terima kasih!'
 		        );
 		        $this->session->set_flashdata('message',$data);
 				redirect($_SERVER['HTTP_REFERER']);
@@ -398,7 +398,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Akun anda terdeteksi ada kesalahan, anda telah mencoba praktek pembobolan akun, secara otomatis akun yang bersangkutan dinonaktifkan.'
+		            'text' => 'Maaf, untuk sementara akun Anda telah terkunci, silakan hubungi bagian Admin kami untuk melaporkan masalah ini. Terima kasih!'
 		        );
 
 		        $checks = $this->Users_m->checkusers($email)->row();
@@ -414,7 +414,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Sukses!',
 					'style' => 'is-success',
-		            'text' => 'Hallo, Selamat datang '. $this->session->userdata('Name')
+		            'text' => 'Halo! Selamat datang, '. $this->session->userdata('Name')
 		        );
 
 		        $this->session->set_flashdata('message',$data);
@@ -424,7 +424,7 @@ class User extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf, akun anda tidak aktif, silakan cek email anda untuk konfirmasi, atau hubungi kami di form contact us. Terima kasih!'
+		            'text' => 'Maaf, akun Anda belum aktif, silakan cek email Anda untuk konfirmasi, atau hubungi kami di form Contact Us. Terima kasih!'
 		        	);
 		        $this->session->set_flashdata('message',$data);
 				redirect($_SERVER['HTTP_REFERER']);
@@ -449,7 +449,7 @@ class User extends Frontend_Controller {
 			$data = array(
 			'title' => 'Error',
 			'style' => 'is-warning',
-            'text' => 'Maaf, silakan ulangi inputan email dan kata sandi Anda dibawah!'
+            'text' => 'Maaf, silakan ulangi inputan email dan kata sandi Anda di bawah.'
         	);
         $this->session->set_flashdata('message',$data);
 		redirect($_SERVER['HTTP_REFERER']);
@@ -532,10 +532,10 @@ class User extends Frontend_Controller {
 	}
 
 	private function sendemailnotificationreset($id=NULL, $email=NULL, $name=NULL) {
-		$from_email = 'no-reply@nyatkadir.com'; //change this to yours
+		$from_email = 'no-reply@nyatkadir.org'; //change this to yours
      	$idCODE = encode($id);
         $subject = 'Konfirmasi Reset Kata sandi - Kawan Nyat Kadir';
-        $word1 = 'Baru saja Anda merequest untuk mengubah kata sandi akun keanggotaan Anda di NyatKadir.com pada <b>'.date("l, d F Y H:i:s").'</b>. Silakan klik tautan berikut untuk melanjutkan proses pengubahan kata sandi Anda.';
+        $word1 = 'Baru saja Anda merequest untuk mengubah kata sandi akun keanggotaan Anda di NyatKadir.org pada <b>'.date("l, d F Y H:i:s").'</b>. Silakan klik tautan berikut untuk melanjutkan proses pengubahan kata sandi Anda.';
         $message = '
         <!DOCTYPE html>
 		<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -763,7 +763,7 @@ class User extends Frontend_Controller {
 		        <tr>
 		            <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
 		                <br><br>
-		                Nyat Kadir.com<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
+		                Nyat Kadir.org<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
 		                <br><br>
 		                <unsubscribe style="color: #888888; text-decoration: underline;">unsubscribe</unsubscribe>
 		            </td>
@@ -842,7 +842,7 @@ class User extends Frontend_Controller {
 	}
 
 	private function sendemailnotification_success_reset($id=NULL, $email=NULL) {
-		$from_email = 'no-reply@nyatkadir.com'; //change this to yours
+		$from_email = 'no-reply@nyatkadir.org'; //change this to yours
      	$idCODE = encode($id);
         $subject = 'Reset Kata sandi berhasil - Kawan Nyat Kadir';
         $word1 = '<p style="margin: 0;">Selamat! Kata sandi baru akun Anda telah berhasil direset pada <b>'.date("l, d F Y H:i:s").'</b>. Harap simpan baik-baik informasi kata sandi Anda di tempat yang aman.</p>
@@ -1050,7 +1050,7 @@ class User extends Frontend_Controller {
 		        <tr>
 		            <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
 		                <br><br>
-		                Nyat Kadir.com<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
+		                Nyat Kadir.org<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
 		                <br><br>
 		                <unsubscribe style="color: #888888; text-decoration: underline;">unsubscribe</unsubscribe>
 		            </td>
