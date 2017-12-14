@@ -89,7 +89,7 @@ class User extends Frontend_Controller {
 	{
 
 		$from_email = 'no-reply@nyatkadir.org';
-        $subject = 'Selamat datang '.$name.' - Kawan Nyat Kadir';
+        $subject = 'Selamat datang, '.$name.' - NyatKadir.org';
         $word1 = 'Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.';
         $message = '
         <!DOCTYPE html>
@@ -240,7 +240,7 @@ class User extends Frontend_Controller {
 		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 		            <tr>
 		                <td style="padding: 20px 0; text-align: center">
-		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">com</span></h2>
+		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">org</span></h2>
 		                </td>
 		            </tr>
 		        </table>
@@ -695,7 +695,7 @@ class User extends Frontend_Controller {
 		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 		            <tr>
 		                <td style="padding: 20px 0; text-align: center">
-		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">com</span></h2>
+		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">org</span></h2>
 		                </td>
 		            </tr>
 		        </table>
@@ -1006,7 +1006,7 @@ class User extends Frontend_Controller {
 		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 		            <tr>
 		                <td style="padding: 20px 0; text-align: center">
-		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">com</span></h2>
+		                    <h2 style="height: auto; font-family: sans-serif; font-size: 24px; line-height: 140%; color: #f3f3f3;">NyatKadir.<span style="color: #fdc236">org</span></h2>
 		                </td>
 		            </tr>
 		        </table>
