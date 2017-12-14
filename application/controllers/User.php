@@ -98,7 +98,7 @@ class User extends Frontend_Controller {
 		    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
 		    <meta name="viewport" content="width=device-width">
 		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		    <meta name="x-apple-disable-message-reformatting"> 
+		    <meta name="x-apple-disable-message-reformatting">
 		    <title>'.$subject.'</title>
 		    <style>
 		        html,
@@ -280,7 +280,7 @@ class User extends Frontend_Controller {
 		    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px; font-family: sans-serif; color: #888888; font-size: 12px; line-height: 140%;">
 		        <tr>
 		            <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
-		                
+
 		                <br><br>
 		                Nyat Kadir.com<br>Komplek Tiban 2 Blok H #33, Batam 29432<br>(0778) 456-7890
 		                <br><br>
@@ -290,11 +290,11 @@ class User extends Frontend_Controller {
 		    </center>
 		</body>
 		</html>';
-						        
+
         //configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
         $this->email->from($from_email, 'Kawan Nyat Kadir');
         $this->email->to($email);
@@ -367,7 +367,7 @@ class User extends Frontend_Controller {
 	}
 
 	public function process(){
-		
+
 		$rules = $this->Users_m->rules_login_users;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
@@ -379,7 +379,7 @@ class User extends Frontend_Controller {
 
 			$email = $this->input->post('email');
 			$pass = $this->input->post('password');
-			
+
 			$attemptslogin = $this->_checkbrute_users($email);
 			$countencrypt = strlen($this->Users_m->hash($pass));
 
@@ -410,7 +410,7 @@ class User extends Frontend_Controller {
 			}
 
 			if ($this->Users_m->login($email, $pass) == "USER"){
-				
+
 				$data = array(
 					'title' => 'Sukses!',
 					'style' => 'is-success',
@@ -482,7 +482,7 @@ class User extends Frontend_Controller {
 
 		$data['list_submited_aspirasi_user'] = $this->Aspirasi_m->selectall_aspirasi_at_account($this->session->userdata('idUSER'))->result();
 		$data['count_submited_aspirasi_user'] = count($data['list_submited_aspirasi_user']);
-		
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'account', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
@@ -774,11 +774,11 @@ class User extends Frontend_Controller {
 		    </center>
 		</body>
 		</html>';
-						        
+
         //configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
         $this->email->from($from_email, 'Kawan Nyat Kadir');
         $this->email->to($email);
@@ -1060,11 +1060,11 @@ class User extends Frontend_Controller {
 		    </center>
 		</body>
 		</html>';
-						        
+
         //configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
         $this->email->from($from_email, 'Kawan Nyat Kadir');
         $this->email->to($email);

@@ -111,10 +111,11 @@
                 foreach ($listarticle as $key => $article) {
         ?>
             <div class="card">
-                <div class="card-content">
-                    <h3 class="title">
-                        <?php echo $article->titleARTICLE;?>
-                    </h3>
+                <div class="card-image">
+                    <div class="image is-square">
+                        <img src="http://source.unsplash.com/random/" alt="Titel Infografis">
+                        <span class="title"><?php echo $article->titleARTICLE;?></span>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <div class="card-footer-item">
@@ -144,7 +145,7 @@
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                 <?php
-                    //if (empty($message_choice)){
+                    if (empty($message_choice)){
                 ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
@@ -185,7 +186,7 @@
                         </form>
                         <?php } ?>
                     </div>
-                    <?php //} else { ?>
+                    <?php } else { ?>
                     <div class="column">
                         <div class="successful box">
                             <article class="media">
@@ -203,7 +204,7 @@
                             </article>
                         </div>
                     </div>
-                    <?php// } ?>
+                    <?php } ?>
                 </div>
             <?php } else { ?>
                 <div class="column">
@@ -236,7 +237,10 @@
                 <figure class="image">
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="Video Pop">
                 </figure>
-                <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" class="icon play-button"><i class="mdi mdi-play"></i></a>
+                <div class="caption">
+                    <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" class="icon play-button"><i class="mdi mdi-play"></i></a>
+                    <span class="title">Mengisi Kemerdekaan Dengan Rasa Bangga Mendalam</span>
+                </div>
             </div>
         </div>
     </section>
