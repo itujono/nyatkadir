@@ -29,8 +29,8 @@ class User extends Frontend_Controller {
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh kosong');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
-        $this->form_validation->set_message('valid_email', 'Maaf $s anda tidak valid');
-        $this->form_validation->set_message('is_unique', 'Email anda sudah terdaftar');
+        $this->form_validation->set_message('valid_email', 'Maaf, $s Anda tidak valid');
+        $this->form_validation->set_message('is_unique', 'Tampaknya email Anda sudah terdaftar');
         $this->form_validation->set_message('min_length', 'Minimal kata sandi 8 karakter');
 
 		if ($this->form_validation->run() == TRUE) {
@@ -90,7 +90,7 @@ class User extends Frontend_Controller {
 
 		$from_email = 'no-reply@nyatkadir.org';
         $subject = 'Selamat datang, '.$name.' - NyatKadir.org';
-        $word1 = 'Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.';
+        $word1 = 'NyatKadir.org adalah rumah dan wadah aspirasi untuk kawan-kawan di seluruh belahan Bumi Pertiwi. Melalui portal ini, Anda diharapkan dapat turut berpartisipasi menyuarakan aspirasi yang belum sempat tersalurkan. Sebelumnya, silakan klik tautan berikut ini untuk mengonfirmasi keanggotaan Anda.';
         $message = '
         <!DOCTYPE html>
 		<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
