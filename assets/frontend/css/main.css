@@ -1257,6 +1257,14 @@ footer.footer figure.logo-footer img {
   transition: all .3s ease;
 }
 
+.login-wrapper form .button.is-static, .register-wrapper form .button.is-static, .forgot-wrapper form .button.is-static {
+  height: 2.8rem;
+}
+
+.login-wrapper form .gender, .register-wrapper form .gender, .forgot-wrapper form .gender {
+  margin-top: .8em;
+}
+
 .login-wrapper .switch-login, .login-wrapper .forgot, .register-wrapper .switch-login, .register-wrapper .forgot, .forgot-wrapper .switch-login, .forgot-wrapper .forgot {
   text-align: center;
 }

@@ -122,8 +122,16 @@
                             <input type="number" name="zipUSER" class="input" placeholder="Kode Pos" required="required">
                         </div>
                     </div>
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button is-static">+62</a>
+                        </p>
+                        <p class="control is-expanded">
+                            <input type="tel" class="input" value="" placeholder="Nomor ponsel Anda">
+                        </p>
+                    </div>
                     <div class="field is-grouped">
-                        <div class="control is-expanded">
+                        <div class="control is-expanded gender">
                             <label class="radio">
                                 <input type="radio" name="genderUSER" value="1" required="required">
                                 Laki-laki
