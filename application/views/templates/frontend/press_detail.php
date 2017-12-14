@@ -16,9 +16,9 @@
                         <h1 class="title"><?php echo $getpress->titlePRESS;?></h1>
                         <p class="subtitle">Diposting <span class="yellowish"><?php echo indonesian_date($getpress->createdatePRESS,'j F Y',''); ?></span></p>
                         <div class="press-slider four-item-carousel owl-theme owl-carousel">
-                        <?php 
+                        <?php
                           if(!empty($getpress->map)){
-                            foreach ($getpress->map as $key=> $value_img) { 
+                            foreach ($getpress->map as $key=> $value_img) {
                         ?>
                             <a href="<?php echo $value_img;?>" data-fancybox="image" data-caption="<?php echo $getpress->titlePRESS;?>">
                                 <figure class="image is-2by1">
@@ -43,7 +43,7 @@
                 </div> <!-- kelar Press -->
 
                 <div class="similar">
-                    <h3 class="title is-5">Baca juga <span class="yellowish">berita-berita dan event</span> berikut ini</h3>
+                    <h3 class="title is-5">Baca juga <span class="yellowish">liputan-liputan media</span> berikut ini</h3>
                     <?php
                         if(!empty($random_press)){
                             foreach ($random_press as $random) {
