@@ -11,7 +11,12 @@ class Mitra_m extends MY_Model{
 		'nameMITRA' => array(
 			'field' => 'nameMITRA', 
 			'label' => 'Nama Mitra', 
-			'rules' => 'trim|required|is_unique[nyat_mitra_kerja.nameMITRA]'
+			'rules' => 'trim|required'
+		),
+		'linkMITRA' => array(
+			'field' => 'linkMITRA', 
+			'label' => 'Link Mitra', 
+			'rules' => 'trim|valid_url'
 		)
 	);
 
@@ -23,6 +28,7 @@ class Mitra_m extends MY_Model{
 		$mitra = new stdClass();
 		$mitra->idMITRA = '';
 		$mitra->nameMITRA = '';
+		$mitra->linkMITRA = '';
 		return $mitra;
 	}
 

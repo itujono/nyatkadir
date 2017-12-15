@@ -34,6 +34,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
+                <th><center>Link</center></th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -43,6 +44,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
+                <th><center>Link</center></th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -57,6 +59,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     <td><?php echo $key+1; ?></td>
                     <td><img class="img_thumb" src="<?php echo $mitra->imageMITRA;?>" alt="<?php echo $mitra->nameMITRA;?>"/></td>
                     <td><?php echo $mitra->nameMITRA; ?></td>
+                    <td><center><a href="<?php echo $mitra->linkMITRA;?>" class="md-btn md-btn-primary"><i class="material-icons">link</i></a></center></td>
                     <td><?php echo date('d F Y', strtotime($mitra->createdateMITRA));?></td>
                     <?php
                     $icndel = '&#xE16C;';
@@ -102,12 +105,19 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                   </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-1 uk-margin-top">
+                  <div class="uk-width-medium-1-2 uk-margin-top">
                     <div class="parsley-row">
                       <label>Judul<span class="req">*</span></label>
                       <input type="text" class="md-input" name="nameMITRA" autocomplete value="<?php echo cetak($getmitra->nameMITRA);?>" required/>
                     </div>
                     <p class="text-red"><?php echo form_error('nameMITRA'); ?></p>
+                  </div>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <div class="parsley-row">
+                      <label>Link (pakai http://)</label>
+                      <input type="url" pattern="https?://.+" class="md-input" name="linkMITRA" autocomplete value="<?php echo cetak($getmitra->linkMITRA);?>"/>
+                    </div>
+                    <p class="text-red"><?php echo form_error('linkMITRA'); ?></p>
                   </div>
                 </div>
                 <div class="uk-width-medium-1-1 uk-margin-top">

@@ -475,7 +475,7 @@ class User extends Frontend_Controller {
 		$data['addONS'] = 'general_addon';
 		$data['title'] = $this->session->userdata('Name').' - Nyat Kadir - Laman Resmi';
 		$id = $this->session->userdata('idUSER');
-		$data['getuser'] = $this->Users_m->selectall_user($id)->row();
+		$data['getuser'] = $this->Users_m->selectall_users($id)->row();
 
 		$data['list_choice_polling_users'] = $this->Polling_choice_m->list_choice_polling_users($id)->result();
 		$data['count_polling_user'] = count($data['list_choice_polling_users']);

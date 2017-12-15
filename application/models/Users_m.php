@@ -108,7 +108,7 @@ class Users_m extends MY_Model{
 		$this->session->sess_destroy();
 	}
 
-	public function selectall_user($id=NULL){
+	public function selectall_users($id=NULL){
 		$this->db->select('*');
 		$this->db->from('users');
 		if($id != NULL){
