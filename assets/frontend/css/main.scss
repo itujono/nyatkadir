@@ -895,10 +895,17 @@ footer.footer {
         }
         dd {
             margin-bottom: 10px;
+            padding-left: 1.7em;
         }
     }
-    .award .level-item {
-        justify-content: stretch;
+    .award {
+        .level {
+            align-items: flex-start;
+        }
+        .level-item {
+            justify-content: stretch;
+            margin-right: 15px;
+        }
     }
 }
 

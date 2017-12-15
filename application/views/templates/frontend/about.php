@@ -112,7 +112,7 @@
                     <div class="level-item">
                         <dl>
                 <?php } ?>
-                            <dt><?php echo $val[0];?></dt>
+                            <dt><span class="icon"><i class="mdi mdi-trophy"></i></span> <?php echo $val[0];?></dt>
                             <dd><?php echo $val[1];?>
                             <br> <?php echo $val[2];?>
                             </dd>

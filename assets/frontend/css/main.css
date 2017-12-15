@@ -997,12 +997,20 @@ footer.footer figure.logo-footer img {
 
 .achievements dl dd {
   margin-bottom: 10px;
+  padding-left: 1.7em;
+}
+
+.achievements .award .level {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .achievements .award .level-item {
   -webkit-box-pack: stretch;
   -ms-flex-pack: stretch;
   justify-content: stretch;
+  margin-right: 15px;
 }
 
 .fraksi .box {
