@@ -98,12 +98,12 @@
                 <span class="icon mdi mdi-barley"></span>
             </div>
             <div>
-                <h3>Buah Pikiran <span class="reddish">Nyat Kadir</span></h3>
-                Pemikiran-pemikiran Nyat Kadir tentang Indonesia
+                <h3>Infografis <span class="reddish">Nyat Kadir</span></h3>
+                Visualisasi data berbagai macam hal dalam baluran infografis
             </div>
         </div>
         <div class="read-more">
-            <a href="<?php echo base_url();?>article">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
+            <a href="<?php echo base_url();?>article/infographic">Lihat semua <span class="icon mdi mdi-chevron-right"></span></a>
         </div>
         <div class="article-carousel four-item-carousel owl-carousel owl-theme">
         <?php

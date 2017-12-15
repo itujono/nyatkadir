@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="wrapper">
-                <?php 
+                <?php
                     if(!empty($listpress)){
                         foreach ($listpress as $press) {
                 ?>
@@ -33,7 +33,7 @@
                         <div class="card-content">
                             <article class="content">
                                 <a href="<?php echo base_url();?>press/<?php echo base64_encode($press->idPRESS).'-'.seo_url($press->titlePRESS);?>" class="title"><?php echo $press->titlePRESS; ?></a>
-                                <time datetime="<?php echo indonesian_date($press->createdatePRESS,'Y-m-d',''); ?>"><span class="icon mdi mdi-calendar-check"></span><?php echo indonesian_date($press->createdatePRESS,'j F Y',''); ?></time>
+                                <time datetime="<?php echo indonesian_date($press->createdatePRESS,'Y-m-d',''); ?>"><span class="icon mdi mdi-calendar-check"></span> <?php echo indonesian_date($press->createdatePRESS,'j F Y',''); ?></time>
                                 <?php echo word_limiter($press->descPRESS,24); ?>
                             </article>
                         </div>

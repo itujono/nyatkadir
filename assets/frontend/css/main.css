@@ -1512,7 +1512,7 @@ footer.footer figure.logo-footer img {
 }
 
 .press .card .card-image .image img {
-  min-height: 130px;
+  min-height: 120px;
 }
 
 .press .card .card-content {
@@ -1551,40 +1551,40 @@ footer.footer figure.logo-footer img {
   color: #fdc236;
 }
 
-.press {
+.press-detail {
   margin-top: 5em;
 }
 
-.press .breadcrumb {
+.press-detail .breadcrumb {
   margin-bottom: 3em;
 }
 
-.press .breadcrumb li {
+.press-detail .breadcrumb li {
   font-size: 14px;
 }
 
-.press .breadcrumb a {
+.press-detail .breadcrumb a {
   color: #fdc236;
 }
 
-.press .press-detail {
+.press-detail .press-detail {
   margin-bottom: 3em;
 }
 
-.press .press-detail .content {
+.press-detail .press-detail .content {
   padding-bottom: 3em;
 }
 
-.press .press-detail hr {
+.press-detail .press-detail hr {
   width: 10%;
 }
 
-.press .press-detail .title {
+.press-detail .press-detail .title {
   color: #2e2f48;
   width: 70%;
 }
 
-.press .press-detail .subtitle {
+.press-detail .press-detail .subtitle {
   color: #999;
   font-size: 14px;
   margin-bottom: 2em;

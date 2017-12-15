@@ -54,9 +54,9 @@ class Aspirasi extends Frontend_Controller {
 	                if($this->sendemail_aspirasi($email)) {
 
 						$data = array(
-							'title' => 'Sukses',
+							'title' => 'Sukses!',
 							'style' => 'is-success',
-		                    'text' => 'Aspirasi Anda telah kami rekam. Dan terima kasih sudah berpartisipasi. Kami berharap dapat bertemu Anda di lain kesempatan.'
+		                    'text' => 'Aspirasi Anda telah kami rekam. Kami akan segera mengirimkan balasan/tanggapan atas aspirasi Anda dalam beberapa saat. Harap periksa selalu inbox email Anda. <br> Terima kasih dan salam sejahtera!'
 		                );
 		                $this->session->set_flashdata('message_aspirasi',$data);
 		                redirect('home');
@@ -65,7 +65,7 @@ class Aspirasi extends Frontend_Controller {
 						$data = array(
 		                    'title' => 'Error',
 							'style' => 'is-warning',
-		                    'text' => 'Maaf, sesuatu telah terjadi, coba beberapa saat kembali.'
+		                    'text' => 'Maaf, sesuatu telah terjadi. Silakan coba beberapa saat kembali.'
 		                );
 		                $this->session->set_flashdata('message_aspirasi',$data);
 		                redirect('home');
@@ -75,7 +75,7 @@ class Aspirasi extends Frontend_Controller {
 				$data = array(
 					'title' => 'Error!',
 					'style' => 'is-warning',
-		            'text' => 'Maaf, Sistem tidak dapat menyimpan aspirasi anda, silakan ulangi beberapa saat lagi.'
+		            'text' => 'Maaf, sistem tidak dapat menyimpan aspirasi Anda. Silakan ulangi beberapa saat lagi.'
 		        );
 		        $this->session->set_flashdata('message_aspirasi',$data);
 		        redirect('home');
@@ -84,7 +84,7 @@ class Aspirasi extends Frontend_Controller {
 			$data = array(
 				'title' => 'Error!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf ada kesalahan, mohon ulangi inputan form aspirasi anda!.'
+	            'text' => 'Maaf, tampaknya terdapat kesalahan. Mohon ulangi inputan form aspirasi Anda.'
 	        );
 	        $this->session->set_flashdata('message_aspirasi',$data);
 	        redirect('home');
@@ -96,7 +96,7 @@ class Aspirasi extends Frontend_Controller {
 
 		$from_email = 'no-reply@nyatkadir.com';
         $subject = 'Terima Kasih Telah Berpartisipasi - Kawan Nyat Kadir';
-        $word1 = 'Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi <a href="http://www.nyatkadir.com/">NyatKadir.org</a> pada <b>'.date("l, d F Y H:i:s").'</b>. Besar harapan agar segala bentuk aspirasi dari masyarakat Indonesia dapat berdampak positif untuk kemaslahatan umat di kemudian hari.';
+        $word1 = 'Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi <a href="http://www.nyatkadir.com/">NyatKadir.org</a> pada <b>'.date("l, d F Y H:i:s").'</b>. Besar harapan agar segala bentuk aspirasi dari masyarakat Indonesia dapat berdampak positif untuk kemaslahatan umat di kemudian hari. <br> Harap periksa selalu inbox email Anda (atau mungkin di folder spam). Terima kasih dan salam sejahtera!';
         $message = '
         <!DOCTYPE html>
 		<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">

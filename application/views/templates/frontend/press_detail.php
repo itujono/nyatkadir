@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<section class="section press">
+<section class="section press-detail">
     <div class="container">
         <div class="columns">
             <div class="column is-three-quarters">
