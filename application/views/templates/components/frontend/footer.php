@@ -13,7 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                         <h2 class="wow fadeInUp" data-wow-delay="1.5s">Suarakan aspirasimu demi kemajuan masyarakat! Apapun itu, pasti akan kami dengar dengan seksama.</h2>
                         Gunakan form di samping. Tulis sejelas-jelasnya isi aspirasimu. Jangan hanya simpan mereka di dalam benak.
                     </div>
-                    <?php if(!empty($this->session->userdata('idUSER'))) { ?>
                     <div class="column">
                         <form class="form-aspirasi" action="<?php echo base_url();?>aspirasi/send_aspirasi" method="POST">
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
@@ -92,25 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                             </article>
                         </div>
-                        <?php } ?>
                     </div> <!-- kelar div Column form -->
-                    <?php } else { ?>
-                        <div class="successful box" id="submit-failed">
-                            <article class="media">
-                                <div class="media-left">
-                                    <figure class="image">
-                                        <span class="icon is-large mdi mdi-trophy-award"></span>
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h3>Login Dulu</h3>
-                                        <p>Mohon maaf, Anda diharuskan login terlebih dulu jika ingin menyampaikan aspirasi. <br> Terima kasih.</p>
-                                        <a href="<?php echo base_url();?>user" class="button is-link">Login</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
                     <?php } ?>
                 </div>
             </div> <!-- kelar Container -->

@@ -56,10 +56,11 @@ class Mitra extends Admin_Controller {
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
-        $this->form_validation->set_message('is_unique', 'Data yang anda masukkan sudah ada');
+        $this->form_validation->set_message('valid_url', 'Link yang ada masukkan tidak valid');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Mitra_m->array_from_post(array('nameMITRA'));
+			$data = $this->Mitra_m->array_from_post(array('nameMITRA','linkMITRA'));
+
 			$id = decode(urldecode($this->input->post('idMITRA')));
 
 			if(empty($id))$id=NULL;
