@@ -1,4 +1,6 @@
 @import url(../fonts/fonts.css);
+@import url(settings-slider.css);
+@import url(layers.css);
 .p0 {
   padding: 0 !important;
 }
@@ -173,6 +175,57 @@ a:hover {
   border: 1px solid #fdc236;
   border-top: 0;
   border-right: 0;
+}
+
+.rev_slider .link-arrow {
+  color: #fff;
+}
+
+.rev_slider .link-arrow:hover {
+  color: #fdc236;
+}
+
+.rev_slider .link-arrow:hover .icon {
+  -webkit-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.rev_slider .slider-title {
+  color: #fff !important;
+}
+
+.slider-prev,
+.slider-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  font-size: 4rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.slider-prev {
+  left: 2.2rem;
+}
+
+.slider-prev:hover {
+  color: #fdc236;
+}
+
+.slider-next {
+  right: 2.2rem;
+}
+
+.slider-next:hover {
+  color: #fdc236;
 }
 
 .main-slider {
@@ -407,6 +460,8 @@ a:hover {
 
 .article-carousel .image img {
   border-radius: 6px 6px 0 0;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .article-carousel .card .card-footer-item:not(:last-child) {
@@ -422,6 +477,10 @@ a:hover {
 
 .article-carousel .card .card-footer-item:last-child {
   background: none;
+}
+
+.article-carousel .card .card-footer-item:last-child:hover {
+  background-color: transparent;
 }
 
 .card-footer .card-footer-item:first-child span {
@@ -638,6 +697,8 @@ a:hover {
 
 .news-section .news-started .box .image img {
   border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .news-section .news-started .box .media {
@@ -769,6 +830,8 @@ a:hover {
 }
 
 .news-section .video-pop .image img {
+  -o-object-fit: cover;
+  object-fit: cover;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -1358,6 +1421,8 @@ footer.footer figure.logo-footer img {
 }
 
 .news .card .card-image .image img {
+  -o-object-fit: cover;
+  object-fit: cover;
   min-height: 130px;
 }
 
@@ -1488,7 +1553,19 @@ footer.footer figure.logo-footer img {
   font-size: 2em;
 }
 
-.gallery-wrapper .tile img {
+.gallery-wrapper .tile .image {
+  padding-top: 100%;
+}
+
+.gallery-wrapper .tile .image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
   border-radius: 0;
 }
 
@@ -1520,6 +1597,8 @@ footer.footer figure.logo-footer img {
 }
 
 .press .card .card-image .image img {
+  -o-object-fit: cover;
+  object-fit: cover;
   min-height: 120px;
 }
 
@@ -1742,6 +1821,8 @@ footer.footer figure.logo-footer img {
 }
 
 .account-wrapper .topbar figure.image img {
+  -o-object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
 }
 

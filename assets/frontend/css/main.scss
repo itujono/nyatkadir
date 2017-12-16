@@ -1,5 +1,7 @@
 @import '../fonts/fonts.css';
 @import "var.scss";
+@import "settings-slider.css";
+@import "layers.css";
 
 
 
@@ -184,6 +186,48 @@ a {
 
 // Bagian Home deh ini ya heheheh
 
+.rev_slider {
+    .link-arrow{
+        color: #fff;
+        &:hover {
+            color: $yellow;
+            .icon{
+                -webkit-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+        }
+    }
+    .slider-title {
+        color: #fff !important;
+    }
+}
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top:50%;
+    z-index: 1;
+    font-size:4rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: translateY(-50%);
+}
+
+.slider-prev {
+    left: 2.2rem;
+    &:hover {
+        color: $yellow;
+    }
+}
+
+.slider-next {
+    right:2.2rem;
+    &:hover {
+        color: $yellow;
+    }
+}
 
 .main-slider {
     position: relative;
@@ -369,6 +413,7 @@ a {
         overflow: hidden;
         img {
             border-radius: 6px 6px 0 0;
+            object-fit: cover;
         }
     }
     .card {
@@ -380,6 +425,9 @@ a {
             justify-content: flex-end;
             &:last-child {
                 background: none;
+                &:hover {
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -580,6 +628,7 @@ a {
             .image {
                 img {
                     border-radius: 50%;
+                    object-fit: cover;
                 }
             }
             .media {
@@ -674,6 +723,7 @@ a {
         .image {
             width: 100%;
             img {
+                object-fit: cover;
                 transition: all .3s ease;
             }
         }
@@ -1205,6 +1255,7 @@ footer.footer {
             height: 130px;
             overflow: hidden;
             img {
+                object-fit: cover;
                 min-height: 130px;
             }
         }
@@ -1320,8 +1371,18 @@ footer.footer {
                 }
             }
         }
-        img {
-            border-radius: 0;
+        .image {
+            padding-top: 100%;
+            img {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0;
+            }
         }
     }
 }
@@ -1354,6 +1415,7 @@ footer.footer {
             height: 130px;
             overflow: hidden;
             img {
+                object-fit: cover;
                 min-height: 120px;
             }
         }
@@ -1551,6 +1613,7 @@ footer.footer {
         figure.image {
             border-radius: 50%;
             img {
+                object-fit: cover;
                 border-radius: 50%;
             }
         }

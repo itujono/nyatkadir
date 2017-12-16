@@ -11,15 +11,26 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/jquery.fancybox.min.js"></script>
-    <script src="<?php echo base_url().$this->data['asfront'];?>js/revolution.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/jquery.themepunch.tools.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.actions.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.carousel.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.kenburn.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.layeranimation.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.migration.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.navigation.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.parallax.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.slideanims.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider/revolution.extension.video.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/rev-slider-init.js"></script>
 
     <script>
-    $('[data-fancybox]').fancybox({
-        youtube : {
-            controls : 0,
-            showinfo : 0
-        }
-    });
+        $('[data-fancybox]').fancybox({
+            youtube : {
+                controls : 0,
+                showinfo : 0
+            }
+        });
     </script>
 
     <script>
@@ -407,13 +418,13 @@ if ($plugins == 'home') { ?>
 
 <script>
     var btnDelete = document.querySelectorAll(".delete");
-    var message = document.querySelectorAll(".message");
+    var notif = document.querySelectorAll(".notification");
 
     for (var i = 0; i < btnDelete.length; i++) {
         btnDelete[i].addEventListener("click", function(e) {
             e.preventDefault();
             for (var i = 0; i < message.length; i++) {
-                message[i].classList += " none";
+                notif[i].classList += " none";
             }
         });
     }
@@ -484,10 +495,22 @@ if ($plugins == 'home') { ?>
 
 <script>
     var aspirasiTitle = document.querySelector("#aspirasi-title");
+    var inputEmail = document.querySelector(".input.email");
+    var inputPassword = document.querySelector(".input.password");
 
     aspirasiTitle.oninvalid = function(e) {
         e.target.setCustomValidity('Harap isi judul aspirasi Anda');
         console.log("Sempirdik!");
+    }
+
+    inputEmail.oninvalid = function(e) {
+        e.target.setCustomValidity("Harap isi alamat email Anda");
+        console.log("Sempirdiiikkk!");
+    }
+
+    inputPassword.oninvalid = function(e) {
+        e.target.setCustomValidity("Harap isi kata sandi Anda");
+        console.log("Sempirdiiikkk!");
     }
 </script>
 

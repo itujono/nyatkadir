@@ -9,7 +9,6 @@ if ($plugins == 'home') {
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/settings.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/animate.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/revolution-slider.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/owl.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/main.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/responsive.css">

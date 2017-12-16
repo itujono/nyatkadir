@@ -31,12 +31,12 @@
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                     <div class="field">
                         <div class="control">
-                            <input type="email" name="email" class="input" placeholder="Email Anda" required="required">
+                            <input type="email" name="email" class="input email" placeholder="Email Anda" required="required">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <input type="password" class="input" required="required" name="password" placeholder="Kata sandi anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');"/>
+                            <input type="password" class="input password" required="required" name="password" placeholder="Kata sandi anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');"/>
                         </div>
                     </div>
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
@@ -67,23 +67,13 @@
                     <?php
                         if (!empty($message)){
                     ?>
-                    <article class="message is-success">
-                        <div class="message-header">
-                            <p>Sukses!</p>
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
-                        <div class="message-body">
-                            <?php echo $message['text'];?>
-                        </div>
+                    <article class="notification is-success">
+                        <button class="delete" aria-label="delete"></button>
+                        <?php echo $message['text'];?>
                     </article>
-                    <article class="message is-warning">
-                        <div class="message-header">
-                            <p>Error!</p>
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
-                        <div class="message-body">
-                            <?php echo $message['text'];?>
-                        </div>
+                    <article class="notification is-warning">
+                        <button class="delete" aria-label="delete"></button>
+                        <?php echo $message['text'];?>
                     </article>
                     <?php } ?>
                 </div>
