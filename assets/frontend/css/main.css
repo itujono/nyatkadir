@@ -268,7 +268,7 @@ a:hover {
 }
 
 .ataglance .columns > .column:last-child {
-  background-color: #d9d9d9;
+  background-color: #f3f3f3;
 }
 
 .ataglance {
@@ -278,6 +278,11 @@ a:hover {
 }
 
 .ataglance h3 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.ataglance .button-cta h3 {
   color: #c3943c;
   background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
   background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
@@ -285,8 +290,10 @@ a:hover {
   background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.4rem;
-  line-height: 1.2;
+}
+
+.ataglance .lead-title h3 {
+  color: #2e2f48;
 }
 
 .ataglance p {

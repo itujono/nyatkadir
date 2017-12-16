@@ -488,7 +488,7 @@
         </div>
         <div class="column">
             <div class="columns">
-                <div class="column p20" class="wow fadeInUp" data-wow-delay="2s">
+                <div class="column p20 lead-title" class="wow fadeInUp" data-wow-delay="2s">
                     <h3><?php echo $title_about;?></h3>
                 </div>
                 <div class="column wow fadeInUp">

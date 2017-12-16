@@ -262,7 +262,7 @@ a {
         padding: 0;
     }
     > .column:last-child {
-        background-color: #d9d9d9;
+        background-color: #f3f3f3;
     }
 }
 
@@ -271,9 +271,18 @@ a {
     padding-bottom: 0;
     padding-top: 3.8rem;
     h3 {
-        @include goldGradient;
         font-size: 2.4rem;
         line-height: 1.2;
+    }
+    .button-cta {
+        h3 {
+            @include goldGradient;
+        }
+    }
+    .lead-title {
+        h3 {
+            color: $darkBlue;
+        }
     }
     p {
         font-size: 1rem;
