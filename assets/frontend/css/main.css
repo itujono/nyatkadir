@@ -434,6 +434,11 @@ a:hover {
   bottom: 0;
 }
 
+.article-carousel .owl-item:hover .image img {
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
+}
+
 .article-carousel .card-content {
   height: 240px;
 }
@@ -462,6 +467,9 @@ a:hover {
   border-radius: 6px 6px 0 0;
   -o-object-fit: cover;
   object-fit: cover;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .article-carousel .card .card-footer-item:not(:last-child) {
