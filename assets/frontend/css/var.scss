@@ -7,6 +7,7 @@ $grey: #bbb;
 $greyNavbarItem: #5e5e61;
 $reddish: #ff5a5a;
 $bgInput: #a1a2ab;
+$bgGoldish: linear-gradient(left,rgba(195,148,60,.5),#c3943c,#ffe09e,#c3943c,rgba(195,148,60,.5));
 $gradientDarkBlue: linear-gradient(to top, $darkBlue, lighten($darkBlue, 10%));
 $textShadow: 2px 5px 10px rgba(0, 0, 0, 0.17);
 
@@ -17,6 +18,7 @@ $textShadow: 2px 5px 10px rgba(0, 0, 0, 0.17);
 
 @mixin goldGradient {
     color: #c3943c;
-    background: linear-gradient(left,#ffe09e,#c3943c);
-    background-clip: text;
+    background: linear-gradient(left,rgba(195,148,60,.5),#c3943c,#ffe09e,#c3943c,rgba(195,148,60,.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

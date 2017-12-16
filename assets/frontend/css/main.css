@@ -51,11 +51,12 @@
 
 .goldish {
   color: #c3943c;
-  background: -webkit-gradient(linear, left top, right top, from(#ffe09e), to(#c3943c));
-  background: -webkit-linear-gradient(left, #ffe09e, #c3943c);
-  background: -o-linear-gradient(left, #ffe09e, #c3943c);
-  background: linear-gradient(left, #ffe09e, #c3943c);
-  background-clip: text;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .white {
@@ -277,6 +278,13 @@ a:hover {
 }
 
 .ataglance h3 {
+  color: #c3943c;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 2.4rem;
   line-height: 1.2;
 }
@@ -860,6 +868,13 @@ a:hover {
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
+  color: #c3943c;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .news-section .video-pop .caption .play-button {

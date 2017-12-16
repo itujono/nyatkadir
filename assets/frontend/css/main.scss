@@ -271,6 +271,7 @@ a {
     padding-bottom: 0;
     padding-top: 3.8rem;
     h3 {
+        @include goldGradient;
         font-size: 2.4rem;
         line-height: 1.2;
     }
@@ -746,6 +747,7 @@ a {
                 color: $yellow;
                 opacity: 0;
                 transition: all .3s ease;
+                @include goldGradient;
             }
             .play-button {
                 margin-left: -30px;

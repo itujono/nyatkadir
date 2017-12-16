@@ -729,7 +729,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/looking.jpg" alt="">
                 </figure>
                 <div class="read-more">
-                    <h4>Lihat semua <br> <span class="yellowish">Berita dan Event</span></h4>
+                    <h4>Lihat semua <br> <span class="goldish">Berita dan Event</span></h4>
                     <a href="<?php echo base_url();?>news"><span class="icon mdi mdi-chevron-right"></span></a>
                 </div>
             </div>
