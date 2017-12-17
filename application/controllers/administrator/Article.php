@@ -6,6 +6,7 @@ class Article extends Admin_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Article_m');
+		$this->load->model('Category_article_m');
 	}
 
 	public function index_article($id = NULL){
@@ -51,6 +52,7 @@ class Article extends Admin_Controller {
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
+        $data['dropdown_category_article'] = $this->Category_article_m->select_category_article_drop();
 
 		$data['subview'] = $this->load->view($this->data['backendDIR'].'article', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
@@ -63,7 +65,7 @@ class Article extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Article_m->array_from_post(array('titleARTICLE','bestARTICLE'));
+			$data = $this->Article_m->array_from_post(array('titleARTICLE','bestARTICLE','idCAT'));
 			if($data['bestARTICLE'] == 'on')$data['bestARTICLE']=1;
 			else $data['bestARTICLE']=0;
 			$id = decode(urldecode($this->input->post('idARTICLE')));

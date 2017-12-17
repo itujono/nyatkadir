@@ -346,3 +346,24 @@ function find_menu_for_admin_user($admin, $menu){
     $data = $CI->db->get()->row();
     return $data;
 }
+
+function selectall_category_for_navigation_frontend(){
+    $CI =& get_instance();
+    $CI->db->select('idCAT, nameCAT');
+    $CI->db->from('category_article');
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function getnumbervoting_for_admin($id=NULL) {
+    $CI =& get_instance();
+    if($id != NULL){
+        $where_id = 'WHERE idPOLLING = '.$id.'';
+    } else {
+        $where_id = '';
+    }
+    $result = $CI->db->query("SELECT nameCHOICE, idPOLLING, SUM(valueCHOICE) AS vote_value, (SELECT SUM(valueCHOICE) FROM nyat_choice_polling $where_id) AS total FROM nyat_choice_polling $where_id GROUP BY nameCHOICE");
+    $data = $result->result();
+    return $data;
+}

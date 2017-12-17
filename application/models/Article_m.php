@@ -17,6 +17,11 @@ class Article_m extends MY_Model{
 			'field' => 'descARTICLE', 
 			'label' => 'Deskripsi Artikel', 
 			'rules' => 'trim'
+		),
+		'idCAT' => array(
+			'field' => 'idCAT', 
+			'label' => 'Kategori Artikel', 
+			'rules' => 'trim'
 		)
 	);
 
@@ -27,6 +32,7 @@ class Article_m extends MY_Model{
 	public function get_new(){
 		$article = new stdClass();
 		$article->idARTICLE = '';
+		$article->idCAT = '';
 		$article->titleARTICLE = '';
 		$article->descARTICLE = '';
 		$article->bestARTICLE = '';
@@ -35,7 +41,9 @@ class Article_m extends MY_Model{
 
 	public function selectall_article($id = NULL, $best=NULL) {
 		$this->db->select('*');
+		$this->db->select('category_article.nameCAT, category_article.idCAT');
 		$this->db->from('article');
+		$this->db->join('category_article', 'category_article.idCAT = article.idCAT');
 		if ($id != NULL) {
 			$this->db->where('idARTICLE',$id);
 		}

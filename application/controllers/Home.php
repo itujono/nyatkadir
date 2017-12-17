@@ -28,17 +28,25 @@ class Home extends Frontend_Controller {
 			}
 		}
 		$data['listarticle'] = $this->Article_m->selectall_article()->result();
-		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
+		foreach ($data['listarticle'] as $key => $value) {
+			$map = directory_map('assets/upload/article/pic-article-'.$data['listarticle'][$key]->idARTICLE, FALSE, TRUE);
+			if(!empty($map)){
+				$data['listarticle'][$key]->imageARTICLE = base_url() . 'assets/upload/article/pic-article-'.$data['listarticle'][$key]->idARTICLE.'/'.$map[0];
+			} else {
+				$data['listarticle'][$key]->imageARTICLE = base_url() . 'assets/upload/no-image-available.png';
+			}
+		}
 
+		$data['getpolling'] = $this->Polling_m->selectall_polling('',1)->row();
 		$session_user = $this->session->userdata('idUSER');
 		if(empty($data['getpolling'])){
 			$polling_data = '';
 		} else {
 			$polling_data = $data['getpolling']->idPOLLING;
 		}
-		
 		$data['check_choice_polling'] = $this->Polling_choice_m->check_choice_polling($polling_data, $session_user)->row();
-
+		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting($polling_data);
+		
 		$data['listmitra'] = $this->Mitra_m->selectall_mitra()->result();
 		foreach ($data['listmitra'] as $key => $value) {
 			$map = directory_map('assets/upload/mitra_kerja/pic-mitra-'.folenc($data['listmitra'][$key]->idMITRA), FALSE, TRUE);
@@ -52,7 +60,6 @@ class Home extends Frontend_Controller {
 		$data['updated_at_home'] = $this->News_m->selectall_random_news('',1)->result();
 
 		$data['getflyer'] = $this->Flyer_m->select_flyer_in_frontend()->row();
-
 		if(!empty($data['getflyer'])){
 			$map = directory_map('assets/upload/flyer/pic-flyer-'.folenc($data['getflyer']->idFLYER), FALSE, TRUE);
 			if(!empty($map)){

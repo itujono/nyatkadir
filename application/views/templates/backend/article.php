@@ -34,6 +34,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
+                <th>Kategori</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -43,6 +44,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
+                <th>Kategori</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -57,6 +59,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     <td><?php echo $key+1; ?></td>
                     <td><img class="img_thumb" src="<?php echo $article->imageARTICLE;?>" alt="<?php echo $article->titleARTICLE;?>"/></td>
                     <td><?php echo $article->titleARTICLE; ?></td>
+                    <td><?php echo $article->nameCAT; ?></td>
                     <td><?php echo date('d F Y', strtotime($article->createdateARTICLE));?></td>
                     <?php
                     $icndel = '&#xE16C;';
@@ -112,12 +115,21 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                   </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-2 uk-margin-top">
+                  <div class="uk-width-medium-1-1 uk-margin-top">
                     <div class="parsley-row">
                       <label>Judul Artikel<span class="req">*</span></label>
                       <input type="text" class="md-input" name="titleARTICLE" autocomplete value="<?php echo cetak($getarticle->titleARTICLE);?>" required/>
                     </div>
                     <p class="text-red"><?php echo form_error('titleARTICLE'); ?></p>
+                  </div>
+                </div>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <div class="parsley-row">
+                      
+                      <?php echo form_dropdown('idCAT', $dropdown_category_article, $getarticle->idCAT,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                    </div>
+                    <p class="text-red"><?php echo form_error('idCAT'); ?></p>
                   </div>
                   <div class="uk-width-medium-1-2 uk-margin-top">
                     <div class="parsley-row">

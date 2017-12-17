@@ -48,12 +48,14 @@
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="<?php echo base_url().$values[0];?>" class="navbar-link">Artikel</a>
                     <div class="navbar-dropdown">
-                        <a href="#" class="navbar-item">Luar Negeri</a>
-                        <a href="#" class="navbar-item">Dalam Negeri</a>
-                        <a href="#" class="navbar-item">Politik</a>
-                        <hr class="navbar-divider">
-                        <a href="#" class="navbar-item">Infografis</a>
-                        <a href="#" class="navbar-item">Statistik</a>
+                        <?php 
+                            $menu_category = selectall_category_for_navigation_frontend();
+                            if(!empty($menu_category)){
+                                foreach ($menu_category as $menu_cat) {
+                        ?>
+                        <a href="#" class="navbar-item"><?php echo $menu_cat->nameCAT;?></a>
+                            <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php } ?>

@@ -15,8 +15,10 @@ class Polling extends Admin_Controller {
 		
 		$data['listpolling'] = $this->Polling_m->selectall_polling()->result();
 
-		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting()->result();
-
+		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting();
+			
+		
+		
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }

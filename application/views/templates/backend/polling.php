@@ -65,15 +65,14 @@
             <br>
             <br>
             <?php
-              if(!empty($number_voting)){
-                foreach ($number_voting as $choice) {
+              $number_votings = getnumbervoting_for_admin($polling->idPOLLING);
+              if(!empty($number_votings)){
+                foreach ($number_votings as $choice) {
                   if($choice->idPOLLING == $polling->idPOLLING){
-                    $randomprogress = ['uk-progress-success', 'uk-progress-danger', 'uk-progress-warning', ''];
-                    $randomprogress = $randomprogress[array_rand($randomprogress)];
                     $total_vote = round(100*($choice->vote_value / $choice->total),2);
             ?>
             <span class="uk-text-medium uk-text-muted uk-text-left"><?php echo $choice->nameCHOICE;?> - <?php echo $total_vote;?>%</span>
-            <div class="uk-progress <?php echo $randomprogress;?> uk-progress-striped uk-active uk-progress-small">
+            <div class="uk-progress uk-progress-success uk-progress-striped uk-active uk-progress-small">
                 <div class="uk-progress-bar" style="width: <?php echo $total_vote;?>%;"></div>
             </div>
             <br>
