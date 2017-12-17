@@ -24,13 +24,8 @@ class User_m extends MY_Model{
 		'emailADMIN' => array(
 			'field' => 'emailADMIN',
 			'label' => 'Email',
-			'rules' => 'trim|required|valid_email|is_unique[nyat_users_admin.emailADMIN]'
-			),
-		'passwordADMIN' => array(
-			'field' => 'passwordADMIN',
-			'label' => 'Kata sandi',
-			'rules' => 'trim|required|min_length[8]'
-			),
+			'rules' => 'trim|required|valid_email'
+		)
 	);
 
 	public $rules_changepassword = array(
@@ -100,12 +95,13 @@ class User_m extends MY_Model{
 		$this->session->sess_destroy();
 	}
 
-	public function selectall_user($id=NULL){
+	public function selectall_user_admin($id=NULL){
 		$this->db->select('*');
 		$this->db->from('users_admin');
 		if($id != NULL){
 			$this->db->where('idADMIN', $id);
 		}
+		
 		return $this->db->get();
 	}
 

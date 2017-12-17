@@ -1,142 +1,168 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<h3 class="heading_b uk-margin-bottom">Daftar Pengguna</h3>
-<?php if (!empty($message)){ ?>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$title1 = 'Buat Data Pengguna Admin';
+$actions = 'saveuser';
+$controller = 'user';
+if($getuser->idADMIN != NULL){
+ $title1 = 'Perbaharui Data Pengguna Admin';
+}
+$url = base_url().'administrator/'.$controller.'/'.$actions;
+?>
+<div class="uk-width-medium-1-1">
+  <h4 class="heading_a uk-margin-bottom"><?php echo $title1;?></h4>
+
+  <?php if (!empty($message)){ ?>
   <div class="uk-alert uk-alert-<?php echo $message['type']; ?>" data-uk-alert>
     <a href="#" class="uk-alert-close uk-close"></a>
     <h4><?php echo $message['title']; ?></h4>
     <?php echo $message['text']; ?>
-    <?php if(!empty(form_error('emailADMIN')) OR !empty(form_error('passwordADMIN'))) { ?>
-    <ul>
-        <?php if(!empty(form_error('emailADMIN'))) { ?>
-        <li><p class="text-red"><?php echo form_error('emailADMIN'); ?></p></li>
-        <?php } elseif (!empty(form_error('passwordADMIN'))) { ?>
-        <li><p class="text-red"><?php echo form_error('passwordADMIN'); ?></p></li>
-        <?php } ?>
-    </ul>
-    <?php } ?>
   </div>
-<?php } ?>
-<div class="md-card uk-margin-medium-bottom">
+  <?php } ?>
+
+  <div class="md-card">
     <div class="md-card-content">
-        <div class="uk-grid" data-uk-grid-margin>
-            <div class="uk-width-medium-1-2">
-                <label for="contact_list_search">Cari... (min. 3 karakter.)</label>
-                <input class="md-input" type="text" id="contact_list_search"/>
-            </div>
-            <div class="uk-width-medium-1-2">
-            <button class="md-fab md-fab-accent" data-uk-modal="{target:'#modal_large'}"><i class="material-icons">&#xE145;</i></button>
-            <div class="uk-modal" id="modal_large">
-            <div class="uk-modal-dialog uk-modal-dialog-large">
-                <button type="button" class="uk-modal-close uk-close"></button>
-                <?php
-                    $actions = 'saveuser';
-                    $controller = 'user';
-                    $url = base_url().'administrator/'.$controller.'/'.$actions;
-                ?>
-                <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
-                <form method="post" name="formuser" action="<?php echo $url;?>"">
+      <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">List Admin</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Admin</a></li>
+      </ul>
+      <ul id="tabs_4" class="uk-switcher uk-margin">
+        <li>
+          <table id="dt_individual_search" class="uk-table" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Action</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Terakhir Login</th>
+                <th>Menu</th>
+                <th>Created</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>No.</th>
+                <th>Action</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Terakhir Login</th>
+                <th>Menu</th>
+                <th>Created</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <?php
+              if(!empty($listuseradmin)){
+                foreach ($listuseradmin  as $key => $admin) {
+                  $id = encode($admin->idADMIN);
+                  $multiple_menu = select_all_multiple_menu_for_row($admin->idADMIN);
+                  if($admin->lastloginADMIN == '0000-00-00 00:00:00'){
+                      $lastlog = 'Belum ada';
+                  } else {
+                      $lastlog = '<b style="color:red;"><i>'.timeAgo(dF('H:i:s',strtotime($admin->lastloginADMIN))).'</i></b>';
+                  }
+              ?>
+                  <tr>
+                    <td><?php echo $key+1; ?></td>
+                    <?php
+                    $icndel = '&#xE16C;';
+                    $msg1 = 'Are you sure want to delete this data ?';
+                    $msg2 = 'Are you sure want to change this data ?';
+                    $url1 = 'administrator/'.$controller.'/actiondelete_user/'.urlencode($id);
+                    $url2 = 'administrator/'.$controller.'/index_user_admin/'.urlencode($id);
+                    ?>
+                    <td class="uk-text-center">
+                      <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
+                      <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
+                    </td>
+                    <td><?php echo $admin->nameADMIN; ?></td>
+                    <td><?php echo $admin->emailADMIN; ?></td>
+                    <td><?php echo $lastlog; ?></td>
+                    <td>
+                      <?php foreach ($multiple_menu as $val) { ?>
+                      (<?php echo $val->namaMENU;?>) - <a href="#" onclick="UIkit.modal.confirm('Are you sure want to delete this data?', function(){ document.location.href='<?php echo base_url().'administrator/'.$controller."/delete_join_menu_user_admin/".urlencode(encode($val->idMENUSJOINADMIN)); ?>'; });">
+                        <span><i class="fa fa-times">X</i></span>
+                      </a>
+                      <br>
+                      <?php } ?>
+                    </td>
+                    <td><?php echo date('d F Y', strtotime($admin->createdateADMIN));?></td>
+                  </tr>
+                  <?php } ?>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </li>
+            <!-- END LIST SLIDER -->
+
+            <!-- START FORM INPUT AREA -->
+            <li>
+              <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
+              <form method="post" name="formrental" action="<?php echo $url;?>" id="form_validation">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                <?php echo form_hidden('idADMIN',encode($getuser->idADMIN),'hidden'); ?>
+                <?php echo form_hidden('oldEMAIL',$getuser->emailADMIN,'hidden'); ?>
                 <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-1 uk-margin-top">
-                    <label>Nama</label>
+                  <?php if(!empty($getuser->emailADMIN)){ 
+                    $width_form = "uk-width-medium-1-1";
+                  } else {
+                    $width_form = "uk-width-medium-1-2";
+                  }
+                  ?>
+                  <div class="<?php echo $width_form; ?> uk-margin-top">
+                    <label>Email Admin</label>
                     <br>
-                    <input type="text" class="md-input" name="nameADMIN" autocomplete required="required" />
-                    <p class="text-red"><?php echo form_error('nameADMIN'); ?></p>
-                  </div>
-                  <div class="uk-width-medium-1-1 uk-margin-top">
-                    <label>Email</label>
-                    <br>
-                    <input type="email" class="md-input" name="emailADMIN" required="required" />
+                    <input type="email" class="md-input label-fixed" name="emailADMIN" autocomplete value="<?php echo $getuser->emailADMIN;?>"/>
                     <p class="text-red"><?php echo form_error('emailADMIN'); ?></p>
                   </div>
-                  <div class="uk-width-medium-1-1 uk-margin-top">
+                  <?php if(empty($getuser->emailADMIN)){ ?>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
                     <label>Password</label>
                     <br>
                     <input type="password" class="md-input" name="passwordADMIN" required="required"/>
                     <p class="text-red"><?php echo form_error('passwordADMIN'); ?></p>
                   </div>
+                  <?php } ?>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-2 uk-margin-top">
-                    <label>Akses Admin</label>
+                  <div class="uk-width-medium-1-1 uk-margin-top">
+                    <label>Menu Management (Multiple)</label>
                     <br>
-                    <br>
-                    <input type="checkbox" data-switchery checked="checked" data-switchery-size="large" data-switchery-color="#7cb342" name="is_adminADMIN" id="switch_demo_large">
-                    <label for="switch_demo_large" class="inline-label"><b>Akses Admin?</b></label>
-                  </div>
-                  <div class="uk-width-medium-1-2 uk-margin-top">
-                    <label>Status Admin</label>
-                    <br>
-                    <br>
-                      <input type="checkbox" data-switchery checked="checked" data-switchery-size="large" data-switchery-color="#d32f2f" name="statusADMIN" id="switch_demo_large">
-                      <label for="switch_demo_large" class="inline-label"><b>Aktifkan Admin</b></label>
-                  </div>
-                </div>
-                <div class="uk-width-medium-1-1 uk-margin-top">
-                 <div class="uk-form-row">
-                   <span class="uk-input-group-addon"><?php echo form_submit('submit', 'SAVE', 'class="md-btn md-btn-primary" id="show_preloader_md"'); ?></span>
-                 </div>
-                </div>
-               </form>
-            </div>  
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
+                    <select id="select_menu" name="idMENU[]" multiple required="required">
+                      <?php
+                      if(!empty($getuser->emailADMIN)){
+                        $getmenus = select_all_multiple_menu_for_row($getuser->idADMIN);
+                        $selected = "selected";
+                      } else {
+                        $getmenus = select_all_multiple_menu();
+                        $selected = "";
+                      }
 
-<h3 class="heading_b uk-text-center grid_no_results" style="display:none">Tidak ada data ditemukan.</h3>
-<div class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 uk-grid-width-xlarge-1-5 hierarchical_show" id="contact_list">
-<?php 
-if(!empty($listuser)){
-    foreach ($listuser as $user) {
-
-?>
-    <div data-uk-filter="<?php echo strtolower($user->emailADMIN);?>,<?php echo strtolower($user->nameADMIN);?>">
-        <div class="md-card md-card-hover">
-            <div class="md-card-head">
-                <div class="md-card-head-menu" data-uk-dropdown="{pos:'bottom-right'}">
-                    <i class="md-icon material-icons">&#xE5D4;</i>
-                    <div class="uk-dropdown uk-dropdown-small">
-                        <ul class="uk-nav">
-                            <li><a href="<?php echo base_url();?>administrator/user/saveuser/<?php echo encode($user->idADMIN);?>">Edit</a></li>
-                            <li><a href="<?php echo base_url();?>administrator/user/actiondelete_user/<?php echo encode($user->idADMIN);?>">Hapus</a></li>
-                            <li><a href="#">Menu</a></li>
-                        </ul>
+                      if(!empty($getmenus)){
+                        foreach ($getmenus as $key => $menus) {
+                          ?>
+                          <option value="<?php echo $menus->idMENU;?>" <?php echo $selected;?>><?php echo $menus->namaMENU;?></option>
+                          <?php } ?>
+                          <?php } ?>
+                        </select>
+                        <p class="text-red"><?php echo form_error('idMENU'); ?></p>
+                      </div>
                     </div>
-                </div>
-                <div class="uk-text-center">
-                    <img class="md-card-head-avatar" src="<?php echo base_url().$this->data['asback'];?>img/avatars/avatar_06.png" alt=""/>
-                </div>
-                <h3 class="md-card-head-text uk-text-center">
-                    <?php echo ucwords($user->nameADMIN);?>
-                    <br>
-                </h3>
-            </div>
-            <div class="md-card-content">
-                <ul class="md-list">
-                    <li>
-                        <div class="md-list-content">
-                            <span class="md-list-heading">Email</span>
-                            <span class="uk-text-small uk-text-muted uk-text-truncate"><?php echo strtolower($user->emailADMIN);?></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="md-list-content">
-                            <span class="md-list-heading">Terakhir Login</span>
-                            <?php
-                            if($user->lastloginADMIN == '0000-00-00 00:00:00'){
-                                $lastlog = 'Belum ada';
-                            } else {
-                                $lastlog = '<b style="color:red;"><i>'.timeAgo(dF('H:i:s',strtotime($user->lastloginADMIN))).'</i></b>';
-                            }
-                            ?>
-                            <span class="uk-text-small uk-text-muted"><?php echo $lastlog; ?></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <?php } ?>
-<?php } ?>
-</div>
+                    <div class="uk-grid" data-uk-grid-margin>
+                      <div class="uk-width-medium-1-1 uk-margin-top">
+                       <div class="uk-form-row">
+                         <span class="uk-input-group-addon"><?php echo form_submit('submit', 'SAVE', 'class="md-btn md-btn-primary" id="show_preloader_md"'); ?></span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </form>
+         </li>
+         <!-- END FORM INPUT AREA -->
+       </ul>
+     </div>
+   </div>
+ </div>
