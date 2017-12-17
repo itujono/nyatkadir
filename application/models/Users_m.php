@@ -55,7 +55,12 @@ class Users_m extends MY_Model{
 			'field' => 'ageUSER',
 			'label' => 'Umur',
 			'rules' => 'trim|required'
-			)
+			),
+		'teleUSER' => array(
+			'field' => 'teleUSER',
+			'label' => 'No. Telepon',
+			'rules' => 'trim|required|is_unique[nyat_users.teleUSER]|is_numeric'
+			),
 	);
 
 	public $rules_changepassword_users = array(

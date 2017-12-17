@@ -32,9 +32,10 @@ class User extends Frontend_Controller {
         $this->form_validation->set_message('valid_email', 'Maaf, $s Anda tidak valid');
         $this->form_validation->set_message('is_unique', 'Tampaknya email Anda sudah terdaftar');
         $this->form_validation->set_message('min_length', 'Minimal kata sandi 8 karakter');
+        $this->form_validation->set_message('is_numeric', 'Hanya memasukan angka saja');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Users_m->array_from_post(array('nameUSER','emailUSER','passwordUSER','addressUSER','cityUSER','zipUSER','genderUSER','ageUSER'));
+			$data = $this->Users_m->array_from_post(array('nameUSER','emailUSER','passwordUSER','addressUSER','cityUSER','zipUSER','genderUSER','ageUSER','teleUSER'));
             $data['passwordUSER'] = $this->Users_m->hash($data['passwordUSER']);
 
    			$data = $this->security->xss_clean($data);

@@ -117,7 +117,7 @@
                             <a class="button is-static">+62</a>
                         </p>
                         <p class="control is-expanded">
-                            <input type="tel" class="input" value="" placeholder="Nomor ponsel Anda">
+                            <input type="tel" class="input" name="teleUSER" placeholder="Nomor ponsel Anda" required="required">
                         </p>
                     </div>
                     <div class="field is-grouped">
