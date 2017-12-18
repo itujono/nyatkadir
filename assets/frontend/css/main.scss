@@ -316,6 +316,7 @@ a {
         h3 {
             color: $yellow;
             font-size: 2rem;
+            @include goldGradient;
         }
     }
 }
@@ -327,6 +328,7 @@ a {
         color: #ddd;
         h3 {
             color: #ddd;
+            @include goldGradient;
         }
     }
     h3 {
@@ -941,16 +943,28 @@ footer.footer {
 .few-gallery {
     background-color: $darkBlue;
     padding: 3rem 0 6rem 0;
-    .card-footer {
-        .card-footer-item:hover {
-            background-color: initial;
-        }
-    }
     .image-gallery, .video-gallery {
         padding: 3rem 6rem;
         border-bottom: 1px solid transparentize($yellow, .5);
         &:last-child {
             border-bottom: none;
+        }
+    }
+    .owl-carousel {
+        .card-image {
+            height: 280px;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .card-footer {
+            .card-footer-item {
+                font-size: .8rem;
+                &:hover {
+                    background-color: initial;
+                }
+            }
         }
     }
 }
@@ -981,6 +995,7 @@ footer.footer {
 .fraksi {
     .box {
         background-color: #fdc236;
+        padding-left: 0;
         padding-bottom: 4em;
         border-radius: 0;
         -webkit-box-shadow: none;

@@ -345,6 +345,13 @@ a:hover {
 .button-cta .level-item h3 {
   color: #fdc236;
   font-size: 2rem;
+  color: #c3943c;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-title {
@@ -358,6 +365,13 @@ a:hover {
 
 .section-title.dark h3 {
   color: #ddd;
+  color: #c3943c;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-title h3 {
@@ -1066,10 +1080,6 @@ footer.footer figure.logo-footer img {
   padding: 3rem 0 6rem 0;
 }
 
-.few-gallery .card-footer .card-footer-item:hover {
-  background-color: initial;
-}
-
 .few-gallery .image-gallery, .few-gallery .video-gallery {
   padding: 3rem 6rem;
   border-bottom: 1px solid rgba(253, 194, 54, 0.5);
@@ -1077,6 +1087,24 @@ footer.footer figure.logo-footer img {
 
 .few-gallery .image-gallery:last-child, .few-gallery .video-gallery:last-child {
   border-bottom: none;
+}
+
+.few-gallery .owl-carousel .card-image {
+  height: 280px;
+}
+
+.few-gallery .owl-carousel .card-image img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.few-gallery .owl-carousel .card-footer .card-footer-item {
+  font-size: .8rem;
+}
+
+.few-gallery .owl-carousel .card-footer .card-footer-item:hover {
+  background-color: initial;
 }
 
 .achievements {
@@ -1108,6 +1136,7 @@ footer.footer figure.logo-footer img {
 
 .fraksi .box {
   background-color: #fdc236;
+  padding-left: 0;
   padding-bottom: 4em;
   border-radius: 0;
   -webkit-box-shadow: none;
