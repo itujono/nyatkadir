@@ -1092,12 +1092,33 @@ footer.footer figure.logo-footer img {
 }
 
 .few-gallery .image-gallery, .few-gallery .video-gallery {
+  position: relative;
   padding: 3rem 0;
-  border-bottom: 1px solid rgba(253, 194, 54, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .few-gallery .image-gallery:last-child, .few-gallery .video-gallery:last-child {
   border-bottom: none;
+}
+
+.few-gallery .image-gallery:before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  bottom: -1px;
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.few-gallery .image-gallery:after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  bottom: -1px;
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .few-gallery .owl-carousel .card-image {
@@ -1586,6 +1607,7 @@ footer.footer figure.logo-footer img {
   padding: 5px;
   font-size: 14px;
   opacity: 0;
+  left: 10px;
   bottom: -40px;
   line-height: 1.2;
   visibility: hidden;
