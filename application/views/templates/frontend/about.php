@@ -93,9 +93,6 @@
                     </div> <!-- kelar Button-CTA -->
                 </div>
             </div> <!-- kelar div Fraksi -->
-
-
-
             <div class="column award">
                 <div class="section-title">
                     <h3 class="mb10"><?php echo $title_award;?></h3>
@@ -129,6 +126,10 @@
                 </div> <!-- kelar div Level -->
 
             </div> <!-- kelar div Column -->
+        </div>
+        <div class="imaginary">
+            <img src="<?php echo base_url().$this->data['asfront'];?>img/geometric.png" alt="" class="wow fadeInLeft">
+            <img src="<?php echo base_url().$this->data['asfront'];?>img/old-man-in-suit.png" class="wow fadeInUp" data-wow-delay=".4s">
         </div>
     </div> <!-- kelar Container Utama -->
 </section>
