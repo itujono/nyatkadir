@@ -33,7 +33,11 @@
                         <ul>
                             <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=<?php echo $getnews->titleNEWS;?>&url=<?php echo base_url(uri_string());?>')" title="Share to Twitter"><span class="icon mdi mdi-twitter"></span></a></li>
                             <li><a href="#" title="Share to Facebook" class="ShareFB"><span class="icon mdi mdi-facebook"></span></a></li>
-                            <li><a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
+                            <?php
+                                $content_wa = str_replace(' ','%20',$getnews->titleNEWS);
+                                $url_wa = "https://api.whatsapp.com/send?text='$content_wa'";
+                            ?>
+                            <li><a href="<?php echo $url_wa;?>" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
                             <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo base_url(uri_string());?>')" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a></li>
                         </ul>
                     </div>
