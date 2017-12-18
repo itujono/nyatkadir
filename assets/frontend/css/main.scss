@@ -322,6 +322,7 @@ a {
 }
 
 .section-title {
+    position: relative;
     margin-bottom: 2em;
     line-height: 1.6;
     &.dark {
@@ -334,6 +335,15 @@ a {
     h3 {
         font-size: 1.8rem;
         line-height: 1.4;
+    }
+    .bar {
+        position: absolute;
+        left: -100px;
+        top: 30px;
+        z-index: -1;
+        width: 250px;
+        height: 3px;
+        background: $yellow;
     }
 }
 
@@ -944,7 +954,7 @@ footer.footer {
     background-color: $darkBlue;
     padding: 3rem 0 6rem 0;
     .image-gallery, .video-gallery {
-        padding: 3rem 6rem;
+        padding: 3rem 0;
         border-bottom: 1px solid transparentize($yellow, .5);
         &:last-child {
             border-bottom: none;

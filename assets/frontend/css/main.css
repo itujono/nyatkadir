@@ -355,6 +355,7 @@ a:hover {
 }
 
 .section-title {
+  position: relative;
   margin-bottom: 2em;
   line-height: 1.6;
 }
@@ -377,6 +378,16 @@ a:hover {
 .section-title h3 {
   font-size: 1.8rem;
   line-height: 1.4;
+}
+
+.section-title .bar {
+  position: absolute;
+  left: -100px;
+  top: 30px;
+  z-index: -1;
+  width: 250px;
+  height: 3px;
+  background: #fdc236;
 }
 
 .read-more {
@@ -1081,7 +1092,7 @@ footer.footer figure.logo-footer img {
 }
 
 .few-gallery .image-gallery, .few-gallery .video-gallery {
-  padding: 3rem 6rem;
+  padding: 3rem 0;
   border-bottom: 1px solid rgba(253, 194, 54, 0.5);
 }
 
