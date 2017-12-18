@@ -33,10 +33,14 @@
                     <div class="share">
                         <h3>Share berita ini:</h3>
                         <ul>
-                            <li><a href="#" title="Share to Twitter"><span class="icon mdi mdi-twitter"></span></a></li>
-                            <li><a href="#" title="Share to Facebook"><span class="icon mdi mdi-facebook"></span></a></li>
-                            <li><a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
-                            <li><a href="#" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a></li>
+                            <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=<?php echo $getpress->titlePRESS;?>&url=<?php echo base_url(uri_string());?>')" title="Share to Twitter"><span class="icon mdi mdi-twitter"></span></a></li>
+                            <li><a href="#" title="Share to Facebook" class="ShareFB"><span class="icon mdi mdi-facebook"></span></a></li>
+                            <?php
+                                $content_wa = str_replace(' ','%20',$getpress->titlePRESS);
+                                $url_wa = "https://api.whatsapp.com/send?text=".$content_wa;
+                            ?>
+                            <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('<?php echo $url_wa;?>')" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a></li>
+                            <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo base_url(uri_string());?>')" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a></li>
                         </ul>
                     </div>
                     <hr>
@@ -84,3 +88,30 @@
         </div> <!-- kelar div Columns -->
     </div>
 </section>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+
+function createFBShareLink(FBVars) {
+    // FBVars is app_id
+    var url = 'http://www.facebook.com/dialog/feed?app_id='+FBVars+
+    '&link=' + '<?php echo base_url(uri_string());?>' +
+    '&picture=' + '<?php echo base_url().$this->data['asfront'];?>img/logo.png' +
+    '&name=' + encodeURIComponent('<?php echo $getpress->titlePRESS;?>') +
+    '&description=' + encodeURIComponent('<?php echo word_limiter($getpress->descPRESS,8);?>') +
+    '&redirect_uri=' + '<?php echo base_url(uri_string());?>' +
+    '&display=popup';
+    window.open(url,'feedDialog','toolbar=0,status=0,width=626,height=436');
+}
+
+$(".ShareFB").click(function(e) {
+    e.preventDefault();
+    createFBShareLink('328440447656043');
+});
+</script>
