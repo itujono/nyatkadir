@@ -1,18 +1,20 @@
 
 #header_main {
-	background: #96d019;
+	background: #333656;
 }
 
 #sidebar_main .sidebar_main_header .sidebar_logo {
-	height: initial;
-    line-height: 48px;
     overflow: hidden;
-    display: flex;
+    height: 100%;
 }
 
 #sidebar_main .sidebar_main_header .sidebar_logo a {
-    display: block;
+    display: inline-block;
     margin-left: 0;
+}
+
+#sidebar_main .sidebar_main_header {
+	height: 140px;
 }
 
 .dataTables_wrapper .dt-uikit-header {
@@ -44,14 +46,29 @@ label, .dataTables_wrapper .uk-table thead .sorting, .selectize-control.single .
     background: #96d019;
 }
 
+
+
+
+
+.uk-tab-grid {
+    margin-left: 0;
+    border-bottom: none;
+    position: relative;
+    z-index: 0;
+}
+
 .uk-tab > li.uk-active > a {
     background: 0 0!important;
-    border-bottom-color: #96d019;
+    border-bottom-color: #f8be36;
 }
 
 .uk-tab > li > a {
     color: #bbb;
 	padding: 14px !important;
+}
+
+.selectize-dropdown {
+	position: relative !important;
 }
 
 .selectize-control.single .selectize-input {
@@ -88,7 +105,7 @@ input[type=text].md-input {
 }
 
 .uk-width-1-2.uk-active {
-    background-color: #d575ef;
+    background-color: #333656;
 }
 
 .uk-tab > li.uk-active > a {
