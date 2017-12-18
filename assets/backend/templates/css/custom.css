@@ -55,6 +55,7 @@ label, .dataTables_wrapper .uk-table thead .sorting, .selectize-control.single .
     border-bottom: none;
     position: relative;
     z-index: 0;
+	box-shadow: 1px 4px 12px rgba(0, 0, 0, .1);
 }
 
 .uk-tab > li.uk-active > a {
