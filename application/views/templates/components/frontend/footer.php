@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
         <div class="columns is-centered">
             <div class="column">
                 <figure class="image logo-footer m0 wow bounceInUp">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-footer.png" alt="Logo Footer" width="100">
+                    <img src="<?php echo base_url().$this->data['asfront'];?>img/logo.png" alt="Logo Footer" width="100">
                 </figure>
             </div>
             <div class="column is-two-thirds">

@@ -835,6 +835,7 @@ a:hover {
 }
 
 .news-section .video-pop {
+  position: relative;
   max-height: 80%;
   overflow: hidden;
   display: -webkit-box;
@@ -850,6 +851,8 @@ a:hover {
   margin-bottom: 4em;
   height: 400px;
   max-width: 100%;
+  -webkit-box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;

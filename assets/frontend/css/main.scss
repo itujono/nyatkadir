@@ -726,6 +726,7 @@ a {
         }
     }
     .video-pop {
+        position: relative;
         max-height: 80%;
         overflow: hidden;
         display: flex;
@@ -735,6 +736,7 @@ a {
         margin-bottom: 4em;
         height: 400px;
         max-width: 100%;
+        box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         transition: all .3s ease;
         &:hover {
             img {
