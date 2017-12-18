@@ -1168,8 +1168,7 @@ footer.footer figure.logo-footer img {
 
 .fraksi .box {
   background-color: #fdc236;
-  padding-left: 0;
-  padding-bottom: 4em;
+  padding: 3em 3em 4em 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
