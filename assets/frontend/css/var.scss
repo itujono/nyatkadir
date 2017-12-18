@@ -9,6 +9,7 @@ $reddish: #ff5a5a;
 $bgInput: #a1a2ab;
 $bgGoldish: linear-gradient(left,rgba(195,148,60,.5),#c3943c,#ffe09e,#c3943c,rgba(195,148,60,.5));
 $gradientDarkBlue: linear-gradient(to top, $darkBlue, lighten($darkBlue, 10%));
+$gradientYellow: linear-gradient(to top, $yellow, darken($yellow, 15%));
 $textShadow: 2px 5px 10px rgba(0, 0, 0, 0.17);
 
 @mixin hoverCard {

@@ -823,7 +823,10 @@ a:hover {
   font-size: 3em;
   line-height: 3.1;
   padding: 0 1.2em;
-  background: #fdc236;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdc236), to(#e4a102));
+  background: -webkit-linear-gradient(bottom, #fdc236, #e4a102);
+  background: -o-linear-gradient(bottom, #fdc236, #e4a102);
+  background: linear-gradient(to top, #fdc236, #e4a102);
   color: #f2f2f2;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
@@ -831,7 +834,7 @@ a:hover {
 }
 
 .news-section .read-more a:hover {
-  background-color: #1a1b29;
+  background: #1a1b29;
 }
 
 .news-section .video-pop {
@@ -942,7 +945,7 @@ a:hover {
 }
 
 .aspirasi .introduction h5 {
-  color: #fdc236;
+  color: #fff;
 }
 
 .aspirasi .introduction h2 {
@@ -950,6 +953,13 @@ a:hover {
   font-size: 2.4rem;
   line-height: 1.4;
   margin-bottom: .6em;
+  color: #c3943c;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(195, 148, 60, 0.5)), color-stop(#c3943c), color-stop(#ffe09e), color-stop(#c3943c), to(rgba(195, 148, 60, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: -o-linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  background: linear-gradient(left, rgba(195, 148, 60, 0.5), #c3943c, #ffe09e, #c3943c, rgba(195, 148, 60, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .aspirasi .successful.box {
@@ -992,7 +1002,10 @@ form {
 
 .button.is-submit {
   font-family: "FontBook", Helvetica, Arial, sans-serif;
-  background-color: #fdc236;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdc236), to(#e4a102));
+  background: -webkit-linear-gradient(bottom, #fdc236, #e4a102);
+  background: -o-linear-gradient(bottom, #fdc236, #e4a102);
+  background: linear-gradient(to top, #fdc236, #e4a102);
   border-color: transparent;
   color: #fff;
   display: block;
@@ -1004,7 +1017,7 @@ form {
 }
 
 .button.is-submit:hover {
-  background-color: transparent;
+  background: transparent;
   border: 1px solid #fdc236;
   color: #fdc236;
 }
@@ -1092,6 +1105,7 @@ footer.footer figure.logo-footer img {
 .few-gallery {
   background-color: #2e2f48;
   padding: 3rem 0 6rem 0;
+  border-bottom: 5px solid #fdc236;
 }
 
 .few-gallery .image-gallery, .few-gallery .video-gallery {
@@ -1124,6 +1138,10 @@ footer.footer figure.logo-footer img {
   background: rgba(0, 0, 0, 0.35);
 }
 
+.few-gallery .owl-carousel {
+  cursor: move;
+}
+
 .few-gallery .owl-carousel .card-image {
   height: 280px;
 }
@@ -1143,8 +1161,19 @@ footer.footer figure.logo-footer img {
 }
 
 .achievements {
-  background: url(../img/slide1.jpg) center no-repeat;
+  position: relative;
+}
+
+.achievements:before {
+  content: '';
+  background: url("../img/slide1.jpg") center no-repeat;
   background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .achievements dl dt {
@@ -1167,6 +1196,11 @@ footer.footer figure.logo-footer img {
   -ms-flex-pack: stretch;
   justify-content: stretch;
   margin-right: 15px;
+}
+
+.achievements .award .icon {
+  color: #fdc236;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .fraksi .box {
@@ -1776,8 +1810,32 @@ footer.footer figure.logo-footer img {
   margin-bottom: 2em;
 }
 
-.press-slider figure {
+.press-slider .owl-item {
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.press-slider .owl-item:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+}
+
+.press-slider .owl-item figure {
   margin: 0;
+  height: 200px;
+}
+
+.press-slider .owl-item figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .share ul {
