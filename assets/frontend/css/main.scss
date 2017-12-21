@@ -823,6 +823,15 @@ a {
 form {
     width: 80%;
     margin: 0 auto;
+    .input, .textarea {
+        + .help {
+            display: none;
+            transition: all .2s ease;
+        }
+    }
+    .help {
+        color: $yellow;
+    }
 }
 
 .input, .textarea, .select {
@@ -840,12 +849,6 @@ form {
     }
     &:focus + .help {
         display: block;
-    }
-}
-
-.input {
-    + .help {
-        display: none;
     }
 }
 

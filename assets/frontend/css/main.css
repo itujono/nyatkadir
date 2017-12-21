@@ -976,6 +976,17 @@ form {
   margin: 0 auto;
 }
 
+form .input + .help, form .textarea + .help {
+  display: none;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+form .help {
+  color: #fdc236;
+}
+
 .input, .textarea, .select {
   font-family: "FontBook", Helvetica, Arial, sans-serif;
   border-radius: 2px;
@@ -992,6 +1003,10 @@ form {
 
 .input:placeholder, .textarea:placeholder, .select:placeholder {
   color: #ddd;
+}
+
+.input:focus + .help, .textarea:focus + .help, .select:focus + .help {
+  display: block;
 }
 
 .field:not(:last-child) {
