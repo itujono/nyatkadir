@@ -375,3 +375,12 @@ function select_all_social_media(){
     $data = $CI->db->get()->result();
     return $data;
 }
+
+function select_video_gallery_at_home(){
+    $CI =& get_instance();
+    $CI->db->select('ishomevideoGALLERY, titleGALLERY, linkvideoGALLERY');
+    $CI->db->from('gallery');
+    $CI->db->where('ishomevideoGALLERY', 1);
+    $data = $CI->db->get()->row();
+    return $data;
+}

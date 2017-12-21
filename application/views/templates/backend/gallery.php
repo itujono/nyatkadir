@@ -32,6 +32,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
             <thead>
               <tr>
                 <th>No.</th>
+                <th>Home Video</th>
                 <th>Thumbnail/Video</th>
                 <th>Kategori</th>
                 <th>Judul</th>
@@ -42,6 +43,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
             <tfoot>
               <tr>
                 <th>No.</th>
+                <th>Home Video</th>
                 <th>Thumbnail/Video</th>
                 <th>Kategori</th>
                 <th>Judul</th>
@@ -62,9 +64,14 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     $thumbnail = get_thumbnail_from_youtube($gal->linkvideoGALLERY);
                     $image = '<img class="img_thumb" src="'.$thumbnail.'" alt="'.$gal->titleGALLERY.'"/>';
                   }
+                   $icn = '&#xE04C;'; 
+                   if($gal->ishomevideoGALLERY == 1){
+                      $icn = '&#xE04B;';
+                   }
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
+                    <td><i class="md-icon material-icons"><?php echo $icn; ?></i></td>
                     <td><?php echo $image;?></td>
                     <td><?php echo $cat; ?></td>
                     <td><?php echo $gal->titleGALLERY; ?></td>
@@ -134,7 +141,7 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     </div>
                   </div>
                   <div class="uk-grid" data-uk-grid-margin>
-                    <div class="uk-width-medium-1-1 uk-margin-top">
+                    <div class="uk-width-medium-1-2 uk-margin-top">
                       <div class="parsley-row">
                         <label>Judul<span class="req">*</span></label>
                         <?php 
@@ -148,8 +155,17 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                       </div>
                       <p class="text-red"><?php echo form_error('titleGALLERY'); ?></p>
                     </div>
+                    <div class="uk-width-medium-1-2 uk-margin-top">
+                      <div class="parsley-row">
+                        <?php
+                          $checkdis= '';
+                          if($getgallery->ishomevideoGALLERY == 1) $checkdis = 'checked' ;
+                        ?>
+                        <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#304ffe" name="ishomevideoGALLERY" id="switch_demo_large">
+                        <label for="switch_demo_large" class="inline-label"><b>Video Home</b></label>
+                      </div>
+                    </div>
                   </div>
-                  
                   <div class="uk-grid" data-uk-grid-margin id="row_video">
                     <div class="uk-width-medium-1-1 uk-margin-top">
                       <div class="parsley-row">

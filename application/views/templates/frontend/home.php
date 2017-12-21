@@ -370,19 +370,26 @@
 </section>
 
 <section class="section news-section">
+    <?php
+        $is_home_video = select_video_gallery_at_home();
+        if(!empty($is_home_video)){
+            $thumbnail = get_thumbnail_from_youtube($is_home_video->linkvideoGALLERY);
+            $image = '<img class="img_thumb" src="'.$thumbnail.'" alt="'.$is_home_video->titleGALLERY.'"/>';
+    ?>
     <section class="hero">
         <div class="container">
             <div class="video-pop">
                 <figure class="image">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="Video Pop">
+                    <img src="<?php echo $thumbnail;?>" alt="<?php echo $is_home_video->titleGALLERY;?>">
                 </figure>
                 <div class="caption">
-                    <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" class="icon play-button"><i class="mdi mdi-play"></i></a>
-                    <span class="title">Mengisi Kemerdekaan Dengan Rasa Bangga Mendalam</span>
+                    <a data-fancybox href="<?php echo $is_home_video->linkvideoGALLERY;?>&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" class="icon play-button"><i class="mdi mdi-play"></i></a>
+                    <span class="title"><?php echo $is_home_video->titleGALLERY;?></span>
                 </div>
             </div>
         </div>
     </section>
+    <?php } ?>
     <div class="container">
         <div class="section-title">
             <h3>Berita dan Event <span class="reddish">Nyat Kadir</span></h3>
