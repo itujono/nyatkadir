@@ -196,6 +196,7 @@
                         <div class="control">
                             <input type="email" name="emailing" class="input" placeholder="Masukkan alamat email Anda" required="required">
                         </div>
+                        <p class="help">Misal: andrigunawan@myemail.com</p>
                     </div>
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
                         <div class="control">
