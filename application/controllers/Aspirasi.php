@@ -21,6 +21,15 @@ class Aspirasi extends Frontend_Controller {
 	}
 
 	public function send_aspirasi(){
+		if(empty($this->session->userdata('idUSER'))){
+			$data = array(
+                'title' => 'Error',
+				'style' => 'is-warning',
+                'text' => 'Maaf, silakan login terlebih dahulu.'
+            );
+            $this->session->set_flashdata('message',$data);
+            redirect('user');
+		}
 		$rules = $this->Aspirasi_m->rules_aspirasi;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');

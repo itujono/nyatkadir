@@ -13,7 +13,6 @@
                     <p class="title wow fadeInUp" data-wow-delay="1s"><?php echo $this->session->userdata('Name'); ?></p>
                     <?php }
                         if (!empty($message)){
-
                     ?>
                     <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
@@ -59,23 +58,11 @@
                 </div>
                 <?php } ?>
             </div> <!-- kelar Login Wrapper -->
-
+            
             <div class="register-wrapper">
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
                     <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan isi data diri terlebih dahulu untuk melanjutkan.</p>
-                    <?php
-                        if (!empty($message)){
-                    ?>
-                    <article class="notification is-success">
-                        <button class="delete" aria-label="delete"></button>
-                        <?php echo $message['text'];?>
-                    </article>
-                    <article class="notification is-warning">
-                        <button class="delete" aria-label="delete"></button>
-                        <?php echo $message['text'];?>
-                    </article>
-                    <?php } ?>
                 </div>
                 <form action="<?php echo base_url();?>user/registration" method="POST">
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />

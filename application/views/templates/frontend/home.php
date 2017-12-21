@@ -252,9 +252,6 @@
                 </div>
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
-                <?php
-                    if (empty($message_choice)){
-                ?>
                     <div class="content">
                         <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
                         <?php
@@ -269,6 +266,25 @@
                                 </label>
                             </div>
                         </div>
+                        <?php if(!empty($message_choice)){ ?>
+                        <div class="column">
+                            <div class="successful box">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <figure class="image">
+                                            <span class="icon is-large mdi mdi-trophy-award"></span>
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <h3><?php echo $message_choice['title'];?></h3>
+                                            <p><?php echo $message_choice['text'];?></p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <?php } ?>
                         <div class="column"> <!--Hasil polling ya wak-->
                             <h6 class="title">Hasil Polling:</h6>
                             <div class="voting-result">
@@ -328,25 +344,6 @@
                         </form>
                         <?php } ?>
                     </div>
-                    <?php } else { ?>
-                    <div class="column">
-                        <div class="successful box">
-                            <article class="media">
-                                <div class="media-left">
-                                    <figure class="image">
-                                        <span class="icon is-large mdi mdi-trophy-award"></span>
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h3><?php echo $message_choice['title'];?></h3>
-                                        <p><?php echo $message_choice['text'];?></p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <?php } ?>
                 </div>
             <?php } else { ?>
                 <div class="column">

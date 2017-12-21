@@ -19,6 +19,9 @@ class User extends Frontend_Controller {
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
+        if(!empty($this->session->flashdata('message_registration'))) {
+            $data['message_registration'] = $this->session->flashdata('message_registration');
+        }
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'users', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
@@ -47,23 +50,21 @@ class User extends Frontend_Controller {
                 $name = ucwords($this->input->post('nameUSER'));
 
 	                if($this->sendemailconfirmation($name, $email, $saveid)){
-
-					$data = array(
-						'title' => 'Sukses',
-						'style' => 'is-success',
-	                    'text' => 'Terima kasih sudah mendaftar. Silakan cek kotak masuk ataupun kotak spam email Anda. Terima Kasih!'
-	                );
-	                $this->session->set_flashdata('message',$data);
-	                redirect('user');
-
+						$data = array(
+							'title' => 'Sukses',
+							'style' => 'is-success',
+		                    'text' => 'Terima kasih sudah mendaftar. Silakan cek kotak masuk ataupun kotak spam email Anda. Terima Kasih!'
+		                );
+		                $this->session->set_flashdata('message',$data);
+		                redirect('user');
 					} else {
-					$data = array(
-	                    'title' => 'Error',
-						'style' => 'is-warning',
-	                    'text' => 'Maaf, ada kesalahan koneksi.'
-	                );
-	                $this->session->set_flashdata('message',$data);
-	                redirect('user');
+						$data = array(
+		                    'title' => 'Error',
+							'style' => 'is-warning',
+		                    'text' => 'Maaf, ada kesalahan koneksi.'
+		                );
+		                $this->session->set_flashdata('message',$data);
+		                redirect('user');
 					}
 
 			} else {

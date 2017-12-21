@@ -14,6 +14,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                         Gunakan form di samping. Tulis sejelas-jelasnya isi aspirasimu. Jangan hanya simpan mereka di dalam benak.
                     </div>
                     <div class="column">
+                        <?php if(!empty($message_aspirasi)){ ?>
+                        <div class="successful box" id="submit-success">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image">
+                                        <span class="icon is-large mdi mdi-trophy-award"></span>
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h3><?php echo $message_aspirasi['title']; ?></h3>
+                                        <p><?php echo $message_aspirasi['text']; ?></p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <?php } else { ?>
                         <form class="form-aspirasi" action="<?php echo base_url();?>aspirasi/send_aspirasi" method="POST">
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                             <div class="field">
@@ -75,24 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                 </div>
                             </div>
                         </form>
-                        <?php if(!empty($message_aspirasi)){ ?>
-                        <div class="successful box" id="submit-success">
-                            <article class="media">
-                                <div class="media-left">
-                                    <figure class="image">
-                                        <span class="icon is-large mdi mdi-trophy-award"></span>
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h3><?php echo $message_aspirasi['title']; ?></h3>
-                                        <p><?php echo $message_aspirasi['text']; ?></p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                        <?php } ?>
                     </div> <!-- kelar div Column form -->
-                    <?php } ?>
                 </div>
             </div> <!-- kelar Container -->
         </div>
