@@ -838,6 +838,15 @@ form {
     &:placeholder {
         color: #ddd;
     }
+    &:focus + .help {
+        display: block;
+    }
+}
+
+.input {
+    + .help {
+        display: none;
+    }
 }
 
 .field:not(:last-child) {

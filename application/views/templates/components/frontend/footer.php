@@ -45,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                         }
                                     ?>
                                     <input type="text" class="input" name="nameASPIRASI" placeholder="Nama Anda" value="<?php echo $data_val;?>" required="required" <?php echo $read_only;?>>
+                                    <p class="help">Misal: Andri Gunawan</p>
                                 </div>
                             </div>
                             <div class="field">
@@ -59,6 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                         }
                                     ?>
                                     <input type="email" name="emailASPIRASI" class="input" placeholder="Email Anda" value="<?php echo $data_val;?>" required="required" <?php echo $read_only;?>>
+                                    <p class="help">Misal: andrigunawan@myemail.com</p>
                                 </div>
                             </div>
                             <div class="field">
@@ -74,16 +76,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                                         }
                                     ?>
                                     <input type="number" class="input" name="ageASPIRASI" placeholder="Usia Anda" required="required" value="<?php echo $data_val;?>" <?php echo $read_only;?>>
+                                    <p class="help">Misal: 21</p>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <input type="text" class="input" name="subjectASPIRASI" placeholder="Judul Aspirasi Anda" required="required" id="aspirasi-title">
+                                    <p class="help">Misal: Minimal 10 (sepuluh) karakter</p>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <textarea  class="textarea" rows="6" name="descASPIRASI" placeholder="Isi Aspirasi" required="required" id="aspirasi-message"></textarea>
+                                    <p class="help">Misal: Minimal 10 (sepuluh) karakter</p>
                                 </div>
                             </div>
                             <div class="field">

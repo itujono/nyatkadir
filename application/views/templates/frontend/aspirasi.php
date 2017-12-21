@@ -15,26 +15,31 @@
                             <div class="control">
                                 <input type="text" class="input" placeholder="Nama Anda">
                             </div>
+                            <p class="help">Misal: Andri Gunawan</p>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <input type="text" class="input" placeholder="Email Anda">
                             </div>
+                            <p class="help">Misal: andrigunawan@myemail.com</p>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <input type="number" class="input" placeholder="Usia Anda">
                             </div>
+                            <p class="help">Misal: 21</p>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <input type="text" class="input" placeholder="Judul Aspirasi Anda">
                             </div>
+                            <p class="help">Misal: Minimal 10 (sepuluh) karakter</p>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <textarea class="textarea" rows="6" placeholder="Isi Aspirasi"></textarea>
                             </div>
+                            <p class="help">Misal: Minimal 10 (sepuluh) karakter</p>
                         </div>
                         <div class="field">
                             <div class="control">
@@ -62,6 +67,7 @@
         </div> <!-- kelar Container -->
     </div>
 </section>
+
 <div class="container">
     <div class="columns is-centered">
         <div class="column">
@@ -83,6 +89,7 @@
         </div>
     </div>
 </div>
+
 <div class="level copyright">
     <div class="level-left">
         <div class="level-item">
