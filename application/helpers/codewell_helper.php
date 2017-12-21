@@ -367,3 +367,11 @@ function getnumbervoting_for_admin($id=NULL) {
     $data = $result->result();
     return $data;
 }
+
+function select_all_social_media(){
+    $CI =& get_instance();
+    $CI->db->select('nameSOCIAL, linkSOCIAL');
+    $CI->db->from('social_media');
+    $data = $CI->db->get()->result();
+    return $data;
+}

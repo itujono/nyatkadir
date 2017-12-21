@@ -13,8 +13,7 @@
                     <br>
                     <p class="title wow fadeInUp" data-wow-delay="1s"><?php echo $this->session->userdata('Name'); ?></p>
                     <?php }
-                    if (!empty($message)){
-                        ?>
+                    if (!empty($message)){ ?>
                         <article class="message <?php echo $message['style'];?>">
                             <div class="message-header">
                                 <p><?php echo $message['title'];?></p>

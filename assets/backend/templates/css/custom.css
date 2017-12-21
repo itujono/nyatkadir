@@ -69,7 +69,6 @@ label, .dataTables_wrapper .uk-table thead .sorting, .selectize-control.single .
 }
 
 .selectize-dropdown {
-	position: relative !important;
 }
 
 .selectize-control.single .selectize-input {

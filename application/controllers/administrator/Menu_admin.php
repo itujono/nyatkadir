@@ -31,7 +31,7 @@ class Menu_admin extends Admin_Controller{
 		}
 
 		$data['dropdown_menu'] = $this->Menu_m->select_parents_drop();
-
+		
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
