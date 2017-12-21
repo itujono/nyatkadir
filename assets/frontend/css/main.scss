@@ -150,8 +150,8 @@ a {
 
 .navbar a.navbar-item {
     &:hover {
-        background-color: rgba(0, 0, 0, .2);
-        color: #eee;
+        background-color: $yellow;
+        color: #444;
     }
     &:active {
         background-color: $yellow;
@@ -181,6 +181,18 @@ a {
         border: 1px solid $yellow;
         border-top: 0;
         border-right: 0;
+    }
+}
+
+.navbar-dropdown {
+    background-color: $darkBlue;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    border-top: none;
+    .navbar-item {
+        padding: 0.8rem 1rem;
+        white-space: nowrap;
     }
 }
 
