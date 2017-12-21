@@ -493,7 +493,7 @@ if ($plugins == 'home') { ?>
     }
 </script>
 
-<script>
+<!-- <script>
     var aspirasiTitle = document.querySelector("#aspirasi-title");
     var inputEmail = document.querySelector(".input.email");
     var inputPassword = document.querySelector(".input.password");
@@ -512,6 +512,6 @@ if ($plugins == 'home') { ?>
         e.target.setCustomValidity("Harap isi kata sandi Anda");
         console.log("Sempirdiiikkk!");
     }
-</script>
+</script> -->
 
 <script src="<?php echo base_url().$this->data['asfront'];?>js/script.js"></script>

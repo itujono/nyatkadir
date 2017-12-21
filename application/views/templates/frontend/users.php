@@ -58,55 +58,82 @@
                 </div>
                 <?php } ?>
             </div> <!-- kelar Login Wrapper -->
-            
+
             <div class="register-wrapper">
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
                     <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan isi data diri terlebih dahulu untuk melanjutkan.</p>
                 </div>
                 <form action="<?php echo base_url();?>user/registration" method="POST">
+
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+
                     <div class="field">
                         <div class="control">
                             <input type="text" name="nameUSER" class="input" placeholder="Nama Lengkap Anda" required="required">
                         </div>
+                        <p class="help">Misal: Andri Gunawan</p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="email" name="emailUSER" class="input" placeholder="Email Anda" required="required">
                         </div>
+                        <p class="help">Misal: andri@myemail.com</p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="password"  name="passwordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : ''); if(this.checkValidity()) form.repasswordUSER.pattern = this.value;" id="passwordUSER" required="" placeholder="Ketik password anda">
                         </div>
+                        <p class="help">Misal: Andri Gunawan</p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="password" name="repasswordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Mohon samakan kata sandi anda seperti kata sandi diatas' : '');" id="repasswordUSER" required="" placeholder="Input Lagi Kata Sandi Anda">
                         </div>
+                        <p class="help">Minimal 8 (delapan) karakter</p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <textarea class="textarea" name="addressUSER" placeholder="Domisili Anda" required="required"></textarea>
                         </div>
+                        <p class="help">Misal: Jalan Bahagia Blok A No. 1, Sungai Panas</p>
                     </div>
-                    <div class="field is-grouped">
-                        <div class="control is-expanded">
-                            <input type="text" name="cityUSER" class="input" placeholder="Kota" required="required">
+
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control is-expanded">
+                                    <input type="text" name="cityUSER" class="input" placeholder="Kota" required="required">
+                                </div>
+                                <p class="help">Misal: Tanjung Pinang</p>
+                            </div>
+                            <div class="field">
+                                <div class="control is-expanded">
+                                    <input type="number" name="zipUSER" class="input" placeholder="Kode Pos" required="required">
+                                </div>
+                                <p class="help">Misal: 29432</p>
+                            </div>
+                        </div> <!-- kelar Field-Body -->
+                    </div>
+
+                    <div class="field-body">
+                        <div class="field is-expanded">
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <a class="button is-static">+62</a>
+                                </p>
+                                <p class="control is-expanded">
+                                    <input type="tel" class="input" name="teleUSER" placeholder="Nomor ponsel Anda" required="required">
+                                </p>
+                            </div>
+                            <p class="help">Misal: 8121234567</p>
                         </div>
-                        <div class="control">
-                            <input type="number" name="zipUSER" class="input" placeholder="Kode Pos" required="required">
-                        </div>
                     </div>
-                    <div class="field has-addons">
-                        <p class="control">
-                            <a class="button is-static">+62</a>
-                        </p>
-                        <p class="control is-expanded">
-                            <input type="tel" class="input" name="teleUSER" placeholder="Nomor ponsel Anda" required="required">
-                        </p>
-                    </div>
+
                     <div class="field is-grouped">
                         <div class="control is-expanded gender">
                             <label class="radio">
@@ -122,11 +149,13 @@
                             <input type="number" name="ageUSER" class="input" placeholder="Usia Anda" required="required">
                         </div>
                     </div>
+
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
                         <div class="control">
                             <input type="submit" class="button is-link is-submit" value="Submit">
                         </div>
                     </div>
+
                 </form>
                 <div class="switch-login" id="switch-to-login">
                     <a href="#"><span class="icon mdi mdi-account-outline"></span> Sudah punya akun?</a>

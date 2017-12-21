@@ -1399,6 +1399,33 @@ footer.footer figure.logo-footer img {
   margin-top: -1rem;
 }
 
+.article .article-detail .owl-item {
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.article .article-detail .owl-item:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+}
+
+.article .article-detail .owl-item .image {
+  height: 180px;
+}
+
+.article .article-detail .owl-item .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .top-post li {
   margin-bottom: 15px;
 }
