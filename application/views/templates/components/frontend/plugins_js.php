@@ -103,6 +103,7 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+
     <script>
         if ($('.four-item-carousel').length) {
             $('.four-item-carousel').owlCarousel({
@@ -261,6 +262,7 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+
     <script>
         if ($('.four-item-carousel').length) {
             $('.four-item-carousel').owlCarousel({
@@ -293,6 +295,7 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+
     <script>
         if ($('.three-item-carousel').length) {
             $('.three-item-carousel').owlCarousel({
@@ -418,14 +421,15 @@ if ($plugins == 'home') { ?>
 
 <script>
     var btnDelete = document.querySelectorAll(".delete");
-    var notif = document.querySelectorAll(".notification");
+    var message = document.querySelectorAll(".message");
 
     for (var i = 0; i < btnDelete.length; i++) {
         btnDelete[i].addEventListener("click", function(e) {
             e.preventDefault();
             for (var i = 0; i < message.length; i++) {
-                notif[i].classList += " none";
+                message[i].classList += " none";
             }
+            console.log("Bolta juga ya heheh");
         });
     }
 </script>
