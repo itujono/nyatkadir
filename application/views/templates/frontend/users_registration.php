@@ -3,6 +3,7 @@
 <section class="section is-medium login">
     <div class="hero-body">
         <div class="container">
+
             <div class="login-wrapper">
                 <?php if(empty($message_registration)){ ?>
                 <div class="login-title">
@@ -24,27 +25,27 @@
                                 <?php echo $message['text'];?>
                             </div>
                         </article>
-                        <?php } ?>
+                    <?php } ?>
+                </div>
+                <?php if(empty($this->session->userdata('idUSER'))) { ?>
+                <form action="<?php echo base_url();?>user/process" method="POST">
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                    <div class="field">
+                        <div class="control">
+                            <input type="email" name="email" class="input email" placeholder="Email Anda" required="required">
+                        </div>
                     </div>
-                    <?php if(empty($this->session->userdata('idUSER'))) { ?>
-                    <form action="<?php echo base_url();?>user/process" method="POST">
-                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
-                        <div class="field">
-                            <div class="control">
-                                <input type="email" name="email" class="input email" placeholder="Email Anda" required="required">
-                            </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="password" class="input password" required="required" name="password" placeholder="Kata sandi anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');"/>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <input type="password" class="input password" required="required" name="password" placeholder="Kata sandi anda" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : '');"/>
-                            </div>
+                    </div>
+                    <div class="field wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="control">
+                            <input type="submit" class="button is-link is-submit" value="Submit">
                         </div>
-                        <div class="field wow fadeInUp" data-wow-delay="1.2s">
-                            <div class="control">
-                                <input type="submit" class="button is-link is-submit" value="Submit">
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                </form>
                     <?php }
                     if(empty($this->session->userdata('idUSER'))){ ?>
                     <div class="switch-login" id="switch-to-register">
@@ -70,7 +71,7 @@
                     </article>
                     <?php } ?>
                 </div> <!-- kelar Login Wrapper -->
-    
+
                 <div class="register-wrapper is-active">
                     <div class="login-title">
                         <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
@@ -87,6 +88,7 @@
                         </article>
                         <?php } ?>
                     </div>
+
                     <form action="<?php echo base_url();?>user/registration" method="POST">
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                         <div class="field">
@@ -168,11 +170,11 @@
                                 <input type="submit" class="button is-link is-submit" value="Submit">
                             </div>
                         </div>
-
                     </form>
+
                     <div class="switch-login" id="switch-to-login">
                         <a href="#"><span class="icon mdi mdi-account-outline"></span> Sudah punya akun?</a>
-                    </div>    
+                    </div>
                 </div> <!-- kelar Register Wrapper -->
             </div>
         </div>

@@ -429,7 +429,6 @@ if ($plugins == 'home') { ?>
             for (var i = 0; i < message.length; i++) {
                 message[i].classList += " none";
             }
-            console.log("Bolta juga ya heheh");
         });
     }
 </script>
@@ -450,10 +449,12 @@ if ($plugins == 'home') { ?>
     });
 
     for (var i = 0; i < stLogin.length; i++) {
-        stLogin[i].addEventListener("click", function() {
+        stLogin[i].addEventListener("click", function(e) {
             if (register.classList.contains("is-active")) {
+                e.preventDefault();
                 register.classList.remove("is-active");
                 login.classList += " is-active";
+                console.log("Switched to login nih!");
             }
             if (forgot.classList.contains("is-active")) {
                 forgot.classList.remove("is-active");
