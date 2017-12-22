@@ -497,26 +497,4 @@ if ($plugins == 'home') { ?>
         });
     }
 </script>
-
-<!-- <script>
-    var aspirasiTitle = document.querySelector("#aspirasi-title");
-    var inputEmail = document.querySelector(".input.email");
-    var inputPassword = document.querySelector(".input.password");
-
-    aspirasiTitle.oninvalid = function(e) {
-        e.target.setCustomValidity('Harap isi judul aspirasi Anda');
-        console.log("Sempirdik!");
-    }
-
-    inputEmail.oninvalid = function(e) {
-        e.target.setCustomValidity("Harap isi alamat email Anda");
-        console.log("Sempirdiiikkk!");
-    }
-
-    inputPassword.oninvalid = function(e) {
-        e.target.setCustomValidity("Harap isi kata sandi Anda");
-        console.log("Sempirdiiikkk!");
-    }
-</script> -->
-
 <script src="<?php echo base_url().$this->data['asfront'];?>js/script.js"></script>

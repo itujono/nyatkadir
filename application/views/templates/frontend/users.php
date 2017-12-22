@@ -3,7 +3,6 @@
 <section class="section is-medium login">
     <div class="hero-body">
         <div class="container">
-        
             <div class="login-wrapper is-active">
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Selamat datang!</h3>
@@ -13,15 +12,15 @@
                     <br>
                     <p class="title wow fadeInUp" data-wow-delay="1s"><?php echo $this->session->userdata('Name'); ?></p>
                     <?php }
-                        if (!empty($message_login)){
+                        if (!empty($message)){
                     ?>
-                    <article class="message <?php echo $message_login['style'];?>">
+                    <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
-                            <p><?php echo $message_login['title'];?></p>
+                            <p><?php echo $message['title'];?></p>
                             <button class="delete" aria-label="delete"></button>
                         </div>
                         <div class="message-body">
-                            <?php echo $message_login['text'];?>
+                            <?php echo $message['text'];?>
                         </div>
                     </article>
                     <?php } ?>
@@ -59,43 +58,51 @@
                 </div>
                 <?php } ?>
             </div> <!-- kelar Login Wrapper -->
-          
+
             <div class="register-wrapper">
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
                     <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan isi data diri terlebih dahulu untuk melanjutkan.</p>
                 </div>
                 <form action="<?php echo base_url();?>user/registration" method="POST">
+
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+
                     <div class="field">
                         <div class="control">
                             <input type="text" name="nameUSER" class="input" placeholder="Nama Lengkap Anda" required="required">
                         </div>
                         <p class="help"><?php echo form_error('nameUSER'); ?></p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="email" name="emailUSER" class="input" placeholder="Email Anda" required="required">
                         </div>
                         <p class="help"><?php echo form_error('emailUSER'); ?></p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="password"  name="passwordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : ''); if(this.checkValidity()) form.repasswordUSER.pattern = this.value;" id="passwordUSER" required="" placeholder="Ketik password anda">
                         </div>
                         <p class="help"><?php echo form_error('passwordUSER'); ?></p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <input type="password" name="repasswordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Mohon samakan kata sandi anda seperti kata sandi diatas' : '');" id="repasswordUSER" required="" placeholder="Input Lagi Kata Sandi Anda">
                         </div>
+                        <p class="help"><?php echo form_error('passwordUSER'); ?></p>
                     </div>
+
                     <div class="field">
                         <div class="control">
                             <textarea class="textarea" name="addressUSER" placeholder="Domisili Anda" required="required"></textarea>
                         </div>
                         <p class="help"><?php echo form_error('addressUSER'); ?></p>
                     </div>
+
                     <div class="field is-horizontal">
                         <div class="field-body">
                             <div class="field">
@@ -112,6 +119,7 @@
                             </div>
                         </div> <!-- kelar Field-Body -->
                     </div>
+
                     <div class="field-body">
                         <div class="field is-expanded">
                             <div class="field has-addons">
@@ -125,6 +133,7 @@
                             <p class="help"><?php echo form_error('teleUSER'); ?></p>
                         </div>
                     </div>
+
                     <div class="field is-grouped">
                         <div class="control is-expanded gender">
                             <label class="radio">
@@ -137,10 +146,11 @@
                             </label>
                         </div>
                         <div class="control">
-                            <input type="number" name="ageUSER" class="input" placeholder="Usia Anda" required="required" min="10" max="99">
+                            <input type="number" name="ageUSER" class="input" placeholder="Usia Anda" required="required">
                             <p class="help"><?php echo form_error('ageUSER'); ?></p>
                         </div>
                     </div>
+
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
                         <div class="control">
                             <input type="submit" class="button is-link is-submit" value="Submit">
@@ -158,15 +168,15 @@
                     <h3 class="title wow fadeInUp">Lupa Kata Sandi Anda?</h3>
                     <p class="subtitle wow fadeInUp" data-wow-delay="1s">Tak perlu panik. Gunakan form di bawah dan kami akan membantu Anda mendapatkan kembali kata sandi akun Anda.</p>
                     <?php
-                        if (!empty($message_forgot)){
+                        if (!empty($message)){
                     ?>
-                    <article class="message <?php echo $message_forgot['style'];?>">
+                    <article class="message <?php echo $message['style'];?>">
                         <div class="message-header">
-                            <p><?php echo $message_forgot['title'];?></p>
+                            <p><?php echo $message['title'];?></p>
                             <button class="delete" aria-label="delete"></button>
                         </div>
                         <div class="message-body">
-                            <?php echo $message_forgot['text'];?>
+                            <?php echo $message['text'];?>
                         </div>
                     </article>
                     <?php } ?>
@@ -177,7 +187,6 @@
                         <div class="control">
                             <input type="email" name="emailing" class="input" placeholder="Masukkan alamat email Anda" required="required">
                         </div>
-                        <p class="help">Misal: andrigunawan@myemail.com</p>
                     </div>
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">
                         <div class="control">

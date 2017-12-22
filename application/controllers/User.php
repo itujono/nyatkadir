@@ -26,9 +26,9 @@ class User extends Frontend_Controller {
 	public function index_registration(){
 		$data['addONS'] = 'non_footer_page';
 		$data['title'] = 'Registrasi -  Nyat Kadir - Laman Resmi';
-
-		if(!empty($this->session->flashdata('message_registration'))) {
-            $data['message_registration'] = $this->session->flashdata('message_registration');
+		$this->session->unset_userdata('message');
+		if(!empty($this->session->flashdata('message'))) {
+            $data['message'] = $this->session->flashdata('message');
         }
         
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'users_registration', $data, TRUE);
@@ -62,7 +62,7 @@ class User extends Frontend_Controller {
 							'style' => 'is-success',
 		                    'text' => 'Terima kasih sudah mendaftar. Silakan cek kotak masuk ataupun kotak spam email Anda. Terima Kasih!'
 		                );
-		                $this->session->set_flashdata('message_registration',$data);
+		                $this->session->set_flashdata('message',$data);
 		                redirect('user/index_registration');
 					} else {
 						$data = array(
@@ -70,7 +70,7 @@ class User extends Frontend_Controller {
 							'style' => 'is-warning',
 		                    'text' => 'Maaf, ada kesalahan koneksi.'
 		                );
-		                $this->session->set_flashdata('message_registration',$data);
+		                $this->session->set_flashdata('message',$data);
 		                redirect('user/index_registration');
 					}
 
@@ -80,16 +80,16 @@ class User extends Frontend_Controller {
 					'style' => 'is-warning',
 		            'text' => 'Maaf, sistem tidak dapat menyimpan data Anda. Silakan ulangi beberapa saat lagi.'
 		        );
-		       	$this->session->set_flashdata('message_registration',$data);
+		       	$this->session->set_flashdata('message',$data);
 		        redirect('user/index_registration');
 			}
 		} else {
 			$data = array(
 				'title' => 'Error!',
 				'style' => 'is-warning',
-	            'text' => 'Maaf, sedang terjadi kesalahan. Mohon ulangi inputan form registrasi Anda.'
+	            'text' => 'Maaf, andhana.'
 	        );
-	        $this->session->set_flashdata('message_registration',$data);
+	        $this->session->set_flashdata('message',$data);
 	        $this->index_registration();
 		}
 	}
@@ -400,7 +400,7 @@ class User extends Frontend_Controller {
 		            'text' => 'Maaf, untuk sementara akun Anda telah terkunci, silakan hubungi bagian Admin kami untuk melaporkan masalah ini. Terima kasih!'
 		        );
 		        $this->session->set_flashdata('message_login',$data);
-				redirect($_SERVER['HTTP_REFERER']);
+				redirect('user');
 			}
 
 			if ($countencrypt > 128 OR $countencrypt < 128) {
@@ -415,7 +415,7 @@ class User extends Frontend_Controller {
 		        $this->Users_m->delete($data_stat, $checks->idUSER);
 
 		        $this->session->set_flashdata('message_login',$data);
-				redirect($_SERVER['HTTP_REFERER']);
+				redirect('user');
 			}
 
 			if ($this->Users_m->login($email, $pass) == "USER"){
@@ -427,7 +427,7 @@ class User extends Frontend_Controller {
 		        );
 
 		        $this->session->set_flashdata('message_login',$data);
-				redirect($_SERVER['HTTP_REFERER']);
+				redirect('user');
 			} else if ($this->Users_m->login($email, $pass) == "NOT ACTIVE"){
 
 				$data = array(
@@ -436,7 +436,7 @@ class User extends Frontend_Controller {
 		            'text' => 'Maaf, akun Anda belum aktif, silakan cek email Anda untuk konfirmasi, atau hubungi kami di form Contact Us. Terima kasih!'
 		        	);
 		        $this->session->set_flashdata('message_login',$data);
-				redirect($_SERVER['HTTP_REFERER']);
+				redirect('user');
 
 			} else {
 				$mailing = $this->input->post('email');
@@ -452,7 +452,7 @@ class User extends Frontend_Controller {
 		            'text' => 'Maaf, email atau kata sandi yang Anda masukkan salah. Mohon periksa kembali terlebih dulu dengan seksama.'
 		        	);
 		        $this->session->set_flashdata('message_login',$data);
-				redirect($_SERVER['HTTP_REFERER']);
+				redirect('user');
 			}
 		} else {
 			$data = array(
@@ -461,12 +461,12 @@ class User extends Frontend_Controller {
             'text' => 'Maaf, silakan ulangi inputan email dan kata sandi Anda di bawah.'
         	);
         $this->session->set_flashdata('message_login',$data);
-		redirect($_SERVER['HTTP_REFERER']);
+		redirect('user');
 		}
 	}
 
 	public function logout (){
-		$unset_data_session = array('message_registration', 'message');
+		$unset_data_session = array('message', 'message');
 		$this->session->unset_userdata($unset_data_session);
 		$this->Users_m->logout();
 		$data = array(
