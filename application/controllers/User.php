@@ -30,7 +30,7 @@ class User extends Frontend_Controller {
 		if(!empty($this->session->flashdata('message_registration'))) {
             $data['message_registration'] = $this->session->flashdata('message_registration');
         }
-
+        
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'users_registration', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
