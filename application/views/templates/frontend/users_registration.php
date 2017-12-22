@@ -4,7 +4,6 @@
     <div class="hero-body">
         <div class="container">
             <div class="login-wrapper">
-                <?php if(empty($message_registration)){ ?>
                 <div class="login-title">
                     <h3 class="title wow fadeInUp">Selamat datang!</h3>
                     <?php if(empty($this->session->userdata('idUSER'))) { ?>
@@ -57,24 +56,14 @@
                         <a href="<?php echo base_url();?>user/logout"><span class="icon mdi mdi-account-outline"></span> Keluar?</a>
                     </div>
                     <?php } ?>
-                    <?php } else { ?>
-                    <article class="message <?php echo $message_registration['style'];?>">
-                        <div class="message-header">
-                            <p><?php echo $message_registration['title'];?></p>
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
-                        <div class="message-body">
-                            <?php echo $message_registration['text'];?>
-                        </div>
-                    </article>
-                    <?php } ?>
                 </div> <!-- kelar Login Wrapper -->
     
                 <div class="register-wrapper is-active">
                     <div class="login-title">
                         <h3 class="title wow fadeInUp">Bergabunglah bersama kami.</h3>
                         <p class="subtitle wow fadeInUp" data-wow-delay="1s">Silakan isi data diri terlebih dahulu untuk melanjutkan.</p>
-                        <?php if(!empty($message_registration)){ ?>
+                    </div>
+                    <?php if(empty($message_registration)){ ?>
                         <article class="message <?php echo $message_registration['style'];?>">
                             <div class="message-header">
                                 <p><?php echo $message_registration['title'];?></p>
@@ -84,36 +73,36 @@
                                 <?php echo $message_registration['text'];?>
                             </div>
                         </article>
-                        <?php } ?>
-                    </div>
+                    <?php } else { ?>
+                    <br>
                     <form action="<?php echo base_url();?>user/registration" method="POST">
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                         <div class="field">
                             <div class="control">
-                                <input type="text" name="nameUSER" class="input" placeholder="Nama Lengkap Anda" required="required" value="Testing">
+                                <input type="text" name="nameUSER" class="input" placeholder="Nama Lengkap Anda" required="required" value="<?php echo set_value('nameUSER') ?>">
                             </div>
                             <p class="help"><?php echo form_error('nameUSER'); ?></p>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="email" name="emailUSER" class="input" placeholder="Email Anda" required="required" value="testing@email.com">
+                                <input type="email" name="emailUSER" class="input" placeholder="Email Anda" required="required" value="<?php echo set_value('emailUSER') ?>">
                             </div>
                             <p class="help"><?php echo form_error('emailUSER'); ?></p>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="password"  name="passwordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : ''); if(this.checkValidity()) form.repasswordUSER.pattern = this.value;" id="passwordUSER" required="" placeholder="Ketik password anda" value="admin1234">
+                                <input type="password"  name="passwordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimal 8 karakter' : ''); if(this.checkValidity()) form.repasswordUSER.pattern = this.value;" id="passwordUSER" required="" placeholder="Ketik password anda">
                             </div>
                             <p class="help"><?php echo form_error('passwordUSER'); ?></p>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="password" name="repasswordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Mohon samakan kata sandi anda seperti kata sandi diatas' : '');" id="repasswordUSER" required="" placeholder="Input Lagi Kata Sandi Anda" value="admin1234">
+                                <input type="password" name="repasswordUSER" class="input" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Mohon samakan kata sandi anda seperti kata sandi diatas' : '');" id="repasswordUSER" required="" placeholder="Input Lagi Kata Sandi Anda">
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" name="addressUSER" placeholder="Domisili Anda" required="required">tibaaaaaaaaaaaaaaaan</textarea>
+                                <textarea class="textarea" name="addressUSER" placeholder="Domisili Anda" required="required"><?php echo set_value('addressUSER') ?></textarea>
                             </div>
                             <p class="help"><?php echo form_error('addressUSER'); ?></p>
                         </div>
@@ -121,13 +110,13 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control is-expanded">
-                                        <input type="text" name="cityUSER" class="input" placeholder="Kota" required="required" value="batasm">
+                                        <input type="text" name="cityUSER" class="input" placeholder="Kota" required="required" value="<?php echo set_value('cityUSER') ?>">
                                     </div>
                                     <p class="help"><?php echo form_error('cityUSER'); ?></p>
                                 </div>
                                 <div class="field">
                                     <div class="control is-expanded">
-                                        <input type="number" name="zipUSER" class="input" placeholder="Kode Pos" required="required" value="34622">
+                                        <input type="number" name="zipUSER" class="input" placeholder="Kode Pos" required="required" value="<?php echo set_value('zipUSER') ?>">
                                     </div>
                                     <p class="help"><?php echo form_error('zipUSER'); ?></p>
                                 </div>
@@ -140,7 +129,7 @@
                                         <a class="button is-static">+62</a>
                                     </p>
                                     <p class="control is-expanded">
-                                        <input type="tel" class="input" name="teleUSER" placeholder="Nomor ponsel Anda" required="required" value="8126709342">
+                                        <input type="tel" class="input" name="teleUSER" placeholder="Nomor ponsel Anda" required="required" value="<?php echo set_value('teleUSER') ?>">
                                     </p>
                                 </div>
                                 <p class="help"><?php echo form_error('teleUSER'); ?></p>
@@ -158,7 +147,7 @@
                                 </label>
                             </div>
                             <div class="control">
-                                <input type="number" name="ageUSER" class="input" placeholder="Usia Anda" required="required" min="10" max="99" value="45">
+                                <input type="number" name="ageUSER" class="input" placeholder="Usia Anda" required="required" min="10" max="99" value="<?php echo set_value('ageUSER') ?>">
                                 <p class="help"><?php echo form_error('ageUSER'); ?></p>
                             </div>
                         </div>
@@ -167,11 +156,11 @@
                                 <input type="submit" class="button is-link is-submit" value="Submit">
                             </div>
                         </div>
-
                     </form>
                     <div class="switch-login" id="switch-to-login">
                         <a href="#"><span class="icon mdi mdi-account-outline"></span> Sudah punya akun?</a>
-                    </div>    
+                    </div>
+                    <?php } ?>
                 </div> <!-- kelar Register Wrapper -->
             </div>
         </div>

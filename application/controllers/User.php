@@ -80,7 +80,7 @@ class User extends Frontend_Controller {
 					'style' => 'is-warning',
 		            'text' => 'Maaf, sistem tidak dapat menyimpan data Anda. Silakan ulangi beberapa saat lagi.'
 		        );
-		        $this->session->set_flashdata('message_registration',$data);
+		       	$this->session->set_flashdata('message_registration',$data);
 		        redirect('user/index_registration');
 			}
 		} else {
@@ -466,6 +466,8 @@ class User extends Frontend_Controller {
 	}
 
 	public function logout (){
+		$unset_data_session = array('message_registration', 'message');
+		$this->session->unset_userdata($unset_data_session);
 		$this->Users_m->logout();
 		$data = array(
 			'title' => 'Sukses!',
