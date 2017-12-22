@@ -25,12 +25,14 @@
                         </article>
                     <?php } ?>
                 </div>
-                <?php if(empty($this->session->userdata('idUSER'))) { ?>
-                <form action="<?php echo base_url();?>user/process" method="POST">
-                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
-                    <div class="field">
-                        <div class="control">
-                            <input type="email" name="email" class="input email" placeholder="Email Anda" required="required">
+                    </div>
+                    <?php if(empty($this->session->userdata('idUSER'))) { ?>
+                    <form action="<?php echo base_url();?>user/process" method="POST">
+                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                        <div class="field">
+                            <div class="control">
+                                <input type="email" name="email" class="input email" placeholder="Email Anda" required="required">
+                            </div>
                         </div>
                     </div>
                     <div class="field">
@@ -74,14 +76,9 @@
                                 <?php echo $message_registration['text'];?>
                             </div>
                         </article>
-<<<<<<< HEAD
-                        <?php } ?>
                     </div>
-
-=======
                     <?php } else { ?>
                     <br>
->>>>>>> 60d1b34cb4b928afaff13f04ec0889b7008fd632
                     <form action="<?php echo base_url();?>user/registration" method="POST">
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                         <div class="field">
@@ -168,10 +165,7 @@
                     <div class="switch-login" id="switch-to-login">
                         <a href="#"><span class="icon mdi mdi-account-outline"></span> Sudah punya akun?</a>
                     </div>
-<<<<<<< HEAD
-=======
                     <?php } ?>
->>>>>>> 60d1b34cb4b928afaff13f04ec0889b7008fd632
                 </div> <!-- kelar Register Wrapper -->
             </div>
         </div>
