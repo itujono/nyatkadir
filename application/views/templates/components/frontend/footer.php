@@ -114,10 +114,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="social">
                     <h3>Berkawan</h3>
                     <ul>
-                        <li><a href="#" class="" title="Twitter Nyat Kadir"><!--<span class="mdi mdi-twitter"></span>-->Twitter</a></li>
-                        <li><a href="#" class="" title="Facebook Nyat Kadir"><!--<span class="mdi mdi-facebook"></span>-->Facebook</a></li>
-                        <li><a href="#" class="" title="Instagram Nyat Kadir"><!--<span class="mdi mdi-instagram"></span>-->Instagram</a></li>
-                        <li><a href="#" class="" title="Google+ Nyat Kadir"><!--<span class="mdi mdi-google-plus"></span>-->Google Plus</a></li>
+                    <?php
+                        $social_media = select_all_social_media();
+                        if(!empty($social_media)){
+                            foreach ($social_media as $social) {
+                    ?>
+                        <li><a href="<?php echo $social->linkSOCIAL;?>" class="" title="<?php echo $social->nameSOCIAL;?> Nyat Kadir"><?php echo $social->nameSOCIAL;?></a></li>
+                        <?php } ?>
+                    <?php } ?>
                     </ul>
                 </div>
                 <div class="quick-links">

@@ -59,7 +59,9 @@ class Gallery extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Gallery_m->array_from_post(array('titleGALLERY','categoryGALLERY','linkvideoGALLERY'));
+			$data = $this->Gallery_m->array_from_post(array('titleGALLERY','categoryGALLERY','linkvideoGALLERY','ishomevideoGALLERY'));
+			if($data['ishomevideoGALLERY'] == 'on')$data['ishomevideoGALLERY']=1;
+			else $data['ishomevideoGALLERY']=0;
 			$id = decode(urldecode($this->input->post('idGALLERY')));
 
 			if(empty($id))$id=NULL;

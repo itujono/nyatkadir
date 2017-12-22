@@ -30,6 +30,7 @@ class Gallery_m extends MY_Model{
 		$gallery->titleGALLERY = '';
 		$gallery->categoryGALLERY = '';
 		$gallery->linkvideoGALLERY = '';
+		$gallery->ishomevideoGALLERY = '';
 		return $gallery;
 	}
 
