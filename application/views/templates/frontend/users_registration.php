@@ -197,7 +197,7 @@
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                     <div class="field">
                         <div class="control">
-                            <input type="email" name="emailing" class="input" placeholder="Masukkan alamat email Anda" required="required">
+                            <input type="email" name="emailing" class="input" placeholder="Masukkan alamat email Anda" required="required" value="<?php echo set_value('emailing') ?>">
                         </div>
                     </div>
                     <div class="field wow fadeInUp" data-wow-delay="1.2s">

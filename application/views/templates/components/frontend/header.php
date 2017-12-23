@@ -79,7 +79,7 @@
                     </a>
                     <div class="navbar-dropdown">
                         <a href="<?php echo base_url();?>user" class="navbar-item">Login</a>
-                        <a href="<?php echo base_url();?>user/registration" class="navbar-item">Daftar</a>
+                        <a href="<?php echo base_url();?>user/index_registration" class="navbar-item">Daftar</a>
                     </div>
                 <?php } ?>
                 </div>
