@@ -46,7 +46,17 @@ if ($plugins == 'home') { ?>
     <script>
         new WOW().init();
     </script>
-
+    <?php
+        if(!empty($getflyer)){
+            $image_flyer = $getflyer->imageFLYER;
+            $image_flyer_alt = $getflyer->titleFLYER;
+            $active = 'is-active';
+        } else {
+            $image_flyer = '';
+            $image_flyer_alt = '';
+            $active = '';
+        }
+    ?>
     <script>
         jQuery(document).ready(function($) {
 
@@ -54,7 +64,7 @@ if ($plugins == 'home') { ?>
 
             if (sessionStorage.getItem('advertOnce') !== 'true') {
                 $('body').append(
-                    '<div class="modal is-active"><div class="modal-background"></div><div class="modal-content"><p class="image"><img src="<?php echo $getflyer->imageFLYER;?>" alt="<?php echo $getflyer->titleFLYER;?>"></p></div><button class="modal-close is-large" aria-label="close"></button></div>'
+                    '<div class="modal <?php echo $active;?>"><div class="modal-background"></div><div class="modal-content"><p class="image"><img src="<?php echo $image_flyer;?>" alt="<?php echo $image_flyer_alt;?>"></p></div><button class="modal-close is-large" aria-label="close"></button></div>'
                 )
                 sessionStorage.setItem('advertOnce','true');
                 console.log(advertOnce);
