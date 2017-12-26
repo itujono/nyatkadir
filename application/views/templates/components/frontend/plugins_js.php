@@ -392,6 +392,7 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/jquery.fancybox.min.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/accordion.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/tab.min.js"></script>
 
     <script>
         new WOW().init();
@@ -399,6 +400,8 @@ if ($plugins == 'home') { ?>
 
     <script>
         $(".ui.accordion").accordion();
+
+        $(".accordion .content li a").tab();
     </script>
 
     <script>

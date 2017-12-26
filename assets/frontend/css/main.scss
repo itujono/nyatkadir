@@ -1569,6 +1569,15 @@ footer.footer {
         p {
             padding-left: 1.7em !important;
         }
+        ul {
+            margin: 0 !important;
+            margin-left: 2.8em !important;
+            a {
+                // &.active {
+                //     color: $yellow;
+                // }
+            }
+        }
     }
 }
 

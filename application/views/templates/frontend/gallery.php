@@ -21,33 +21,44 @@
                         Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                     </div>
                     <div class="ui styled accordion">
-                        <div class="title">
-                            <i class="dropdown icon"></i>
-                            Apakah sundalaga itu?
-                        </div>
-                        <div class="content">
-                            <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-                        </div>
                         <div class="title active">
                             <i class="dropdown icon"></i>
-                            What kinds of dogs are there?
+                            Desember 2017
                         </div>
-                        <div class="content active">
-                            <p class="transition visible" style="display: block !important;">There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+                        <div class="ui menu content active">
+                            <ul>
+                                <li><a href="#" class="item active" data-tab="tab1">Makestool</a></li>
+                                <li><a href="#" class="item" data-tab="tab2">Perencanaan Fly-over</a></li>
+                                <li><a href="#" class="item" data-tab="tab3">Jurang Pemisah di Antara Umat Manusia</a></li>
+                            </ul>
                         </div>
                         <div class="title">
                             <i class="dropdown icon"></i>
-                            How do you acquire a dog?
+                            November 2017
                         </div>
                         <div class="content">
-                            <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
-                            <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                            <ul>
+                                <li><a href="#">Makestool</a></li>
+                                <li><a href="#">Perencanaan Fly-over</a></li>
+                                <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="title">
+                            <i class="dropdown icon"></i>
+                            Oktober 2017
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">Makestool</a></li>
+                                <li><a href="#">Perencanaan Fly-over</a></li>
+                                <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- kelar Accordion -->
                 </div>
                 <div class="column">
                     <div class="gallery-wrapper">
-                    <?php
+                    <!-- <?php
                         if(!empty($listgallery)){
                             $i= 0;
                             foreach ($listgallery as $key => $gal) {
@@ -56,26 +67,51 @@
                             if($i == 1){
                     ?>
                         <div class="tile is-ancestor">
-                            <?php } ?>
+                            <?php //} ?>
                             <div class="tile is-parent">
                                 <div class="tile is-child box">
-                                    <a href="<?php echo $gal->imageGALLERY;?>" data-fancybox="image" data-caption="<?php echo $gal->titleGALLERY;?>">
+                                    <a href="<?php //echo $gal->imageGALLERY;?>" data-fancybox="image" data-caption="<?php //echo $gal->titleGALLERY;?>">
                                         <div class="image">
-                                            <img src="<?php echo $gal->imageGALLERY;?>" alt="<?php echo $gal->titleGALLERY;?>">
+                                            <img src="<?php //echo $gal->imageGALLERY;?>" alt="<?php //echo $gal->titleGALLERY;?>">
                                         </div>
-                                        <h4><?php echo $gal->titleGALLERY;?></h4>
+                                        <h4><?php //echo $gal->titleGALLERY;?></h4>
                                     </a>
                                 </div>
                             </div>
                         <?php
-                        if($i == 4){
-                        $i = 0;
-                        ?>
+                        // if($i == 4){
+                        // $i = 0;
+                        // ?>
                         </div>
                                     <?php }?>
                                 <?php }?>
                             <?php }?>
-                        <?php }?>
+                        <?php }?> -->
+                        <div class="ui tab hero is-primary active" data-tab="tab1">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h1 class="title">Makestool</h1>
+                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 1 -->
+                        <div class="ui tab hero is-info" data-tab="tab2">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h1 class="title">Perencanaan Fly-over</h1>
+                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 2 -->
+                        <div class="ui tab hero is-success" data-tab="tab3">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h1 class="title">Jurang Pemisah di Antara Umat Manusia</h1>
+                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 3 -->
+
                     </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
                 </div>
             </div> <!-- kelar div Columns -->
@@ -88,6 +124,41 @@
                     <h3 class="mb10">Galeri <span class="yellowish">Video</span></h3>
                     Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                 </div>
+                <div class="ui styled accordion">
+                    <div class="title active">
+                        <i class="dropdown icon"></i>
+                        Desember 2017
+                    </div>
+                    <div class="content active">
+                        <ul>
+                            <li><a href="#">Makestool</a></li>
+                            <li><a href="#">Perencanaan Fly-over</a></li>
+                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                        </ul>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        November 2017
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li><a href="#">Makestool</a></li>
+                            <li><a href="#">Perencanaan Fly-over</a></li>
+                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                        </ul>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Oktober 2017
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li><a href="#">Makestool</a></li>
+                            <li><a href="#">Perencanaan Fly-over</a></li>
+                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                        </ul>
+                    </div>
+                </div> <!-- kelar Accordion -->
             </div>
             <div class="column">
                 <div class="gallery-wrapper">
