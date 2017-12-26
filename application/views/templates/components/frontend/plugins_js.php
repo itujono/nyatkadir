@@ -402,9 +402,7 @@ if ($plugins == 'home') { ?>
         $(".ui.accordion").accordion();
 
         $(".accordion .content li a").tab();
-    </script>
 
-    <script>
         $('[data-fancybox="image"]').fancybox({
             thumbs : {
                 autoStart : true
@@ -414,9 +412,7 @@ if ($plugins == 'home') { ?>
                 'close'
             ]
         });
-    </script>
 
-    <script>
         if ($('.four-item-carousel').length) {
             $('.four-item-carousel').owlCarousel({
                 loop:true,

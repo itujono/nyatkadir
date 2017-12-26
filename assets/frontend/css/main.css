@@ -81,8 +81,16 @@
   border-bottom: 5px solid #f7ac01;
 }
 
+.subtitle {
+  font-size: 1rem;
+}
+
 figure {
   margin: 0;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -1rem;
 }
 
 body {
@@ -1001,8 +1009,12 @@ form .help {
   display: block;
 }
 
+.field-body > .field:not(:last-child) {
+  margin-bottom: 0;
+}
+
 .field:not(:last-child) {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1em;
 }
 
 .input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {

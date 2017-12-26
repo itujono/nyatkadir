@@ -89,26 +89,20 @@
                         <?php }?> -->
                         <div class="ui tab hero is-primary active" data-tab="tab1">
                             <div class="hero-body">
-                                <div class="container">
-                                    <h1 class="title">Makestool</h1>
-                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                                </div>
+                                <h1 class="title">Makestool</h1>
+                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
                             </div>
                         </div> <!-- kelar Tab-Content 1 -->
                         <div class="ui tab hero is-info" data-tab="tab2">
                             <div class="hero-body">
-                                <div class="container">
-                                    <h1 class="title">Perencanaan Fly-over</h1>
-                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                                </div>
+                                <h1 class="title">Perencanaan Fly-over</h1>
+                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
                             </div>
                         </div> <!-- kelar Tab-Content 2 -->
                         <div class="ui tab hero is-success" data-tab="tab3">
                             <div class="hero-body">
-                                <div class="container">
-                                    <h1 class="title">Jurang Pemisah di Antara Umat Manusia</h1>
-                                    <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                                </div>
+                                <h1 class="title">Jurang Pemisah di Antara Umat Manusia</h1>
+                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
                             </div>
                         </div> <!-- kelar Tab-Content 3 -->
 
