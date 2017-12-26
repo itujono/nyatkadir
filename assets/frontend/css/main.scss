@@ -30,6 +30,10 @@
     padding-bottom: 0 !important;
 }
 
+.pl4em {
+    padding-left: 4em !important;
+}
+
 .mb10 {
     margin-bottom: 10px !important;
 }
@@ -86,9 +90,11 @@ figure {
 
 
 
+
 body {
     font-family: $fontDefault;
     line-height: 1.6;
+    background: #f3f3f3;
     color: #777;
 }
 
@@ -159,7 +165,7 @@ a {
 }
 
 .navbar a.navbar-item, .navbar-item, .navbar-link {
-    color: #999;
+    color: #eee;
     transition: all .3s ease;
 }
 
@@ -293,7 +299,8 @@ a {
     }
     .button-cta {
         h3 {
-            @include goldGradient;
+            color: $yellow;
+            // @include goldGradient;
         }
     }
     .lead-title {
@@ -333,7 +340,7 @@ a {
         h3 {
             color: $yellow;
             font-size: 2rem;
-            @include goldGradient;
+            // @include goldGradient;
         }
     }
 }
@@ -345,8 +352,8 @@ a {
     &.dark {
         color: #ddd;
         h3 {
-            color: #ddd;
-            @include goldGradient;
+            color: $yellow;
+            // @include goldGradient;
         }
     }
     h3 {
@@ -734,7 +741,7 @@ a {
             font-size: 3em;
             line-height: 3.1;
             padding: 0 1.2em;
-            background: $gradientYellow;
+            background: $yellow;
             color: #f2f2f2;
             transition: all .3s ease;
             &:hover {
@@ -815,15 +822,16 @@ a {
 
 .aspirasi {
     .introduction {
+        color: #ddd;
         h5 {
             color: #fff;
         }
         h2 {
-            color: #fff;
+            color: $yellow;
             font-size: 2.4rem;
             line-height: 1.4;
             margin-bottom: .6em;
-            @include goldGradient;
+            // @include goldGradient;
         }
     }
     .successful.box {
@@ -875,7 +883,7 @@ form {
 
 .button.is-submit {
     font-family: $fontDefault;
-    background: $gradientYellow;
+    background: $yellow;
     border-color: transparent;
     color: #fff;
     display: block;
@@ -932,10 +940,12 @@ footer.footer {
         }
     }
     .quick-links {
+        margin-bottom: 1em;
         ul {
             li {
                 display: inline-block;
                 margin-right: 1.4em;
+                line-height: 2;
             }
         }
     }
@@ -1085,7 +1095,7 @@ footer.footer {
 
 .fraksi {
     .box {
-        background-color: #fdc236;
+        background-color: $yellow;
         padding: 3em 3em 4em 0;
         border-radius: 0;
         box-shadow: none;
@@ -1236,7 +1246,7 @@ footer.footer {
                 filter: brightness(1.2);
             }
             .image {
-                height: 180px;
+                height: 300px;
                 img {
                     width: 100%;
                     height: 100%;
@@ -1250,6 +1260,18 @@ footer.footer {
 .top-post {
     li {
         margin-bottom: 15px;
+        padding-bottom: 1em;
+        border-bottom: 1px solid rgb(247, 172, 1);
+        a {
+            display: block;
+            margin-bottom: .6em;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    .title {
+        color: $yellow;
     }
 }
 
@@ -1445,6 +1467,9 @@ footer.footer {
     }
 }
 
+#disqus_thread {
+    margin-bottom: 4em !important;
+}
 
 
 
@@ -1523,6 +1548,26 @@ footer.footer {
                 object-fit: cover;
                 border-radius: 0;
             }
+        }
+    }
+}
+
+.ui.styled.accordion {
+    background: transparent !important;
+    box-shadow: none !important;
+    .title, .content {
+        padding-left: 0 !important;
+    }
+    .title {
+        color: $yellow !important;
+        font-weight: inherit !important;
+        &:not(.ui) {
+            font-family: inherit !important;
+        }
+    }
+    .content {
+        p {
+            padding-left: 1.7em !important;
         }
     }
 }

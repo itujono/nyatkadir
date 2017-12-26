@@ -1,14 +1,14 @@
 @media screen and (max-width: 768px) {
   .navbar-burger {
-    background-color: #fdc236;
-    color: #2e2f48;
+    background-color: #f7ac01;
+    color: #1f2466;
     margin-top: 20px;
   }
   .navbar-burger:hover {
-    background-color: #fdc236;
+    background-color: #f7ac01;
   }
   .navbar .navbar-item {
-    color: #2e2f48 !important;
+    color: #1f2466 !important;
   }
   .navbar .navbar-dropdown {
     font-size: 0.875rem;
@@ -66,7 +66,7 @@
     max-height: calc(100% - 88px);
   }
   .article-carousel .title {
-    color: #2e2f48;
+    color: #1f2466;
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.6;

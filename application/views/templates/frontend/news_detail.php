@@ -15,7 +15,7 @@
                     <div class="content">
                         <h1 class="title"><?php echo $getnews->titleNEWS;?></h1>
                         <p class="subtitle">Diposting <span class="yellowish"><?php echo indonesian_date($getnews->createdateNEWS,'j F Y',''); ?></span></p>
-                        <div class="news-slider four-item-carousel owl-theme owl-carousel">
+                        <div class="news-slider one-item-carousel owl-theme owl-carousel">
                         <?php
                           if(!empty($getnews->map)){
                             foreach ($getnews->map as $key=> $value_img) {
@@ -43,6 +43,34 @@
                     </div>
                     <hr>
                 </div> <!-- kelar Article-Detail -->
+
+                <div id="disqus_thread"></div>
+                <script>
+                    /** *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND
+                    UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR
+                    PLATFORM OR CMS. *  LEARN WHY DEFINING THESE VARIABLES IS
+                    IMPORTANT:
+                    https://disqus.com/admin/universalcode/#configuration-variables */ /*
+                    var disqus_config = function () { this.page.url = PAGE_URL;  //
+                    Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace
+                    PAGE_IDENTIFIER with your page's unique identifier variable }; */
+
+                    (function() {  // DON'T EDIT BELOW THIS LINE
+                        var d = document,
+                        s = d.createElement('script');
+
+                        s.src = 'https://nyatkadir-disqus-com.disqus.com/embed.js';
+
+                        s.setAttribute('data-timestamp', +new Date()); (d.head ||
+                        d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>
+                    Please enable JavaScript to view the
+                    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+                </noscript>
+
                 <div class="similar">
                     <h3 class="title is-5">Baca juga <span class="yellowish">berita-berita dan event</span> berikut ini</h3>
                     <?php
@@ -111,3 +139,5 @@ $(".ShareFB").click(function(e) {
     createFBShareLink('328440447656043');
 });
 </script>
+
+<script id="dsq-count-scr" src="//nyatkadir-disqus-com.disqus.com/count.js" async></script>

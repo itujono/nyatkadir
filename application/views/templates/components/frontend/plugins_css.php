@@ -36,6 +36,7 @@ if ($plugins == 'home') {
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/main.css">
     <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/responsive.css">
+    <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/accordion.min.css">
 <?php
 } elseif ($plugins == 'login_user') {
 ?>

@@ -238,9 +238,7 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
 
-    <script>
-        new WOW().init();
-    </script>
+    <script>new WOW().init();</script>
 
     <script>
         if ($('.five-item-carousel').length) {
@@ -300,6 +298,26 @@ if ($plugins == 'home') { ?>
                     },
                     1100:{
                         items:4
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        if ($('.one-item-carousel').length) {
+            $('.one-item-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                smartSpeed: 700,
+                autoplay: 3000,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    1024:{
+                        items:1,
+                        dots: true
                     }
                 }
             });
@@ -373,9 +391,14 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/jquery.fancybox.min.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/accordion.min.js"></script>
 
     <script>
         new WOW().init();
+    </script>
+
+    <script>
+        $(".ui.accordion").accordion();
     </script>
 
     <script>
