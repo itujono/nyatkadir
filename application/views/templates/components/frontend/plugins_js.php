@@ -71,8 +71,7 @@ if ($plugins == 'home') { ?>
             }
 
             $(".modal-close").on("click", function() {
-                $(".modal").removeClass("is-active");
-                $(".modal").fadeOut(500);
+                $(this).closest(".modal").fadeOut(200);
             });
 
             jQuery(document).keypress(function(e) {

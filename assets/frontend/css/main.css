@@ -1914,6 +1914,10 @@ footer.footer figure.logo-footer img {
   color: #f7ac01;
 }
 
+.press-slider {
+  cursor: move;
+}
+
 .press-detail {
   margin-top: 5em;
 }
@@ -1956,10 +1960,12 @@ footer.footer figure.logo-footer img {
 }
 
 .press-slider {
+  cursor: move;
   margin-bottom: 2em;
 }
 
 .press-slider .owl-item {
+  cursor: move;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -1985,6 +1991,10 @@ footer.footer figure.logo-footer img {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.press-slider .owl-item a {
+  cursor: move;
 }
 
 .share ul {

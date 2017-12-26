@@ -1691,6 +1691,10 @@ footer.footer {
     }
 }
 
+.press-slider {
+    cursor: move;
+}
+
 
 
 
@@ -1732,8 +1736,10 @@ footer.footer {
 }
 
 .press-slider {
+    cursor: move;
     margin-bottom: 2em;
     .owl-item {
+        cursor: move;
         transition: all .3s ease;
         &:hover {
             @include hoverCard;
@@ -1747,6 +1753,9 @@ footer.footer {
                 height: 100%;
                 object-fit: cover;
             }
+        }
+        a {
+            cursor: move;
         }
     }
 }

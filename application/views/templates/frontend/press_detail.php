@@ -15,7 +15,7 @@
                     <div class="content">
                         <h1 class="title"><?php echo $getpress->titlePRESS;?></h1>
                         <p class="subtitle">Diposting <span class="yellowish"><?php echo indonesian_date($getpress->createdatePRESS,'j F Y',''); ?></span></p>
-                        <div class="press-slider four-item-carousel owl-theme owl-carousel">
+                        <div class="press-slider one-item-carousel owl-theme owl-carousel">
                         <?php
                           if(!empty($getpress->map)){
                             foreach ($getpress->map as $key=> $value_img) {
