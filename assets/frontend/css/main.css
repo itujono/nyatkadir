@@ -168,6 +168,10 @@ a:hover {
   background-color: #f7ac01;
 }
 
+.navbar a.navbar-item.active {
+  background-color: #f7ac01;
+}
+
 .navbar a.navbar-item, .navbar-item, .navbar-link {
   color: #eee;
   -webkit-transition: all .3s ease;
@@ -1360,6 +1364,7 @@ footer.footer figure.logo-footer img {
 }
 
 .articles .box .title {
+  color: #eee;
   font-size: 1.2em;
   margin-bottom: 1em;
   line-height: 1.4;

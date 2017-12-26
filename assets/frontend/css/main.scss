@@ -175,6 +175,9 @@ a {
     &:active {
         background-color: $yellow;
     }
+    &.active {
+        background-color: $yellow;
+    }
 }
 
 .navbar a.navbar-item, .navbar-item, .navbar-link {
@@ -1210,6 +1213,7 @@ footer.footer {
             }
         }
         .title {
+            color: #eee;
             font-size: 1.2em;
             margin-bottom: 1em;
             line-height: 1.4;
