@@ -169,8 +169,8 @@ a {
 
 .navbar a.navbar-item {
     &:hover {
-        background-color: $yellow;
-        color: #444;
+        background-color: rgba(0, 0, 0, .4);
+        color: #fff;
     }
     &:active {
         background-color: $yellow;
