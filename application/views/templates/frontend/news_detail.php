@@ -42,7 +42,7 @@
                         </ul>
                     </div>
                     <hr>
-                </div> <!-- kelar Article-Detail -->
+                </div>
 
                 <div id="disqus_thread"></div>
                 <script>
