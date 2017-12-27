@@ -46,15 +46,9 @@
 
                 <div id="disqus_thread"></div>
                 <script>
-                    /** *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND
-                    UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR
-                    PLATFORM OR CMS. *  LEARN WHY DEFINING THESE VARIABLES IS
-                    IMPORTANT:
-                    https://disqus.com/admin/universalcode/#configuration-variables */ /*
-                    var disqus_config = function () { this.page.url = PAGE_URL;  //
-                    Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace
-                    PAGE_IDENTIFIER with your page's unique identifier variable }; */
+                    var disqus_config = function () { this.page.url = '<?php echo base_url(uri_string());?>';
+                    this.page.identifier = '<?php echo base_url(uri_string());?>';
+                    };
 
                     (function() {  // DON'T EDIT BELOW THIS LINE
                         var d = document,
@@ -101,8 +95,8 @@
                             foreach ($best_news as $best) {
                     ?>
                         <li>
-                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($best->idNEWS).'-'.seo_url($best->titleNEWS);?>"><?php echo $best->titleARTICLE;?></a>
-                            <p><?php echo indonesian_date($best->createdateARTICLE,'j F Y',''); ?></p>
+                            <a href="<?php echo base_url();?>news/<?php echo base64_encode($best->idNEWS).'-'.seo_url($best->titleNEWS);?>"><?php echo $best->titleNEWS;?></a>
+                            <p><?php echo indonesian_date($best->createdateNEWS,'j F Y',''); ?></p>
                         </li>
                         <?php } ?>
                     <?php } ?>

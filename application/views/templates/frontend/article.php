@@ -16,55 +16,19 @@
             <p>Dan bagaimana pemikiran-pemikiran Nyat Kadir amat menarik untuk disimak.</p>
         </div>
         <div class="article-wrapper">
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Tak Ada Manusia yang Berjiwa Abadi di Surga</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
+        <?php
+            if(!empty($listarticle)){
+                foreach ($listarticle as $article) {
+        ?>
+            <div class="tile box" style="background-image: url(<?php echo $article->imageARTICLE;?>);">
+                <a href="<?php echo base_url();?>article/<?php echo base64_encode($article->idARTICLE).'-'.seo_url($article->titleARTICLE);?>" class="title"><?php echo $article->titleARTICLE;?></a>
+                <p class="subtitle"><?php echo indonesian_date($article->createdateARTICLE,'j F Y',''); ?></p>
+                <a href="<?php echo base_url();?>article/<?php echo base64_encode($article->idARTICLE).'-'.seo_url($article->titleARTICLE);?>" class="link">
                     <span class="icon mdi mdi-chevron-right"></span>
                 </a>
             </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Membuat Kulit Wol Dari Jerami Basah</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Tak Ada Manusia yang Berjiwa Abadi di Surga</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Apakah Anda Pikir Anda Adalah Penentu Keluarga?</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Tak Ada Manusia yang Berjiwa Abadi di Surga</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Membuat Kulit Wol Dari Jerami Basah</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
-            <div class="tile box" style="background-image: url(<?php echo base_url().$this->data['asfront'];?>img/nyatkadir.jpg);">
-                <a href="<?php echo base_url();?>article/detail_article" class="title">Tak Ada Manusia yang Berjiwa Abadi di Surga</a>
-                <p class="subtitle">21 Agustus 2017</p>
-                <a href="<?php echo base_url();?>article/detail_article" class="link">
-                    <span class="icon mdi mdi-chevron-right"></span>
-                </a>
-            </div>
+        <?php } ?>
+        <?php } ?>
         </div>
     </div>
 </section>

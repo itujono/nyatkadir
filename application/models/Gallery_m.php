@@ -35,8 +35,12 @@ class Gallery_m extends MY_Model{
 	}
 
 	public function selectall_gallery($id = NULL, $randoom=NULL) {
+
 		$this->db->select('*');
 		$this->db->from('gallery');
+		
+		$this->db->group_by('createdateGALLERY');
+		
 		if ($id != NULL) {
 			$this->db->where('idGALLERY',$id);
 		}
@@ -44,6 +48,16 @@ class Gallery_m extends MY_Model{
 			$this->db->order_by('RAND()');
 			$this->db->where('categoryGALLERY', 1);
 		}
+		return $this->db->get();
+	}
+
+	public function list_month_gallery($id = NULL, $randoom=NULL) {
+
+		$this->db->select('idGALLERY, categoryGALLERY, createdateGALLERY');
+		$this->db->from('gallery');
+		
+		$this->db->group_by('MONTH(createdateGALLERY)');
+
 		return $this->db->get();
 	}
 }

@@ -127,6 +127,10 @@ function replacesymbol($string){
     return str_replace([' ','&',',','.','(',')','!','?'], ['','','','','','','',''], $string);
 }
 
+function replacesymbol_tounderscore($string){
+    return str_replace([' ','&',',','.','(',')','!','?'], ['_','_','_','_','_','_','_','_'], $string);
+}
+
 function seo_url($string){
     $change = str_replace([' ','&',',','.','(',')','!','?'], ['-','-','-','-','-','-','-','-'], $string);
     return strtolower($change);

@@ -12,6 +12,16 @@ class Article extends Frontend_Controller {
 		$data['addONS'] = 'general_addon';
 		$data['title'] = 'Artikel Nyat Kadir - Laman Resmi';
 
+		$data['listarticle'] = $this->Article_m->selectall_article()->result();
+		foreach ($data['listarticle'] as $key => $value) {
+			$map = directory_map('assets/upload/article/pic-article-'.$data['listarticle'][$key]->idARTICLE, FALSE, TRUE);
+			if(!empty($map)){
+				$data['listarticle'][$key]->imageARTICLE = base_url() . 'assets/upload/article/pic-article-'.$data['listarticle'][$key]->idARTICLE.'/'.$map[0];
+			} else {
+				$data['listarticle'][$key]->imageARTICLE = base_url() . 'assets/upload/no-image-available.png';
+			}
+		}
+		
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'article', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}

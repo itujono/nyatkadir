@@ -21,91 +21,67 @@
                         Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                     </div>
                     <div class="ui styled accordion">
-                        <div class="title active">
+                    <?php
+                    if(!empty($list_month_gallery)){
+                        foreach ($list_month_gallery as $key => $month) {
+                            if($month->categoryGALLERY == 1){
+                            if($key == 0){
+                                $active = 'active';
+                                $div = 'ui menu content active';
+                            } else {
+                                $active = '';
+                                $div = 'content';
+                            }
+                        $date_form = dF($month->createdateGALLERY, "m");
+                    ?>
+                        <div class="title <?php echo $active;?>">
                             <i class="dropdown icon"></i>
-                            Desember 2017
+                            <?php echo indonesian_date($month->createdateGALLERY,'F Y',''); ?>
                         </div>
-                        <div class="ui menu content active">
+                        <div class="<?php echo $div;?>">
                             <ul>
-                                <li><a href="#" class="item active" data-tab="tab1">Makestool</a></li>
-                                <li><a href="#" class="item" data-tab="tab2">Perencanaan Fly-over</a></li>
-                                <li><a href="#" class="item" data-tab="tab3">Jurang Pemisah di Antara Umat Manusia</a></li>
+                            <?php
+                                foreach ($listgallery as $keys => $gal) {
+                                if($gal->categoryGALLERY == 1){
+                                if($keys == 0){
+                                    $active = 'active';
+                                } else {
+                                    $active = '';
+                                }
+                                $date_format_gallery = dF($gal->createdateGALLERY, "m");
+                                    if($date_form == $date_format_gallery){
+                            ?>
+                                <li><a href="#" class="item <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gal->titleGALLERY); ?>"><?php echo $gal->titleGALLERY; ?></a></li>
+                                        <?php } ?>
+                                    <?php } ?>
+                                <?php } ?>
                             </ul>
                         </div>
-                        <div class="title">
-                            <i class="dropdown icon"></i>
-                            November 2017
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li><a href="#">Makestool</a></li>
-                                <li><a href="#">Perencanaan Fly-over</a></li>
-                                <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
-                            </ul>
-                        </div>
-                        <div class="title">
-                            <i class="dropdown icon"></i>
-                            Oktober 2017
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li><a href="#">Makestool</a></li>
-                                <li><a href="#">Perencanaan Fly-over</a></li>
-                                <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
-                            </ul>
-                        </div>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
                     </div> <!-- kelar Accordion -->
                 </div>
                 <div class="column">
                     <div class="gallery-wrapper">
-                    <!-- <?php
-                        if(!empty($listgallery)){
-                            $i= 0;
-                            foreach ($listgallery as $key => $gal) {
-                            if($gal->categoryGALLERY == 1){
-                            $i++;
-                            if($i == 1){
+                    <?php
+                    foreach ($listgallery as $keying => $gallery) {
+                        if($gallery->categoryGALLERY == 1){
+                        if($keying == 0){
+                            $active = 'active';
+                        } else {
+                            $active = '';
+                        }
                     ?>
-                        <div class="tile is-ancestor">
-                            <?php //} ?>
-                            <div class="tile is-parent">
-                                <div class="tile is-child box">
-                                    <a href="<?php //echo $gal->imageGALLERY;?>" data-fancybox="image" data-caption="<?php //echo $gal->titleGALLERY;?>">
-                                        <div class="image">
-                                            <img src="<?php //echo $gal->imageGALLERY;?>" alt="<?php //echo $gal->titleGALLERY;?>">
-                                        </div>
-                                        <h4><?php //echo $gal->titleGALLERY;?></h4>
-                                    </a>
-                                </div>
+                        <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gallery->titleGALLERY); ?>">
+                            <div class="hero-body">
+                                <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
                             </div>
-                        <?php
-                        // if($i == 4){
-                        // $i = 0;
-                        // ?>
                         </div>
-                                    <?php }?>
-                                <?php }?>
-                            <?php }?>
-                        <?php }?> -->
-                        <div class="ui tab hero is-primary active" data-tab="tab1">
-                            <div class="hero-body">
-                                <h1 class="title">Makestool</h1>
-                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                            </div>
-                        </div> <!-- kelar Tab-Content 1 -->
-                        <div class="ui tab hero is-info" data-tab="tab2">
-                            <div class="hero-body">
-                                <h1 class="title">Perencanaan Fly-over</h1>
-                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                            </div>
-                        </div> <!-- kelar Tab-Content 2 -->
-                        <div class="ui tab hero is-success" data-tab="tab3">
-                            <div class="hero-body">
-                                <h1 class="title">Jurang Pemisah di Antara Umat Manusia</h1>
-                                <h2 class="subtitle">Sempardak tulisan membahana di muka bumi dan di mata Cerberus.</h2>
-                            </div>
-                        </div> <!-- kelar Tab-Content 3 -->
-
+                    </div>
+                </div> <!-- kelar Tab-Content 1 -->
+                <?php } ?>
+            <?php } ?>
                     </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
                 </div>
             </div> <!-- kelar div Columns -->
@@ -119,74 +95,67 @@
                     Hari di mana demokrasi merupakan hak-hak yang mutlak bagi seluruh rakyat. Semua suku bangsa yang ada di Indonesia, haruslah bersatu tanpa terkecuali.
                 </div>
                 <div class="ui styled accordion">
-                    <div class="title active">
+                    <?php
+                    if(!empty($list_month_gallery)){
+                        foreach ($list_month_gallery as $key => $month) {
+                            if($month->categoryGALLERY == 2){
+                            if($key == 0){
+                                $active = 'active';
+                                $div = 'ui menu content active';
+                            } else {
+                                $active = '';
+                                $div = 'content';
+                            }
+                        $date_form = dF($month->createdateGALLERY, "m");
+                    ?>
+                    <div class="title <?php echo $active;?>">
                         <i class="dropdown icon"></i>
-                        Desember 2017
+                        <?php echo indonesian_date($month->createdateGALLERY,'F Y',''); ?>
                     </div>
-                    <div class="content active">
+                    <div class="<?php echo $div;?>">
                         <ul>
-                            <li><a href="#">Makestool</a></li>
-                            <li><a href="#">Perencanaan Fly-over</a></li>
-                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
+                        <?php
+                        foreach ($listgallery as $keys => $gal) {
+                            if($gal->categoryGALLERY == 2){
+                            if($keys == 0){
+                                $active = 'active';
+                            } else {
+                                $active = '';
+                            }
+                            $date_format_gallery = dF($gal->createdateGALLERY, "m");
+                                if($date_form == $date_format_gallery){
+                        ?>
+                            <li><a href="#" class="item <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gal->titleGALLERY); ?>"><?php echo $gal->titleGALLERY; ?></a></li>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
                         </ul>
                     </div>
-                    <div class="title">
-                        <i class="dropdown icon"></i>
-                        November 2017
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li><a href="#">Makestool</a></li>
-                            <li><a href="#">Perencanaan Fly-over</a></li>
-                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
-                        </ul>
-                    </div>
-                    <div class="title">
-                        <i class="dropdown icon"></i>
-                        Oktober 2017
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li><a href="#">Makestool</a></li>
-                            <li><a href="#">Perencanaan Fly-over</a></li>
-                            <li><a href="#">Jurang Pemisah di Antara Umat Manusia</a></li>
-                        </ul>
-                    </div>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
                 </div> <!-- kelar Accordion -->
             </div>
             <div class="column">
                 <div class="gallery-wrapper">
                 <?php
-                    if(!empty($listgallery)){
-                        $i= 0;
-                        foreach ($listgallery as $key => $gal) {
-                        if($gal->categoryGALLERY == 2){
-                        $thumbnail = get_thumbnail_from_youtube($gal->linkvideoGALLERY);
-                        $i++;
-                        if($i == 1){
+                foreach ($listgallery as $keying => $gallery) {
+                    if($gallery->categoryGALLERY == 2){
+                    if($keying == 0){
+                        $active = 'active';
+                    } else {
+                        $active = '';
+                    }
                 ?>
-                    <div class="tile is-ancestor">
-                        <?php } ?>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <a href="<?php echo $gal->linkvideoGALLERY;?>" data-fancybox="video" data-caption="<?php echo $gal->titleGALLERY;?>">
-                                    <div class="image">
-                                        <img src="<?php echo $thumbnail;?>" alt="<?php echo $gal->titleGALLERY;?>">
-                                        <span class="play-button"><i class="mdi mdi-play"></i></span>
-                                    </div>
-                                    <h4><?php echo $gal->titleGALLERY;?></h4>
-                                </a>
+                    <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gallery->titleGALLERY); ?>">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
                             </div>
                         </div>
-                    <?php
-                    if($i == 4){
-                    $i = 0;
-                    ?>
                     </div>
-                                <?php } ?>
-                            <?php } ?>
-                        <?php } ?>
                     <?php } ?>
+                <?php } ?>
                 </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
             </div>
         </div> <!-- kelar div Columns -->

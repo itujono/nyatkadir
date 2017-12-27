@@ -20,7 +20,7 @@
 <nav class="navbar">
     <div class="container">
         <div class="navbar-brand">
-            <a href="#" class="navbar-item main-logo">
+            <a href="<?php echo base_url();?>" class="navbar-item main-logo">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/logo.png" alt="Logo Utama Nyat Kadir" width="">
             </a>
             <button class="button navbar-burger" data-target="navMenu">
@@ -40,10 +40,10 @@
                   $url = $this->uri->segment(1);
                 }
                 $class = '';
-                if($url == $values[0])$class = 'active';
+                if($url == $values[0])$class = 'is-active';
                 if($values[1] != 'Artikel'){
             ?>
-                <a href="<?php echo base_url().$values[0];?>" class="navbar-item"><?php echo $values[1];?></a>
+                <a href="<?php echo base_url().$values[0];?>" class="navbar-item <?php echo $class;?>"><?php echo $values[1];?></a>
                 <?php } else { ?>
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="<?php echo base_url().$values[0];?>" class="navbar-link">Artikel</a>

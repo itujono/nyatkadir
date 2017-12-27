@@ -20,8 +20,11 @@ class Gallery extends Frontend_Controller {
 			} else {
 				$data['listgallery'][$key]->imageGALLERY = base_url() . 'assets/upload/no-image-available.png';
 			}
+
 		}
 
+		$data['list_month_gallery'] = $this->Gallery_m->list_month_gallery()->result();
+		
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'gallery', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}

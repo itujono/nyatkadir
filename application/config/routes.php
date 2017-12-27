@@ -50,8 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['account/(:any)/(:any)'] = 'user/account/$1/$2'; //route user/account/ disingkat menjadi account
-$route['press/(:any)'] = 'press/detail/$1'; //route user/account/ disingkat menjadi account
-$route['news/(:any)'] = 'news/detail/$1'; //route user/account/ disingkat menjadi account
+$route['press/(:any)'] = 'press/detail/$1';
+$route['news/(:any)'] = 'news/detail/$1'; 
+$route['article/(:any)'] = 'article/detail/$1'; 
 $route['default_controller'] = 'home';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
