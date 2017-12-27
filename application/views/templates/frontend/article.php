@@ -17,8 +17,20 @@
         </div>
         <div class="article-wrapper">
         <?php
+        if(!empty($listarticle_category)){
+                foreach ($listarticle_category as $article_cat) {
+        ?>
+            <div class="tile box" style="background-image: url(<?php echo $article_cat->imageARTICLE;?>);">
+                <a href="<?php echo base_url();?>article/<?php echo base64_encode($article_cat->idARTICLE).'-'.seo_url($article_cat->titleARTICLE);?>" class="title"><?php echo $article_cat->titleARTICLE;?></a>
+                <p class="subtitle"><?php echo indonesian_date($article_cat->createdateARTICLE,'j F Y',''); ?></p>
+                <a href="<?php echo base_url();?>article/<?php echo base64_encode($article_cat->idARTICLE).'-'.seo_url($article_cat->titleARTICLE);?>" class="link">
+                    <span class="icon mdi mdi-chevron-right"></span>
+                </a>
+            </div>
+        <?php } ?>
+        <?php } else {
             if(!empty($listarticle)){
-                foreach ($listarticle as $article) {
+            foreach ($listarticle as $article) {
         ?>
             <div class="tile box" style="background-image: url(<?php echo $article->imageARTICLE;?>);">
                 <a href="<?php echo base_url();?>article/<?php echo base64_encode($article->idARTICLE).'-'.seo_url($article->titleARTICLE);?>" class="title"><?php echo $article->titleARTICLE;?></a>
@@ -27,7 +39,8 @@
                     <span class="icon mdi mdi-chevron-right"></span>
                 </a>
             </div>
-        <?php } ?>
+                <?php } ?>
+            <?php } ?>
         <?php } ?>
         </div>
     </div>

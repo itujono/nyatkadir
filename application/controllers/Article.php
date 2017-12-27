@@ -51,4 +51,25 @@ class Article extends Frontend_Controller {
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'article_detail', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
+
+	public function category($id) {
+		$data['addONS'] = 'general_addon';
+		$data['title'] = 'Artikel Nyat Kadir - Laman Resmi';
+		if($id == NULL){
+			redirect('article');
+		}
+		$id = base64_decode(cutting($id));
+		$data['listarticle_category'] = $this->Article_m->selectall_article(NULL,NULL,$id)->result();
+		foreach ($data['listarticle_category'] as $key => $value) {
+			$map = directory_map('assets/upload/article/pic-article-'.$data['listarticle_category'][$key]->idARTICLE, FALSE, TRUE);
+			if(!empty($map)){
+				$data['listarticle_category'][$key]->imageARTICLE = base_url() . 'assets/upload/article/pic-article-'.$data['listarticle_category'][$key]->idARTICLE.'/'.$map[0];
+			} else {
+				$data['listarticle_category'][$key]->imageARTICLE = base_url() . 'assets/upload/no-image-available.png';
+			}
+		}
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'article', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
 }

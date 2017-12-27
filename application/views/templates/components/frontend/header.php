@@ -53,7 +53,7 @@
                             if(!empty($menu_category)){
                                 foreach ($menu_category as $menu_cat) {
                         ?>
-                        <a href="#" class="navbar-item"><?php echo $menu_cat->nameCAT;?></a>
+                        <a href="<?php echo base_url();?>article/category/<?php echo base64_encode($menu_cat->idCAT).'-'.seo_url($menu_cat->nameCAT);?>" class="navbar-item"><?php echo $menu_cat->nameCAT;?></a>
                             <?php } ?>
                         <?php } ?>
                     </div>

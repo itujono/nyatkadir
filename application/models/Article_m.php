@@ -39,7 +39,7 @@ class Article_m extends MY_Model{
 		return $article;
 	}
 
-	public function selectall_article($id = NULL, $best=NULL) {
+	public function selectall_article($id = NULL, $best=NULL, $category_article=NULL) {
 		$this->db->select('*');
 		$this->db->select('category_article.nameCAT, category_article.idCAT');
 		$this->db->from('article');
@@ -49,6 +49,9 @@ class Article_m extends MY_Model{
 		}
 		if ($best != NULL) {
 			$this->db->where('bestARTICLE',1);
+		}
+		if ($category_article != NULL) {
+			$this->db->where('article.idCAT',$category_article);
 		}
 		return $this->db->get();
 	}
