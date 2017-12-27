@@ -160,8 +160,8 @@ a:hover {
 }
 
 .navbar a.navbar-item:hover {
-  background-color: #f7ac01;
-  color: #444;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
 }
 
 .navbar a.navbar-item:active {
@@ -170,6 +170,11 @@ a:hover {
 
 .navbar a.navbar-item.active {
   background-color: #f7ac01;
+}
+
+.navbar a.navbar-item.has-dropdown:hover .navbar-link {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
 }
 
 .navbar a.navbar-item, .navbar-item, .navbar-link {
@@ -661,6 +666,9 @@ a:hover {
 .voting {
   position: relative;
   background-color: #1f2466;
+  height: 100vh;
+  padding-top: 6em;
+  overflow-y: hidden;
 }
 
 .voting .title {

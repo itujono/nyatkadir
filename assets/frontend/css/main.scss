@@ -168,7 +168,7 @@ a {
 }
 
 .navbar a.navbar-item {
-    &:hover {
+    &:hover, {
         background-color: rgba(0, 0, 0, .4);
         color: #fff;
     }
@@ -177,6 +177,12 @@ a {
     }
     &.active {
         background-color: $yellow;
+    }
+    &.has-dropdown {
+        &:hover .navbar-link {
+            background-color: rgba(0, 0, 0, .4);
+            color: #fff;
+        }
     }
 }
 
@@ -613,6 +619,9 @@ a {
 .voting {
     position: relative;
     background-color: $darkBlue;
+    height: 100vh;
+    padding-top: 6em;
+    overflow-y: hidden;
     .title {
         color: $yellow;
     }
