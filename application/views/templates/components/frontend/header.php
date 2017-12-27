@@ -40,7 +40,7 @@
                   $url = $this->uri->segment(1);
                 }
                 $class = '';
-                if($url == $values[0])$class = 'is-active';
+                if($url == $values[0])$class = 'active';
                 if($values[1] != 'Artikel'){
             ?>
                 <a href="<?php echo base_url().$values[0];?>" class="navbar-item <?php echo $class;?>"><?php echo $values[1];?></a>
