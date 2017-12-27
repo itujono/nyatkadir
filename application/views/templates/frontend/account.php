@@ -14,7 +14,7 @@
                         <div class="level-item">
                             <input type="file" name="file" id="file" class="inputfile" />
                             <label for="file">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto">
+                                <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
                                 <span>Edit Gambar...</span>
                             </label>
                         </div>

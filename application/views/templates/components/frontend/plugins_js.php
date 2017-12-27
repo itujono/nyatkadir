@@ -236,6 +236,7 @@ if ($plugins == 'home') { ?>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
+    <script src="<?php echo base_url().$this->data['asfront'];?>js/plugins.js"></script>
 
     <script>new WOW().init();</script>
 
