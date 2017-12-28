@@ -226,6 +226,33 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
+    <?php if(!empty($getpolling)){ 
+    $name_fb =  $getpolling->questionPOLLING;
+    $desc_fb =  $getpolling->questionPOLLING;
+}?>
+<script type="text/javascript">
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+
+function createFBShareLink(FBVars) {
+    // FBVars is app_id
+    var url = 'http://www.facebook.com/dialog/feed?app_id='+FBVars+
+    '&link=' + '<?php echo base_url(uri_string());?>' +
+    '&picture=' + '<?php echo base_url().$this->data['asfront'];?>img/logo.png' +
+    '&name=' + encodeURIComponent('<?php echo $name_fb; ?>') +
+    '&description=' + encodeURIComponent('<?php echo $desc_fb; ?>') +
+    '&redirect_uri=' + '<?php echo base_url(uri_string());?>' +
+    '&display=popup';
+    window.open(url,'feedDialog','toolbar=0,status=0,width=626,height=436');
+}
+
+$(".ShareFB").click(function(e) {
+    e.preventDefault();
+    createFBShareLink('328440447656043');
+});
+</script>
 
 <?php
 } elseif ($plugins == 'general_addon') {
@@ -380,6 +407,36 @@ if ($plugins == 'home') { ?>
             }
         tabbed();
     </script>
+<?php if(!empty($getnews)){ 
+    $name_fb =  $getnews->titleNEWS;
+    $desc_fb =  $getnews->descNEWS;
+} else {
+    $name_fb =  '';
+    $desc_fb =  '';
+}?>
+<script type="text/javascript">
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+
+function createFBShareLink(FBVars) {
+    // FBVars is app_id
+    var url = 'http://www.facebook.com/dialog/feed?app_id='+FBVars+
+    '&link=' + '<?php echo base_url(uri_string());?>' +
+    '&picture=' + '<?php echo base_url().$this->data['asfront'];?>img/logo.png' +
+    '&name=' + encodeURIComponent('<?php echo $name_fb;?>') +
+    '&description=' + encodeURIComponent('<?php echo word_limiter($desc_fb,8);?>') +
+    '&redirect_uri=' + '<?php echo base_url(uri_string());?>' +
+    '&display=popup';
+    window.open(url,'feedDialog','toolbar=0,status=0,width=626,height=436');
+}
+
+$(".ShareFB").click(function(e) {
+    e.preventDefault();
+    createFBShareLink('328440447656043');
+});
+</script>
 
 <?php
 } elseif ($plugins == 'gallery') {
@@ -503,6 +560,36 @@ if ($plugins == 'home') { ?>
             login.classList.remove("is-active");
         }
     });
+</script>
+<?php if(!empty($getpolling)){ 
+    $name_fb =  $getpolling->questionPOLLING;
+    $desc_fb =  $getpolling->questionPOLLING;
+} else {
+    $name_fb =  '';
+    $desc_fb =  '';
+}?>
+<script type="text/javascript">
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+
+function createFBShareLink(FBVars) {
+    // FBVars is app_id
+    var url = 'http://www.facebook.com/dialog/feed?app_id='+FBVars+
+    '&link=' + '<?php echo base_url(uri_string());?>' +
+    '&picture=' + '<?php echo base_url().$this->data['asfront'];?>img/logo.png' +
+    '&name=' + encodeURIComponent('<?php echo $name_fb; ?>') +
+    '&description=' + encodeURIComponent('<?php echo $desc_fb; ?>') +
+    '&redirect_uri=' + '<?php echo base_url(uri_string());?>' +
+    '&display=popup';
+    window.open(url,'feedDialog','toolbar=0,status=0,width=626,height=436');
+}
+
+$(".ShareFB").click(function(e) {
+    e.preventDefault();
+    createFBShareLink('328440447656043');
+});
 </script>
 <?php
 } elseif ($plugins == 'reset_password_user') {

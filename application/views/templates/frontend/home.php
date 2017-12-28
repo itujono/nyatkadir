@@ -253,7 +253,7 @@
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                     <div class="content">
-                        <h3 class="title"><?php echo $getpolling->questionPOLLING;?></h3>
+                        <h3 class="title"><a href="<?php echo base_url();?>polling/<?php echo base64_encode($getpolling->idPOLLING).'-'.seo_url($getpolling->questionPOLLING);?>"><?php echo $getpolling->questionPOLLING;?></a></h3>
                         <?php
                             if(!empty($check_choice_polling)){
                         ?>
@@ -304,16 +304,20 @@
                                 <h3>Share Polling ini:</h3>
                                 <ul>
                                     <li class="wow fadeInUp">
-                                        <a href="#" title="Share to Twitter" data-wow-delay=".9s"><span class="icon mdi mdi-twitter"></span></a>
+                                        <a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=Ikuti polling di nyatkadir.org dengan tema <?php echo $getpolling->questionPOLLING;?>&url=<?php echo base_url();?>polling/<?php echo base64_encode($getpolling->idPOLLING).'-'.seo_url($getpolling->questionPOLLING);?>')" title="Share to Twitter" data-wow-delay=".9s"><span class="icon mdi mdi-twitter"></span></a>
                                     </li>
                                     <li class="wow fadeInUp" data-wow-delay="1.1s">
-                                        <a href="#" title="Share to Facebook"><span class="icon mdi mdi-facebook"></span></a>
+                                        <a href="#" title="Share to Facebook" class="ShareFB"><span class="icon mdi mdi-facebook"></span></a>
                                     </li>
+                                    <?php
+                                        $content_wa = str_replace(' ','%20',$getpolling->questionPOLLING);
+                                        $url_wa = "https://api.whatsapp.com/send?text=Ikuti%20polling%20di%20nyatkadir.org%20dengan%20tema%20".$content_wa." di ".base_url(uri_string());
+                                    ?>
                                     <li class="wow fadeInUp" data-wow-delay="1.3s">
-                                        <a href="#" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a>
+                                        <a href="javascript:void(0)" onclick="javascript:genericSocialShare('<?php echo $url_wa;?>')" title="Share to Whatsapp"><span class="icon mdi mdi-whatsapp"></span></a>
                                     </li>
                                     <li class="wow fadeInUp" data-wow-delay="1.5s">
-                                        <a href="#" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a>
+                                        <a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo base_url();?>polling/<?php echo base64_encode($getpolling->idPOLLING).'-'.seo_url($getpolling->questionPOLLING);?>')" title="Share to Google+"><span class="icon mdi mdi-google-plus"></span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -449,13 +453,3 @@
         </div>
     </div>
 </section>
-
-<!-- <div class="modal is-active">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-        <p class="image">
-            <img src="http://source.unsplash.com/300x400/" alt="Flyer Hari Besar">
-        </p>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
-</div> -->

@@ -9,9 +9,25 @@ class Polling extends Frontend_Controller {
 		$this->load->model('Polling_choice_m');
 	}
 
-	public function index() {
+	public function detail($id) {
 		$data['addONS'] = 'non_footer_page';
-		$data['title'] = 'Judul Polling nya -  Nyat Kadir - Laman Resmi';
+
+		if($id == NULL){
+			redirect('home');
+		}
+		
+		$id = base64_decode(cutting($id));
+		$data['getpolling'] = $this->Polling_m->selectall_polling($id,1)->row();
+		$data['title'] = $data['getpolling']->questionPOLLING.' -  Nyat Kadir - Laman Resmi';
+
+		$session_user = $this->session->userdata('idUSER');
+		if(empty($data['getpolling'])){
+			$polling_data = '';
+		} else {
+			$polling_data = $data['getpolling']->idPOLLING;
+		}
+		$data['check_choice_polling'] = $this->Polling_choice_m->check_choice_polling($polling_data, $session_user)->row();
+		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting($polling_data);
 
 		if(!empty($this->session->flashdata('message_choice'))) {
             $data['message_choice'] = $this->session->flashdata('message_choice');

@@ -53,6 +53,7 @@ $route['account/(:any)/(:any)'] = 'user/account/$1/$2'; //route user/account/ di
 $route['press/(:any)'] = 'press/detail/$1';
 $route['news/(:any)'] = 'news/detail/$1'; 
 $route['article/(:any)'] = 'article/detail/$1';
+$route['polling/(:any)'] = 'polling/detail/$1';
 $route['default_controller'] = 'home';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
