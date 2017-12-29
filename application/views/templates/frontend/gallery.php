@@ -51,7 +51,7 @@
                                 $date_format_gallery = dF($gal->createdateGALLERY, "m");
                                     if($date_form == $date_format_gallery){
                             ?>
-                                <li><a href="#" class="item <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gal->titleGALLERY); ?>"><?php echo $gal->titleGALLERY; ?></a></li>
+                                <li><a href="#" class="item <?php echo $active;?>" data-tab="<?php echo strtolower(replacesymbol_tounderscore($gal->titleGALLERY)); ?>"><?php echo $gal->titleGALLERY; ?></a></li>
                                         <?php } ?>
                                     <?php } ?>
                                 <?php } ?>
@@ -64,24 +64,34 @@
                 </div>
                 <div class="column">
                     <div class="gallery-wrapper">
-                    <?php
-                    foreach ($listgallery as $keying => $gallery) {
-                        if($gallery->categoryGALLERY == 1){
-                        if($keying == 0){
-                            $active = 'active';
-                        } else {
-                            $active = '';
-                        }
-                    ?>
-                        <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gallery->titleGALLERY); ?>">
+                        <?php
+                        foreach ($listgallery as $keying => $gallery) {
+                            if($gallery->categoryGALLERY == 1){
+                            if($keying == 0){
+                                $active = 'active';
+                            } else {
+                                $active = '';
+                            }
+                        ?>
+                        <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo strtolower(replacesymbol_tounderscore($gallery->titleGALLERY)); ?>">
                             <div class="hero-body">
                                 <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
+                                <div class="tile is-ancestor">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child box">
+                                            <a href="<?php echo $gallery->imageGALLERY;?>" data-fancybox="image" data-caption="<?php echo $gallery->titleGALLERY;?>">
+                                                <div class="image">
+                                                    <img src="<?php echo $gallery->imageGALLERY;?>" alt="<?php echo $gallery->titleGALLERY;?>">
+                                                </div>
+                                                <h4><?php echo $gallery->titleGALLERY;?></h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- kelar Tab-Content 1 -->
-                <?php } ?>
-            <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
                     </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
                 </div>
             </div> <!-- kelar div Columns -->
@@ -141,19 +151,31 @@
                 <?php
                 foreach ($listgallery as $keying => $gallery) {
                     if($gallery->categoryGALLERY == 2){
+                    $thumbnail = get_thumbnail_from_youtube($gallery->linkvideoGALLERY);
                     if($keying == 0){
                         $active = 'active';
                     } else {
                         $active = '';
                     }
                 ?>
-                    <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo replacesymbol_tounderscore($gallery->titleGALLERY); ?>">
-                        <div class="hero-body">
-                            <div class="container">
-                                <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
+                <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo strtolower(replacesymbol_tounderscore($gallery->titleGALLERY)); ?>">
+                    <div class="hero-body">
+                        <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
+                        <div class="tile is-ancestor">
+                            <div class="tile is-parent">
+                                <div class="tile is-child box">
+                                    <a href="<?php echo $gallery->linkvideoGALLERY;?>" data-fancybox="video" data-caption="<?php echo $gallery->titleGALLERY;?>">
+                                        <div class="image">
+                                            <img src="<?php echo $thumbnail;?>" alt="<?php echo $gallery->titleGALLERY;?>">
+                                            <span class="play-button"><i class="mdi mdi-play"></i></span>
+                                        </div>
+                                        <h4><?php echo $gallery->titleGALLERY;?></h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
                     <?php } ?>
                 <?php } ?>
                 </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->

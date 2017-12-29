@@ -5,17 +5,23 @@ class Dashboard extends Admin_Controller {
 
 	public function __construct (){
 		parent::__construct();
-		//$this->load->model('Dashboard_m');
+		$this->load->model('Dashboard_m');
+		$this->load->model('Polling_m');
+		$this->load->model('Polling_choice_m');
 	}
 
 	public function index_dashboard() {
 		$data['addONS'] = 'plugins_dashboard';
 
-		// $data['totalprodukrental'] = $this->Dashboard_m->jumlah_data('barang_rental');
-  //       $data['totalproduksale'] = $this->Dashboard_m->jumlah_data('barang_sale');
-  //       $data['totaltrivia'] = $this->Dashboard_m->jumlah_data('post_trivia');
-  //       $data['totalvisitor'] = $this->Dashboard_m->jumlah_data('visitor');
+		$data['totalaspirasi'] = $this->Dashboard_m->jumlah_data('aspirasi');
+        $data['totalmember'] = $this->Dashboard_m->jumlah_data('users');
+        $data['totalpolling'] = $this->Dashboard_m->jumlah_data('polling');
+        $data['totalvisitor'] = $this->Dashboard_m->jumlah_data('visitor');
 
+        $data['listpolling'] = $this->Polling_m->selectall_polling('',1)->row();
+        
+		$data['number_voting'] = $this->Polling_choice_m->getNumberVoting($data['listpolling']->idPOLLING);
+		
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }

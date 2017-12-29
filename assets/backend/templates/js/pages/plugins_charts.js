@@ -513,7 +513,7 @@ altair_charts = {
         // pie chart with custom labels
         var data = {
             labels: ['Bananas', 'Apples', 'Grapes'],
-            series: [20, 15, 40]
+            series: [20, 15, 0]
         };
 
         var options = {

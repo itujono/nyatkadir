@@ -189,6 +189,7 @@ function chart_visitor_labels(){
     $data = $CI->db->get()->result();
     return json_encode($data);
 }
+
 function chart_visitor_series(){
     $CI =& get_instance();
     $CI->db->select('COUNT(ipVISITOR) as jumlah');
@@ -370,6 +371,16 @@ function getnumbervoting_for_admin($id=NULL) {
     $result = $CI->db->query("SELECT nameCHOICE, idPOLLING, SUM(valueCHOICE) AS vote_value, (SELECT SUM(valueCHOICE) FROM nyat_choice_polling $where_id) AS total FROM nyat_choice_polling $where_id GROUP BY nameCHOICE");
     $data = $result->result();
     return $data;
+    
+}
+
+function getnumbervoting_for_chart_labels($id, $vote_value_total=NULL) {
+    $CI =& get_instance();
+    $where_id = 'WHERE idPOLLING = '.$id.'';
+
+    $result = $CI->db->query("SELECT nameCHOICE FROM nyat_choice_polling $where_id GROUP BY nameCHOICE");
+    $data = $result->result();
+    return json_encode($data);
 }
 
 function select_all_social_media(){
