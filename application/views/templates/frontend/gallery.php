@@ -42,12 +42,12 @@
                             <ul>
                             <?php
                                 foreach ($listgallery as $keys => $gal) {
-                                if($gal->categoryGALLERY == 1){
-                                if($keys == 0){
-                                    $active = 'active';
-                                } else {
-                                    $active = '';
-                                }
+                                    if($gal->categoryGALLERY == 1){
+                                        if($keys == 0){
+                                            $active = 'active';
+                                    } else {
+                                        $active = '';
+                                    }
                                 $date_format_gallery = dF($gal->createdateGALLERY, "m");
                                     if($date_form == $date_format_gallery){
                             ?>
