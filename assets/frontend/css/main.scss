@@ -1539,10 +1539,23 @@ footer.footer {
             font-size: 12px;
         }
     }
-    .tile {
+    .tab {
+        &.hero.is-primary {
+            background-color: transparent !important;
+        }
+        .hero-body {
+            padding-top: 0;
+            .title {
+                margin-top: 0;
+            }
+        }
         .box {
+            display: inline-block;
+            width: 24%;
             padding: 0;
+            margin-bottom: .5rem;
             border-radius: 0;
+            vertical-align: top;
             overflow: hidden;
             transition: all .3s ease;
             &:hover {
@@ -1590,18 +1603,18 @@ footer.footer {
                     font-size: 2em;
                 }
             }
-        }
-        .image {
-            padding-top: 100%;
-            img {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 0;
+            .image {
+                padding-top: 100%;
+                img {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 0;
+                }
             }
         }
     }

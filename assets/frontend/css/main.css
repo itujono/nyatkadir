@@ -1734,16 +1734,32 @@ footer.footer figure.logo-footer img {
   font-size: 12px;
 }
 
-.gallery-wrapper .tile .box {
+.gallery-wrapper .tab.hero.is-primary {
+  background-color: transparent !important;
+}
+
+.gallery-wrapper .tab .hero-body {
+  padding-top: 0;
+}
+
+.gallery-wrapper .tab .hero-body .title {
+  margin-top: 0;
+}
+
+.gallery-wrapper .tab .box {
+  display: inline-block;
+  width: 24%;
   padding: 0;
+  margin-bottom: .5rem;
   border-radius: 0;
+  vertical-align: top;
   overflow: hidden;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
 }
 
-.gallery-wrapper .tile .box:hover {
+.gallery-wrapper .tab .box:hover {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
@@ -1751,12 +1767,12 @@ footer.footer figure.logo-footer img {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-wrapper .tile .box:hover img {
+.gallery-wrapper .tab .box:hover img {
   -webkit-filter: brightness(0.7);
   filter: brightness(0.7);
 }
 
-.gallery-wrapper .tile .box:hover h4 {
+.gallery-wrapper .tab .box:hover h4 {
   position: absolute;
   visibility: visible;
   opacity: 1;
@@ -1765,7 +1781,7 @@ footer.footer figure.logo-footer img {
   transform: translateY(-50px);
 }
 
-.gallery-wrapper .tile .box h4 {
+.gallery-wrapper .tab .box h4 {
   position: absolute;
   color: #fff;
   padding: 5px;
@@ -1780,7 +1796,7 @@ footer.footer figure.logo-footer img {
   transition: all .3s ease;
 }
 
-.gallery-wrapper .tile .box .play-button {
+.gallery-wrapper .tab .box .play-button {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -1801,19 +1817,19 @@ footer.footer figure.logo-footer img {
   opacity: .7;
 }
 
-.gallery-wrapper .tile .box .play-button:hover {
+.gallery-wrapper .tab .box .play-button:hover {
   opacity: 1;
 }
 
-.gallery-wrapper .tile .box .play-button i {
+.gallery-wrapper .tab .box .play-button i {
   font-size: 2em;
 }
 
-.gallery-wrapper .tile .image {
+.gallery-wrapper .tab .box .image {
   padding-top: 100%;
 }
 
-.gallery-wrapper .tile .image img {
+.gallery-wrapper .tab .box .image img {
   position: absolute;
   top: 0;
   bottom: 0;

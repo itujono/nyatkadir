@@ -64,35 +64,277 @@
                 </div>
                 <div class="column">
                     <div class="gallery-wrapper">
-                        <?php
-                        foreach ($listgallery as $keying => $gallery) {
-                            if($gallery->categoryGALLERY == 1){
-                            if($keying == 0){
-                                $active = 'active';
-                            } else {
-                                $active = '';
-                            }
+
+
+
+
+                        <!-- <?php
+                        //foreach ($listgallery as $keying => $gallery) {
+                            //if($gallery->categoryGALLERY == 1){
+                            //if($keying == 0){
+                                //$active = 'active';
+                            //} //else {
+                                //$active = '';
+                            //}
                         ?>
-                        <div class="ui tab hero is-primary <?php echo $active;?>" data-tab="<?php echo strtolower(replacesymbol_tounderscore($gallery->titleGALLERY)); ?>">
+                        <div class="ui tab hero is-primary <?php //echo $active;?>" data-tab="<?php //echo strtolower(replacesymbol_tounderscore($gallery->titleGALLERY)); ?>">
                             <div class="hero-body">
-                                <h1 class="title"><?php echo $gallery->titleGALLERY; ?></h1>
+                                <h1 class="title"><?php //echo $gallery->titleGALLERY; ?></h1>
                                 <div class="tile is-ancestor">
                                     <div class="tile is-parent">
                                         <div class="tile is-child box">
-                                            <a href="<?php echo $gallery->imageGALLERY;?>" data-fancybox="image" data-caption="<?php echo $gallery->titleGALLERY;?>">
+                                            <a href="<?php //echo $gallery->imageGALLERY;?>" data-fancybox="image" data-caption="<?php //echo $gallery->titleGALLERY;?>">
                                                 <div class="image">
-                                                    <img src="<?php echo $gallery->imageGALLERY;?>" alt="<?php echo $gallery->titleGALLERY;?>">
+                                                    <img src="<?php //echo $gallery->imageGALLERY;?>" alt="<?php //echo $gallery->titleGALLERY;?>">
                                                 </div>
-                                                <h4><?php echo $gallery->titleGALLERY;?></h4>
+                                                <h4><?php //echo $gallery->titleGALLERY;?></h4>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <?php } ?>
-                        <?php } ?>
-                    </div> <!-- kelar Gallery-Wrapper / Ancestor tile -->
+                            <?php //} ?>
+                        <?php //} ?> -->
+
+
+
+
+
+
+                        <div class="ui tab hero is-primary active" data-tab="demi_bangsa">
+                            <div class="hero-body">
+                                <h1 class="title">Demi Bangsa dan Indonesia</h1>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="">
+                                        </div>
+                                        <h4>Perjalanan Menuju Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        </div>
+                                        <h4>Sampai di Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
+                                        </div>
+                                        <h4>Bersalaman dengan Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" data-fancybox="demi_bangsa" data-caption="Demi Bangsa">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Asuhan Aini</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 1 -->
+
+                        <div class="ui tab hero is-primary" data-tab="untuk_kita_dari_kita">
+                            <div class="hero-body">
+                                <h1 class="title">Untuk Kita, Dari Kita</h1>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
+                                        </div>
+                                        <h4>Perjalanan Menuju Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="">
+                                        </div>
+                                        <h4>Sampai di Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="">
+                                        </div>
+                                        <h4>Bersalaman dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" data-fancybox="untuk_kita_dari_kita" data-caption="Untuk Kita Dari Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 2 -->
+
+                        <div class="ui tab hero is-primary" data-tab="menjaga_marwah_melayu">
+                            <div class="hero-body">
+                                <h1 class="title">Menjaga Marwah Melayu</h1>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="">
+                                        </div>
+                                        <h4>Perjalanan Menuju Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
+                                        </div>
+                                        <h4>Sampai di Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        </div>
+                                        <h4>Bersalaman dengan Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sitting.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/pine-forest.jpg" data-fancybox="menjaga_marwah_melayu" data-caption="Menjaga Marwah Melayu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/pine-forest.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Kontestan Tanjung Riau</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 3 -->
+
+                        <div class="ui tab hero is-primary" data-tab="menjaga_tanah_air_kita">
+                            <div class="hero-body">
+                                <h1 class="title">Menjaga Tanah Air Kita</h1>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/slide1.jpg" alt="">
+                                        </div>
+                                        <h4>Perjalanan Menuju Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/sushi-man-edited.jpg" alt="">
+                                        </div>
+                                        <h4>Sampai di Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/campaign.jpg" alt="">
+                                        </div>
+                                        <h4>Bersalaman dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir1.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/nyatkadir2.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/road-forest.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/gletser.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/gletser.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <a href="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg" data-fancybox="menjaga_tanah_air_kita" data-caption="Menjaga Tanah Air Kita">
+                                        <div class="image">
+                                            <img src="<?php echo base_url().$this->data['asfront'];?>img/bg05.jpg" alt="">
+                                        </div>
+                                        <h4>Beramah-tamah dengan Panti Pulau Setokok</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> <!-- kelar Tab-Content 4 -->
+
+                    </div> <!-- kelar Gallery-Wrapper -->
                 </div>
             </div> <!-- kelar div Columns -->
         </section> <!-- kelar Section Gallery-Image -->
