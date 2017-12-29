@@ -110,12 +110,25 @@ altair_wysiwyg = {
 <script src="<?php echo base_url().$this->data['asbackbower']; ?>countUp.js/dist/countUp.min.js"></script>
 <!-- chartist -->
 <script src="<?php echo base_url().$this->data['asbackbower']; ?>chartist/dist/chartist.min.js"></script>
+<!--  charts functions -->
+<script src="<?php echo base_url().$this->data['asback']; ?>js/pages/plugins_charts.min.js"></script>
 <?php
     $charings = chart_visitor_labels();
     $replacechartlabels = str_replace(['{',':','}','date','""'], ['','','','',''], $charings);
-
+    
     $charing = chart_visitor_series();
     $replacechartseries = str_replace(['{','"',':','}','jumlah'], ['','','','',''], $charing);
+
+    $numbered_voting_labels= getnumbervoting_for_chart_labels($listpolling->idPOLLING);
+    $replace_name_choice = str_replace(['{','nameCHOICE',':','}','""'], ['','','','',''], $numbered_voting_labels);
+
+    foreach ($number_voting as $key => $value) {
+        $vote_value = $value->vote_value;
+        $total = $value->total;
+        $total_vote[$key] = round(100*($vote_value / $total),2);
+        $total_json = json_encode($total_vote);
+    }
+    
 ?>
 <script type="text/javascript">
 $(function() {
@@ -137,10 +150,51 @@ altair_charts = {
         $window.on('resize',function() {
             ch_line_area.update();
         });
+
+        // pie chart with custom labels
+        var data = {
+            labels: <?php echo $replace_name_choice;?>,
+            series: <?php echo $total_json;?>
+        };
+
+        var options = {
+            labelInterpolationFnc: function(value) {
+                return value[0]
+            }
+        };
+
+        var responsiveOptions = [
+            ['screen and (max-width: 767px)', {
+                chartPadding: 50,
+                labelOffset: 50,
+                labelDirection: 'explode',
+                labelInterpolationFnc: function(value) {
+                    return value;
+                }
+            }],
+            ['screen and (min-width: 768px)', {
+                chartPadding: 30,
+                labelOffset: 60,
+                labelDirection: 'explode',
+                labelInterpolationFnc: function(value) {
+                    return value;
+                }
+            }],
+            ['screen and (min-width: 1024px)', {
+                labelOffset: 80,
+                chartPadding: 20
+            }]
+        ];
+
+        var ch_pie_custom_labels = new Chartist.Pie('#chartist_pie_custom_labels', data, options, responsiveOptions);
+        $window.on('resize',function() {
+            ch_pie_custom_labels.update();
+        });
     }
 };
 </script>
 <script src="<?php echo base_url().$this->data['asback']; ?>js/pages/dashboard.min.js"></script>
+
 <?php
 } elseif($plugins == 'plugins') { 
 ?>

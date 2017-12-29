@@ -10577,9 +10577,10 @@ div.ganttview .ui-resizable-w {
 }
 /* chartist overide */
 .chartist {
-  height: 240px;
+  height: 260px;
   width: 100%;
 }
+
 .chartist .ct-label {
   color: #727272;
   fill: #727272;
