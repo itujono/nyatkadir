@@ -12,11 +12,15 @@
                 <div class="level topbar">
                     <div class="level-left">
                         <div class="level-item">
-                            <input type="file" name="file" id="file" class="inputfile" />
-                            <label for="file">
+                            <div class="thumb">
                                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
-                                <span>Edit Gambar...</span>
-                            </label>
+                            </div>
+                            <form class="" action="">
+                                <label for="image-upload">
+                                    <input type="file" name="file" class="inputfile" id="image-upload">
+                                    <span>Edit Gambar...</span>
+                                </label>
+                            </form>
                         </div>
                     </div>
                     <div class="level-right">

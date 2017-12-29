@@ -2046,6 +2046,68 @@ footer.footer figure.logo-footer img {
   font-size: 16px;
 }
 
+label[for=image-upload] {
+  display: inline-block;
+  border: 3px solid #ccc;
+  color: #666;
+  font-size: .8rem;
+  font-weight: bold;
+  background: #eee;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+label[for=image-upload]:hover {
+  background: #ddd;
+}
+
+label[for=image-upload] input {
+  display: none;
+}
+
+.thumb {
+  position: relative;
+  height: 170px;
+  width: 300px;
+  margin-right: 1em;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: move;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.thumb:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  border: 3px dashed #eee;
+  z-index: 9;
+  top: 1%;
+  left: 1%;
+  opacity: 0;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.thumb:hover::before {
+  opacity: 0.6;
+}
+
 .inputfile {
   width: 0.1px;
   height: 0.1px;
@@ -2108,8 +2170,8 @@ footer.footer figure.logo-footer img {
 }
 
 .inputfile:focus + label, .inputfile + label:hover img {
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
   opacity: .7;
   cursor: pointer;
 }

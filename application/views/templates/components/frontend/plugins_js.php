@@ -226,7 +226,7 @@ if ($plugins == 'home') { ?>
             });
         }
     </script>
-    <?php if(!empty($getpolling)){ 
+    <?php if(!empty($getpolling)){
     $name_fb =  $getpolling->questionPOLLING;
     $desc_fb =  $getpolling->questionPOLLING;
 }?>
@@ -262,6 +262,7 @@ $(".ShareFB").click(function(e) {
     <script src="https://npmcdn.com/headroom.js@0.9.4"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/wow.js"></script>
     <script src="<?php echo base_url().$this->data['asfront'];?>js/plugins.js"></script>
 
@@ -407,7 +408,7 @@ $(".ShareFB").click(function(e) {
             }
         tabbed();
     </script>
-<?php if(!empty($getnews)){ 
+<?php if(!empty($getnews)){
     $name_fb =  $getnews->titleNEWS;
     $desc_fb =  $getnews->descNEWS;
 } else {
@@ -561,7 +562,7 @@ $(".ShareFB").click(function(e) {
         }
     });
 </script>
-<?php if(!empty($getpolling)){ 
+<?php if(!empty($getpolling)){
     $name_fb =  $getpolling->questionPOLLING;
     $desc_fb =  $getpolling->questionPOLLING;
 } else {

@@ -27,17 +27,29 @@
 // Place any jQuery/helper plugins in here.
 
 $(document).ready(function() {
-    $(function () {
-        $("#file").change(function () {
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-                reader.onload = imageIsLoaded;
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
+
+    function preview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) { $('#avatar').attr('src', e.target.result);  }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#image-upload").change(function(){
+        $("#avatar").css({top: 0, left: 0});
+        preview(this);
+        $("#avatar").draggable({ containment: 'parent',scroll: false });
     });
 
-    function imageIsLoaded(e) {
-        $('#avatar').attr('src', e.target.result);
-    };
+    // $("#file-upload").dropzone({
+    //     maxFiles: 1,
+    //     clickable: false
+    // });
+    //
+    // $("#file-upload").on("complete", function(file) {
+    //   $(this).removeFile(file);
+    //   console.log(this);
+    // });
+
 });
