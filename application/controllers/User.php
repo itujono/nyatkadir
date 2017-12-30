@@ -26,11 +26,11 @@ class User extends Frontend_Controller {
 	public function index_registration(){
 		$data['addONS'] = 'non_footer_page';
 		$data['title'] = 'Registrasi -  Nyat Kadir - Laman Resmi';
-		
+
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
-        
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'users_registration', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
@@ -43,7 +43,7 @@ class User extends Frontend_Controller {
         $this->form_validation->set_message('is_unique', 'Tampaknya inputan Anda sudah terdaftar');
         $this->form_validation->set_message('min_length', 'Minimal kata sandi 8 karakter');
         $this->form_validation->set_message('is_numeric', 'Hanya memasukan angka saja');
-        $this->form_validation->set_error_delimiters('<p class="help">', '</p>'); 
+        $this->form_validation->set_error_delimiters('<p class="help">', '</p>');
 		if ($this->form_validation->run() == TRUE) {
 			$data = $this->Users_m->array_from_post(array('nameUSER','emailUSER','passwordUSER','addressUSER','cityUSER','zipUSER','genderUSER','ageUSER','teleUSER'));
             $data['passwordUSER'] = $this->Users_m->hash($data['passwordUSER']);
@@ -305,7 +305,7 @@ class User extends Frontend_Controller {
         $this->email->initialize($config);
 
         //send mail
-        $this->email->from($from_email, 'Kawan Nyat Kadir');
+        $this->email->from($from_email, 'NyatKadir.org');
         $this->email->to($email);
         $this->email->subject($subject);
         $this->email->message($message);
@@ -791,7 +791,7 @@ class User extends Frontend_Controller {
         $this->email->initialize($config);
 
         //send mail
-        $this->email->from($from_email, 'Kawan Nyat Kadir');
+        $this->email->from($from_email, 'NyatKadir.org');
         $this->email->to($email);
         $this->email->subject($subject);
         $this->email->message($message);
@@ -1077,7 +1077,7 @@ class User extends Frontend_Controller {
         $this->email->initialize($config);
 
         //send mail
-        $this->email->from($from_email, 'Kawan Nyat Kadir');
+        $this->email->from($from_email, 'NyatKadir.org');
         $this->email->to($email);
         $this->email->subject($subject);
         $this->email->message($message);

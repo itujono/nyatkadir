@@ -35,7 +35,7 @@ class Changepassword extends Admin_Controller {
 			$oldpassword = $this->User_m->hash($this->input->post('oldpassword'));
 			$password = $this->User_m->hash($this->input->post('password'));
 			$renewpassword = $this->User_m->hash($this->input->post('repassword'));
-		
+
 			if($password != $renewpassword){
 				$data = array(
 		            'title' => 'Maaf!',
@@ -53,7 +53,7 @@ class Changepassword extends Admin_Controller {
 				$data['passwordADMIN'] = $this->User_m->hash($this->input->post('password'));
 				$this->User_m->save($data, $ids);
 				if($this->sendemailnotifforgotpasswordadmin()){
-					
+
 					$data = array(
 						'title' => 'Sukses',
 						'text' => 'Perubahan kata sandi telah berhasil dilakukan, silakan masuk kembali untuk memulai',
@@ -94,8 +94,8 @@ class Changepassword extends Admin_Controller {
 					<head>
 					    <meta charset="utf-8">
 					    <meta name="viewport" content="width=device-width">
-					    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-					    <meta name="x-apple-disable-message-reformatting"> 
+					    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+					    <meta name="x-apple-disable-message-reformatting">
 					    <title>'.$subject.'</title>
 					    <!--[if mso]>
 					        <style>
@@ -163,12 +163,12 @@ class Changepassword extends Admin_Controller {
 					            display: none !important;
 					            opacity: 0.01 !important;
 					        }
-					        
+
 					        img.g-img + div {
 					            display: none !important;
 					        }
 
-					        
+
 					        .button-link {
 					            text-decoration: none !important;
 					        }
@@ -341,9 +341,9 @@ class Changepassword extends Admin_Controller {
         //configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
-        $this->email->from($from_email, 'Kawan Nyat Kadir');
+        $this->email->from($from_email, 'NyatKadir.org');
         $this->email->to($emailADMIN);
         $this->email->subject($subject);
         $this->email->message($message);

@@ -174,9 +174,11 @@ a {
     }
     &:active {
         background-color: $yellow;
+        color: $darkBlue
     }
     &.active {
         background-color: $yellow;
+        color: $darkBlue
     }
     &.has-dropdown {
         &:hover .navbar-link {

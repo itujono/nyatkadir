@@ -35,9 +35,9 @@ if ($plugins == 'home') { ?>
 
     <script>
         var form = document.querySelector(".form-aspirasi");
-        var successBox = document.querySelector("#submit-success");
+        var button = document.querySelector("button.is-submit");
 
-        submit.addEventListener("submit", function(e) {
+        button.addEventListener("submit", function(e) {
             e.preventDefault();
             console.log("Sempardak!!!");
         });

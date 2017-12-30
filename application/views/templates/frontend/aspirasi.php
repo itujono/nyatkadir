@@ -43,7 +43,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="submit" class="button is-link is-submit" value="Submit">
+                                <button type="submit" class="button is-link is-submit">Submit</button>
                             </div>
                         </div>
                     </form>

@@ -104,7 +104,7 @@ class Aspirasi extends Frontend_Controller {
 	{
 
 		$from_email = 'no-reply@nyatkadir.com';
-        $subject = 'Terima Kasih Telah Berpartisipasi - Kawan Nyat Kadir';
+        $subject = 'Terima Kasih Telah Berpartisipasi - NyatKadir.org';
         $word1 = 'Terima kasih atas partisipasi Anda dalam menyampaikan aspirasi, saran, dan masukan tentang apa saja untuk Indonesia, di laman resmi <a href="http://www.nyatkadir.com/">NyatKadir.org</a> pada <b>'.date("l, d F Y H:i:s").'</b>. Besar harapan agar segala bentuk aspirasi dari masyarakat Indonesia dapat berdampak positif untuk kemaslahatan umat di kemudian hari. <br> Harap periksa selalu inbox email Anda (atau mungkin di folder spam). Terima kasih dan salam sejahtera!';
         $message = '
         <!DOCTYPE html>

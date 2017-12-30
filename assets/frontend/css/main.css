@@ -166,10 +166,12 @@ a:hover {
 
 .navbar a.navbar-item:active {
   background-color: #f7ac01;
+  color: #1f2466;
 }
 
 .navbar a.navbar-item.active {
   background-color: #f7ac01;
+  color: #1f2466;
 }
 
 .navbar a.navbar-item.has-dropdown:hover .navbar-link {
