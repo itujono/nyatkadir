@@ -2069,7 +2069,22 @@ footer.footer figure.logo-footer img {
   font-size: 16px;
 }
 
+.account form.image-upload {
+  display: block;
+  width: initial;
+}
+
+.account form.image-upload button {
+  display: block;
+  width: 100%;
+}
+
 label[for=image-upload] {
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  opacity: 0;
+  visibility: hidden;
   display: inline-block;
   border: 3px solid #ccc;
   color: #666;
@@ -2078,6 +2093,9 @@ label[for=image-upload] {
   background: #eee;
   padding: 8px 15px;
   border-radius: 5px;
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
   cursor: pointer;
 }
 
@@ -2092,8 +2110,8 @@ label[for=image-upload] input {
 .thumb {
   position: relative;
   height: 170px;
-  width: 300px;
-  margin-right: 1em;
+  width: 200px;
+  margin-bottom: 1em;
   overflow: hidden;
   border-radius: 4px;
   cursor: move;
@@ -2127,8 +2145,13 @@ label[for=image-upload] input {
   pointer-events: none;
 }
 
-.thumb:hover::before {
+.thumb:hover :before {
   opacity: 0.6;
+}
+
+.thumb:hover label[for=image-upload] {
+  opacity: 1;
+  visibility: visible;
 }
 
 .inputfile {
@@ -2214,6 +2237,11 @@ label[for=image-upload] input {
   margin-bottom: 0;
   background-color: #eee;
   border-radius: 8px 8px 0 0;
+}
+
+.account-wrapper .topbar .level-left .level-item {
+  display: block;
+  width: 100%;
 }
 
 .account-wrapper .topbar .level-right span {

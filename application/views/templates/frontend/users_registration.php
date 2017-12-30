@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
-<section class="section is-medium login">
+<section class="section is-large login">
     <div class="hero-body">
         <div class="container">
             <div class="login-wrapper">

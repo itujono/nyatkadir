@@ -14,12 +14,13 @@
                         <div class="level-item">
                             <div class="thumb">
                                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
-                            </div>
-                            <form class="" action="">
                                 <label for="image-upload">
                                     <input type="file" name="file" class="inputfile" id="image-upload">
                                     <span>Edit Gambar...</span>
                                 </label>
+                            </div>
+                            <form class="image-upload" action="">
+                                <button type="submit" name="image-upload" class="button is-primary">Simpan foto</button>
                             </form>
                         </div>
                     </div>
