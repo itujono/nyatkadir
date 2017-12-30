@@ -624,6 +624,13 @@ a {
     &#voting-page {
         height: 100vh;
     }
+    .columns {
+        .column {
+            &:last-of-type {
+                padding-left: 3em;
+            }
+        }
+    }
     .title {
         color: $yellow;
     }

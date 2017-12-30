@@ -674,6 +674,10 @@ a:hover {
   height: 100vh;
 }
 
+.voting .columns .column:last-of-type {
+  padding-left: 3em;
+}
+
 .voting .title {
   color: #f7ac01;
 }
