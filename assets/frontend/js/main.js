@@ -939,7 +939,6 @@ jQuery.extend( jQuery.easing,
 
 
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
 $('a.page-scroll').on('click', function (event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
@@ -949,38 +948,7 @@ $('a.page-scroll').on('click', function (event) {
 });
 
 /* Page Preloader Script */
-$(window).load(function () {
-    $('#preloader').delay(100).fadeOut('slow');
-    $('html,body').addClass('add-oveflow');
-});
-
-$(document).ready(function ($) {
-    goto_top_page();
-});
-
-/* Script for Go to top */
-function goto_top_page() {
-    (function ($) {
-
-        var offset = 600,
-        /* visible when reach */
-        offset_opacity = 1200,
-        /* opacity reduced when reach */
-        $back_to_top = $('.goto-top');
-        //hide or show the "back to top" link
-        $(window).scroll(function () {
-            ($(this).scrollTop() > offset) ? $back_to_top.addClass('goto-is-visible'): $back_to_top.removeClass('goto-is-visible goto-fade-out');
-            if ($(this).scrollTop() > offset_opacity) {
-                $back_to_top.addClass('goto-fade-out');
-            }
-        });
-        //smooth scroll to top
-        $back_to_top.on('click', function (event) {
-            event.preventDefault();
-            $('body,html').animate({
-                scrollTop: $('#top').offset().top,
-            }, 700);
-        });
-
-    })(jQuery);
-}
+// $(window).load(function () {
+//     $('.preloader').delay(100).fadeOut('slow');
+//     $('html,body').addClass('add-overflow');
+// });

@@ -37,7 +37,7 @@ if ($plugins == 'home') { ?>
         var form = document.querySelector(".form-aspirasi");
         var button = document.querySelector("button.is-submit");
 
-        button.addEventListener("submit", function(e) {
+        button.addEventListener("click", function(e) {
             e.preventDefault();
             console.log("Sempardak!!!");
         });
