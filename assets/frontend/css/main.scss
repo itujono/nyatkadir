@@ -619,9 +619,11 @@ a {
 .voting {
     position: relative;
     background-color: $darkBlue;
-    height: 100vh;
     padding-top: 6em;
     overflow-y: hidden;
+    &#voting-page {
+        height: 100vh;
+    }
     .title {
         color: $yellow;
     }

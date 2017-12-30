@@ -240,7 +240,7 @@
     </div>
 </section>
 
-<section class="hero voting parallax-window" data-stellar-ratio="0.5">
+<section class="hero voting is-medium parallax-window" data-stellar-ratio="0.5">
     <div class="hero-body">
         <div class="container">
             <div class="columns">

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
-<section class="hero voting">
+<section class="hero voting" id="voting-page">
     <div class="hero-body">
      <div class="container">
         <div class="columns">
