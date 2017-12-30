@@ -42,18 +42,18 @@ class Attempts_m extends MY_Model{
 	// 	return $this->db->get();
 	// }
 
-	// public function checkingbrute_admin($idADMIN = NULL, $valid_attempts = NULL){
+	public function checkingbrute_admin($idADMIN = NULL, $valid_attempts = NULL){
 
-	// 	$query = $this->db->query("SELECT timeATTEMPTS FROM nyat_attempts_admin WHERE idADMIN = ".$idADMIN." AND timeATTEMPTS > ".$valid_attempts." ");
- //        return $query->num_rows();
-	// }
+		$query = $this->db->query("SELECT timeATTEMPTS FROM nyat_attempts_admin WHERE idADMIN = ".$idADMIN." AND timeATTEMPTS > ".$valid_attempts." ");
+        return $query->num_rows();
+	}
 
-	// function deletedata_admin($id){
- //        $this->db->where('idUSER', $id);
- //        $this->db->delete('attempts_admin');
- //    }
+	function deletedata_admin($id){
+        $this->db->where('idUSER', $id);
+        $this->db->delete('attempts_admin');
+    }
 
-    // function insertdatabrute_admin($data){
-    //     $this->db->insert('attempts_admin', $data);
-    // }
+    function insertdatabrute_admin($data){
+        $this->db->insert('attempts_admin', $data);
+    }
 }

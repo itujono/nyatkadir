@@ -34,6 +34,10 @@ class Press extends Frontend_Controller {
 			redirect('press');
 		}
 		$id = base64_decode(cutting($id));
+		$check_id_press = $this->Press_m->check_id_press($id)->row();
+		if(empty($check_id_press)){
+			redirect('press');
+		}
 		$data['getpress'] = $this->Press_m->selectall_press($id)->row();
 		$data['title'] = $data['getpress']->titlePRESS.' - Nyat Kadir - Laman Resmi';
 

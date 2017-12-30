@@ -15,8 +15,11 @@ class Polling extends Frontend_Controller {
 		if($id == NULL){
 			redirect('home');
 		}
-		
 		$id = base64_decode(cutting($id));
+		$check_id_polling = $this->Polling_m->check_id_polling($id)->row();
+		if(empty($check_id_polling)){
+			redirect('home');
+		}
 		$data['getpolling'] = $this->Polling_m->selectall_polling($id,1)->row();
 		$data['title'] = $data['getpolling']->questionPOLLING.' -  Nyat Kadir - Laman Resmi';
 

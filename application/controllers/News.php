@@ -34,6 +34,10 @@ class News extends Frontend_Controller {
 			redirect('news');
 		}
 		$id = base64_decode(cutting($id));
+		$check_id_news = $this->News_m->check_id_news($id)->row();
+		if(empty($check_id_news)){
+			redirect('news');
+		}
 		$data['getnews'] = $this->News_m->selectall_news($id)->row();
 		$data['title'] = $data['getnews']->titleNEWS.' - Laman Resmi';
 

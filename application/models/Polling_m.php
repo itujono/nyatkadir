@@ -61,4 +61,12 @@ class Polling_m extends MY_Model{
 		$this->db->limit(1);
 		return $this->db->get();
 	}
+
+	public function check_id_polling($id) {
+		$this->db->select('idPOLLING');
+		$this->db->from('polling');
+		$this->db->where('idPOLLING', $id);
+		$this->db->limit(1);
+		return $this->db->get();
+	}
 }

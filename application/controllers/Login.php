@@ -32,6 +32,35 @@ class Login extends CI_Controller {
 			$email = $this->input->post('email');
 			$pass = $this->input->post('password');
 
+			$attemptslogin = $this->_checkbrute_admin($email);
+			$countencrypt = strlen($this->User_m->hash($pass));
+
+			if($attemptslogin == true){
+
+				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
+		            'text' => 'Maaf, untuk sementara akun Anda telah terkunci, silakan hubungi bagian Admin kami untuk melaporkan masalah ini. Terima kasih!'
+		        );
+		        $this->session->set_flashdata('message',$data);
+				redirect('login');
+			}
+
+			if ($countencrypt > 128 OR $countencrypt < 128) {
+				$data = array(
+					'title' => 'Error!',
+					'style' => 'is-warning',
+		            'text' => 'Maaf, untuk sementara akun Anda telah terkunci, silakan hubungi bagian Admin kami untuk melaporkan masalah ini. Terima kasih!'
+		        );
+
+		        $checks = $this->User_m->checkusers($email)->row();
+		        $data_stat['statusUSER'] = 0;
+		        $this->User_m->save($data_stat, $checks->idADMIN);
+
+		        $this->session->set_flashdata('message',$data);
+				redirect('login');
+			}
+
 			if ($this->User_m->login($email, $pass) == "ADMIN") {
 				$checkid = $this->User_m->checkuser($email)->row();
 				
@@ -57,6 +86,13 @@ class Login extends CI_Controller {
 				redirect('login');
 
 			}  else {
+				$mailing = $this->input->post('email');
+
+				$logindata_admin = $this->User_m->checkuser($mailing)->row();
+				$data['idADMIN'] = $logindata_admin->idADMIN;
+				$data['timeATTEMPTS'] = time();
+				$this->Attempts_m->insertdatabrute_admin($data);
+
 				$data = array(
 					'title' => 'Warning!',
 			  		'text' => 'email atau kata sandi yang anda masukkan salah',
@@ -86,5 +122,29 @@ class Login extends CI_Controller {
 	    );
  	 	$this->session->set_flashdata('message',$data);
 		$this->index();
+	}
+
+	private function _checkbrute_admin($email) {
+	    $now = time();
+	    $valid_attempts = $now - (2 * 60 * 60);
+
+	    $idlogin_admin = $this->User_m->checkuser($email)->row();
+
+	    if(empty($idlogin_admin)){
+	    	$data = array(
+	    		'title' => 'Error!',
+				'style' => 'is-warning',
+	            'text' => 'Maaf, akun Anda tidak terdaftar di data kami.'
+	        );
+	        $this->session->set_flashdata('message',$data);
+			redirect('login');
+	    }
+
+	    $attempts = $this->Attempts_m->checkingbrute_admin($idlogin_admin->idADMIN,$valid_attempts);
+	    if($attempts  >= 4){
+	    	return true;
+	    } else {
+	    	return false;
+	    }
 	}
 }
