@@ -14,9 +14,9 @@ class Gallery extends Admin_Controller {
 		
 		$data['listgallery'] = $this->Gallery_m->selectall_gallery()->result();
 		foreach ($data['listgallery'] as $key => $value) {
-			$map = directory_map('assets/upload/gallery/pic-gallery-'.seo_url($data['listgallery'][$key]->titleGALLERY), FALSE, TRUE);
+			$map = directory_map('assets/upload/gallery/pic-gallery-'.folenc($data['listgallery'][$key]->idGALLERY), FALSE, TRUE);
 			if(!empty($map)){
-				$data['listgallery'][$key]->imageGALLERY = base_url() . 'assets/upload/gallery/pic-gallery-'.seo_url($data['listgallery'][$key]->titleGALLERY).'/'.$map[0];
+				$data['listgallery'][$key]->imageGALLERY = base_url() . 'assets/upload/gallery/pic-gallery-'.folenc($data['listgallery'][$key]->idGALLERY).'/'.$map[0];
 			} else {
 				$data['listgallery'][$key]->imageGALLERY = base_url() . 'assets/upload/no-image-available.png';
 			}
@@ -35,13 +35,17 @@ class Gallery extends Admin_Controller {
 	            'form-tab' => 'uk-active',
 	        );
 			$data['getgallery'] = $this->Gallery_m->selectall_gallery($id)->row();
-			$map = directory_map('assets/upload/gallery/pic-gallery-'.seo_url($data['getgallery']->titleGALLERY), FALSE, TRUE);
+			$map = directory_map('assets/upload/gallery/pic-gallery-'.folenc($data['getgallery']->idGALLERY), FALSE, TRUE);
+			$maps = array();
+			$imgs = array();
 			if(!empty($map)){
-				$data['getgallery']->imageGALLERY = base_url() . 'assets/upload/gallery/pic-gallery-'.seo_url($data['getgallery']->titleGALLERY).'/'.$map[0];
-			} else {
-				$data['getgallery']->imageGALLERY = '';
+				foreach ($map  as $key => $value) {
+					$maps[] = base_url().'assets/upload/gallery/pic-gallery-'.folenc($data['getgallery']->idGALLERY).'/'.$value;
+					$imgs[] = $value;
+				}
 			}
-
+			$data['getgallery']->map = $maps;
+			$data['getgallery']->imgs = $imgs;
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -66,12 +70,14 @@ class Gallery extends Admin_Controller {
 
 			if(empty($id))$id=NULL;
 			$data = $this->security->xss_clean($data);
-			$this->Gallery_m->save($data, $id);
+			$idsave = $this->Gallery_m->save($data, $id);
 
-			$subject = $this->input->post('titleGALLERY');
-			$filenamesubject = 'pic-gallery-'.seo_url($subject);
+			$subject = $idsave;
+			$filenamesubject = 'pic-gallery-'.folenc($subject);
 
-			if(!empty($_FILES['imgGALLERY']['name'][0])) {
+			if(!empty($_FILES['imgGALLERY']['name'][0])){
+				$number_of_files = sizeof($_FILES['imgGALLERY']['tmp_name']);
+				$files = $_FILES['imgGALLERY'];
 				$path = 'assets/upload/gallery/'.$filenamesubject;
 				if (!file_exists($path)){
 	            	mkdir($path, 0777, true);
@@ -81,11 +87,21 @@ class Gallery extends Admin_Controller {
 	            $config['allowed_types']	= 'jpg|png|jpeg';
 	            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
 
-		        $this->upload->initialize($config);
-
-		        if ($this->upload->do_upload('imgGALLERY')){
-		        	$data['uploads'] = $this->upload->data();
-		        }
+	            for ($i = 0; $i < $number_of_files; $i++) {
+			        $_FILES['imgGALLERY']['name'] = $files['name'][$i];
+			        $_FILES['imgGALLERY']['type'] = $files['type'][$i];
+			        $_FILES['imgGALLERY']['tmp_name'] = $files['tmp_name'][$i];
+			        $_FILES['imgGALLERY']['error'] = $files['error'][$i];
+			        $_FILES['imgGALLERY']['size'] = $files['size'][$i];
+			        //now we initialize the upload library
+			        $this->upload->initialize($config);
+			        // we retrieve the number of files that were uploaded
+			        if ($this->upload->do_upload('imgGALLERY')){
+			          $data['uploads'][$i] = $this->upload->data();
+			        }else{
+			          $data['upload_errors'][$i] = $this->upload->display_errors();
+			        }
+			    }
 	    	}
 	    $data = array(
         	'title' => 'Sukses',
@@ -93,7 +109,7 @@ class Gallery extends Admin_Controller {
             'type' => 'success'
   		);
   		$this->session->set_flashdata('message', $data);
-			redirect('administrator/gallery/index_gallery');
+		redirect('administrator/gallery/index_gallery');
 		  		
 		} else {
 			$data = array(
@@ -128,17 +144,10 @@ class Gallery extends Admin_Controller {
 		}
 	}
 
-	public function deleteimggallery($title=NULL, $id1=NULL){
-		if($title != NULL){
-
-			$map = directory_map('assets/upload/gallery/pic-gallery-'.seo_url($title), FALSE, TRUE);
-			$path = 'assets/upload/gallery/pic-gallery-'.seo_url($title);
-			foreach ($map as $value) {
-				unlink('assets/upload/gallery/pic-gallery-'.seo_url($title).'/'.$value);
-			}
-			if(is_dir($path)){
-				rmdir($path);
-			}
+	public function deleteimggallery($id1=NULL, $id2=NULL){
+		if($id1 != NULL){
+			$id = decode(urldecode($id1));
+			unlink('assets/upload/gallery/pic-gallery-'.folenc($id).'/'.$id2);
 		}
 		$data = array(
             'title' => 'Sukses',

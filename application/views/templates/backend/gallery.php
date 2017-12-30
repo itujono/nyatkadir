@@ -121,37 +121,28 @@ $url = base_url().'administrator/'.$controller.'/'.$actions;
                     </div>
                   </div>
                 </div>
-                
                 <div class="uk-grid" data-uk-grid-margin id="row_photo">
-                  <div class="uk-width-medium-1-1">
-                    <div class="md-card">
-                      <div class="md-card-content">
-                        <?php
-                        if(!empty($getgallery->imageGALLERY)){
-                          ?>
-                          <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimggallery/".seo_url($getgallery->titleGALLERY)."/".encode($getgallery->idGALLERY); ?>'; });"></a>
-                            <img src="<?php echo $getgallery->imageGALLERY;?>" alt="<?php echo $getgallery->titleGALLERY;?>" class="img_medium"/>
-                          </div>
-                          <?php } else { ?>
-                          <?php echo form_upload('imgGALLERY','','class="md-input"'); ?>
-                          <?php } ?>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="uk-width-medium-1-1">Gallery Upload
+                    <?php echo form_upload('imgGALLERY[]','','class="md-input" multiple');?>
+                    <ul class="img-edit clearfix">
+                      <?php 
+                      if(!empty($getgallery->map)){
+                      foreach ($getgallery->map as $key=> $value_img) { ?>
+                        <li class="uk-position-relative">
+                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'administrator/'.$controller."/deleteimggallery/".encode($getgallery->idGALLERY).'/'.$getgallery->imgs[$key]; ?>'; });"></a>
+                              <img src="<?php echo $value_img; ?>" class="img_medium"/>
+                        </li>
+                        <br>
+                      <?php } ?>
+                      <?php } ?>
+                    </ul>
+                  </div>
                   </div>
                   <div class="uk-grid" data-uk-grid-margin>
                     <div class="uk-width-medium-1-2 uk-margin-top">
                       <div class="parsley-row">
                         <label>Judul<span class="req">*</span></label>
-                        <?php 
-                        if(!empty($getgallery->imageGALLERY)){
-                          $disa = "disabled data-uk-tooltip='{pos:'top'}' title='Hapus dulu gambar anda.'";
-                        } else {
-                          $disa = "";
-                        }
-                        ?>
-                        <input type="text" class="md-input" name="titleGALLERY" autocomplete value="<?php echo cetak($getgallery->titleGALLERY);?>" required <?php echo $disa;?>/>
+                        <input type="text" class="md-input" name="titleGALLERY" autocomplete value="<?php echo cetak($getgallery->titleGALLERY);?>" required/>
                       </div>
                       <p class="text-red"><?php echo form_error('titleGALLERY'); ?></p>
                     </div>
