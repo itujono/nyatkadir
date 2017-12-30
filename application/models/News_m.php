@@ -60,4 +60,12 @@ class News_m extends MY_Model{
 		}
 		return $this->db->get();
 	}
+
+	public function check_id_news($id) {
+		$this->db->select('idNEWS');
+		$this->db->from('news');
+		$this->db->where('idNEWS', $id);
+		$this->db->limit(1);
+		return $this->db->get();
+	}
 }

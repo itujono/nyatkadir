@@ -32,6 +32,10 @@ class Article extends Frontend_Controller {
 			redirect('article');
 		}
 		$id = base64_decode(cutting($id));
+		$check_id_article = $this->Article_m->check_id_article($id)->row();
+		if(empty($check_id_article)){
+			redirect('article');
+		}
 		$data['getarticle'] = $this->Article_m->selectall_article($id)->row();
 		$data['title'] = $data['getarticle']->titleARTICLE.' - Laman Resmi';
 

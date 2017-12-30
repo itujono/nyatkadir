@@ -60,4 +60,12 @@ class Press_m extends MY_Model{
 		$this->db->where('idPRESS !=',$id);
 		return $this->db->get();
 	}
+
+	public function check_id_press($id) {
+		$this->db->select('idPRESS');
+		$this->db->from('press');
+		$this->db->where('idPRESS', $id);
+		$this->db->limit(1);
+		return $this->db->get();
+	}
 }

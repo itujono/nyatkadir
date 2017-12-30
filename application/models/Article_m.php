@@ -62,4 +62,12 @@ class Article_m extends MY_Model{
 		$this->db->where('idARTICLE !=',$id);
 		return $this->db->get();
 	}
+
+	public function check_id_article($id) {
+		$this->db->select('idARTICLE');
+		$this->db->from('article');
+		$this->db->where('idARTICLE', $id);
+		$this->db->limit(1);
+		return $this->db->get();
+	}
 }
