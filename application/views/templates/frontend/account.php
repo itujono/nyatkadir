@@ -57,7 +57,7 @@
                                 <dt>Alamat</dt>
                                 <dd><?php echo $getuser->addressUSER;?></dd>
                                 <dt>Nomor Telepon</dt>
-                                <dd><?php //echo $getuser->nameUSER;?></dd>
+                                <dd><?php echo $getuser->teleUSER;?></dd>
                             </dl>
                         </div>
                     </div>
