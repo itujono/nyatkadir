@@ -2076,7 +2076,7 @@ footer.footer figure.logo-footer img {
   width: initial;
 }
 
-.account form.image-upload button {
+.account form.image-upload button, .account form.image-upload input[type="submit"] {
   display: block;
   width: 100%;
 }
@@ -2090,14 +2090,14 @@ label[for=image-upload] {
   display: inline-block;
   border: 3px solid #ccc;
   color: #666;
-  font-size: .8rem;
+  font-size: .7rem;
   font-weight: bold;
   background: #eee;
-  padding: 8px 15px;
+  padding: 5px 10px;
   border-radius: 5px;
-  -webkit-transform: translateX(40px);
-  -ms-transform: translateX(40px);
-  transform: translateX(40px);
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
   cursor: pointer;
 }
 
@@ -2111,17 +2111,17 @@ label[for=image-upload] input {
 
 .thumb {
   position: relative;
-  height: 170px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
   margin-bottom: 1em;
-  overflow: hidden;
-  border-radius: 4px;
+  border-radius: 50%;
   cursor: move;
 }
 
 .thumb img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
   -webkit-transition: all 0.4s;
@@ -2235,7 +2235,8 @@ label[for=image-upload] input {
 }
 
 .account-wrapper .topbar {
-  padding: 1em 1.4em;
+  padding: 2.4em 1.4em !important;
+  padding-top: 1em !important;
   margin-bottom: 0;
   background-color: #eee;
   border-radius: 8px 8px 0 0;

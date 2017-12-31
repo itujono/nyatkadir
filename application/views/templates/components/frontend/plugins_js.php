@@ -384,6 +384,12 @@ $(".ShareFB").click(function(e) {
     </script>
 
     <script>
+        $(".image-saved .delete").on("click", function() {
+            $(this).closest(".image-saved").fadeOut(200);
+        });
+    </script>
+
+    <script>
         var tabbed = function() {
             var tab = document.getElementsByClassName('tab-link');
             var tabContent = document.getElementsByClassName('tab-content');

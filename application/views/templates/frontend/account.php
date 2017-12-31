@@ -12,6 +12,10 @@
                 <div class="level topbar">
                     <div class="level-left">
                         <div class="level-item">
+                            <div class="notification is-success image-saved">
+                                <button class="delete"></button>
+                                Sukses! Image Anda berhasil disimpan
+                            </div>
                             <div class="thumb">
                                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
                                 <form class="image-upload" method="POST" name="form_upload" action="<?php echo base_url();?>user/upload_profile_picture" enctype="multipart/form-data">
@@ -20,7 +24,9 @@
                                         <input type="file" name="file_profile_picture" class="inputfile" id="image-upload" accept=".jpg, .jpeg, .png">
                                         <span>Edit Gambar...</span>
                                     </label>
-                                    <input type="submit" class="button is-link" value="Simpan foto">
+                                    <div class="control">
+                                        <input type="submit" class="button is-link" value="Simpan foto">
+                                    </div>
                                 </form>
                             </div>
                         </div>

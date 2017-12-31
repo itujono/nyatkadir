@@ -1833,7 +1833,7 @@ footer.footer {
     form.image-upload {
         display: block;
         width: initial;
-        button {
+        button, input[type="submit"] {
             display: block;
             width: 100%
         }
@@ -1849,12 +1849,12 @@ label[for=image-upload] {
     display:inline-block;
     border:3px solid #ccc;
     color:#666;
-    font-size: .8rem;
+    font-size: .7rem;
     font-weight:bold;
     background:#eee;
-    padding:8px 15px;
+    padding: 5px 10px;
     border-radius:5px;
-    transform: translateX(40px);
+    transform: translateX(10px);
     cursor:pointer;
     &:hover {
         background:#ddd
@@ -1866,16 +1866,17 @@ label[for=image-upload] {
 
 .thumb {
     position:relative;
-    height:170px;
-    width:200px;
+    height:120px;
+    width:120px;
     // margin-right: 1em;
     margin-bottom: 1em;
-    overflow:hidden;
-    border-radius: 4px;
+    // overflow:hidden;
+    border-radius: 50%;
     cursor: move;
     img {
         width:100%;
         height: 100%;
+        border-radius: 50%;
         object-fit: cover;
         transition:all 0.4s;
     }
@@ -1975,7 +1976,8 @@ label[for=image-upload] {
     box-shadow: 2px 5px 12px rgba(0, 0, 0, .1);
 
     .topbar {
-        padding: 1em 1.4em;
+        padding: 2.4em 1.4em !important;
+        padding-top: 1em !important;
         margin-bottom: 0;
         background-color: #eee;
         border-radius: 8px 8px 0 0;
