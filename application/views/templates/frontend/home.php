@@ -253,7 +253,26 @@
                 <?php if(!empty($getpolling)){ ?>
                 <div class="column">
                     <div class="content">
-                        <h3 class="title"><a href="<?php echo base_url();?>polling/<?php echo base64_encode($getpolling->idPOLLING).'-'.seo_url($getpolling->questionPOLLING);?>"><?php echo $getpolling->questionPOLLING;?></a></h3>
+                    <?php if(!empty($message_choice)){ ?>
+                        <div class="column">
+                            <div class="successful box">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <figure class="image">
+                                            <span class="icon is-large mdi mdi-trophy-award"></span>
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <h3><?php echo $message_choice['title'];?></h3>
+                                            <p><?php echo $message_choice['text'];?></p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        <h3 class="title"><a href="<?php echo base_url();?>polling/detail/<?php echo base64_encode($getpolling->idPOLLING).'-'.seo_url($getpolling->questionPOLLING);?>"><?php echo $getpolling->questionPOLLING;?></a></h3>
                         <?php
                             if(!empty($check_choice_polling)){
                         ?>
@@ -342,7 +361,7 @@
                             </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input type="submit" name="" value="Submit" class="button is-link">
+                                        <input type="submit" value="Submit" class="button is-link">
                                     </div>
                                 </div>
                         </form>

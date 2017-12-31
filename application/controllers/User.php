@@ -498,6 +498,45 @@ class User extends Frontend_Controller {
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
 
+	public function upload_profile_picture(){
+		$idsession = $this->session->userdata('idUSER');
+		$namesession = $this->session->userdata('Name');
+		if(empty($idsession)){
+			$data = array(
+				'title' => 'Warning!',
+				'style' => 'is-warning',
+	            'text' => 'Maaf, anda tidak diperbolehkan mengunggah foto anda.'
+	        	);
+	        $this->session->set_flashdata('message',$data);
+			redirect('account/'.$idsession.'/'.seo_url($namesession));
+		}
+		$subject = strtolower($idsession);
+		$filenamesubject = 'pic-profile-picture-'.folenc($subject);
+		if(!empty($_FILES['file_profile_picture']['name'][0])) {
+			$path = 'assets/upload/profile_picture/'.$filenamesubject;
+			if (!file_exists($path)){
+            	mkdir($path, 0777, true);
+        	}
+
+			$config['upload_path']		= $path;
+            $config['allowed_types']	= 'jpg|png|jpeg';
+            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
+
+	        $this->upload->initialize($config);
+
+	        if ($this->upload->do_upload('file_profile_picture')){
+	        	$data['uploads'] = $this->upload->data();
+	        }
+	    }
+	  		$data = array(
+	        	'title' => 'Sukses',
+	            'text' => 'Foto anda berhasil di unggah.',
+	            'type' => 'success'
+      		);
+      		$this->session->set_flashdata('message', $data);
+  			redirect('account/'.$idsession.'/'.seo_url($namesession));
+	}
+
 	public function processreset(){
 		$email = $this->input->post('emailing');
 		if(empty($email)){

@@ -14,14 +14,15 @@
                         <div class="level-item">
                             <div class="thumb">
                                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
-                                <label for="image-upload">
-                                    <input type="file" name="file" class="inputfile" id="image-upload">
-                                    <span>Edit Gambar...</span>
-                                </label>
+                                <form class="image-upload" method="POST" name="form_upload" action="<?php echo base_url();?>user/upload_profile_picture" enctype="multipart/form-data">
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+                                    <label for="image-upload">
+                                        <input type="file" name="file_profile_picture" class="inputfile" id="image-upload" accept=".jpg, .jpeg, .png">
+                                        <span>Edit Gambar...</span>
+                                    </label>
+                                    <input type="submit" class="button is-link" value="Simpan foto">
+                                </form>
                             </div>
-                            <form class="image-upload" action="">
-                                <button type="submit" name="image-upload" class="button is-primary">Simpan foto</button>
-                            </form>
                         </div>
                     </div>
                     <div class="level-right">
