@@ -12,12 +12,14 @@
                 <div class="level topbar">
                     <div class="level-left">
                         <div class="level-item">
-                            <div class="notification is-success image-saved">
+                            <?php if(!empty($message_upload)){ ?>
+                            <div class="notification <?php echo $message_upload['style'];?> image-saved">
                                 <button class="delete"></button>
-                                Sukses! Image Anda berhasil disimpan
+                                <?php echo $message_upload['text'];?>
                             </div>
+                            <?php } ?>
                             <div class="thumb">
-                                <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Avatar Rusmanto" id="avatar">
+                                <img src="<?php echo $image_profile_picture;?>" alt="Avatar <?php echo $this->session->userdata('Name');?>" id="avatar">
                                 <form class="image-upload" method="POST" name="form_upload" action="<?php echo base_url();?>user/upload_profile_picture" enctype="multipart/form-data">
                                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                                     <label for="image-upload">

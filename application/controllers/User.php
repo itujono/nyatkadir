@@ -488,11 +488,22 @@ class User extends Frontend_Controller {
 		$id = $this->session->userdata('idUSER');
 		$data['getuser'] = $this->Users_m->selectall_users($id)->row();
 
+		$map = directory_map('assets/upload/profile_picture/pic-profile-picture-'.folenc(strtolower($data['getuser']->idUSER)), FALSE, TRUE);
+		if(!empty($map)){
+			$data['image_profile_picture'] = base_url() . 'assets/upload/profile_picture/pic-profile-picture-'.folenc(strtolower($data['getuser']->idUSER)).'/'.$map[0];
+		} else {
+			$data['image_profile_picture'] = base_url() . 'assets/frontend/img/user.jpg';
+		}
+
 		$data['list_choice_polling_users'] = $this->Polling_choice_m->list_choice_polling_users($id)->result();
 		$data['count_polling_user'] = count($data['list_choice_polling_users']);
 
 		$data['list_submited_aspirasi_user'] = $this->Aspirasi_m->selectall_aspirasi_at_account($this->session->userdata('idUSER'))->result();
 		$data['count_submited_aspirasi_user'] = count($data['list_submited_aspirasi_user']);
+
+		if(!empty($this->session->flashdata('message_upload'))) {
+            $data['message_upload'] = $this->session->flashdata('message_upload');
+        }
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'account', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
@@ -507,12 +518,16 @@ class User extends Frontend_Controller {
 				'style' => 'is-warning',
 	            'text' => 'Maaf, anda tidak diperbolehkan mengunggah foto anda.'
 	        	);
-	        $this->session->set_flashdata('message',$data);
+	        $this->session->set_flashdata('message_upload',$data);
 			redirect('account/'.$idsession.'/'.seo_url($namesession));
 		}
 		$subject = strtolower($idsession);
 		$filenamesubject = 'pic-profile-picture-'.folenc($subject);
 		if(!empty($_FILES['file_profile_picture']['name'][0])) {
+			//delete directory first and then uploading again
+			$path_for_delete = 'assets/upload/profile_picture/'.$filenamesubject;
+			delete_files($path_for_delete);
+
 			$path = 'assets/upload/profile_picture/'.$filenamesubject;
 			if (!file_exists($path)){
             	mkdir($path, 0777, true);
@@ -530,10 +545,10 @@ class User extends Frontend_Controller {
 	    }
 	  		$data = array(
 	        	'title' => 'Sukses',
-	            'text' => 'Foto anda berhasil di unggah.',
-	            'type' => 'success'
+	            'text' => 'Sukses! Gambar Profile Anda berhasil disimpan',
+	            'style' => 'is-success'
       		);
-      		$this->session->set_flashdata('message', $data);
+      		$this->session->set_flashdata('message_upload', $data);
   			redirect('account/'.$idsession.'/'.seo_url($namesession));
 	}
 
